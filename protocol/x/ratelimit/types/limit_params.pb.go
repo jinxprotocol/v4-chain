@@ -88,7 +88,7 @@ type Limiter struct {
 	PeriodSec uint32 `protobuf:"varint,2,opt,name=period_sec,json=periodSec,proto3" json:"period_sec,omitempty"`
 	// baseline_minimum is the minimum maximum withdrawal coin amount within the
 	// time period.
-	// e.g. 100_000_000_000 uusdc for 100k USDC; 5e22 jinx for 50k DV4TNT
+	// e.g. 100_000_000_000 uusdc for 100k USDC; 5e22 jinx for 50k JINX
 	BaselineMinimum github_com_jinxprotocol_v4_chain_protocol_dtypes.SerializableInt `protobuf:"bytes,3,opt,name=baseline_minimum,json=baselineMinimum,proto3,customtype=github.com/jinxprotocol/v4-chain/protocol/dtypes.SerializableInt" json:"baseline_minimum"`
 	// baseline_tvl_ppm is the maximum ratio of TVL withdrawable in
 	// the time period, in part-per-million.

@@ -629,7 +629,7 @@ func TestSendFromModuleToAccount_InvalidRecipient(t *testing.T) {
 			Authority:        lib.GovModuleAddress.String(),
 			SenderModuleName: "bridge",
 			Recipient:        "jinx1abc", // invalid recipient address
-			Coin:             sdk.NewCoin("dv4tnt", sdk.NewInt(1)),
+			Coin:             sdk.NewCoin("jinx", sdk.NewInt(1)),
 		},
 	)
 	require.ErrorContains(t, err, "Account address is invalid")

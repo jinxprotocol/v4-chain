@@ -164,7 +164,7 @@ func TestUpdatePerpetualsParams(t *testing.T) {
 				Authority: authtypes.NewModuleAddress(govtypes.ModuleName).String(),
 				PerpetualParams: perptypes.PerpetualParams{
 					Id:                TEST_PERPETUAL_PARAMS.Id,
-					Ticker:            "BTC-DV4TNT",
+					Ticker:            "BTC-JINX",
 					MarketId:          4,
 					AtomicResolution:  TEST_PERPETUAL_PARAMS.AtomicResolution,
 					DefaultFundingPpm: 500,
@@ -196,7 +196,7 @@ func TestUpdatePerpetualsParams(t *testing.T) {
 				Authority: authtypes.NewModuleAddress(govtypes.ModuleName).String(),
 				PerpetualParams: perptypes.PerpetualParams{
 					Id:                TEST_PERPETUAL_PARAMS.Id,
-					Ticker:            "BTC-DV4TNT",
+					Ticker:            "BTC-JINX",
 					MarketId:          4,
 					AtomicResolution:  TEST_PERPETUAL_PARAMS.AtomicResolution,
 					DefaultFundingPpm: 1_000_001,
@@ -212,7 +212,7 @@ func TestUpdatePerpetualsParams(t *testing.T) {
 				Authority: authtypes.NewModuleAddress(perptypes.ModuleName).String(),
 				PerpetualParams: perptypes.PerpetualParams{
 					Id:                TEST_PERPETUAL_PARAMS.Id,
-					Ticker:            "BTC-DV4TNT",
+					Ticker:            "BTC-JINX",
 					MarketId:          4,
 					AtomicResolution:  TEST_PERPETUAL_PARAMS.AtomicResolution,
 					DefaultFundingPpm: 500,
@@ -228,7 +228,7 @@ func TestUpdatePerpetualsParams(t *testing.T) {
 				Authority: authtypes.NewModuleAddress(govtypes.ModuleName).String(),
 				PerpetualParams: perptypes.PerpetualParams{
 					Id:                TEST_PERPETUAL_PARAMS.Id,
-					Ticker:            "BTC-DV4TNT",
+					Ticker:            "BTC-JINX",
 					MarketId:          4,
 					AtomicResolution:  TEST_PERPETUAL_PARAMS.AtomicResolution,
 					DefaultFundingPpm: 500,
@@ -244,7 +244,7 @@ func TestUpdatePerpetualsParams(t *testing.T) {
 				Authority: authtypes.NewModuleAddress(govtypes.ModuleName).String(),
 				PerpetualParams: perptypes.PerpetualParams{
 					Id:                TEST_PERPETUAL_PARAMS.Id,
-					Ticker:            "BTC-DV4TNT",
+					Ticker:            "BTC-JINX",
 					MarketId:          5, // market id 5 does not exist.
 					AtomicResolution:  TEST_PERPETUAL_PARAMS.AtomicResolution,
 					DefaultFundingPpm: 500,
