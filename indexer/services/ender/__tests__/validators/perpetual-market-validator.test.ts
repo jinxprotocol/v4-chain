@@ -1,8 +1,8 @@
-import { logger, ParseMessageError } from '@jinxprotocol-indexer/base';
-import { PerpetualMarketCreateEventV1, IndexerTendermintBlock, IndexerTendermintEvent } from '@jinxprotocol-indexer/v4-protos';
+import { logger, ParseMessageError } from '@dydxprotocol-indexer/base';
+import { PerpetualMarketCreateEventV1, IndexerTendermintBlock, IndexerTendermintEvent } from '@dydxprotocol-indexer/v4-protos';
 import {
   dbHelpers, testMocks, perpetualMarketRefresher,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import { JinxIndexerSubtypes } from '../../src/lib/types';
 import {
   defaultPerpetualMarketCreateEvent, defaultHeight, defaultTime, defaultTxHash,

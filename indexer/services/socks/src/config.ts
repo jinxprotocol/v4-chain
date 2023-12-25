@@ -5,14 +5,14 @@ import {
   parseNumber,
   parseSchema,
   parseString,
-} from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/base';
 import {
   complianceConfigSchema,
-} from '@jinxprotocol-indexer/compliance';
-import { kafkaConfigSchema } from '@jinxprotocol-indexer/kafka';
+} from '@dydxprotocol-indexer/compliance';
+import { kafkaConfigSchema } from '@dydxprotocol-indexer/kafka';
 import {
   postgresConfigSchema,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 
 export const configSchema = {
   ...baseConfigSchema,

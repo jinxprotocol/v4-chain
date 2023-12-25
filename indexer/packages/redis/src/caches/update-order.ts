@@ -1,4 +1,4 @@
-import { IndexerOrderId, RedisOrder } from '@jinxprotocol-indexer/v4-protos';
+import { IndexerOrderId, RedisOrder } from '@dydxprotocol-indexer/v4-protos';
 import { Callback, RedisClient } from 'redis';
 
 import { InvalidTotalFilledQuantumsError } from '../errors';

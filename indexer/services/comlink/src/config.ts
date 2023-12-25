@@ -4,12 +4,12 @@ import {
   parseInteger,
   parseSchema,
   parseString,
-} from '@jinxprotocol-indexer/base';
-import { complianceConfigSchema } from '@jinxprotocol-indexer/compliance';
+} from '@dydxprotocol-indexer/base';
+import { complianceConfigSchema } from '@dydxprotocol-indexer/compliance';
 import {
   postgresConfigSchema,
-} from '@jinxprotocol-indexer/postgres';
-import { redisConfigSchema } from '@jinxprotocol-indexer/redis';
+} from '@dydxprotocol-indexer/postgres';
+import { redisConfigSchema } from '@dydxprotocol-indexer/redis';
 
 export const configSchema = {
   ...baseConfigSchema,

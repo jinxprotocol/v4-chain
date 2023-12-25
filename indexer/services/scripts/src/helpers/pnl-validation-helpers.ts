@@ -9,7 +9,7 @@ import {
   PnlTicksColumns,
   PnlTicksFromDatabase,
   PnlTicksTable,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import Big from 'big.js';
 import _ from 'lodash';
 

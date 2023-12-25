@@ -6,12 +6,12 @@ import {
   dbHelpers,
   testConstants,
   testMocks,
-} from '@jinxprotocol-indexer/postgres';
-import { stats } from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/postgres';
+import { stats } from '@dydxprotocol-indexer/base';
 import { complianceProvider } from '../../../../src/helpers/compliance/compliance-clients';
-import { ComplianceClientResponse, INDEXER_COMPLIANCE_BLOCKED_PAYLOAD } from '@jinxprotocol-indexer/compliance';
+import { ComplianceClientResponse, INDEXER_COMPLIANCE_BLOCKED_PAYLOAD } from '@dydxprotocol-indexer/compliance';
 import { ratelimitRedis } from '../../../../src/caches/rate-limiters';
-import { redis } from '@jinxprotocol-indexer/redis';
+import { redis } from '@dydxprotocol-indexer/redis';
 import { DateTime } from 'luxon';
 import config from '../../../../src/config';
 import { getIpAddr } from '../../../../src/lib/utils';

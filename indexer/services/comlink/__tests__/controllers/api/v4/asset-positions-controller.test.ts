@@ -7,7 +7,7 @@ import {
   PositionSide,
   testConstants,
   testMocks,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import { AssetPositionResponseObject, RequestMethod } from '../../../../src/types';
 import request from 'supertest';
 import { sendRequest } from '../../../helpers/helpers';

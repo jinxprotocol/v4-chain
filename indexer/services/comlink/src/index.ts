@@ -2,8 +2,8 @@ import {
   logger,
   wrapBackgroundTask,
   startBugsnag,
-} from '@jinxprotocol-indexer/base';
-import { perpetualMarketRefresher, liquidityTierRefresher } from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/base';
+import { perpetualMarketRefresher, liquidityTierRefresher } from '@dydxprotocol-indexer/postgres';
 
 import config from './config';
 import IndexV4 from './controllers/api/index-v4';

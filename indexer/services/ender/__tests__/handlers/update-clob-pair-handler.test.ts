@@ -6,7 +6,7 @@ import {
   perpetualMarketRefresher,
   protocolTranslations,
   testMocks,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import { updateBlockCache } from '../../src/caches/block-cache';
 import {
   defaultHeight,
@@ -20,7 +20,7 @@ import {
   IndexerTendermintEvent,
   Timestamp,
   UpdateClobPairEventV1,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import {
   createIndexerTendermintBlock,
   createIndexerTendermintEvent,
@@ -28,7 +28,7 @@ import {
 } from '../helpers/indexer-proto-helpers';
 import { JinxIndexerSubtypes } from '../../src/lib/types';
 import { UpdateClobPairHandler } from '../../src/handlers/update-clob-pair-handler';
-import { createKafkaMessage, producer } from '@jinxprotocol-indexer/kafka';
+import { createKafkaMessage, producer } from '@dydxprotocol-indexer/kafka';
 import { KafkaMessage } from 'kafkajs';
 import { onMessage } from '../../src/lib/on-message';
 import { createPostgresFunctions } from '../../src/helpers/postgres/postgres-functions';

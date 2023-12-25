@@ -8,7 +8,7 @@ import {
   baseConfigSchema,
   parseInteger,
   parseBoolean,
-} from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/base';
 
 export const complianceConfigSchema = {
   ...baseConfigSchema,

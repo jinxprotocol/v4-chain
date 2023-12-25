@@ -14,12 +14,12 @@ import {
   BestEffortOpenedStatus,
   LiquidityTiersFromDatabase,
   helpers,
-} from '@jinxprotocol-indexer/postgres';
-import { OrderbookLevels, redisTestConstants } from '@jinxprotocol-indexer/redis';
+} from '@dydxprotocol-indexer/postgres';
+import { OrderbookLevels, redisTestConstants } from '@dydxprotocol-indexer/redis';
 import {
   IndexerOrder_TimeInForce,
   RedisOrder,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import Big from 'big.js';
 import {
   OrderbookLevelsToResponseObject,

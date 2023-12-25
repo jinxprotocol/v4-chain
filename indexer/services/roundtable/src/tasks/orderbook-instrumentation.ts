@@ -1,17 +1,17 @@
 import {
   logger,
   stats,
-} from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/base';
 import {
   PerpetualMarketFromDatabase,
   PerpetualMarketTable,
   QUOTE_CURRENCY_ATOMIC_RESOLUTION,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import {
   OpenOrdersCache,
   OrderbookLevels,
   OrderbookLevelsCache,
-} from '@jinxprotocol-indexer/redis';
+} from '@dydxprotocol-indexer/redis';
 import Big from 'big.js';
 
 import config from '../config';

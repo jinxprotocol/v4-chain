@@ -1,9 +1,9 @@
-import { logger, ParseMessageError } from '@jinxprotocol-indexer/base';
+import { logger, ParseMessageError } from '@dydxprotocol-indexer/base';
 import {
   ORDERBOOKS_WEBSOCKET_MESSAGE_VERSION,
-} from '@jinxprotocol-indexer/kafka';
-import { OrderbookMessageContents, PerpetualMarketFromDatabase, protocolTranslations } from '@jinxprotocol-indexer/postgres';
-import { OffChainUpdateV1, OrderbookMessage, RedisOrder } from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/kafka';
+import { OrderbookMessageContents, PerpetualMarketFromDatabase, protocolTranslations } from '@dydxprotocol-indexer/postgres';
+import { OffChainUpdateV1, OrderbookMessage, RedisOrder } from '@dydxprotocol-indexer/v4-protos';
 import { OrderbookSide } from 'src/lib/types';
 
 import { orderSideToOrderbookSide } from './helpers';

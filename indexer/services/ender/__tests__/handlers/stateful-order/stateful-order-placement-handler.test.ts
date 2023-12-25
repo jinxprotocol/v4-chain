@@ -11,7 +11,7 @@ import {
   testConstants,
   testMocks,
   TimeInForce,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import {
   IndexerTendermintBlock,
   IndexerTendermintEvent,
@@ -19,7 +19,7 @@ import {
   IndexerOrder,
   OrderPlaceV1_OrderPlacementStatus,
   StatefulOrderEventV1,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import { KafkaMessage } from 'kafkajs';
 import { onMessage } from '../../../src/lib/on-message';
 import { JinxIndexerSubtypes } from '../../../src/lib/types';
@@ -41,8 +41,8 @@ import {
 import { StatefulOrderPlacementHandler } from '../../../src/handlers/stateful-order/stateful-order-placement-handler';
 import { getPrice, getSize } from '../../../src/lib/helper';
 import { STATEFUL_ORDER_ORDER_FILL_EVENT_TYPE } from '../../../src/constants';
-import { producer } from '@jinxprotocol-indexer/kafka';
-import { ORDER_FLAG_LONG_TERM } from '@jinxprotocol-indexer/v4-proto-parser';
+import { producer } from '@dydxprotocol-indexer/kafka';
+import { ORDER_FLAG_LONG_TERM } from '@dydxprotocol-indexer/v4-proto-parser';
 import { createPostgresFunctions } from '../../../src/helpers/postgres/postgres-functions';
 
 describe('statefulOrderPlacementHandler', () => {

@@ -1,10 +1,10 @@
-import { logger, ParseMessageError } from '@jinxprotocol-indexer/base';
+import { logger, ParseMessageError } from '@dydxprotocol-indexer/base';
 import {
   IndexerTendermintBlock,
   IndexerTendermintEvent,
   LiquidityTierUpsertEventV1,
-} from '@jinxprotocol-indexer/v4-protos';
-import { dbHelpers, testMocks } from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/v4-protos';
+import { dbHelpers, testMocks } from '@dydxprotocol-indexer/postgres';
 import { JinxIndexerSubtypes } from '../../src/lib/types';
 import {
   defaultHeight, defaultLiquidityTierUpsertEvent, defaultTime, defaultTxHash,

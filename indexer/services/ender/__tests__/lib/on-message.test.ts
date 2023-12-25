@@ -16,7 +16,7 @@ import {
   testMocks,
   TransactionFromDatabase,
   TransactionTable,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import {
   FundingEventV1,
   IndexerTendermintBlock,
@@ -26,17 +26,17 @@ import {
   SubaccountUpdateEventV1,
   Timestamp,
   TransferEventV1,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import { createIndexerTendermintBlock, createIndexerTendermintEvent } from '../helpers/indexer-proto-helpers';
 import { onMessage } from '../../src/lib/on-message';
 import { KafkaMessage } from 'kafkajs';
 import {
   createKafkaMessage, KafkaTopics, producer,
-} from '@jinxprotocol-indexer/kafka';
+} from '@dydxprotocol-indexer/kafka';
 import { MILLIS_IN_NANOS, SECONDS_IN_MILLIS } from '../../src/constants';
 import { ConsolidatedKafkaEvent, JinxIndexerSubtypes } from '../../src/lib/types';
 import config from '../../src/config';
-import { logger, stats } from '@jinxprotocol-indexer/base';
+import { logger, stats } from '@dydxprotocol-indexer/base';
 import {
   defaultFundingUpdateSampleEvent,
   defaultHeight,

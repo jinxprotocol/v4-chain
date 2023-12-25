@@ -1,13 +1,13 @@
 import {
   logger,
   ParseMessageError,
-} from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/base';
 import {
   IndexerTendermintBlock,
   IndexerTendermintEvent,
   Timestamp,
   TransferEventV1,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import {
   AssetTable,
   AssetFromDatabase,
@@ -26,9 +26,9 @@ import {
   WalletTable,
   WalletFromDatabase,
   testConversionHelpers,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import { KafkaMessage } from 'kafkajs';
-import { createKafkaMessage, producer } from '@jinxprotocol-indexer/kafka';
+import { createKafkaMessage, producer } from '@dydxprotocol-indexer/kafka';
 import { onMessage } from '../../src/lib/on-message';
 import { JinxIndexerSubtypes } from '../../src/lib/types';
 import {

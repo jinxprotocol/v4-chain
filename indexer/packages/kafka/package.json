@@ -1,10 +1,10 @@
 {
-  "name": "@jinxprotocol-indexer/kafka",
+  "name": "@dydxprotocol-indexer/kafka",
   "version": "0.0.1",
   "description": "",
   "main": "build/src/index.js",
   "devDependencies": {
-    "@jinxprotocol-indexer/dev": "workspace:^0.0.1",
+    "@dydxprotocol-indexer/dev": "workspace:^0.0.1",
     "@types/jest": "^28.1.4",
     "@types/lodash": "^4.14.182",
     "@types/node": "^18.0.3",
@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/jinxprotocol/indexer#readme",
   "dependencies": {
-    "@jinxprotocol-indexer/base": "workspace:^0.0.1",
+    "@dydxprotocol-indexer/base": "workspace:^0.0.1",
     "dotenv-flow": "^3.2.0",
     "kafkajs": "^2.1.0",
     "lodash": "^4.17.21",

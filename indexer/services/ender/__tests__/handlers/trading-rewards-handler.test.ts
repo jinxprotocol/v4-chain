@@ -4,7 +4,7 @@ import {
   IndexerTendermintEvent,
   Timestamp,
   TradingRewardsEventV1,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import {
   dbHelpers,
   testMocks,
@@ -14,9 +14,9 @@ import {
   TradingRewardTable,
   TradingRewardFromDatabase,
   testConversionHelpers,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import { KafkaMessage } from 'kafkajs';
-import { createKafkaMessage } from '@jinxprotocol-indexer/kafka';
+import { createKafkaMessage } from '@dydxprotocol-indexer/kafka';
 import { onMessage } from '../../src/lib/on-message';
 import { JinxIndexerSubtypes } from '../../src/lib/types';
 import {

@@ -1,15 +1,15 @@
 import {
   logger,
   stats,
-} from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/base';
 import {
   BlockFromDatabase,
   BlockTable,
   OrderFromDatabase,
   OrderStatus,
   OrderTable,
-} from '@jinxprotocol-indexer/postgres';
-import { ORDER_FLAG_SHORT_TERM } from '@jinxprotocol-indexer/v4-proto-parser';
+} from '@dydxprotocol-indexer/postgres';
+import { ORDER_FLAG_SHORT_TERM } from '@dydxprotocol-indexer/v4-proto-parser';
 
 import config from '../config';
 

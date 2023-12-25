@@ -1,6 +1,6 @@
 import {
   stats, logger, safeJsonStringify, InfoObject,
-} from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/base';
 import { v4 as uuidv4 } from 'uuid';
 import WebSocket from 'ws';
 

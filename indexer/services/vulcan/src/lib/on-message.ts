@@ -3,9 +3,9 @@ import {
   stats,
   ParseMessageError,
   STATS_NO_SAMPLING,
-} from '@jinxprotocol-indexer/base';
-import { KafkaTopics } from '@jinxprotocol-indexer/kafka';
-import { OffChainUpdateV1 } from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/base';
+import { KafkaTopics } from '@dydxprotocol-indexer/kafka';
+import { OffChainUpdateV1 } from '@dydxprotocol-indexer/v4-protos';
 import { IHeaders, KafkaMessage } from 'kafkajs';
 import { Handler } from 'src/handlers/handler';
 

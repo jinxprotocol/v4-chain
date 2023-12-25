@@ -40,7 +40,7 @@ This repository contains the source code for the Cosmos SDK application responsi
 
 `protocol` — Contains source code for the Cosmos SDK app that runs the protocol. See its [README](https://github.com/jinxprotocol/v4-chain/blob/main/indexer/README.md) for developer documentation.
 
-`v4-proto-js` — Scripts for publishing proto package to [npm](https://www.npmjs.com/package/@jinxprotocol/v4-proto).
+`v4-proto-js` — Scripts for publishing proto package to [npm](https://www.npmjs.com/package/@dydxprotocol/v4-proto).
 
 `v4-proto-py` — Scripts for publishing proto package to [PyPI](https://pypi.org/project/v4-proto/).
 

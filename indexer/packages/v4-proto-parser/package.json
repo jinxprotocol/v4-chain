@@ -1,10 +1,10 @@
 {
-  "name": "@jinxprotocol-indexer/v4-proto-parser",
+  "name": "@dydxprotocol-indexer/v4-proto-parser",
   "version": "0.0.1",
   "description": "",
   "main": "build/src/index.js",
   "devDependencies": {
-    "@jinxprotocol-indexer/dev": "workspace:^0.0.1",
+    "@dydxprotocol-indexer/dev": "workspace:^0.0.1",
     "@types/jest": "^28.1.4",
     "@types/luxon": "^3.0.0",
     "@types/node": "^18.0.3",
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/jinxprotocol/indexer#readme",
   "dependencies": {
-    "@jinxprotocol-indexer/v4-protos": "workspace:^0.0.1",
+    "@dydxprotocol-indexer/v4-protos": "workspace:^0.0.1",
     "dotenv-flow": "^3.2.0",
     "long": "^5.2.1"
   }

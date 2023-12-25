@@ -53,8 +53,8 @@ export function mockNow(now: Date | number): FnMock<typeof Date.now> {
  * Function to make `wrapBackgroundTask` a synchronous function for testing.
  * Requires code like this at the top of the file:
  *
- * jest.mock('@jinxprotocol-indexer/base', () => ({
- *   ...jest.requireActual('@jinxprotocol-indexer/base'),
+ * jest.mock('@dydxprotocol-indexer/base', () => ({
+ *   ...jest.requireActual('@dydxprotocol-indexer/base'),
  *   wrapBackgroundTask: jest.fn(),
  * }));
  *

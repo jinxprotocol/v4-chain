@@ -1,6 +1,6 @@
 import {
   NodeEnv, delay, logger, stats,
-} from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/base';
 
 import config from '../config';
 import * as LiquidityTiersTable from '../stores/liquidity-tiers-table';

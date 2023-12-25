@@ -1,7 +1,7 @@
 import {
   NextFundingCache,
   StateFilledQuantumsCache,
-} from '@jinxprotocol-indexer/redis';
+} from '@dydxprotocol-indexer/redis';
 import Big from 'big.js';
 
 import { redisClient } from '../../src/helpers/redis/redis-controller';

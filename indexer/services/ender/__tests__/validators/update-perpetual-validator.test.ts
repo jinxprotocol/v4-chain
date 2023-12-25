@@ -1,12 +1,12 @@
-import { logger, ParseMessageError } from '@jinxprotocol-indexer/base';
+import { logger, ParseMessageError } from '@dydxprotocol-indexer/base';
 import {
   IndexerTendermintBlock,
   IndexerTendermintEvent,
   UpdatePerpetualEventV1,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import {
   dbHelpers, testMocks, perpetualMarketRefresher,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import { JinxIndexerSubtypes } from '../../src/lib/types';
 import {
   defaultUpdatePerpetualEvent,

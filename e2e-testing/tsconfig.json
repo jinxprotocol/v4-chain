@@ -20,7 +20,7 @@
     "strict": true,
     "useUnknownInCatchVariables": false,
     "paths": {
-      "@jinxprotocol-indexer/example-package": ["packages/example-package/src"],
+      "@dydxprotocol-indexer/example-package": ["packages/example-package/src"],
     },
     "baseUrl": ".",
     "outDir": "build",

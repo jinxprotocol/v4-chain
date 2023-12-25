@@ -11,14 +11,14 @@ import {
   testConstants,
   testMocks,
   TimeInForce,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import {
   IndexerTendermintBlock,
   IndexerTendermintEvent,
   IndexerOrder,
   StatefulOrderEventV1,
   IndexerOrder_ConditionType,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import { KafkaMessage } from 'kafkajs';
 import { onMessage } from '../../../src/lib/on-message';
 import { JinxIndexerSubtypes } from '../../../src/lib/types';
@@ -39,9 +39,9 @@ import {
 } from '../../helpers/indexer-proto-helpers';
 import { getPrice, getSize, getTriggerPrice } from '../../../src/lib/helper';
 import { STATEFUL_ORDER_ORDER_FILL_EVENT_TYPE } from '../../../src/constants';
-import { ORDER_FLAG_CONDITIONAL } from '@jinxprotocol-indexer/v4-proto-parser';
+import { ORDER_FLAG_CONDITIONAL } from '@dydxprotocol-indexer/v4-proto-parser';
 import Long from 'long';
-import { producer } from '@jinxprotocol-indexer/kafka';
+import { producer } from '@dydxprotocol-indexer/kafka';
 import { ConditionalOrderPlacementHandler } from '../../../src/handlers/stateful-order/conditional-order-placement-handler';
 import { createPostgresFunctions } from '../../../src/helpers/postgres/postgres-functions';
 

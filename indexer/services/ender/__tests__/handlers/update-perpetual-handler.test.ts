@@ -5,7 +5,7 @@ import {
   liquidityTierRefresher,
   perpetualMarketRefresher,
   testMocks,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import { updateBlockCache } from '../../src/caches/block-cache';
 import {
   defaultHeight,
@@ -19,7 +19,7 @@ import {
   IndexerTendermintEvent,
   Timestamp,
   UpdatePerpetualEventV1,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import {
   createIndexerTendermintBlock,
   createIndexerTendermintEvent,
@@ -27,7 +27,7 @@ import {
 } from '../helpers/indexer-proto-helpers';
 import { JinxIndexerSubtypes } from '../../src/lib/types';
 import { UpdatePerpetualHandler } from '../../src/handlers/update-perpetual-handler';
-import { createKafkaMessage, producer } from '@jinxprotocol-indexer/kafka';
+import { createKafkaMessage, producer } from '@dydxprotocol-indexer/kafka';
 import { KafkaMessage } from 'kafkajs';
 import { onMessage } from '../../src/lib/on-message';
 import { createPostgresFunctions } from '../../src/helpers/postgres/postgres-functions';

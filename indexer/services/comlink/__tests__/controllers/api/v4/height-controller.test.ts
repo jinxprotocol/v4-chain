@@ -5,8 +5,8 @@ import {
   BlockTable,
   dbHelpers,
   testMocks,
-} from '@jinxprotocol-indexer/postgres';
-import { stats } from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/postgres';
+import { stats } from '@dydxprotocol-indexer/base';
 
 describe('height-controller#V4', () => {
   beforeAll(async () => {

@@ -1,7 +1,7 @@
-import { logger } from '@jinxprotocol-indexer/base';
+import { logger } from '@dydxprotocol-indexer/base';
 import {
   consumer, producer, TO_ENDER_TOPIC, addOnMessageFunction,
-} from '@jinxprotocol-indexer/kafka';
+} from '@dydxprotocol-indexer/kafka';
 import { KafkaMessage } from 'kafkajs';
 
 import { onMessage } from '../../lib/on-message';

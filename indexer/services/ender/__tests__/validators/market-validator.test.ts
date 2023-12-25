@@ -1,9 +1,9 @@
-import { logger, ParseMessageError } from '@jinxprotocol-indexer/base';
+import { logger, ParseMessageError } from '@dydxprotocol-indexer/base';
 import {
   IndexerTendermintBlock,
   IndexerTendermintEvent,
   MarketEventV1,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import { JinxIndexerSubtypes } from '../../src/lib/types';
 import { MarketValidator } from '../../src/validators/market-validator';
 import {

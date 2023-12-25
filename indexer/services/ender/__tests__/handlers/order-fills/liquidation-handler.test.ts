@@ -1,4 +1,4 @@
-import { logger } from '@jinxprotocol-indexer/base';
+import { logger } from '@dydxprotocol-indexer/base';
 import {
   IndexerTendermintBlock, IndexerTendermintEvent, Timestamp,
   LiquidationOrderV1,
@@ -9,7 +9,7 @@ import {
   IndexerOrder_TimeInForce,
   OffChainUpdateV1,
   OrderRemovalReason, OrderRemoveV1_OrderRemovalStatus,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import {
   assetRefresher,
   CandleFromDatabase,
@@ -34,7 +34,7 @@ import {
   testConstants,
   testMocks,
   TimeInForce,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import { KafkaMessage } from 'kafkajs';
 import { DateTime } from 'luxon';
 import {
@@ -43,7 +43,7 @@ import {
   STATEFUL_ORDER_ORDER_FILL_EVENT_TYPE,
   SUBACCOUNT_ORDER_FILL_EVENT_TYPE,
 } from '../../../src/constants';
-import { producer } from '@jinxprotocol-indexer/kafka';
+import { producer } from '@dydxprotocol-indexer/kafka';
 import { onMessage } from '../../../src/lib/on-message';
 import {
   createKafkaMessageFromOrderFillEvent,
@@ -63,7 +63,7 @@ import {
 } from '../../helpers/indexer-proto-helpers';
 import Big from 'big.js';
 import { getWeightedAverage } from '../../../src/lib/helper';
-import { ORDER_FLAG_SHORT_TERM, ORDER_FLAG_LONG_TERM } from '@jinxprotocol-indexer/v4-proto-parser';
+import { ORDER_FLAG_SHORT_TERM, ORDER_FLAG_LONG_TERM } from '@dydxprotocol-indexer/v4-proto-parser';
 import { updateBlockCache } from '../../../src/caches/block-cache';
 import { defaultLiquidation, defaultLiquidationEvent, defaultPreviousHeight } from '../../helpers/constants';
 import { JinxIndexerSubtypes } from '../../../src/lib/types';

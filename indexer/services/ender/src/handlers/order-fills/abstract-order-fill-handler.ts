@@ -10,14 +10,14 @@ import {
   SubaccountMessageContents,
   TradeMessageContents,
   UpdatedPerpetualPositionSubaccountKafkaObject,
-} from '@jinxprotocol-indexer/postgres';
-import { getOrderIdHash } from '@jinxprotocol-indexer/v4-proto-parser';
+} from '@dydxprotocol-indexer/postgres';
+import { getOrderIdHash } from '@dydxprotocol-indexer/v4-proto-parser';
 import {
   IndexerOrder,
   IndexerSubaccountId,
   IndexerOrderId, OffChainUpdateV1,
   OrderRemovalReason, OrderRemoveV1_OrderRemovalStatus,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import Long from 'long';
 
 import {

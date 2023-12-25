@@ -1,6 +1,6 @@
-import { baseConfigSchema, parseSchema } from '@jinxprotocol-indexer/base';
-import { kafkaConfigSchema } from '@jinxprotocol-indexer/kafka';
-import { postgresConfigSchema } from '@jinxprotocol-indexer/postgres';
+import { baseConfigSchema, parseSchema } from '@dydxprotocol-indexer/base';
+import { kafkaConfigSchema } from '@dydxprotocol-indexer/kafka';
+import { postgresConfigSchema } from '@dydxprotocol-indexer/postgres';
 
 export const configSchema = {
   ...baseConfigSchema,

@@ -9,11 +9,11 @@ import {
   FundingIndexUpdatesTable,
   BlockTable,
   liquidityTierRefresher,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import { RequestMethod } from '../../../../src/types';
 import request from 'supertest';
 import { getFixedRepresentation, sendRequest } from '../../../helpers/helpers';
-import { stats } from '@jinxprotocol-indexer/base';
+import { stats } from '@dydxprotocol-indexer/base';
 
 describe('addresses-controller#V4', () => {
   const latestHeight: string = '3';

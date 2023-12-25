@@ -2,8 +2,8 @@ import {
   logger,
   stats,
   wrapBackgroundTask,
-} from '@jinxprotocol-indexer/base';
-import { MARKETS_WEBSOCKET_MESSAGE_VERSION, producer, WebsocketTopics } from '@jinxprotocol-indexer/kafka';
+} from '@dydxprotocol-indexer/base';
+import { MARKETS_WEBSOCKET_MESSAGE_VERSION, producer, WebsocketTopics } from '@dydxprotocol-indexer/kafka';
 import {
   LiquidityTiersFromDatabase,
   LiquidityTiersMap,
@@ -12,14 +12,14 @@ import {
   PerpetualMarketsMap,
   TradingMarketMessageContents,
   helpers,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import {
   MarketMessage,
   OffChainUpdateV1,
   IndexerOrderId,
   OrderRemovalReason,
   OrderRemoveV1_OrderRemovalStatus,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import _ from 'lodash';
 
 import config from '../config';

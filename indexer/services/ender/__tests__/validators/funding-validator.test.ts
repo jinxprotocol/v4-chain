@@ -1,11 +1,11 @@
-import { logger, ParseMessageError } from '@jinxprotocol-indexer/base';
+import { logger, ParseMessageError } from '@dydxprotocol-indexer/base';
 import {
   FundingEventV1,
   FundingEventV1_Type,
   IndexerTendermintBlock,
   IndexerTendermintEvent,
-} from '@jinxprotocol-indexer/v4-protos';
-import { dbHelpers, perpetualMarketRefresher, testMocks } from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/v4-protos';
+import { dbHelpers, perpetualMarketRefresher, testMocks } from '@dydxprotocol-indexer/postgres';
 import { JinxIndexerSubtypes } from '../../src/lib/types';
 import { FundingValidator } from '../../src/validators/funding-validator';
 import {
@@ -20,7 +20,7 @@ import {
   createIndexerTendermintEvent,
 } from '../helpers/indexer-proto-helpers';
 import { expectDidntLogError, expectLoggedParseMessageError } from '../helpers/validator-helpers';
-import { bigIntToBytes } from '@jinxprotocol-indexer/v4-proto-parser';
+import { bigIntToBytes } from '@dydxprotocol-indexer/v4-proto-parser';
 
 describe('funding-validator', () => {
   beforeEach(async () => {

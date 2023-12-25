@@ -1,5 +1,5 @@
-import { OrderTable } from '@jinxprotocol-indexer/postgres';
-import { IndexerOrderId } from '@jinxprotocol-indexer/v4-protos';
+import { OrderTable } from '@dydxprotocol-indexer/postgres';
+import { IndexerOrderId } from '@dydxprotocol-indexer/v4-protos';
 import { RedisClient } from 'redis';
 
 import { getAsync } from '../helpers/redis';

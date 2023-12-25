@@ -8,7 +8,7 @@ import {
   parseString,
   parseSchema,
   baseConfigSchema,
-} from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/base';
 
 export const configSecrets: (keyof typeof postgresConfigSchema)[] = [
   'DB_PASSWORD',

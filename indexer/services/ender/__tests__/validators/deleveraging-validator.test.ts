@@ -1,5 +1,5 @@
-import { logger, ParseMessageError } from '@jinxprotocol-indexer/base';
-import { DeleveragingEventV1, IndexerTendermintBlock, IndexerTendermintEvent } from '@jinxprotocol-indexer/v4-protos';
+import { logger, ParseMessageError } from '@dydxprotocol-indexer/base';
+import { DeleveragingEventV1, IndexerTendermintBlock, IndexerTendermintEvent } from '@dydxprotocol-indexer/v4-protos';
 import { JinxIndexerSubtypes } from '../../src/lib/types';
 import { DeleveragingValidator } from '../../src/validators/deleveraging-validator';
 import {

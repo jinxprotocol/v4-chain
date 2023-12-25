@@ -1,13 +1,13 @@
-import { createKafkaMessage } from '@jinxprotocol-indexer/kafka';
-import { OrderSide } from '@jinxprotocol-indexer/postgres';
+import { createKafkaMessage } from '@dydxprotocol-indexer/kafka';
+import { OrderSide } from '@dydxprotocol-indexer/postgres';
 import {
   OpenOrdersCache,
   redisTestConstants,
   OrderbookLevelsCache,
   CanceledOrdersCache,
   CanceledOrderStatus,
-} from '@jinxprotocol-indexer/redis';
-import { OffChainUpdateV1 } from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/redis';
+import { OffChainUpdateV1 } from '@dydxprotocol-indexer/v4-protos';
 import { KafkaMessage } from 'kafkajs';
 
 import { redisClient } from '../../src/helpers/redis/redis-controller';

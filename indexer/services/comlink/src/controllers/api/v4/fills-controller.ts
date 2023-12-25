@@ -1,4 +1,4 @@
-import { stats } from '@jinxprotocol-indexer/base';
+import { stats } from '@dydxprotocol-indexer/base';
 import {
   SubaccountTable,
   IsoString,
@@ -7,7 +7,7 @@ import {
   FillTable,
   FillFromDatabase,
   QueryableField,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import express from 'express';
 import {
   checkSchema,

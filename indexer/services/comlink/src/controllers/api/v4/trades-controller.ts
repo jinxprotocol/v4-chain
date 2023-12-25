@@ -1,4 +1,4 @@
-import { stats } from '@jinxprotocol-indexer/base';
+import { stats } from '@dydxprotocol-indexer/base';
 import {
   IsoString,
   FillTable,
@@ -6,7 +6,7 @@ import {
   Liquidity,
   QueryableField,
   perpetualMarketRefresher,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import express from 'express';
 import {
   checkSchema,

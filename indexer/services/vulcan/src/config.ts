@@ -7,13 +7,13 @@ import {
   parseSchema,
   baseConfigSchema,
   parseBoolean,
-} from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/base';
 import {
   kafkaConfigSchema,
-} from '@jinxprotocol-indexer/kafka';
+} from '@dydxprotocol-indexer/kafka';
 import {
   redisConfigSchema,
-} from '@jinxprotocol-indexer/redis';
+} from '@dydxprotocol-indexer/redis';
 
 export const configSchema = {
   ...baseConfigSchema,

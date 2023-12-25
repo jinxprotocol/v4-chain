@@ -1,7 +1,7 @@
-import { logger } from '@jinxprotocol-indexer/base';
+import { logger } from '@dydxprotocol-indexer/base';
 import {
   dbHelpers, MarketFromDatabase, MarketTable, testMocks,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import { KafkaMessage } from 'kafkajs';
 import { onMessage } from '../../../src/lib/on-message';
 import { JinxIndexerSubtypes, MarketModifyEventMessage } from '../../../src/lib/types';
@@ -9,9 +9,9 @@ import {
   defaultHeight, defaultMarketModify, defaultPreviousHeight, defaultTime, defaultTxHash,
 } from '../../helpers/constants';
 import { createKafkaMessageFromMarketEvent } from '../../helpers/kafka-helpers';
-import { producer } from '@jinxprotocol-indexer/kafka';
+import { producer } from '@dydxprotocol-indexer/kafka';
 import { updateBlockCache } from '../../../src/caches/block-cache';
-import { MarketEventV1, IndexerTendermintBlock, IndexerTendermintEvent } from '@jinxprotocol-indexer/v4-protos';
+import { MarketEventV1, IndexerTendermintBlock, IndexerTendermintEvent } from '@dydxprotocol-indexer/v4-protos';
 import { createIndexerTendermintBlock, createIndexerTendermintEvent } from '../../helpers/indexer-proto-helpers';
 import { MarketModifyHandler } from '../../../src/handlers/markets/market-modify-handler';
 import Long from 'long';

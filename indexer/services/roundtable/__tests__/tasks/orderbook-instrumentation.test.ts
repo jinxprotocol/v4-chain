@@ -1,16 +1,16 @@
-import { stats } from '@jinxprotocol-indexer/base';
+import { stats } from '@dydxprotocol-indexer/base';
 import {
   dbHelpers,
   OrderSide,
   PerpetualMarketFromDatabase,
   PerpetualMarketTable,
   testMocks,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import {
   OpenOrdersCache,
   OrderbookLevelsCache,
   redis,
-} from '@jinxprotocol-indexer/redis';
+} from '@dydxprotocol-indexer/redis';
 import
 orderbookInstrumentationTask,
 { priceToSubticks }

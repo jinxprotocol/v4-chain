@@ -20,8 +20,8 @@ import {
   UpdatedPerpetualPositionSubaccountKafkaObject,
   TransferType,
   SubaccountTable,
-} from '@jinxprotocol-indexer/postgres';
-import { IndexerSubaccountId } from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/postgres';
+import { IndexerSubaccountId } from '@dydxprotocol-indexer/v4-protos';
 import { DateTime } from 'luxon';
 import {
   addPositionsToContents,
@@ -31,7 +31,7 @@ import {
   generateTransferContents,
   getPnl,
 } from '../../src/helpers/kafka-helper';
-import { stats } from '@jinxprotocol-indexer/base';
+import { stats } from '@dydxprotocol-indexer/base';
 import { updateBlockCache } from '../../src/caches/block-cache';
 import { defaultPreviousHeight, defaultWalletAddress } from './constants';
 

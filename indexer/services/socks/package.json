@@ -16,11 +16,11 @@
   "author": "",
   "license": "AGPL-3.0",
   "dependencies": {
-    "@jinxprotocol-indexer/base": "workspace:^0.0.1",
-    "@jinxprotocol-indexer/compliance": "workspace:^0.0.1",
-    "@jinxprotocol-indexer/kafka": "workspace:^0.0.1",
-    "@jinxprotocol-indexer/postgres": "workspace:^0.0.1",
-    "@jinxprotocol-indexer/v4-protos": "workspace:^0.0.1",
+    "@dydxprotocol-indexer/base": "workspace:^0.0.1",
+    "@dydxprotocol-indexer/compliance": "workspace:^0.0.1",
+    "@dydxprotocol-indexer/kafka": "workspace:^0.0.1",
+    "@dydxprotocol-indexer/postgres": "workspace:^0.0.1",
+    "@dydxprotocol-indexer/v4-protos": "workspace:^0.0.1",
     "axios": "^1.2.1",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
@@ -36,7 +36,7 @@
     "ws": "^8.8.1"
   },
   "devDependencies": {
-    "@jinxprotocol-indexer/dev": "workspace:^0.0.1",
+    "@dydxprotocol-indexer/dev": "workspace:^0.0.1",
     "@types/body-parser": "^1.19.2",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",

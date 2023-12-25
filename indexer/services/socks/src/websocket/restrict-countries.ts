@@ -1,7 +1,7 @@
 import {
   CountryHeaders,
   isRestrictedCountryHeaders,
-} from '@jinxprotocol-indexer/compliance';
+} from '@dydxprotocol-indexer/compliance';
 
 import { IncomingMessage } from '../types';
 

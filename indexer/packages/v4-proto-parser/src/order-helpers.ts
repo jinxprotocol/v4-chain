@@ -1,6 +1,6 @@
 import { createHash } from 'crypto';
 
-import { IndexerOrderId, IndexerOrder_TimeInForce } from '@jinxprotocol-indexer/v4-protos';
+import { IndexerOrderId, IndexerOrder_TimeInForce } from '@dydxprotocol-indexer/v4-protos';
 
 import { ORDER_FLAG_CONDITIONAL, ORDER_FLAG_LONG_TERM } from './constants';
 

@@ -1,6 +1,6 @@
 import {
   NodeEnv,
-} from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/base';
 import Knex from 'knex';
 
 import config from '../config';

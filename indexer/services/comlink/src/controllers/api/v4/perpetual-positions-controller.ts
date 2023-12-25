@@ -1,4 +1,4 @@
-import { stats } from '@jinxprotocol-indexer/base';
+import { stats } from '@dydxprotocol-indexer/base';
 import {
   PerpetualPositionStatus,
   SubaccountTable,
@@ -16,7 +16,7 @@ import {
   BlockFromDatabase,
   BlockTable,
   FundingIndexMap,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import express from 'express';
 import {
   checkSchema,

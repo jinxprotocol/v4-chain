@@ -1,4 +1,4 @@
-import { CandleMessage_Resolution, ClobPairStatus } from '@jinxprotocol-indexer/v4-protos';
+import { CandleMessage_Resolution, ClobPairStatus } from '@dydxprotocol-indexer/v4-protos';
 
 import config from './config';
 import AssetModel from './models/asset-model';

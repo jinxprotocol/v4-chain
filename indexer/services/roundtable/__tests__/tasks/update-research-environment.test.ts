@@ -1,5 +1,5 @@
 import config from '../../src/config';
-import { asMock } from '@jinxprotocol-indexer/dev';
+import { asMock } from '@dydxprotocol-indexer/dev';
 import {
   checkIfExportJobToS3IsOngoing,
   checkIfS3ObjectExists,

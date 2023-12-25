@@ -7,14 +7,14 @@ import {
   SocketClient,
   SubaccountInfo,
   ValidatorClient,
-} from '@jinxprotocol/v4-client-js';
+} from '@dydxprotocol/v4-client-js';
 import {
   Ordering,
   SubaccountTable,
   TransferColumns,
   TransferFromDatabase,
   TransferTable,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import * as utils from './helpers/utils';
 import { JINX_LOCAL_ADDRESS, JINX_LOCAL_MNEMONIC } from './helpers/constants';
 

@@ -1,4 +1,4 @@
-import { logger } from '@jinxprotocol-indexer/base';
+import { logger } from '@dydxprotocol-indexer/base';
 import express from 'express';
 import _ from 'lodash';
 import { RateLimiterRedis, RateLimiterRes } from 'rate-limiter-flexible';

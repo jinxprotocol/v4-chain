@@ -6,7 +6,7 @@ import {
   SUBACCOUNTS_WEBSOCKET_MESSAGE_VERSION,
   TRADES_WEBSOCKET_MESSAGE_VERSION,
   KafkaTopics,
-} from '@jinxprotocol-indexer/kafka';
+} from '@dydxprotocol-indexer/kafka';
 import {
   FillFromDatabase,
   FillTable,
@@ -30,8 +30,8 @@ import {
   PerpetualMarketTable,
   IsoString,
   fillTypeToTradeType,
-} from '@jinxprotocol-indexer/postgres';
-import { getOrderIdHash } from '@jinxprotocol-indexer/v4-proto-parser';
+} from '@dydxprotocol-indexer/postgres';
+import { getOrderIdHash } from '@dydxprotocol-indexer/v4-proto-parser';
 import {
   LiquidationOrderV1,
   MarketMessage,
@@ -50,7 +50,7 @@ import {
   IndexerOrderId,
   PerpetualMarketCreateEventV1,
   DeleveragingEventV1,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import { Message, ProducerRecord } from 'kafkajs';
 import _ from 'lodash';
 

@@ -5,17 +5,17 @@ import { sendMessage, sendMessageString } from '../../src/helpers/wss';
 import { RateLimiter } from '../../src/lib/rate-limit';
 import {
   dbHelpers, testMocks, perpetualMarketRefresher, CandleResolution,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import { btcTicker, invalidChannel, invalidTicker } from '../constants';
 import { axiosRequest } from '../../src/lib/axios';
-import { AxiosSafeServerError, makeAxiosSafeServerError } from '@jinxprotocol-indexer/base';
+import { AxiosSafeServerError, makeAxiosSafeServerError } from '@dydxprotocol-indexer/base';
 import { BlockedError } from '../../src/lib/errors';
-import { isRestrictedCountry } from '@jinxprotocol-indexer/compliance';
+import { isRestrictedCountry } from '@dydxprotocol-indexer/compliance';
 
 jest.mock('ws');
 jest.mock('../../src/helpers/wss');
 jest.mock('../../src/lib/axios');
-jest.mock('@jinxprotocol-indexer/compliance');
+jest.mock('@dydxprotocol-indexer/compliance');
 
 describe('Subscriptions', () => {
   let subscriptions: Subscriptions;

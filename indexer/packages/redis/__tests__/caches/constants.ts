@@ -1,5 +1,5 @@
-import { IsoString, OrderTable, SubaccountTable } from '@jinxprotocol-indexer/postgres';
-import { ORDER_FLAG_LONG_TERM, ORDER_FLAG_SHORT_TERM } from '@jinxprotocol-indexer/v4-proto-parser';
+import { IsoString, OrderTable, SubaccountTable } from '@dydxprotocol-indexer/postgres';
+import { ORDER_FLAG_LONG_TERM, ORDER_FLAG_SHORT_TERM } from '@dydxprotocol-indexer/v4-proto-parser';
 import {
   IndexerOrder,
   IndexerOrder_Side,
@@ -8,7 +8,7 @@ import {
   RedisOrder_TickerType,
   IndexerOrderId,
   IndexerOrder_ConditionType,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import Long from 'long';
 import { DateTime } from 'luxon';
 

@@ -8,7 +8,7 @@ import {
   BlockTable,
   FundingIndexUpdatesTable,
   PerpetualPositionStatus,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import { PerpetualPositionResponseObject, RequestMethod } from '../../../../src/types';
 import request from 'supertest';
 import { getFixedRepresentation, getQueryString, sendRequest } from '../../../helpers/helpers';

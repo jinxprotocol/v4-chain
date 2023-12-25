@@ -1,4 +1,4 @@
-import { logger } from '@jinxprotocol-indexer/base';
+import { logger } from '@dydxprotocol-indexer/base';
 
 import config from '../config';
 import { createErrorMessage, createPongMessage } from '../helpers/message';

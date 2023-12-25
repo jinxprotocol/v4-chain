@@ -15,16 +15,16 @@ import {
   ONE_HOUR_IN_MILLISECONDS,
   ONE_SECOND_IN_MILLISECONDS,
   TEN_SECONDS_IN_MILLISECONDS,
-} from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/base';
 import {
   kafkaConfigSchema,
-} from '@jinxprotocol-indexer/kafka';
+} from '@dydxprotocol-indexer/kafka';
 import {
   postgresConfigSchema,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import {
   redisConfigSchema,
-} from '@jinxprotocol-indexer/redis';
+} from '@dydxprotocol-indexer/redis';
 
 export const configSchema = {
   ...baseConfigSchema,

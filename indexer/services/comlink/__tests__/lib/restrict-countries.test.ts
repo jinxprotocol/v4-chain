@@ -1,10 +1,10 @@
-import { INDEXER_GEOBLOCKED_PAYLOAD, isRestrictedCountryHeaders } from '@jinxprotocol-indexer/compliance';
+import { INDEXER_GEOBLOCKED_PAYLOAD, isRestrictedCountryHeaders } from '@dydxprotocol-indexer/compliance';
 import config from '../../src/config';
 import { rejectRestrictedCountries } from '../../src/lib/restrict-countries';
 import { BlockedCode } from '../../src/types';
 import * as utils from '../../src/lib/utils';
 
-jest.mock('@jinxprotocol-indexer/compliance');
+jest.mock('@dydxprotocol-indexer/compliance');
 
 const restrictedHeaders = {
   'cf-ipcountry': 'US',

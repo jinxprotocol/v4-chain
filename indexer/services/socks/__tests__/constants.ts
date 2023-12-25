@@ -4,7 +4,7 @@ import {
   ORDERBOOKS_WEBSOCKET_MESSAGE_VERSION,
   SUBACCOUNTS_WEBSOCKET_MESSAGE_VERSION,
   TRADES_WEBSOCKET_MESSAGE_VERSION,
-} from '@jinxprotocol-indexer/kafka';
+} from '@dydxprotocol-indexer/kafka';
 import {
   CandleMessage,
   CandleMessage_Resolution,
@@ -13,7 +13,7 @@ import {
   SubaccountId,
   SubaccountMessage,
   TradeMessage,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 
 export const btcClobPairId: string = '1';
 export const ethClobPairId: string = '2';

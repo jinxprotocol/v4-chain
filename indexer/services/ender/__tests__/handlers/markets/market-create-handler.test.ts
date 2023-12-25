@@ -1,8 +1,8 @@
-import { logger } from '@jinxprotocol-indexer/base';
+import { logger } from '@dydxprotocol-indexer/base';
 import {
   dbHelpers, MarketFromDatabase, MarketTable, testMocks,
-} from '@jinxprotocol-indexer/postgres';
-import { IndexerTendermintBlock, IndexerTendermintEvent, MarketEventV1 } from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/postgres';
+import { IndexerTendermintBlock, IndexerTendermintEvent, MarketEventV1 } from '@dydxprotocol-indexer/v4-protos';
 import { KafkaMessage } from 'kafkajs';
 import { onMessage } from '../../../src/lib/on-message';
 import { JinxIndexerSubtypes, MarketCreateEventMessage } from '../../../src/lib/types';
@@ -14,7 +14,7 @@ import {
   defaultTxHash,
 } from '../../helpers/constants';
 import { createKafkaMessageFromMarketEvent } from '../../helpers/kafka-helpers';
-import { producer } from '@jinxprotocol-indexer/kafka';
+import { producer } from '@dydxprotocol-indexer/kafka';
 import { updateBlockCache } from '../../../src/caches/block-cache';
 import { MarketCreateHandler } from '../../../src/handlers/markets/market-create-handler';
 import {

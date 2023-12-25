@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
 import path from 'path';
 
-import { logger } from '@jinxprotocol-indexer/base';
-import { dbHelpers, storeHelpers } from '@jinxprotocol-indexer/postgres';
+import { logger } from '@dydxprotocol-indexer/base';
+import { dbHelpers, storeHelpers } from '@dydxprotocol-indexer/postgres';
 
 export type PostgresFunction = {
   // The name of the script

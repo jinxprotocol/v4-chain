@@ -1,4 +1,4 @@
-import { stats } from '@jinxprotocol-indexer/base';
+import { stats } from '@dydxprotocol-indexer/base';
 import {
   DEFAULT_POSTGRES_OPTIONS,
   FundingIndexUpdatesColumns,
@@ -8,7 +8,7 @@ import {
   Ordering,
   PerpetualMarketFromDatabase,
   PerpetualMarketTable,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import express from 'express';
 import { matchedData } from 'express-validator';
 import {

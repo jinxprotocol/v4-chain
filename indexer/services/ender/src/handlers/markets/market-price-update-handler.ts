@@ -1,11 +1,11 @@
-import { logger } from '@jinxprotocol-indexer/base';
+import { logger } from '@dydxprotocol-indexer/base';
 import {
   MarketFromDatabase,
   OraclePriceFromDatabase,
   OraclePriceModel,
   MarketMessageContents, MarketModel,
-} from '@jinxprotocol-indexer/postgres';
-import { MarketEventV1 } from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/postgres';
+import { MarketEventV1 } from '@dydxprotocol-indexer/v4-protos';
 import * as pg from 'pg';
 
 import { generateOraclePriceContents } from '../../helpers/kafka-helper';

@@ -1,17 +1,17 @@
 import {
   logger,
   stats,
-} from '@jinxprotocol-indexer/base';
-import { BatchKafkaProducer, KafkaTopics, producer } from '@jinxprotocol-indexer/kafka';
-import { BlockTable, BlockFromDatabase } from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/base';
+import { BatchKafkaProducer, KafkaTopics, producer } from '@dydxprotocol-indexer/kafka';
+import { BlockTable, BlockFromDatabase } from '@dydxprotocol-indexer/postgres';
 import {
   OrderData,
   OrderExpiryCache,
   OrdersCache,
   OrdersDataCache,
-} from '@jinxprotocol-indexer/redis';
-import { getOrderIdHash } from '@jinxprotocol-indexer/v4-proto-parser';
-import { IndexerOrder, RedisOrder } from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/redis';
+import { getOrderIdHash } from '@dydxprotocol-indexer/v4-proto-parser';
+import { IndexerOrder, RedisOrder } from '@dydxprotocol-indexer/v4-protos';
 import _ from 'lodash';
 
 import config from '../config';

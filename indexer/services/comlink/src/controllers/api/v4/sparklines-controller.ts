@@ -1,4 +1,4 @@
-import { stats } from '@jinxprotocol-indexer/base';
+import { stats } from '@dydxprotocol-indexer/base';
 import {
   CandleColumns,
   CandleFromDatabase,
@@ -8,7 +8,7 @@ import {
   Ordering,
   PerpetualMarketColumns,
   perpetualMarketRefresher,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import express from 'express';
 import { checkSchema, matchedData } from 'express-validator';
 import _ from 'lodash';

@@ -3,11 +3,11 @@ import {
   OrderTable,
   PerpetualMarketFromDatabase, PerpetualMarketModel,
   SubaccountMessageContents,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import {
   IndexerSubaccountId,
   StatefulOrderEventV1,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import * as pg from 'pg';
 
 import { generateOrderSubaccountMessage } from '../../helpers/kafka-helper';

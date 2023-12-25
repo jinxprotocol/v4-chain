@@ -1,13 +1,13 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@jinxprotocol-indexer/base': file:../indexer/packages/base
-  '@jinxprotocol-indexer/dev': file:../indexer/packages/dev
-  '@jinxprotocol-indexer/kafka': file:../indexer/packages/kafka
-  '@jinxprotocol-indexer/postgres': file:../indexer/packages/postgres
-  '@jinxprotocol-indexer/v4-proto-parser': file:../indexer/packages/v4-proto-parser
-  '@jinxprotocol-indexer/v4-protos': file:../indexer/packages/v4-protos
-  '@jinxprotocol/v4-client-js': ^1.0.12
+  '@dydxprotocol-indexer/base': file:../indexer/packages/base
+  '@dydxprotocol-indexer/dev': file:../indexer/packages/dev
+  '@dydxprotocol-indexer/kafka': file:../indexer/packages/kafka
+  '@dydxprotocol-indexer/postgres': file:../indexer/packages/postgres
+  '@dydxprotocol-indexer/v4-proto-parser': file:../indexer/packages/v4-proto-parser
+  '@dydxprotocol-indexer/v4-protos': file:../indexer/packages/v4-protos
+  '@dydxprotocol/v4-client-js': ^1.0.12
   '@types/jest': ^28.1.4
   '@types/long': 4.0.2
   '@types/node': ^18.0.3
@@ -34,12 +34,12 @@ specifiers:
   yargs: ^13.3.0
 
 dependencies:
-  '@jinxprotocol-indexer/base': link:../indexer/packages/base
-  '@jinxprotocol-indexer/kafka': link:../indexer/packages/kafka
-  '@jinxprotocol-indexer/postgres': link:../indexer/packages/postgres
-  '@jinxprotocol-indexer/v4-proto-parser': link:../indexer/packages/v4-proto-parser
-  '@jinxprotocol-indexer/v4-protos': link:../indexer/packages/v4-protos
-  '@jinxprotocol/v4-client-js': 1.0.12
+  '@dydxprotocol-indexer/base': link:../indexer/packages/base
+  '@dydxprotocol-indexer/kafka': link:../indexer/packages/kafka
+  '@dydxprotocol-indexer/postgres': link:../indexer/packages/postgres
+  '@dydxprotocol-indexer/v4-proto-parser': link:../indexer/packages/v4-proto-parser
+  '@dydxprotocol-indexer/v4-protos': link:../indexer/packages/v4-protos
+  '@dydxprotocol/v4-client-js': 1.0.12
   big.js: 6.2.1
   dotenv-flow: 3.3.0
   kafkajs: 2.2.4
@@ -48,7 +48,7 @@ dependencies:
   yargs: 13.3.2
 
 devDependencies:
-  '@jinxprotocol-indexer/dev': link:../indexer/packages/dev
+  '@dydxprotocol-indexer/dev': link:../indexer/packages/dev
   '@types/jest': 28.1.8
   '@types/long': 4.0.2
   '@types/node': 18.19.3
@@ -539,7 +539,7 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
-  /@jinxprotocol/v4-client-js/1.0.12:
+  /@dydxprotocol/v4-client-js/1.0.12:
     resolution: {integrity: sha512-PeB541a9CgHxtgzLjAa0Yw+qJfIyGcfhGYN0g7/MGvDzlkX45g0dLTfmglYG+w4GCe7rQFoIhSPLLS/w4VjVjg==}
     dependencies:
       '@cosmjs/amino': 0.32.1
@@ -549,7 +549,7 @@ packages:
       '@cosmjs/stargate': 0.32.1
       '@cosmjs/tendermint-rpc': 0.32.1
       '@cosmjs/utils': 0.32.1
-      '@jinxprotocol/v4-proto': 3.0.0-dev.0
+      '@dydxprotocol/v4-proto': 3.0.0-dev.0
       '@osmonauts/lcd': 0.6.0
       '@scure/bip32': 1.3.2
       '@scure/bip39': 1.2.1
@@ -567,7 +567,7 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@jinxprotocol/v4-proto/3.0.0-dev.0:
+  /@dydxprotocol/v4-proto/3.0.0-dev.0:
     resolution: {integrity: sha512-hT6F/AgaTqv8Bwo7twpIhmjXvJE/Fx+3mmHHTuIXMeL6OhVtlOpcEQyHvBEAdh1VrNq/S7qWvdQD0fvC/UgKyA==}
     dependencies:
       protobufjs: 6.11.4

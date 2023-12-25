@@ -1,4 +1,4 @@
-import { logger, stats } from '@jinxprotocol-indexer/base';
+import { logger, stats } from '@dydxprotocol-indexer/base';
 import {
   APIOrderStatus,
   APIOrderStatusEnum,
@@ -13,9 +13,9 @@ import {
   perpetualMarketRefresher,
   protocolTranslations,
   SubaccountTable,
-} from '@jinxprotocol-indexer/postgres';
-import { OrdersCache, SubaccountOrderIdsCache } from '@jinxprotocol-indexer/redis';
-import { RedisOrder } from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/postgres';
+import { OrdersCache, SubaccountOrderIdsCache } from '@dydxprotocol-indexer/redis';
+import { RedisOrder } from '@dydxprotocol-indexer/v4-protos';
 import Big from 'big.js';
 import express from 'express';
 import { checkSchema, matchedData, query } from 'express-validator';

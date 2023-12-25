@@ -1,10 +1,10 @@
 {
-  "name": "@jinxprotocol-indexer/example-package",
+  "name": "@dydxprotocol-indexer/example-package",
   "version": "0.0.1",
   "description": "",
   "main": "build/index.js",
   "devDependencies": {
-    "@jinxprotocol-indexer/dev": "workspace:^0.0.1",
+    "@dydxprotocol-indexer/dev": "workspace:^0.0.1",
     "typescript": "^4.7.4"
   },
   "scripts": {

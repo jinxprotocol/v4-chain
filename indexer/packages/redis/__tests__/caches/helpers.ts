@@ -1,10 +1,10 @@
-import { OrderTable, SubaccountTable } from '@jinxprotocol-indexer/postgres';
-import { ORDER_FLAG_SHORT_TERM } from '@jinxprotocol-indexer/v4-proto-parser';
+import { OrderTable, SubaccountTable } from '@dydxprotocol-indexer/postgres';
+import { ORDER_FLAG_SHORT_TERM } from '@dydxprotocol-indexer/v4-proto-parser';
 import {
   IndexerOrderId,
   RedisOrder,
   IndexerSubaccountId,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import { RedisClient } from 'redis';
 
 import { getOrderExpiry } from '../../src/caches/helpers';

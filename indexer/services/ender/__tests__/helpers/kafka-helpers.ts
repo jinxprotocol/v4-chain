@@ -1,11 +1,11 @@
-import { createKafkaMessage } from '@jinxprotocol-indexer/kafka';
+import { createKafkaMessage } from '@dydxprotocol-indexer/kafka';
 import {
   IndexerTendermintBlock,
   IndexerTendermintEvent,
   Timestamp,
   MarketEventV1,
   StatefulOrderEventV1,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import { KafkaMessage } from 'kafkajs';
 
 import { JinxIndexerSubtypes } from '../../src/lib/types';

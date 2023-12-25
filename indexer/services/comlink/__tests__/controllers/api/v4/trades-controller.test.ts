@@ -6,7 +6,7 @@ import {
   FillTable,
   FillFromDatabase,
   perpetualMarketRefresher,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import { RequestMethod, TradeResponseObject } from '../../../../src/types';
 import request from 'supertest';
 import { createMakerTakerOrderAndFill, sendRequest } from '../../../helpers/helpers';

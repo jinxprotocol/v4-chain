@@ -6,7 +6,7 @@ import {
   perpetualMarketRefresher,
   testConstants,
   testMocks,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import {
   IndexerTendermintBlock,
   IndexerTendermintEvent,
@@ -14,7 +14,7 @@ import {
   OrderRemovalReason,
   OrderRemoveV1_OrderRemovalStatus,
   StatefulOrderEventV1,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import { KafkaMessage } from 'kafkajs';
 import { onMessage } from '../../../src/lib/on-message';
 import { JinxIndexerSubtypes } from '../../../src/lib/types';
@@ -32,7 +32,7 @@ import {
 } from '../../helpers/indexer-proto-helpers';
 import { StatefulOrderRemovalHandler } from '../../../src/handlers/stateful-order/stateful-order-removal-handler';
 import { STATEFUL_ORDER_ORDER_FILL_EVENT_TYPE } from '../../../src/constants';
-import { producer } from '@jinxprotocol-indexer/kafka';
+import { producer } from '@dydxprotocol-indexer/kafka';
 import { createPostgresFunctions } from '../../../src/helpers/postgres/postgres-functions';
 
 describe('statefulOrderRemovalHandler', () => {

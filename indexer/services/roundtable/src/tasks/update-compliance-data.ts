@@ -2,8 +2,8 @@ import {
   delay,
   logger,
   stats,
-} from '@jinxprotocol-indexer/base';
-import { ComplianceClientResponse } from '@jinxprotocol-indexer/compliance';
+} from '@dydxprotocol-indexer/base';
+import { ComplianceClientResponse } from '@dydxprotocol-indexer/compliance';
 import {
   ComplianceDataColumns,
   ComplianceDataCreateObject,
@@ -13,7 +13,7 @@ import {
   SubaccountColumns,
   SubaccountFromDatabase,
   SubaccountTable,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import _ from 'lodash';
 import { DateTime } from 'luxon';
 

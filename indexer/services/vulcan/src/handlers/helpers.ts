@@ -2,16 +2,16 @@ import {
   OrderTable,
   PerpetualMarketFromDatabase,
   protocolTranslations,
-} from '@jinxprotocol-indexer/postgres';
-import { subticksToPrice } from '@jinxprotocol-indexer/postgres/build/src/lib/protocol-translations';
-import { StateFilledQuantumsCache } from '@jinxprotocol-indexer/redis';
+} from '@dydxprotocol-indexer/postgres';
+import { subticksToPrice } from '@dydxprotocol-indexer/postgres/build/src/lib/protocol-translations';
+import { StateFilledQuantumsCache } from '@dydxprotocol-indexer/redis';
 import {
   IndexerOrder,
   IndexerOrder_ConditionType,
   IndexerOrder_Side,
   RedisOrder,
   RedisOrder_TickerType,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import Big from 'big.js';
 
 import { redisClient } from '../helpers/redis/redis-controller';

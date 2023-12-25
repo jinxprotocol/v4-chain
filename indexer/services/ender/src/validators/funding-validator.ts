@@ -1,10 +1,10 @@
-import { perpetualMarketRefresher } from '@jinxprotocol-indexer/postgres';
+import { perpetualMarketRefresher } from '@dydxprotocol-indexer/postgres';
 import {
   FundingEventV1,
   FundingEventV1_Type,
   IndexerTendermintEvent,
   FundingUpdateV1,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 
 import { FundingHandler } from '../handlers/funding-handler';
 import { Handler } from '../handlers/handler';

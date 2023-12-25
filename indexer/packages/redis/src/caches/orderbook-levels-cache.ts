@@ -1,5 +1,5 @@
-import { logger } from '@jinxprotocol-indexer/base';
-import { OrderSide } from '@jinxprotocol-indexer/postgres';
+import { logger } from '@dydxprotocol-indexer/base';
+import { OrderSide } from '@dydxprotocol-indexer/postgres';
 import Big from 'big.js';
 import _ from 'lodash';
 import { Callback, RedisClient } from 'redis';

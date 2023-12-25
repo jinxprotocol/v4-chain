@@ -1,5 +1,5 @@
-import { SubaccountTable } from '@jinxprotocol-indexer/postgres';
-import { IndexerSubaccountId } from '@jinxprotocol-indexer/v4-protos';
+import { SubaccountTable } from '@dydxprotocol-indexer/postgres';
+import { IndexerSubaccountId } from '@dydxprotocol-indexer/v4-protos';
 import _ from 'lodash';
 import { RedisClient } from 'redis';
 

@@ -2,7 +2,7 @@ import {
   CountryHeaders,
   isRestrictedCountryHeaders,
   INDEXER_GEOBLOCKED_PAYLOAD,
-} from '@jinxprotocol-indexer/compliance';
+} from '@dydxprotocol-indexer/compliance';
 import express from 'express';
 
 import { BlockedCode } from '../types';

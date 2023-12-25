@@ -1,10 +1,10 @@
-import { logger, ParseMessageError } from '@jinxprotocol-indexer/base';
+import { logger, ParseMessageError } from '@dydxprotocol-indexer/base';
 import {
   IndexerTendermintBlock,
   IndexerTendermintEvent,
   OrderFillEventV1,
   IndexerOrder_Side,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import { JinxIndexerSubtypes } from '../../src/lib/types';
 import { OrderFillValidator } from '../../src/validators/order-fill-validator';
 import {
@@ -21,7 +21,7 @@ import {
 import { createIndexerTendermintBlock, createIndexerTendermintEvent } from '../helpers/indexer-proto-helpers';
 import { expectDidntLogError, expectLoggedParseMessageError } from '../helpers/validator-helpers';
 import { OrderFillWithLiquidity } from '../../src/lib/translated-types';
-import { Liquidity } from '@jinxprotocol-indexer/postgres';
+import { Liquidity } from '@dydxprotocol-indexer/postgres';
 
 describe('order-fill-validator', () => {
   beforeEach(() => {

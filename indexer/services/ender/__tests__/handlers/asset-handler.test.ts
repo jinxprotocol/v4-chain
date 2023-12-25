@@ -3,7 +3,7 @@ import {
   IndexerTendermintBlock,
   IndexerTendermintEvent,
   Timestamp,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import {
   AssetColumns,
   AssetFromDatabase,
@@ -15,9 +15,9 @@ import {
   BlockTable,
   TendermintEventTable,
   assetRefresher,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import { KafkaMessage } from 'kafkajs';
-import { createKafkaMessage } from '@jinxprotocol-indexer/kafka';
+import { createKafkaMessage } from '@dydxprotocol-indexer/kafka';
 import { onMessage } from '../../src/lib/on-message';
 import { JinxIndexerSubtypes } from '../../src/lib/types';
 import {

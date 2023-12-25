@@ -2,8 +2,8 @@ import {
   logger,
   runFuncWithTimingStat,
   stats,
-} from '@jinxprotocol-indexer/base';
-import { KafkaTopics, SUBACCOUNTS_WEBSOCKET_MESSAGE_VERSION } from '@jinxprotocol-indexer/kafka';
+} from '@dydxprotocol-indexer/base';
+import { KafkaTopics, SUBACCOUNTS_WEBSOCKET_MESSAGE_VERSION } from '@dydxprotocol-indexer/kafka';
 import {
   APIOrderStatus,
   APIOrderStatusEnum,
@@ -17,7 +17,7 @@ import {
   protocolTranslations,
   OrderFromDatabase,
   IsoString,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import {
   OpenOrdersCache,
   OrderbookLevelsCache,
@@ -25,10 +25,10 @@ import {
   placeOrder,
   CanceledOrdersCache,
   StatefulOrderUpdatesCache,
-} from '@jinxprotocol-indexer/redis';
+} from '@dydxprotocol-indexer/redis';
 import {
   ORDER_FLAG_SHORT_TERM, getOrderIdHash, isStatefulOrder, requiresImmediateExecution,
-} from '@jinxprotocol-indexer/v4-proto-parser';
+} from '@dydxprotocol-indexer/v4-proto-parser';
 import {
   OffChainUpdateV1,
   IndexerOrder,
@@ -37,7 +37,7 @@ import {
   OrderUpdateV1,
   RedisOrder,
   SubaccountMessage,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import Big from 'big.js';
 import { Message } from 'kafkajs';
 

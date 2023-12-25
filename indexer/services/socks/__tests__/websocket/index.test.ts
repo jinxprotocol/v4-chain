@@ -15,14 +15,14 @@ import {
 import { InvalidMessageHandler } from '../../src/lib/invalid-message';
 import { PingHandler } from '../../src/lib/ping';
 import config from '../../src/config';
-import { isRestrictedCountryHeaders, COUNTRY_HEADER_KEY } from '@jinxprotocol-indexer/compliance';
+import { isRestrictedCountryHeaders, COUNTRY_HEADER_KEY } from '@dydxprotocol-indexer/compliance';
 
 jest.mock('uuid');
 jest.mock('../../src/helpers/wss');
 jest.mock('../../src/lib/subscription');
 jest.mock('../../src/lib/invalid-message');
 jest.mock('../../src/lib/ping');
-jest.mock('@jinxprotocol-indexer/compliance');
+jest.mock('@dydxprotocol-indexer/compliance');
 
 describe('Index', () => {
   let index: Index;

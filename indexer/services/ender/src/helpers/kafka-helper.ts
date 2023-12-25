@@ -27,8 +27,8 @@ import {
   TradingPerpetualMarketMessage,
   TransferFromDatabase,
   UpdatedPerpetualPositionSubaccountKafkaObject,
-} from '@jinxprotocol-indexer/postgres';
-import { SubaccountId } from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/postgres';
+import { SubaccountId } from '@dydxprotocol-indexer/v4-protos';
 import Big from 'big.js';
 import _ from 'lodash';
 

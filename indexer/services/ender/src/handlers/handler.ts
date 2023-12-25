@@ -3,21 +3,21 @@ import {
   ParseMessageError,
   runFuncWithTimingStat,
   stats,
-} from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/base';
 import {
   MARKETS_WEBSOCKET_MESSAGE_VERSION,
   SUBACCOUNTS_WEBSOCKET_MESSAGE_VERSION,
   TRADES_WEBSOCKET_MESSAGE_VERSION,
   KafkaTopics,
-} from '@jinxprotocol-indexer/kafka';
-import { SubaccountMessageContents } from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/kafka';
+import { SubaccountMessageContents } from '@dydxprotocol-indexer/postgres';
 import {
   IndexerTendermintBlock,
   IndexerTendermintEvent,
   MarketMessage,
   OffChainUpdateV1,
   SubaccountId,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import { DateTime } from 'luxon';
 import * as pg from 'pg';
 

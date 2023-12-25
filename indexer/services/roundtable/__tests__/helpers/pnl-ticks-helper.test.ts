@@ -17,7 +17,7 @@ import {
   Transaction,
   TransferTable,
   PositionSide,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import {
   calculateEquity,
   calculateTotalPnl,
@@ -29,7 +29,7 @@ import {
 import { defaultPnlTickForSubaccounts } from '../../src/helpers/constants';
 import Big from 'big.js';
 import { DateTime } from 'luxon';
-import { LatestAccountPnlTicksCache, PnlTickForSubaccounts, redis } from '@jinxprotocol-indexer/redis';
+import { LatestAccountPnlTicksCache, PnlTickForSubaccounts, redis } from '@dydxprotocol-indexer/redis';
 import { redisClient } from '../../src/helpers/redis';
 import { ZERO } from '../../src/lib/constants';
 import { SubaccountUsdcTransferMap } from '../../src/helpers/types';

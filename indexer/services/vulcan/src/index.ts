@@ -1,6 +1,6 @@
-import { logger, startBugsnag, wrapBackgroundTask } from '@jinxprotocol-indexer/base';
-import { stopConsumer, startConsumer } from '@jinxprotocol-indexer/kafka';
-import { perpetualMarketRefresher } from '@jinxprotocol-indexer/postgres';
+import { logger, startBugsnag, wrapBackgroundTask } from '@dydxprotocol-indexer/base';
+import { stopConsumer, startConsumer } from '@dydxprotocol-indexer/kafka';
+import { perpetualMarketRefresher } from '@dydxprotocol-indexer/postgres';
 
 import config from './config';
 import { connect as connectToKafka } from './helpers/kafka/kafka-controller';

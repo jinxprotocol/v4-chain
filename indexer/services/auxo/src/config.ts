@@ -6,7 +6,7 @@ import {
   parseSchema,
   baseConfigSchema,
   parseNumber,
-} from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/base';
 
 export const configSchema = {
   ...baseConfigSchema,

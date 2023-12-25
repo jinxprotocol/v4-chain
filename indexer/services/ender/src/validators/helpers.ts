@@ -2,7 +2,7 @@ import {
   IndexerOrder,
   IndexerOrderId,
   IndexerOrder_Side,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 
 export function validateOrderIdAndReturnErrorMessage(orderId: IndexerOrderId): string | undefined {
   if (orderId.subaccountId === undefined) {

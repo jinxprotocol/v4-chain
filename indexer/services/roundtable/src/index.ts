@@ -1,5 +1,5 @@
-import { logger, startBugsnag, wrapBackgroundTask } from '@jinxprotocol-indexer/base';
-import { producer } from '@jinxprotocol-indexer/kafka';
+import { logger, startBugsnag, wrapBackgroundTask } from '@dydxprotocol-indexer/base';
+import { producer } from '@dydxprotocol-indexer/kafka';
 
 import config from './config';
 import { complianceProvider } from './helpers/compliance-clients';

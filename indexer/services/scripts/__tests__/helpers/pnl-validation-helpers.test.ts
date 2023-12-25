@@ -9,7 +9,7 @@ import {
   OrderTable,
   testConstants,
   testMocks,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import {
   getPnl,
   getRealizedFunding,

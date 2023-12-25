@@ -19,8 +19,8 @@ import {
   SubaccountFromDatabase,
   TradeType,
   TransferType,
-} from '@jinxprotocol-indexer/postgres';
-import { RedisOrder } from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/postgres';
+import { RedisOrder } from '@dydxprotocol-indexer/v4-protos';
 import Big from 'big.js';
 import express from 'express';
 

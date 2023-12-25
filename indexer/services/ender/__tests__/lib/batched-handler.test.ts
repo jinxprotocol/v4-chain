@@ -1,4 +1,4 @@
-import { IndexerTendermintBlock, IndexerTendermintEvent } from '@jinxprotocol-indexer/v4-protos';
+import { IndexerTendermintBlock, IndexerTendermintEvent } from '@dydxprotocol-indexer/v4-protos';
 import { Handler } from '../../src/handlers/handler';
 import { BatchedHandlers } from '../../src/lib/batched-handlers';
 import { ConsolidatedKafkaEvent, JinxIndexerSubtypes, EventMessage } from '../../src/lib/types';

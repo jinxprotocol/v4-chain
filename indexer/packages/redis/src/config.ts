@@ -6,7 +6,7 @@ import {
   parseInteger,
   parseString,
   parseSchema,
-} from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/base';
 
 export const redisConfigSchema = {
   // Required environment variables.

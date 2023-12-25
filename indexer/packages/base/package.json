@@ -1,10 +1,10 @@
 {
-  "name": "@jinxprotocol-indexer/base",
+  "name": "@dydxprotocol-indexer/base",
   "version": "0.0.1",
   "description": "",
   "main": "build/index.js",
   "devDependencies": {
-    "@jinxprotocol-indexer/dev": "workspace:^0.0.1",
+    "@dydxprotocol-indexer/dev": "workspace:^0.0.1",
     "@types/big.js": "^6.1.5",
     "@types/express": "^4.17.13",
     "@types/lodash": "^4.14.182",

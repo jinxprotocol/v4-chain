@@ -1,15 +1,15 @@
-import { logger } from '@jinxprotocol-indexer/base';
+import { logger } from '@dydxprotocol-indexer/base';
 import {
   perpetualMarketRefresher,
   PROTO_TO_CANDLE_RESOLUTION,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import {
   CandleMessage,
   MarketMessage,
   OrderbookMessage,
   TradeMessage,
   SubaccountMessage, CandleMessage_Resolution,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import { KafkaMessage } from 'kafkajs';
 
 import { TOPIC_TO_CHANNEL, V4_MARKETS_ID } from '../lib/constants';

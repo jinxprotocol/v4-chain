@@ -1,5 +1,5 @@
-import { perpetualMarketRefresher } from '@jinxprotocol-indexer/postgres';
-import { PerpetualMarketCreateEventV1, IndexerTendermintEvent } from '@jinxprotocol-indexer/v4-protos';
+import { perpetualMarketRefresher } from '@dydxprotocol-indexer/postgres';
+import { PerpetualMarketCreateEventV1, IndexerTendermintEvent } from '@dydxprotocol-indexer/v4-protos';
 import Long from 'long';
 
 import { Handler } from '../handlers/handler';

@@ -1,6 +1,6 @@
 import {
   CandleResolution, PositionSide, USDC_ASSET_ID, USDC_SYMBOL,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import Big from 'big.js';
 
 import { AssetPositionResponseObject, SparklineTimePeriod } from '../types';

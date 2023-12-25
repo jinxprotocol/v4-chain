@@ -1,12 +1,12 @@
 import {
   logger,
   stats,
-} from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/base';
 import {
   StatefulOrderUpdateInfo,
   StatefulOrderUpdatesCache,
-} from '@jinxprotocol-indexer/redis';
-import { OrderUpdateV1 } from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/redis';
+import { OrderUpdateV1 } from '@dydxprotocol-indexer/v4-protos';
 
 import config from '../config';
 import { redisClient } from '../helpers/redis';

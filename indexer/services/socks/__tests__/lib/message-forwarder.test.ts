@@ -13,7 +13,7 @@ import {
   startConsumer,
   TRADES_WEBSOCKET_MESSAGE_VERSION,
   SUBACCOUNTS_WEBSOCKET_MESSAGE_VERSION,
-} from '@jinxprotocol-indexer/kafka';
+} from '@dydxprotocol-indexer/kafka';
 import { MessageForwarder } from '../../src/lib/message-forwarder';
 import WebSocket from 'ws';
 import {
@@ -27,8 +27,8 @@ import {
   WebsocketEvents,
 } from '../../src/types';
 import { Admin } from 'kafkajs';
-import { SubaccountMessage, TradeMessage } from '@jinxprotocol-indexer/v4-protos';
-import { dbHelpers, testMocks, perpetualMarketRefresher } from '@jinxprotocol-indexer/postgres';
+import { SubaccountMessage, TradeMessage } from '@dydxprotocol-indexer/v4-protos';
+import { dbHelpers, testMocks, perpetualMarketRefresher } from '@dydxprotocol-indexer/postgres';
 import {
   btcClobPairId,
   btcTicker,

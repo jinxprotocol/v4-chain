@@ -1,4 +1,4 @@
-import { stats } from '@jinxprotocol-indexer/base';
+import { stats } from '@dydxprotocol-indexer/base';
 import {
   AssetPositionFromDatabase,
   BlockTable,
@@ -22,7 +22,7 @@ import {
   Options,
   FundingIndexUpdatesTable,
   FundingIndexMap,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import Big from 'big.js';
 import express from 'express';
 import {

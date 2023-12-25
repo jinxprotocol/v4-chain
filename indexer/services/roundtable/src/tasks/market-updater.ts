@@ -1,7 +1,7 @@
 import {
   logger,
   stats,
-} from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/base';
 import {
   FillTable,
   Market24HourTradeVolumes,
@@ -16,8 +16,8 @@ import {
   PriceMap,
   LiquidityTiersFromDatabase,
   LiquidityTiersTable, LiquidityTiersMap, LiquidityTiersColumns,
-} from '@jinxprotocol-indexer/postgres';
-import { NextFundingCache } from '@jinxprotocol-indexer/redis';
+} from '@dydxprotocol-indexer/postgres';
+import { NextFundingCache } from '@dydxprotocol-indexer/redis';
 import Big from 'big.js';
 import _ from 'lodash';
 

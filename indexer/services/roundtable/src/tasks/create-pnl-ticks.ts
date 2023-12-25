@@ -1,12 +1,12 @@
-import { logger, stats } from '@jinxprotocol-indexer/base';
+import { logger, stats } from '@dydxprotocol-indexer/base';
 import {
   BlockFromDatabase,
   BlockTable,
   PnlTicksCreateObject,
   PnlTicksTable,
   Transaction,
-} from '@jinxprotocol-indexer/postgres';
-import { LatestAccountPnlTicksCache } from '@jinxprotocol-indexer/redis';
+} from '@dydxprotocol-indexer/postgres';
+import { LatestAccountPnlTicksCache } from '@dydxprotocol-indexer/redis';
 import _ from 'lodash';
 import { DateTime } from 'luxon';
 

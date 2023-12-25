@@ -1,4 +1,4 @@
-import { IndexerOrderId } from '@jinxprotocol-indexer/v4-protos';
+import { IndexerOrderId } from '@dydxprotocol-indexer/v4-protos';
 import { getOrderIdHash, isStatefulOrder } from '../src/order-helpers';
 import { ORDER_FLAG_CONDITIONAL, ORDER_FLAG_LONG_TERM, ORDER_FLAG_SHORT_TERM } from '../src';
 

@@ -1,5 +1,5 @@
-import { logger } from '@jinxprotocol-indexer/base';
-import { redis } from '@jinxprotocol-indexer/redis';
+import { logger } from '@dydxprotocol-indexer/base';
+import { redis } from '@dydxprotocol-indexer/redis';
 import {
   assetRefresher,
   dbHelpers,
@@ -18,7 +18,7 @@ import {
   TendermintEventTable,
   testConstants,
   testMocks,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import { updateBlockCache } from '../../../src/caches/block-cache';
 import { defaultDeleveragingEvent, defaultPreviousHeight } from '../../helpers/constants';
 import { clearCandlesMap } from '../../../src/caches/candle-cache';
@@ -30,7 +30,7 @@ import {
   IndexerTendermintBlock,
   IndexerTendermintEvent,
   Timestamp,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import {
   createIndexerTendermintBlock,
   createIndexerTendermintEvent,
@@ -50,8 +50,8 @@ import Long from 'long';
 import { DeleveragingHandler } from '../../../src/handlers/order-fills/deleveraging-handler';
 import { KafkaMessage } from 'kafkajs';
 import { onMessage } from '../../../src/lib/on-message';
-import { producer } from '@jinxprotocol-indexer/kafka';
-import { createdDateTime, createdHeight } from '@jinxprotocol-indexer/postgres/build/__tests__/helpers/constants';
+import { producer } from '@dydxprotocol-indexer/kafka';
+import { createdDateTime, createdHeight } from '@dydxprotocol-indexer/postgres/build/__tests__/helpers/constants';
 import Big from 'big.js';
 import { getWeightedAverage } from '../../../src/lib/helper';
 

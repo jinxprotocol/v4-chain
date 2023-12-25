@@ -1,4 +1,4 @@
-import { logger, stats } from '@jinxprotocol-indexer/base';
+import { logger, stats } from '@dydxprotocol-indexer/base';
 import {
   AssetPositionTable,
   FundingIndexMap,
@@ -16,8 +16,8 @@ import {
   SubaccountToPerpetualPositionsMap,
   TransferTable,
   helpers,
-} from '@jinxprotocol-indexer/postgres';
-import { LatestAccountPnlTicksCache, PnlTickForSubaccounts } from '@jinxprotocol-indexer/redis';
+} from '@dydxprotocol-indexer/postgres';
+import { LatestAccountPnlTicksCache, PnlTickForSubaccounts } from '@dydxprotocol-indexer/redis';
 import Big from 'big.js';
 import _ from 'lodash';
 import { DateTime } from 'luxon';

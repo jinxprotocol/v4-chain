@@ -1,11 +1,11 @@
-import { bytesToBigInt } from '@jinxprotocol-indexer/v4-proto-parser';
+import { bytesToBigInt } from '@dydxprotocol-indexer/v4-proto-parser';
 import {
   IndexerOrder,
   IndexerOrder_Side,
   IndexerOrder_TimeInForce,
   IndexerOrder_ConditionType,
   ClobPairStatus,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import Big from 'big.js';
 import { DateTime } from 'luxon';
 

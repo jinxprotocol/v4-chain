@@ -1,10 +1,10 @@
-import { KafkaTopics } from '@jinxprotocol-indexer/kafka';
+import { KafkaTopics } from '@dydxprotocol-indexer/kafka';
 import {
   Liquidity,
   PerpetualPositionColumns,
   PerpetualPositionFromDatabase,
   SubaccountMessageContents,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import {
   StatefulOrderEventV1,
   IndexerTendermintEvent,
@@ -32,7 +32,7 @@ import {
   UpdateClobPairEventV1,
   DeleveragingEventV1,
   TradingRewardsEventV1,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import Long from 'long';
 
 // Type sourced from protocol:

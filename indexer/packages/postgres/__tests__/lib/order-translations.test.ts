@@ -10,8 +10,8 @@ import {
 import { OrderFromDatabase } from '../../src';
 import {
   IndexerOrder, IndexerOrder_ConditionType, IndexerOrder_Side, IndexerOrder_TimeInForce,
-} from '@jinxprotocol-indexer/v4-protos';
-import { ORDER_FLAG_CONDITIONAL, ORDER_FLAG_LONG_TERM } from '@jinxprotocol-indexer/v4-proto-parser';
+} from '@dydxprotocol-indexer/v4-protos';
+import { ORDER_FLAG_CONDITIONAL, ORDER_FLAG_LONG_TERM } from '@dydxprotocol-indexer/v4-proto-parser';
 import Long from 'long';
 import { convertToIndexerOrder } from '../../src/lib/order-translations';
 import { clearData, migrate, teardown } from '../../src/helpers/db-helpers';

@@ -1,6 +1,6 @@
-import { TRADES_WEBSOCKET_MESSAGE_VERSION, KafkaTopics } from '@jinxprotocol-indexer/kafka';
-import { testConstants, TradeContent, TradeMessageContents } from '@jinxprotocol-indexer/postgres';
-import { TradeMessage } from '@jinxprotocol-indexer/v4-protos';
+import { TRADES_WEBSOCKET_MESSAGE_VERSION, KafkaTopics } from '@dydxprotocol-indexer/kafka';
+import { testConstants, TradeContent, TradeMessageContents } from '@dydxprotocol-indexer/postgres';
+import { TradeMessage } from '@dydxprotocol-indexer/v4-protos';
 
 import { AnnotatedSubaccountMessage, ConsolidatedKafkaEvent, SingleTradeMessage } from '../../src/lib/types';
 

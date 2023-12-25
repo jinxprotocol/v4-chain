@@ -1,4 +1,4 @@
-import { logger } from '@jinxprotocol-indexer/base';
+import { logger } from '@dydxprotocol-indexer/base';
 import {
   AssetCreateEventV1,
   FundingEventV1,
@@ -12,7 +12,7 @@ import {
   TransferEventV1,
   UpdateClobPairEventV1,
   UpdatePerpetualEventV1,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 
 import { AnnotatedIndexerTendermintEvent, JinxIndexerSubtypes } from './types';
 

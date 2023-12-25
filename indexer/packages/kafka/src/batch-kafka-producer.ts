@@ -1,4 +1,4 @@
-import { logger } from '@jinxprotocol-indexer/base';
+import { logger } from '@dydxprotocol-indexer/base';
 import { Producer, RecordMetadata } from 'kafkajs';
 import _ from 'lodash';
 

@@ -3,7 +3,7 @@ import {
   IndexerTendermintEvent,
   SubaccountUpdateEventV1,
   Timestamp,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import {
   AssetColumns,
   AssetFromDatabase,
@@ -31,13 +31,13 @@ import {
   testConstants,
   testMocks,
   UpdatedPerpetualPositionSubaccountKafkaObject,
-} from '@jinxprotocol-indexer/postgres';
-import { bigIntToBytes, bytesToBase64 } from '@jinxprotocol-indexer/v4-proto-parser';
+} from '@dydxprotocol-indexer/postgres';
+import { bigIntToBytes, bytesToBase64 } from '@dydxprotocol-indexer/v4-proto-parser';
 import { KafkaMessage } from 'kafkajs';
 import _ from 'lodash';
 import { DateTime } from 'luxon';
 import { SUBACCOUNT_ORDER_FILL_EVENT_TYPE } from '../../src/constants';
-import { createKafkaMessage, producer } from '@jinxprotocol-indexer/kafka';
+import { createKafkaMessage, producer } from '@dydxprotocol-indexer/kafka';
 import { addPositionsToContents, annotateWithPnl, convertPerpetualPosition } from '../../src/helpers/kafka-helper';
 import { onMessage } from '../../src/lib/on-message';
 import { JinxIndexerSubtypes } from '../../src/lib/types';

@@ -7,7 +7,7 @@ import {
   OrderFromDatabase,
   OrderSide,
   OrderTable,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import Big from 'big.js';
 import e from 'express';
 import _ from 'lodash';

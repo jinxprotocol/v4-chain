@@ -1,6 +1,6 @@
-import { logger } from '@jinxprotocol-indexer/base';
-import { AssetCreateEventV1, IndexerTendermintBlock, IndexerTendermintEvent } from '@jinxprotocol-indexer/v4-protos';
-import { dbHelpers, testMocks } from '@jinxprotocol-indexer/postgres';
+import { logger } from '@dydxprotocol-indexer/base';
+import { AssetCreateEventV1, IndexerTendermintBlock, IndexerTendermintEvent } from '@dydxprotocol-indexer/v4-protos';
+import { dbHelpers, testMocks } from '@dydxprotocol-indexer/postgres';
 import { JinxIndexerSubtypes } from '../../src/lib/types';
 import {
   defaultAssetCreateEvent, defaultHeight, defaultTime, defaultTxHash,

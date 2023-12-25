@@ -1,5 +1,5 @@
-import { testConstants } from '@jinxprotocol-indexer/postgres';
-import { PnlTickForSubaccounts } from '@jinxprotocol-indexer/redis';
+import { testConstants } from '@dydxprotocol-indexer/postgres';
+import { PnlTickForSubaccounts } from '@dydxprotocol-indexer/redis';
 
 export const defaultPnlTickForSubaccounts: PnlTickForSubaccounts = {
   [testConstants.defaultSubaccountId]: testConstants.defaultPnlTick,

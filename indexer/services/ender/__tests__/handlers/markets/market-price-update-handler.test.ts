@@ -1,4 +1,4 @@
-import { logger } from '@jinxprotocol-indexer/base';
+import { logger } from '@dydxprotocol-indexer/base';
 import {
   dbHelpers,
   MarketFromDatabase,
@@ -8,7 +8,7 @@ import {
   OraclePriceTable,
   protocolTranslations,
   testMocks,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import { KafkaMessage } from 'kafkajs';
 import { onMessage } from '../../../src/lib/on-message';
 import { JinxIndexerSubtypes, MarketPriceUpdateEventMessage } from '../../../src/lib/types';
@@ -20,7 +20,7 @@ import {
   defaultTxHash,
 } from '../../helpers/constants';
 import { createKafkaMessageFromMarketEvent } from '../../helpers/kafka-helpers';
-import { producer } from '@jinxprotocol-indexer/kafka';
+import { producer } from '@dydxprotocol-indexer/kafka';
 import {
   createIndexerTendermintBlock,
   createIndexerTendermintEvent,
@@ -28,7 +28,7 @@ import {
 } from '../../helpers/indexer-proto-helpers';
 import { generateOraclePriceContents } from '../../../src/helpers/kafka-helper';
 import { updateBlockCache } from '../../../src/caches/block-cache';
-import { MarketEventV1, IndexerTendermintBlock, IndexerTendermintEvent } from '@jinxprotocol-indexer/v4-protos';
+import { MarketEventV1, IndexerTendermintBlock, IndexerTendermintEvent } from '@dydxprotocol-indexer/v4-protos';
 import { MarketPriceUpdateHandler } from '../../../src/handlers/markets/market-price-update-handler';
 import Long from 'long';
 import { createPostgresFunctions } from '../../../src/helpers/postgres/postgres-functions';

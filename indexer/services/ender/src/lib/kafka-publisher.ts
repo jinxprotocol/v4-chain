@@ -1,19 +1,19 @@
-import { stats, STATS_NO_SAMPLING } from '@jinxprotocol-indexer/base';
+import { stats, STATS_NO_SAMPLING } from '@dydxprotocol-indexer/base';
 import {
   BatchKafkaProducer,
   KafkaTopics,
   producer,
   ProducerMessage,
   TRADES_WEBSOCKET_MESSAGE_VERSION,
-} from '@jinxprotocol-indexer/kafka';
-import { FillSubaccountMessageContents, TradeMessageContents } from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/kafka';
+import { FillSubaccountMessageContents, TradeMessageContents } from '@dydxprotocol-indexer/postgres';
 import {
   CandleMessage,
   MarketMessage,
   OffChainUpdateV1,
   SubaccountMessage,
   TradeMessage,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import Big from 'big.js';
 import _ from 'lodash';
 

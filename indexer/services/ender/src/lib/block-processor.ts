@@ -1,12 +1,12 @@
 /* eslint-disable max-len */
-import { logger, stats, STATS_NO_SAMPLING } from '@jinxprotocol-indexer/base';
+import { logger, stats, STATS_NO_SAMPLING } from '@dydxprotocol-indexer/base';
 import {
   storeHelpers,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import {
   IndexerTendermintBlock,
   IndexerTendermintEvent,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import _ from 'lodash';
 import * as pg from 'pg';
 import { DatabaseError } from 'pg';

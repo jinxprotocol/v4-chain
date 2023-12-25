@@ -3,8 +3,8 @@ import {
   TradingRewardFromDatabase,
   TradingRewardModel,
   TradingRewardSubaccountMessageContents,
-} from '@jinxprotocol-indexer/postgres';
-import { TradingRewardsEventV1 } from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/postgres';
+import { TradingRewardsEventV1 } from '@dydxprotocol-indexer/v4-protos';
 import _ from 'lodash';
 import * as pg from 'pg';
 

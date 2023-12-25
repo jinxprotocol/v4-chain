@@ -1,9 +1,9 @@
-import { logger } from '@jinxprotocol-indexer/base';
+import { logger } from '@dydxprotocol-indexer/base';
 import {
   WebsocketTopics,
   consumer,
   stopConsumer,
-} from '@jinxprotocol-indexer/kafka';
+} from '@dydxprotocol-indexer/kafka';
 
 export async function connect(): Promise<void> {
   await consumer.connect();

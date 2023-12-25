@@ -10,13 +10,13 @@ import {
   ComplianceDataColumns,
   Ordering,
   ComplianceDataCreateObject,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import updateComplianceDataTask from '../../src/tasks/update-compliance-data';
-import { logger, stats } from '@jinxprotocol-indexer/base';
+import { logger, stats } from '@dydxprotocol-indexer/base';
 import _ from 'lodash';
 import config from '../../src/config';
 import { ClientAndProvider } from '../../src/helpers/compliance-clients';
-import { ComplianceClientResponse } from '@jinxprotocol-indexer/compliance';
+import { ComplianceClientResponse } from '@dydxprotocol-indexer/compliance';
 import { DateTime } from 'luxon';
 
 interface ComplianceClientResponseWithNull extends Omit<ComplianceClientResponse, 'riskScore'> {

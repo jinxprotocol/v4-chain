@@ -23,9 +23,9 @@ import {
   SubaccountTable,
   TimeInForce,
   TransferFromDatabase,
-} from '@jinxprotocol-indexer/postgres';
-import { OrderbookLevels, PriceLevel } from '@jinxprotocol-indexer/redis';
-import { RedisOrder } from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/postgres';
+import { OrderbookLevels, PriceLevel } from '@dydxprotocol-indexer/redis';
+import { RedisOrder } from '@dydxprotocol-indexer/v4-protos';
 import Big from 'big.js';
 import _ from 'lodash';
 

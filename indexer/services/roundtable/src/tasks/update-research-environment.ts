@@ -2,7 +2,7 @@ import {
   logger,
   stats,
   InfoObject,
-} from '@jinxprotocol-indexer/base';
+} from '@dydxprotocol-indexer/base';
 import Athena from 'aws-sdk/clients/athena';
 import RDS from 'aws-sdk/clients/rds';
 import S3 from 'aws-sdk/clients/s3';

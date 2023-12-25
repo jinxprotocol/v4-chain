@@ -1,13 +1,13 @@
 import {
   OrderTable,
-} from '@jinxprotocol-indexer/postgres';
-import { getOrderIdHash } from '@jinxprotocol-indexer/v4-proto-parser';
+} from '@dydxprotocol-indexer/postgres';
+import { getOrderIdHash } from '@dydxprotocol-indexer/v4-proto-parser';
 import {
   OrderPlaceV1_OrderPlacementStatus,
   OffChainUpdateV1,
   IndexerOrder,
   StatefulOrderEventV1,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import * as pg from 'pg';
 
 import { ConsolidatedKafkaEvent } from '../../lib/types';

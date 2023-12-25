@@ -2,27 +2,27 @@ import {
   logger,
   runFuncWithTimingStat,
   stats,
-} from '@jinxprotocol-indexer/base';
-import { KafkaTopics } from '@jinxprotocol-indexer/kafka';
+} from '@dydxprotocol-indexer/base';
+import { KafkaTopics } from '@dydxprotocol-indexer/kafka';
 import {
   PerpetualMarketFromDatabase,
   protocolTranslations,
   perpetualMarketRefresher,
   OrderTable,
-} from '@jinxprotocol-indexer/postgres';
+} from '@dydxprotocol-indexer/postgres';
 import {
   updateOrder,
   UpdateOrderResult,
   OrderbookLevelsCache,
   OpenOrdersCache,
   StatefulOrderUpdatesCache,
-} from '@jinxprotocol-indexer/redis';
-import { isStatefulOrder, requiresImmediateExecution } from '@jinxprotocol-indexer/v4-proto-parser';
+} from '@dydxprotocol-indexer/redis';
+import { isStatefulOrder, requiresImmediateExecution } from '@dydxprotocol-indexer/v4-proto-parser';
 import {
   OffChainUpdateV1,
   OrderUpdateV1,
   RedisOrder,
-} from '@jinxprotocol-indexer/v4-protos';
+} from '@dydxprotocol-indexer/v4-protos';
 import Big from 'big.js';
 import { Message } from 'kafkajs';
 
