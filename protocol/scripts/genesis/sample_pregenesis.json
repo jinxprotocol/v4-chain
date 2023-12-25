@@ -27,7 +27,7 @@
     "bank": {
       "balances": [
         {
-          "address": "dydx1zlefkpe3g0vvm9a4h0jf9000lmqutlh9jwjnsv",
+          "address": "jinx1zlefkpe3g0vvm9a4h0jf9000lmqutlh94a45jv",
           "coins": [
             {
               "amount": "1000000000000000000000000000",
@@ -533,8 +533,8 @@
           "block_height": 6912000,
           "id": 0,
           "msg": {
-            "@type": "/dydxprotocol.feetiers.MsgUpdatePerpetualFeeParams",
-            "authority": "dydx1mkkvp26dngu6n8rmalaxyp3gwkjuzztq5zx6tr",
+            "@type": "/jinxprotocol.feetiers.MsgUpdatePerpetualFeeParams",
+            "authority": "jinx1mkkvp26dngu6n8rmalaxyp3gwkjuzztqn3pafr",
             "params": {
               "tiers": [
                 {
@@ -1486,12 +1486,12 @@
           "pair": "USDT-USD"
         },
         {
-          "exchange_config_json": "{\"exchanges\":[{\"exchangeName\":\"Binance\",\"ticker\":\"DYDXUSDT\",\"adjustByMarket\":\"USDT-USD\"},{\"exchangeName\":\"Bybit\",\"ticker\":\"DYDXUSDT\",\"adjustByMarket\":\"USDT-USD\"},{\"exchangeName\":\"Gate\",\"ticker\":\"DYDX_USDT\",\"adjustByMarket\":\"USDT-USD\"},{\"exchangeName\":\"Kucoin\",\"ticker\":\"DYDX-USDT\",\"adjustByMarket\":\"USDT-USD\"},{\"exchangeName\":\"Mexc\",\"ticker\":\"DYDX_USDT\",\"adjustByMarket\":\"USDT-USD\"},{\"exchangeName\":\"Okx\",\"ticker\":\"DYDX-USDT\",\"adjustByMarket\":\"USDT-USD\"}]}",
+          "exchange_config_json": "{\"exchanges\":[{\"exchangeName\":\"Binance\",\"ticker\":\"JINXUSDT\",\"adjustByMarket\":\"USDT-USD\"},{\"exchangeName\":\"Bybit\",\"ticker\":\"JINXUSDT\",\"adjustByMarket\":\"USDT-USD\"},{\"exchangeName\":\"Gate\",\"ticker\":\"JINX_USDT\",\"adjustByMarket\":\"USDT-USD\"},{\"exchangeName\":\"Kucoin\",\"ticker\":\"JINX-USDT\",\"adjustByMarket\":\"USDT-USD\"},{\"exchangeName\":\"Mexc\",\"ticker\":\"JINX_USDT\",\"adjustByMarket\":\"USDT-USD\"},{\"exchangeName\":\"Okx\",\"ticker\":\"JINX-USDT\",\"adjustByMarket\":\"USDT-USD\"}]}",
           "exponent": -9,
           "id": 1000001,
           "min_exchanges": 3,
           "min_price_change_ppm": 2500,
-          "pair": "DYDX-USD"
+          "pair": "JINX-USD"
         }
       ],
       "market_prices": [
@@ -1747,7 +1747,7 @@
       ]
     }
   },
-  "chain_id": "dydx-sample-1",
+  "chain_id": "jinx-sample-1",
   "consensus_params": {
     "block": {
       "max_bytes": "4194304",

@@ -3,8 +3,8 @@ package keeper_test
 import (
 	"testing"
 
-	testapp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	"github.com/dydxprotocol/v4-chain/protocol/x/rewards/types"
+	testapp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	"github.com/jinxprotocol/v4-chain/protocol/x/rewards/types"
 	"github.com/stretchr/testify/require"
 )
 
@@ -22,7 +22,7 @@ func TestSetParams_Success(t *testing.T) {
 	k := tApp.App.RewardsKeeper
 
 	params := types.Params{
-		TreasuryAccount: "dydx12345",
+		TreasuryAccount: "jinx12345",
 		Denom:           "newdenom",
 	}
 	require.NoError(t, params.Validate())

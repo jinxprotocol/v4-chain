@@ -7,13 +7,14 @@ import (
 
 	sdkmath "cosmossdk.io/math"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/app/config"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	bridgetypes "github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
 	ethabi "github.com/ethereum/go-ethereum/accounts/abi"
 	ethcoretypes "github.com/ethereum/go-ethereum/core/types"
+	"github.com/jinxprotocol/v4-chain/protocol/app/config"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	bridgetypes "github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 const (
@@ -51,7 +52,7 @@ func PadOrTruncateAddress(address []byte) []byte {
 
 /*
 BridgeLogToEvent converts an Ethereum log from Bridge contract to a BridgeEvent.
-Note: The format of a dYdX address is [prefix][separator][address][checksum], where `prefix` is `dydx`,
+Note: The format of a jInX address is [prefix][separator][address][checksum], where `prefix` is `jinx`,
 `separator` is `1`, `address` is the actual address portion, and `checksum` occupies last 6 characters.
 An address in Ethereum logs is in hexadecimal format and in Cosmos bech32 format. For example, a
 20-byte address in hexadecimal format is 20*8=160 bits, which is 160/5=32 bech32 characters.

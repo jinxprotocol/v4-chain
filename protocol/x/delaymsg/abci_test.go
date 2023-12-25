@@ -4,10 +4,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	sdktest "github.com/dydxprotocol/v4-chain/protocol/testutil/sdk"
-	"github.com/dydxprotocol/v4-chain/protocol/x/delaymsg"
-	"github.com/dydxprotocol/v4-chain/protocol/x/delaymsg/types"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	sdktest "github.com/jinxprotocol/v4-chain/protocol/testutil/sdk"
+	"github.com/jinxprotocol/v4-chain/protocol/x/delaymsg"
+	"github.com/jinxprotocol/v4-chain/protocol/x/delaymsg/types"
 )
 
 func TestEndBlocker(t *testing.T) {

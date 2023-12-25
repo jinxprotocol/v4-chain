@@ -1,10 +1,11 @@
 package msgsender_test
 
 import (
-	"github.com/Shopify/sarama"
-	"github.com/dydxprotocol/v4-chain/protocol/indexer/msgsender"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/Shopify/sarama"
+	"github.com/jinxprotocol/v4-chain/protocol/indexer/msgsender"
+	"github.com/stretchr/testify/require"
 )
 
 func TestMessage_AddHeader(t *testing.T) {

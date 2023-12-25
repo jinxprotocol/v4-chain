@@ -2,10 +2,11 @@ package types
 
 import (
 	"fmt"
-	"github.com/cometbft/cometbft/libs/log"
-	libtime "github.com/dydxprotocol/v4-chain/protocol/lib/time"
 	"sync"
 	"time"
+
+	"github.com/cometbft/cometbft/libs/log"
+	libtime "github.com/jinxprotocol/v4-chain/protocol/lib/time"
 )
 
 const (

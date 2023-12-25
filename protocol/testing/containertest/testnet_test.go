@@ -12,26 +12,27 @@ import (
 	"time"
 
 	sdkmath "cosmossdk.io/math"
+	"github.com/cosmos/gogoproto/jsonpb"
+	"github.com/cosmos/gogoproto/proto"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
+	testapp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/daemons/pricefeed/exchange_config"
+	assets "github.com/jinxprotocol/v4-chain/protocol/x/assets/types"
+	clob "github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	prices "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	bank "github.com/cosmos/cosmos-sdk/x/bank/types"
 	gov "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
 	upgrade "github.com/cosmos/cosmos-sdk/x/upgrade/types"
-	"github.com/cosmos/gogoproto/jsonpb"
-	"github.com/cosmos/gogoproto/proto"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
-	testapp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/daemons/pricefeed/exchange_config"
-	assets "github.com/dydxprotocol/v4-chain/protocol/x/assets/types"
-	clob "github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	prices "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
 )
 
 const expectDirName = "expect"
-const govModuleAddress = "dydx10d07y265gmmuvt4z0w9aw880jnsr700jnmapky"
+const govModuleAddress = "jinx10d07y265gmmuvt4z0w9aw880jnsr700j5g6x5y"
 
 var acceptFlag = flag.Bool("accept", false, "Accept new values for expect files")
 var nodeAddresses = []string{

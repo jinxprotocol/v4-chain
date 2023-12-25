@@ -8,21 +8,22 @@ import (
 	"testing"
 
 	abcitypes "github.com/cometbft/cometbft/abci/types"
+	"github.com/grpc-ecosystem/grpc-gateway/runtime"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/daemons/pricefeed"
+	keepertest "github.com/jinxprotocol/v4-chain/protocol/testutil/keeper"
+	bridgetypes "github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/vest"
+	vest_keeper "github.com/jinxprotocol/v4-chain/protocol/x/vest/keeper"
+	vesttypes "github.com/jinxprotocol/v4-chain/protocol/x/vest/types"
+	"github.com/stretchr/testify/mock"
+	"github.com/stretchr/testify/require"
+
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/codec/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/tx"
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/daemons/pricefeed"
-	keepertest "github.com/dydxprotocol/v4-chain/protocol/testutil/keeper"
-	bridgetypes "github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/vest"
-	vest_keeper "github.com/dydxprotocol/v4-chain/protocol/x/vest/keeper"
-	vesttypes "github.com/dydxprotocol/v4-chain/protocol/x/vest/types"
-	"github.com/grpc-ecosystem/grpc-gateway/runtime"
-	"github.com/stretchr/testify/mock"
-	"github.com/stretchr/testify/require"
 )
 
 func createAppModule(t *testing.T) vest.AppModule {
@@ -149,14 +150,14 @@ func TestAppModuleBasic_RegisterGRPCGatewayRoutes(t *testing.T) {
 
 	// Expect NumMessages route registered
 	recorder := httptest.NewRecorder()
-	req, err := http.NewRequest("GET", "/dydxprotocol/v4/vest/vest_entry", nil)
+	req, err := http.NewRequest("GET", "/jinxprotocol/v4/vest/vest_entry", nil)
 	require.NoError(t, err)
 	router.ServeHTTP(recorder, req)
 	require.Contains(t, recorder.Body.String(), "no RPC client is defined in offline mode")
 
 	// Expect unexpected route not registered
 	recorder = httptest.NewRecorder()
-	req, err = http.NewRequest("GET", "/dydxprotocol/v4/vest/foo/bar/baz", nil)
+	req, err = http.NewRequest("GET", "/jinxprotocol/v4/vest/foo/bar/baz", nil)
 	require.NoError(t, err)
 	router.ServeHTTP(recorder, req)
 	require.Equal(t, 404, recorder.Code)

@@ -1,13 +1,13 @@
 import {
   logger,
   ParseMessageError,
-} from '@dydxprotocol-indexer/base';
+} from '@jinxprotocol-indexer/base';
 import {
   IndexerTendermintBlock,
   IndexerTendermintEvent,
   Timestamp,
   TransferEventV1,
-} from '@dydxprotocol-indexer/v4-protos';
+} from '@jinxprotocol-indexer/v4-protos';
 import {
   AssetTable,
   AssetFromDatabase,
@@ -26,11 +26,11 @@ import {
   WalletTable,
   WalletFromDatabase,
   testConversionHelpers,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import { KafkaMessage } from 'kafkajs';
-import { createKafkaMessage, producer } from '@dydxprotocol-indexer/kafka';
+import { createKafkaMessage, producer } from '@jinxprotocol-indexer/kafka';
 import { onMessage } from '../../src/lib/on-message';
-import { DydxIndexerSubtypes } from '../../src/lib/types';
+import { JinxIndexerSubtypes } from '../../src/lib/types';
 import {
   createIndexerTendermintBlock,
   createIndexerTendermintEvent, expectSubaccountKafkaMessage,
@@ -107,7 +107,7 @@ describe('transferHandler', () => {
       const eventIndex: number = 0;
 
       const indexerTendermintEvent: IndexerTendermintEvent = createIndexerTendermintEvent(
-        DydxIndexerSubtypes.TRANSFER,
+        JinxIndexerSubtypes.TRANSFER,
         TransferEventV1.encode(defaultTransferEvent).finish(),
         transactionIndex,
         eventIndex,
@@ -486,7 +486,7 @@ function createKafkaMessageFromTransferEvent({
   if (transferEvent !== undefined) {
     events.push(
       createIndexerTendermintEvent(
-        DydxIndexerSubtypes.TRANSFER,
+        JinxIndexerSubtypes.TRANSFER,
         TransferEventV1.encode(transferEvent).finish(),
         transactionIndex,
         eventIndex,

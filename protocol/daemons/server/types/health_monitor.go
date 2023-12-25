@@ -1,13 +1,14 @@
 package types
 
 import (
-	cosmoslog "cosmossdk.io/log"
 	"fmt"
-	"github.com/cometbft/cometbft/libs/log"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/types"
-	libtime "github.com/dydxprotocol/v4-chain/protocol/lib/time"
 	"sync"
 	"time"
+
+	cosmoslog "cosmossdk.io/log"
+	"github.com/cometbft/cometbft/libs/log"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/types"
+	libtime "github.com/jinxprotocol/v4-chain/protocol/lib/time"
 )
 
 const (

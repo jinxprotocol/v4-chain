@@ -1,7 +1,7 @@
 package msgs
 
 import (
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
 )
 
 var (
@@ -134,90 +134,90 @@ var (
 		"/cosmos.upgrade.v1beta1.SoftwareUpgradeProposal":       {},
 
 		// blocktime
-		"/dydxprotocol.blocktime.MsgUpdateDowntimeParams":         {},
-		"/dydxprotocol.blocktime.MsgUpdateDowntimeParamsResponse": {},
+		"/jinxprotocol.blocktime.MsgUpdateDowntimeParams":         {},
+		"/jinxprotocol.blocktime.MsgUpdateDowntimeParamsResponse": {},
 
 		// bridge
-		"/dydxprotocol.bridge.MsgAcknowledgeBridges":          {},
-		"/dydxprotocol.bridge.MsgAcknowledgeBridgesResponse":  {},
-		"/dydxprotocol.bridge.MsgCompleteBridge":              {},
-		"/dydxprotocol.bridge.MsgCompleteBridgeResponse":      {},
-		"/dydxprotocol.bridge.MsgUpdateEventParams":           {},
-		"/dydxprotocol.bridge.MsgUpdateEventParamsResponse":   {},
-		"/dydxprotocol.bridge.MsgUpdateProposeParams":         {},
-		"/dydxprotocol.bridge.MsgUpdateProposeParamsResponse": {},
-		"/dydxprotocol.bridge.MsgUpdateSafetyParams":          {},
-		"/dydxprotocol.bridge.MsgUpdateSafetyParamsResponse":  {},
+		"/jinxprotocol.bridge.MsgAcknowledgeBridges":          {},
+		"/jinxprotocol.bridge.MsgAcknowledgeBridgesResponse":  {},
+		"/jinxprotocol.bridge.MsgCompleteBridge":              {},
+		"/jinxprotocol.bridge.MsgCompleteBridgeResponse":      {},
+		"/jinxprotocol.bridge.MsgUpdateEventParams":           {},
+		"/jinxprotocol.bridge.MsgUpdateEventParamsResponse":   {},
+		"/jinxprotocol.bridge.MsgUpdateProposeParams":         {},
+		"/jinxprotocol.bridge.MsgUpdateProposeParamsResponse": {},
+		"/jinxprotocol.bridge.MsgUpdateSafetyParams":          {},
+		"/jinxprotocol.bridge.MsgUpdateSafetyParamsResponse":  {},
 
 		// clob
-		"/dydxprotocol.clob.MsgCancelOrder":                                {},
-		"/dydxprotocol.clob.MsgCancelOrderResponse":                        {},
-		"/dydxprotocol.clob.MsgCreateClobPair":                             {},
-		"/dydxprotocol.clob.MsgCreateClobPairResponse":                     {},
-		"/dydxprotocol.clob.MsgPlaceOrder":                                 {},
-		"/dydxprotocol.clob.MsgPlaceOrderResponse":                         {},
-		"/dydxprotocol.clob.MsgProposedOperations":                         {},
-		"/dydxprotocol.clob.MsgProposedOperationsResponse":                 {},
-		"/dydxprotocol.clob.MsgUpdateBlockRateLimitConfiguration":          {},
-		"/dydxprotocol.clob.MsgUpdateBlockRateLimitConfigurationResponse":  {},
-		"/dydxprotocol.clob.MsgUpdateClobPair":                             {},
-		"/dydxprotocol.clob.MsgUpdateClobPairResponse":                     {},
-		"/dydxprotocol.clob.MsgUpdateEquityTierLimitConfiguration":         {},
-		"/dydxprotocol.clob.MsgUpdateEquityTierLimitConfigurationResponse": {},
-		"/dydxprotocol.clob.MsgUpdateLiquidationsConfig":                   {},
-		"/dydxprotocol.clob.MsgUpdateLiquidationsConfigResponse":           {},
+		"/jinxprotocol.clob.MsgCancelOrder":                                {},
+		"/jinxprotocol.clob.MsgCancelOrderResponse":                        {},
+		"/jinxprotocol.clob.MsgCreateClobPair":                             {},
+		"/jinxprotocol.clob.MsgCreateClobPairResponse":                     {},
+		"/jinxprotocol.clob.MsgPlaceOrder":                                 {},
+		"/jinxprotocol.clob.MsgPlaceOrderResponse":                         {},
+		"/jinxprotocol.clob.MsgProposedOperations":                         {},
+		"/jinxprotocol.clob.MsgProposedOperationsResponse":                 {},
+		"/jinxprotocol.clob.MsgUpdateBlockRateLimitConfiguration":          {},
+		"/jinxprotocol.clob.MsgUpdateBlockRateLimitConfigurationResponse":  {},
+		"/jinxprotocol.clob.MsgUpdateClobPair":                             {},
+		"/jinxprotocol.clob.MsgUpdateClobPairResponse":                     {},
+		"/jinxprotocol.clob.MsgUpdateEquityTierLimitConfiguration":         {},
+		"/jinxprotocol.clob.MsgUpdateEquityTierLimitConfigurationResponse": {},
+		"/jinxprotocol.clob.MsgUpdateLiquidationsConfig":                   {},
+		"/jinxprotocol.clob.MsgUpdateLiquidationsConfigResponse":           {},
 
 		// delaymsg
-		"/dydxprotocol.delaymsg.MsgDelayMessage":         {},
-		"/dydxprotocol.delaymsg.MsgDelayMessageResponse": {},
+		"/jinxprotocol.delaymsg.MsgDelayMessage":         {},
+		"/jinxprotocol.delaymsg.MsgDelayMessageResponse": {},
 
 		// feetiers
-		"/dydxprotocol.feetiers.MsgUpdatePerpetualFeeParams":         {},
-		"/dydxprotocol.feetiers.MsgUpdatePerpetualFeeParamsResponse": {},
+		"/jinxprotocol.feetiers.MsgUpdatePerpetualFeeParams":         {},
+		"/jinxprotocol.feetiers.MsgUpdatePerpetualFeeParamsResponse": {},
 
 		// perpetuals
-		"/dydxprotocol.perpetuals.MsgAddPremiumVotes":               {},
-		"/dydxprotocol.perpetuals.MsgAddPremiumVotesResponse":       {},
-		"/dydxprotocol.perpetuals.MsgCreatePerpetual":               {},
-		"/dydxprotocol.perpetuals.MsgCreatePerpetualResponse":       {},
-		"/dydxprotocol.perpetuals.MsgSetLiquidityTier":              {},
-		"/dydxprotocol.perpetuals.MsgSetLiquidityTierResponse":      {},
-		"/dydxprotocol.perpetuals.MsgUpdateParams":                  {},
-		"/dydxprotocol.perpetuals.MsgUpdateParamsResponse":          {},
-		"/dydxprotocol.perpetuals.MsgUpdatePerpetualParams":         {},
-		"/dydxprotocol.perpetuals.MsgUpdatePerpetualParamsResponse": {},
+		"/jinxprotocol.perpetuals.MsgAddPremiumVotes":               {},
+		"/jinxprotocol.perpetuals.MsgAddPremiumVotesResponse":       {},
+		"/jinxprotocol.perpetuals.MsgCreatePerpetual":               {},
+		"/jinxprotocol.perpetuals.MsgCreatePerpetualResponse":       {},
+		"/jinxprotocol.perpetuals.MsgSetLiquidityTier":              {},
+		"/jinxprotocol.perpetuals.MsgSetLiquidityTierResponse":      {},
+		"/jinxprotocol.perpetuals.MsgUpdateParams":                  {},
+		"/jinxprotocol.perpetuals.MsgUpdateParamsResponse":          {},
+		"/jinxprotocol.perpetuals.MsgUpdatePerpetualParams":         {},
+		"/jinxprotocol.perpetuals.MsgUpdatePerpetualParamsResponse": {},
 
 		// prices
-		"/dydxprotocol.prices.MsgCreateOracleMarket":         {},
-		"/dydxprotocol.prices.MsgCreateOracleMarketResponse": {},
-		"/dydxprotocol.prices.MsgUpdateMarketPrices":         {},
-		"/dydxprotocol.prices.MsgUpdateMarketPricesResponse": {},
-		"/dydxprotocol.prices.MsgUpdateMarketParam":          {},
-		"/dydxprotocol.prices.MsgUpdateMarketParamResponse":  {},
+		"/jinxprotocol.prices.MsgCreateOracleMarket":         {},
+		"/jinxprotocol.prices.MsgCreateOracleMarketResponse": {},
+		"/jinxprotocol.prices.MsgUpdateMarketPrices":         {},
+		"/jinxprotocol.prices.MsgUpdateMarketPricesResponse": {},
+		"/jinxprotocol.prices.MsgUpdateMarketParam":          {},
+		"/jinxprotocol.prices.MsgUpdateMarketParamResponse":  {},
 
 		// sending
-		"/dydxprotocol.sending.MsgCreateTransfer":                  {},
-		"/dydxprotocol.sending.MsgCreateTransferResponse":          {},
-		"/dydxprotocol.sending.MsgDepositToSubaccount":             {},
-		"/dydxprotocol.sending.MsgDepositToSubaccountResponse":     {},
-		"/dydxprotocol.sending.MsgWithdrawFromSubaccount":          {},
-		"/dydxprotocol.sending.MsgWithdrawFromSubaccountResponse":  {},
-		"/dydxprotocol.sending.MsgSendFromModuleToAccount":         {},
-		"/dydxprotocol.sending.MsgSendFromModuleToAccountResponse": {},
+		"/jinxprotocol.sending.MsgCreateTransfer":                  {},
+		"/jinxprotocol.sending.MsgCreateTransferResponse":          {},
+		"/jinxprotocol.sending.MsgDepositToSubaccount":             {},
+		"/jinxprotocol.sending.MsgDepositToSubaccountResponse":     {},
+		"/jinxprotocol.sending.MsgWithdrawFromSubaccount":          {},
+		"/jinxprotocol.sending.MsgWithdrawFromSubaccountResponse":  {},
+		"/jinxprotocol.sending.MsgSendFromModuleToAccount":         {},
+		"/jinxprotocol.sending.MsgSendFromModuleToAccountResponse": {},
 
 		// stats
-		"/dydxprotocol.stats.MsgUpdateParams":         {},
-		"/dydxprotocol.stats.MsgUpdateParamsResponse": {},
+		"/jinxprotocol.stats.MsgUpdateParams":         {},
+		"/jinxprotocol.stats.MsgUpdateParamsResponse": {},
 
 		// vest
-		"/dydxprotocol.vest.MsgSetVestEntry":            {},
-		"/dydxprotocol.vest.MsgSetVestEntryResponse":    {},
-		"/dydxprotocol.vest.MsgDeleteVestEntry":         {},
-		"/dydxprotocol.vest.MsgDeleteVestEntryResponse": {},
+		"/jinxprotocol.vest.MsgSetVestEntry":            {},
+		"/jinxprotocol.vest.MsgSetVestEntryResponse":    {},
+		"/jinxprotocol.vest.MsgDeleteVestEntry":         {},
+		"/jinxprotocol.vest.MsgDeleteVestEntryResponse": {},
 
 		// rewards
-		"/dydxprotocol.rewards.MsgUpdateParams":         {},
-		"/dydxprotocol.rewards.MsgUpdateParamsResponse": {},
+		"/jinxprotocol.rewards.MsgUpdateParams":         {},
+		"/jinxprotocol.rewards.MsgUpdateParamsResponse": {},
 
 		// ibc.applications
 		"/ibc.applications.transfer.v1.MsgTransfer":           {},

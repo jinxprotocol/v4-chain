@@ -4,9 +4,9 @@ import (
 	"math/big"
 	"sort"
 
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	assettypes "github.com/dydxprotocol/v4-chain/protocol/x/assets/types"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	assettypes "github.com/jinxprotocol/v4-chain/protocol/x/assets/types"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
 )
 
 // pendingUpdates is a utility struct used for storing the working updates to all Subaccounts.

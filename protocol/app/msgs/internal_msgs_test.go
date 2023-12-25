@@ -4,8 +4,8 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/app/msgs"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/app/msgs"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
 	"github.com/stretchr/testify/require"
 )
 
@@ -64,72 +64,72 @@ func TestInternalMsgSamples_Gov_Key(t *testing.T) {
 		"/cosmos.upgrade.v1beta1.MsgSoftwareUpgradeResponse",
 
 		// blocktime
-		"/dydxprotocol.blocktime.MsgUpdateDowntimeParams",
-		"/dydxprotocol.blocktime.MsgUpdateDowntimeParamsResponse",
+		"/jinxprotocol.blocktime.MsgUpdateDowntimeParams",
+		"/jinxprotocol.blocktime.MsgUpdateDowntimeParamsResponse",
 
 		// bridge
-		"/dydxprotocol.bridge.MsgCompleteBridge",
-		"/dydxprotocol.bridge.MsgCompleteBridgeResponse",
-		"/dydxprotocol.bridge.MsgUpdateEventParams",
-		"/dydxprotocol.bridge.MsgUpdateEventParamsResponse",
-		"/dydxprotocol.bridge.MsgUpdateProposeParams",
-		"/dydxprotocol.bridge.MsgUpdateProposeParamsResponse",
-		"/dydxprotocol.bridge.MsgUpdateSafetyParams",
-		"/dydxprotocol.bridge.MsgUpdateSafetyParamsResponse",
+		"/jinxprotocol.bridge.MsgCompleteBridge",
+		"/jinxprotocol.bridge.MsgCompleteBridgeResponse",
+		"/jinxprotocol.bridge.MsgUpdateEventParams",
+		"/jinxprotocol.bridge.MsgUpdateEventParamsResponse",
+		"/jinxprotocol.bridge.MsgUpdateProposeParams",
+		"/jinxprotocol.bridge.MsgUpdateProposeParamsResponse",
+		"/jinxprotocol.bridge.MsgUpdateSafetyParams",
+		"/jinxprotocol.bridge.MsgUpdateSafetyParamsResponse",
 
 		// clob
-		"/dydxprotocol.clob.MsgCreateClobPair",
-		"/dydxprotocol.clob.MsgCreateClobPairResponse",
-		"/dydxprotocol.clob.MsgUpdateBlockRateLimitConfiguration",
-		"/dydxprotocol.clob.MsgUpdateBlockRateLimitConfigurationResponse",
-		"/dydxprotocol.clob.MsgUpdateClobPair",
-		"/dydxprotocol.clob.MsgUpdateClobPairResponse",
-		"/dydxprotocol.clob.MsgUpdateEquityTierLimitConfiguration",
-		"/dydxprotocol.clob.MsgUpdateEquityTierLimitConfigurationResponse",
-		"/dydxprotocol.clob.MsgUpdateLiquidationsConfig",
-		"/dydxprotocol.clob.MsgUpdateLiquidationsConfigResponse",
+		"/jinxprotocol.clob.MsgCreateClobPair",
+		"/jinxprotocol.clob.MsgCreateClobPairResponse",
+		"/jinxprotocol.clob.MsgUpdateBlockRateLimitConfiguration",
+		"/jinxprotocol.clob.MsgUpdateBlockRateLimitConfigurationResponse",
+		"/jinxprotocol.clob.MsgUpdateClobPair",
+		"/jinxprotocol.clob.MsgUpdateClobPairResponse",
+		"/jinxprotocol.clob.MsgUpdateEquityTierLimitConfiguration",
+		"/jinxprotocol.clob.MsgUpdateEquityTierLimitConfigurationResponse",
+		"/jinxprotocol.clob.MsgUpdateLiquidationsConfig",
+		"/jinxprotocol.clob.MsgUpdateLiquidationsConfigResponse",
 
 		// delaymsg
-		"/dydxprotocol.delaymsg.MsgDelayMessage",
-		"/dydxprotocol.delaymsg.MsgDelayMessageResponse",
+		"/jinxprotocol.delaymsg.MsgDelayMessage",
+		"/jinxprotocol.delaymsg.MsgDelayMessageResponse",
 
 		// feetiers
-		"/dydxprotocol.feetiers.MsgUpdatePerpetualFeeParams",
-		"/dydxprotocol.feetiers.MsgUpdatePerpetualFeeParamsResponse",
+		"/jinxprotocol.feetiers.MsgUpdatePerpetualFeeParams",
+		"/jinxprotocol.feetiers.MsgUpdatePerpetualFeeParamsResponse",
 
 		// perpeutals
-		"/dydxprotocol.perpetuals.MsgCreatePerpetual",
-		"/dydxprotocol.perpetuals.MsgCreatePerpetualResponse",
-		"/dydxprotocol.perpetuals.MsgSetLiquidityTier",
-		"/dydxprotocol.perpetuals.MsgSetLiquidityTierResponse",
-		"/dydxprotocol.perpetuals.MsgUpdateParams",
-		"/dydxprotocol.perpetuals.MsgUpdateParamsResponse",
-		"/dydxprotocol.perpetuals.MsgUpdatePerpetualParams",
-		"/dydxprotocol.perpetuals.MsgUpdatePerpetualParamsResponse",
+		"/jinxprotocol.perpetuals.MsgCreatePerpetual",
+		"/jinxprotocol.perpetuals.MsgCreatePerpetualResponse",
+		"/jinxprotocol.perpetuals.MsgSetLiquidityTier",
+		"/jinxprotocol.perpetuals.MsgSetLiquidityTierResponse",
+		"/jinxprotocol.perpetuals.MsgUpdateParams",
+		"/jinxprotocol.perpetuals.MsgUpdateParamsResponse",
+		"/jinxprotocol.perpetuals.MsgUpdatePerpetualParams",
+		"/jinxprotocol.perpetuals.MsgUpdatePerpetualParamsResponse",
 
 		// prices
-		"/dydxprotocol.prices.MsgCreateOracleMarket",
-		"/dydxprotocol.prices.MsgCreateOracleMarketResponse",
-		"/dydxprotocol.prices.MsgUpdateMarketParam",
-		"/dydxprotocol.prices.MsgUpdateMarketParamResponse",
+		"/jinxprotocol.prices.MsgCreateOracleMarket",
+		"/jinxprotocol.prices.MsgCreateOracleMarketResponse",
+		"/jinxprotocol.prices.MsgUpdateMarketParam",
+		"/jinxprotocol.prices.MsgUpdateMarketParamResponse",
 
 		// rewards
-		"/dydxprotocol.rewards.MsgUpdateParams",
-		"/dydxprotocol.rewards.MsgUpdateParamsResponse",
+		"/jinxprotocol.rewards.MsgUpdateParams",
+		"/jinxprotocol.rewards.MsgUpdateParamsResponse",
 
 		// sending
-		"/dydxprotocol.sending.MsgSendFromModuleToAccount",
-		"/dydxprotocol.sending.MsgSendFromModuleToAccountResponse",
+		"/jinxprotocol.sending.MsgSendFromModuleToAccount",
+		"/jinxprotocol.sending.MsgSendFromModuleToAccountResponse",
 
 		// stats
-		"/dydxprotocol.stats.MsgUpdateParams",
-		"/dydxprotocol.stats.MsgUpdateParamsResponse",
+		"/jinxprotocol.stats.MsgUpdateParams",
+		"/jinxprotocol.stats.MsgUpdateParamsResponse",
 
 		// vest
-		"/dydxprotocol.vest.MsgDeleteVestEntry",
-		"/dydxprotocol.vest.MsgDeleteVestEntryResponse",
-		"/dydxprotocol.vest.MsgSetVestEntry",
-		"/dydxprotocol.vest.MsgSetVestEntryResponse",
+		"/jinxprotocol.vest.MsgDeleteVestEntry",
+		"/jinxprotocol.vest.MsgDeleteVestEntryResponse",
+		"/jinxprotocol.vest.MsgSetVestEntry",
+		"/jinxprotocol.vest.MsgSetVestEntryResponse",
 	}
 
 	require.Equal(t, expectedMsgs, lib.GetSortedKeys[sort.StringSlice](msgs.InternalMsgSamplesGovAuth))

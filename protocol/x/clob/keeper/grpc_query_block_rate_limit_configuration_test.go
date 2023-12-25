@@ -1,13 +1,15 @@
 package keeper_test
 
 import (
-	sdktypes "github.com/cosmos/cosmos-sdk/types"
-	testApp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
+	"testing"
+
+	testApp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
-	"testing"
+
+	sdktypes "github.com/cosmos/cosmos-sdk/types"
 )
 
 func TestGetBlockRateLimitConfiguration(t *testing.T) {

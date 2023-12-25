@@ -1,8 +1,8 @@
-import { stats } from '@dydxprotocol-indexer/base';
+import { stats } from '@jinxprotocol-indexer/base';
 import {
   dbHelpers, OrderSide, PerpetualMarketFromDatabase, PerpetualMarketTable, testMocks,
-} from '@dydxprotocol-indexer/postgres';
-import { OrderbookLevels, OrderbookLevelsCache, redis } from '@dydxprotocol-indexer/redis';
+} from '@jinxprotocol-indexer/postgres';
+import { OrderbookLevels, OrderbookLevelsCache, redis } from '@jinxprotocol-indexer/redis';
 import config from '../../src/config';
 import deleteZeroPriceLevelsTask from '../../src/tasks/delete-zero-price-levels';
 import { redisClient } from '../../src/helpers/redis';

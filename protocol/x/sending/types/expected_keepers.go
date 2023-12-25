@@ -4,9 +4,10 @@ import (
 	"math/big"
 	"math/rand"
 
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/auth/types"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
 )
 
 type SubaccountsKeeper interface {

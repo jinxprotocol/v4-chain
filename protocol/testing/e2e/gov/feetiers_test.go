@@ -4,14 +4,15 @@ import (
 	"testing"
 
 	"github.com/cometbft/cometbft/types"
+	testapp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	feetierstypes "github.com/jinxprotocol/v4-chain/protocol/x/feetiers/types"
+	"github.com/stretchr/testify/require"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 	govtypesv1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
-	testapp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	feetierstypes "github.com/dydxprotocol/v4-chain/protocol/x/feetiers/types"
-	"github.com/stretchr/testify/require"
 )
 
 // This tests `MsgUpdatePerpetualFeeParams` in `x/feetiers`.

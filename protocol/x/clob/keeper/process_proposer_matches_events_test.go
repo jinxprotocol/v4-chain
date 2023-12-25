@@ -3,15 +3,16 @@ package keeper_test
 import (
 	"testing"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	keepertest "github.com/dydxprotocol/v4-chain/protocol/testutil/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/tracer"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	keepertest "github.com/jinxprotocol/v4-chain/protocol/testutil/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/tracer"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 func TestSetProcessProposerMatchesEvents(t *testing.T) {

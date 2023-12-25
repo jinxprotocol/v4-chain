@@ -1,11 +1,12 @@
 package keeper
 
 import (
+	indexerevents "github.com/jinxprotocol/v4-chain/protocol/indexer/events"
+	"github.com/jinxprotocol/v4-chain/protocol/indexer/indexer_manager"
+	indexershared "github.com/jinxprotocol/v4-chain/protocol/indexer/shared"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	indexerevents "github.com/dydxprotocol/v4-chain/protocol/indexer/events"
-	"github.com/dydxprotocol/v4-chain/protocol/indexer/indexer_manager"
-	indexershared "github.com/dydxprotocol/v4-chain/protocol/indexer/shared"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
 )
 
 // mustTransitionToFinalSettlement holds logic executed when a market transitions to FINAL_SETTLEMENT status.

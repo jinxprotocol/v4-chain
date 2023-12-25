@@ -6,34 +6,35 @@ import (
 	"testing"
 	"time"
 
-	indexerevents "github.com/dydxprotocol/v4-chain/protocol/indexer/events"
+	indexerevents "github.com/jinxprotocol/v4-chain/protocol/indexer/events"
 
 	cmt "github.com/cometbft/cometbft/types"
-	testapp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
+	testapp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
 
-	"github.com/dydxprotocol/v4-chain/protocol/indexer/indexer_manager"
+	"github.com/jinxprotocol/v4-chain/protocol/indexer/indexer_manager"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	clobtest "github.com/dydxprotocol/v4-chain/protocol/testutil/clob"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	keepertest "github.com/dydxprotocol/v4-chain/protocol/testutil/keeper"
-	memclobtest "github.com/dydxprotocol/v4-chain/protocol/testutil/memclob"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/tracer"
-	blocktimetypes "github.com/dydxprotocol/v4-chain/protocol/x/blocktime/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/memclob"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	feetypes "github.com/dydxprotocol/v4-chain/protocol/x/feetiers/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/perpetuals"
-	perptypes "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/prices"
-	rewardtypes "github.com/dydxprotocol/v4-chain/protocol/x/rewards/types"
-	statstypes "github.com/dydxprotocol/v4-chain/protocol/x/stats/types"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	clobtest "github.com/jinxprotocol/v4-chain/protocol/testutil/clob"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	keepertest "github.com/jinxprotocol/v4-chain/protocol/testutil/keeper"
+	memclobtest "github.com/jinxprotocol/v4-chain/protocol/testutil/memclob"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/tracer"
+	blocktimetypes "github.com/jinxprotocol/v4-chain/protocol/x/blocktime/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/memclob"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	feetypes "github.com/jinxprotocol/v4-chain/protocol/x/feetiers/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/perpetuals"
+	perptypes "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/prices"
+	rewardtypes "github.com/jinxprotocol/v4-chain/protocol/x/rewards/types"
+	statstypes "github.com/jinxprotocol/v4-chain/protocol/x/stats/types"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 func TestPlaceShortTermOrder(t *testing.T) {
@@ -342,7 +343,7 @@ func TestPlaceShortTermOrder(t *testing.T) {
 		// `bigFillQuoteQuantums` for the order when performing collateralization checks during `PlaceOrder`.
 		// This meant that previous buy orders in the match queue could only ever increase collateralization
 		// of the subaccount.
-		// Context: https://dydx-team.slack.com/archives/C03SLFHC3L7/p1668105457456389
+		// Context: https://jinx-team.slack.com/archives/C03SLFHC3L7/p1668105457456389
 		`Regression: New order should be undercollateralized when adding to the orderbook when previous fills make it
 			undercollateralized`: {
 			perpetuals: []perptypes.Perpetual{
@@ -464,7 +465,7 @@ func TestPlaceShortTermOrder(t *testing.T) {
 		// that weren't placed on the first CLOB. If firstClobPair.QuantumConversionExponent >
 		// expectedClobPair.QuantumConversionExponent, then sellers receive more quote quantums and buyers are charged
 		// more. Vice versa if firstClobPair.QuantumConversionExponent < expectedClobPair.QuantumConversionExponent.
-		// Context: https://github.com/dydxprotocol/v4-chain/protocol/pull/562#discussion_r1024319468
+		// Context: https://github.com/jinxprotocol/v4-chain/protocol/pull/562#discussion_r1024319468
 		`Regression: New order should be fully collateralized when matching with previous fills
 				because the correct quantum conversion exponent was used`: {
 			perpetuals: []perptypes.Perpetual{

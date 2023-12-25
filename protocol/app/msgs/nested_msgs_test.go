@@ -4,8 +4,8 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/app/msgs"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/app/msgs"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
 	"github.com/stretchr/testify/require"
 )
 

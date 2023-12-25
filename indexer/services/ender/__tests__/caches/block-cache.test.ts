@@ -7,7 +7,7 @@ import {
   perpetualMarketRefresher,
   testConstants,
   testMocks,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import {
   getCurrentBlockHeight,
   initializeAllCaches,

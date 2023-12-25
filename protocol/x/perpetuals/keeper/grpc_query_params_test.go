@@ -1,13 +1,15 @@
 package keeper_test
 
 import (
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	keepertest "github.com/dydxprotocol/v4-chain/protocol/testutil/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
+	"testing"
+
+	keepertest "github.com/jinxprotocol/v4-chain/protocol/testutil/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
-	"testing"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 func TestParams(t *testing.T) {

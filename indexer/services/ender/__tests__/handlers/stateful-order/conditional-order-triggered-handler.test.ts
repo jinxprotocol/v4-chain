@@ -7,7 +7,7 @@ import {
   perpetualMarketRefresher,
   testConstants,
   testMocks,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import {
   IndexerOrder,
   IndexerOrderId,
@@ -16,10 +16,10 @@ import {
   OffChainUpdateV1,
   OrderPlaceV1_OrderPlacementStatus,
   StatefulOrderEventV1,
-} from '@dydxprotocol-indexer/v4-protos';
+} from '@jinxprotocol-indexer/v4-protos';
 import { KafkaMessage } from 'kafkajs';
 import { onMessage } from '../../../src/lib/on-message';
-import { DydxIndexerSubtypes } from '../../../src/lib/types';
+import { JinxIndexerSubtypes } from '../../../src/lib/types';
 import {
   defaultDateTime,
   defaultHeight,
@@ -33,10 +33,10 @@ import {
   expectVulcanKafkaMessage,
 } from '../../helpers/indexer-proto-helpers';
 import { STATEFUL_ORDER_ORDER_FILL_EVENT_TYPE } from '../../../src/constants';
-import { producer } from '@dydxprotocol-indexer/kafka';
-import { ORDER_FLAG_CONDITIONAL } from '@dydxprotocol-indexer/v4-proto-parser';
+import { producer } from '@jinxprotocol-indexer/kafka';
+import { ORDER_FLAG_CONDITIONAL } from '@jinxprotocol-indexer/v4-proto-parser';
 import { ConditionalOrderTriggeredHandler } from '../../../src/handlers/stateful-order/conditional-order-triggered-handler';
-import { defaultPerpetualMarket } from '@dydxprotocol-indexer/postgres/build/__tests__/helpers/constants';
+import { defaultPerpetualMarket } from '@jinxprotocol-indexer/postgres/build/__tests__/helpers/constants';
 import { createPostgresFunctions } from '../../../src/helpers/postgres/postgres-functions';
 
 describe('conditionalOrderTriggeredHandler', () => {
@@ -80,7 +80,7 @@ describe('conditionalOrderTriggeredHandler', () => {
       const eventIndex: number = 0;
 
       const indexerTendermintEvent: IndexerTendermintEvent = createIndexerTendermintEvent(
-        DydxIndexerSubtypes.STATEFUL_ORDER,
+        JinxIndexerSubtypes.STATEFUL_ORDER,
         StatefulOrderEventV1.encode(defaultStatefulOrderEvent).finish(),
         transactionIndex,
         eventIndex,

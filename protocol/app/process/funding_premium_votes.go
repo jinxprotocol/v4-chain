@@ -3,8 +3,9 @@ package process
 import (
 	"reflect"
 
+	"github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
 )
 
 var (

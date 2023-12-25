@@ -4,7 +4,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
 	"github.com/stretchr/testify/require"
 )
 

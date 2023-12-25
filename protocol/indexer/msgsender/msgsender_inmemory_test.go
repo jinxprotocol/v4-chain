@@ -1,9 +1,10 @@
 package msgsender
 
 import (
-	"github.com/stretchr/testify/require"
 	"strconv"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 func TestIndexerMessageSenderInMemoryCollector(t *testing.T) {

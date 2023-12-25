@@ -1,11 +1,12 @@
 package types
 
 import (
-	"github.com/cometbft/cometbft/libs/log"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/types"
-	libtime "github.com/dydxprotocol/v4-chain/protocol/lib/time"
 	"sync"
 	"time"
+
+	"github.com/cometbft/cometbft/libs/log"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/types"
+	libtime "github.com/jinxprotocol/v4-chain/protocol/lib/time"
 )
 
 // errorStreak tracks two relevant statistics for an error streak returned by a HealthCheckable - the timestamp of the

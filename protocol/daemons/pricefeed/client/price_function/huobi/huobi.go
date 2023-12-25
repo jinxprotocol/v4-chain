@@ -5,8 +5,8 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_function"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/types"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_function"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/types"
 )
 
 // HuobiResponseBody defines the overall Huobi response.

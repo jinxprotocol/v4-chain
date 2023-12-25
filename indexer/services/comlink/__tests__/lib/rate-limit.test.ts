@@ -1,4 +1,4 @@
-import { redis } from '@dydxprotocol-indexer/redis';
+import { redis } from '@jinxprotocol-indexer/redis';
 import { IncomingHttpHeaders } from 'http';
 import config from '../../src/config';
 import { rateLimiterMiddleware } from '../../src/lib/rate-limit';

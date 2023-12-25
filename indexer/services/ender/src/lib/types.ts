@@ -1,10 +1,10 @@
-import { KafkaTopics } from '@dydxprotocol-indexer/kafka';
+import { KafkaTopics } from '@jinxprotocol-indexer/kafka';
 import {
   Liquidity,
   PerpetualPositionColumns,
   PerpetualPositionFromDatabase,
   SubaccountMessageContents,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import {
   StatefulOrderEventV1,
   IndexerTendermintEvent,
@@ -32,12 +32,12 @@ import {
   UpdateClobPairEventV1,
   DeleveragingEventV1,
   TradingRewardsEventV1,
-} from '@dydxprotocol-indexer/v4-protos';
+} from '@jinxprotocol-indexer/v4-protos';
 import Long from 'long';
 
 // Type sourced from protocol:
-// https://github.com/dydxprotocol/v4-chain/blob/main/protocol/indexer/events/constants.go
-export enum DydxIndexerSubtypes {
+// https://github.com/jinxprotocol/v4-chain/blob/main/protocol/indexer/events/constants.go
+export enum JinxIndexerSubtypes {
   ORDER_FILL = 'order_fill',
   SUBACCOUNT_UPDATE = 'subaccount_update',
   TRANSFER = 'transfer',
@@ -64,79 +64,79 @@ export type EventProtoWithTypeAndVersion = {
   version: number,
   blockEventIndex: number,
 } & ({
-  type: DydxIndexerSubtypes.ORDER_FILL,
+  type: JinxIndexerSubtypes.ORDER_FILL,
   eventProto: OrderFillEventV1,
   indexerTendermintEvent: IndexerTendermintEvent,
   version: number,
   blockEventIndex: number,
 } | {
-  type: DydxIndexerSubtypes.SUBACCOUNT_UPDATE,
+  type: JinxIndexerSubtypes.SUBACCOUNT_UPDATE,
   eventProto: SubaccountUpdateEventV1,
   indexerTendermintEvent: IndexerTendermintEvent,
   version: number,
   blockEventIndex: number,
 } | {
-  type: DydxIndexerSubtypes.TRANSFER,
+  type: JinxIndexerSubtypes.TRANSFER,
   eventProto: TransferEventV1,
   indexerTendermintEvent: IndexerTendermintEvent,
   version: number,
   blockEventIndex: number,
 } | {
-  type: DydxIndexerSubtypes.MARKET,
+  type: JinxIndexerSubtypes.MARKET,
   eventProto: MarketEventV1,
   indexerTendermintEvent: IndexerTendermintEvent,
   version: number,
   blockEventIndex: number,
 } | {
-  type: DydxIndexerSubtypes.STATEFUL_ORDER,
+  type: JinxIndexerSubtypes.STATEFUL_ORDER,
   eventProto: StatefulOrderEventV1,
   indexerTendermintEvent: IndexerTendermintEvent,
   version: number,
   blockEventIndex: number,
 } | {
-  type: DydxIndexerSubtypes.FUNDING,
+  type: JinxIndexerSubtypes.FUNDING,
   eventProto: FundingEventV1,
   indexerTendermintEvent: IndexerTendermintEvent,
   version: number,
   blockEventIndex: number,
 } | {
-  type: DydxIndexerSubtypes.ASSET,
+  type: JinxIndexerSubtypes.ASSET,
   eventProto: AssetCreateEventV1,
   indexerTendermintEvent: IndexerTendermintEvent,
   version: number,
   blockEventIndex: number,
 } | {
-  type: DydxIndexerSubtypes.PERPETUAL_MARKET,
+  type: JinxIndexerSubtypes.PERPETUAL_MARKET,
   eventProto: PerpetualMarketCreateEventV1,
   indexerTendermintEvent: IndexerTendermintEvent,
   version: number,
   blockEventIndex: number,
 } | {
-  type: DydxIndexerSubtypes.LIQUIDITY_TIER,
+  type: JinxIndexerSubtypes.LIQUIDITY_TIER,
   eventProto: LiquidityTierUpsertEventV1,
   indexerTendermintEvent: IndexerTendermintEvent,
   version: number,
   blockEventIndex: number,
 } | {
-  type: DydxIndexerSubtypes.UPDATE_PERPETUAL,
+  type: JinxIndexerSubtypes.UPDATE_PERPETUAL,
   eventProto: UpdatePerpetualEventV1,
   indexerTendermintEvent: IndexerTendermintEvent,
   version: number,
   blockEventIndex: number,
 } | {
-  type: DydxIndexerSubtypes.UPDATE_CLOB_PAIR,
+  type: JinxIndexerSubtypes.UPDATE_CLOB_PAIR,
   eventProto: UpdateClobPairEventV1,
   indexerTendermintEvent: IndexerTendermintEvent,
   version: number,
   blockEventIndex: number,
 } | {
-  type: DydxIndexerSubtypes.DELEVERAGING,
+  type: JinxIndexerSubtypes.DELEVERAGING,
   eventProto: DeleveragingEventV1,
   indexerTendermintEvent: IndexerTendermintEvent,
   version: number,
   blockEventIndex: number,
 } | {
-  type: DydxIndexerSubtypes.TRADING_REWARD,
+  type: JinxIndexerSubtypes.TRADING_REWARD,
   eventProto: TradingRewardsEventV1,
   indexerTendermintEvent: IndexerTendermintEvent,
   version: number,

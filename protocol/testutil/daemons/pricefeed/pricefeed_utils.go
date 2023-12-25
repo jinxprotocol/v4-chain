@@ -2,11 +2,12 @@ package pricefeed
 
 import (
 	"fmt"
-	"golang.org/x/exp/maps"
 	"os"
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/json"
+	"golang.org/x/exp/maps"
+
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/json"
 	"github.com/stretchr/testify/require"
 )
 

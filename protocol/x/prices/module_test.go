@@ -8,26 +8,27 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
 
 	errorsmod "cosmossdk.io/errors"
 
 	abci "github.com/cometbft/cometbft/abci/types"
+	"github.com/gorilla/mux"
+	"github.com/grpc-ecosystem/grpc-gateway/runtime"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/daemons/pricefeed"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/prices"
+	prices_keeper "github.com/jinxprotocol/v4-chain/protocol/x/prices/keeper"
+	pricestypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+	"github.com/stretchr/testify/mock"
+	"github.com/stretchr/testify/require"
+
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/codec/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/tx"
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/daemons/pricefeed"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/prices"
-	prices_keeper "github.com/dydxprotocol/v4-chain/protocol/x/prices/keeper"
-	pricestypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
-	"github.com/gorilla/mux"
-	"github.com/grpc-ecosystem/grpc-gateway/runtime"
-	"github.com/stretchr/testify/mock"
-	"github.com/stretchr/testify/require"
 )
 
 const (
@@ -210,21 +211,21 @@ func TestAppModuleBasic_RegisterGRPCGatewayRoutes(t *testing.T) {
 
 	// Expect AllMarkets route registered
 	recorder := httptest.NewRecorder()
-	req, err := http.NewRequest("GET", "/dydxprotocol/prices/market", nil)
+	req, err := http.NewRequest("GET", "/jinxprotocol/prices/market", nil)
 	require.NoError(t, err)
 	router.ServeHTTP(recorder, req)
 	require.Contains(t, recorder.Body.String(), "no RPC client is defined in offline mode")
 
 	// Expect Markets route registered
 	recorder = httptest.NewRecorder()
-	req, err = http.NewRequest("GET", "/dydxprotocol/prices/market/0", nil)
+	req, err = http.NewRequest("GET", "/jinxprotocol/prices/market/0", nil)
 	require.NoError(t, err)
 	router.ServeHTTP(recorder, req)
 	require.Contains(t, recorder.Body.String(), "no RPC client is defined in offline mode")
 
 	// Expect unexpected route not registered
 	recorder = httptest.NewRecorder()
-	req, err = http.NewRequest("GET", "/dydxprotocol/prices/foo/bar/baz", nil)
+	req, err = http.NewRequest("GET", "/jinxprotocol/prices/foo/bar/baz", nil)
 	require.NoError(t, err)
 	router.ServeHTTP(recorder, req)
 	require.Equal(t, 404, recorder.Code)

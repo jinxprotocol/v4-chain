@@ -7,11 +7,12 @@ import (
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	testapp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
+	testapp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
 
-	"github.com/dydxprotocol/v4-chain/protocol/x/vest/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/vest/types"
+	sdk "github.com/cosmos/cosmos-sdk/types"
+
+	"github.com/jinxprotocol/v4-chain/protocol/x/vest/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/vest/types"
 	"github.com/stretchr/testify/require"
 )
 

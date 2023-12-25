@@ -1,9 +1,10 @@
 package keeper
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
 )
 
 // RateLimitCancelOrder passes order cancellations with valid clob pairs to `cancelOrderRateLimiter`.

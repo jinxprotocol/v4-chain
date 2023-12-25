@@ -13,12 +13,13 @@ import (
 
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 
+	"github.com/jinxprotocol/v4-chain/protocol/dtypes"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/sim_helpers"
+	"github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+	pricestypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+
 	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/dydxprotocol/v4-chain/protocol/dtypes"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/sim_helpers"
-	"github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
-	pricestypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
 )
 
 // genNumPerpetuals returns randomized number of perpetuals.

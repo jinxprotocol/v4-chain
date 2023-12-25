@@ -1,10 +1,11 @@
 package types
 
 import (
+	epochstypes "github.com/jinxprotocol/v4-chain/protocol/x/epochs/types"
+	pricestypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/auth/types"
-	epochstypes "github.com/dydxprotocol/v4-chain/protocol/x/epochs/types"
-	pricestypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
 )
 
 type PricesKeeper interface {

@@ -2,15 +2,17 @@ package keeper_test
 
 import (
 	"fmt"
-	delaymsgtypes "github.com/dydxprotocol/v4-chain/protocol/x/delaymsg/types"
 	"testing"
+
+	delaymsgtypes "github.com/jinxprotocol/v4-chain/protocol/x/delaymsg/types"
 
 	sdkmath "cosmossdk.io/math"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
 	"github.com/stretchr/testify/require"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 func TestMsgServerCompleteBridge(t *testing.T) {
@@ -33,7 +35,7 @@ func TestMsgServerCompleteBridge(t *testing.T) {
 				Authority: delaymsgtypes.ModuleAddress.String(),
 				Event: types.BridgeEvent{
 					Id:             0,
-					Coin:           sdk.NewCoin("adv4tnt", sdkmath.NewInt(1)),
+					Coin:           sdk.NewCoin("jinx", sdkmath.NewInt(1)),
 					Address:        "invalid",
 					EthBlockHeight: 1,
 				},

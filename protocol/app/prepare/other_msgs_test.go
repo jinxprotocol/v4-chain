@@ -1,12 +1,13 @@
 package prepare_test
 
 import (
-	testApp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/app/prepare"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/encoding"
+	testApp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+
+	"github.com/jinxprotocol/v4-chain/protocol/app/prepare"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/encoding"
 	"github.com/stretchr/testify/require"
 )
 

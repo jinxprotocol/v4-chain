@@ -3,8 +3,9 @@ package testutil
 import (
 	"fmt"
 
+	sendingcli "github.com/jinxprotocol/v4-chain/protocol/x/sending/client/cli"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	sendingcli "github.com/dydxprotocol/v4-chain/protocol/x/sending/client/cli"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"

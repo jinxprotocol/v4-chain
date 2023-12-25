@@ -3,9 +3,10 @@ package indexer
 import (
 	"strings"
 
-	servertypes "github.com/cosmos/cosmos-sdk/server/types"
 	"github.com/spf13/cast"
 	"github.com/spf13/cobra"
+
+	servertypes "github.com/cosmos/cosmos-sdk/server/types"
 )
 
 type IndexerFlags struct {
@@ -30,7 +31,7 @@ const (
 // AddIndexerFlagsToCmd adds the required flags to instantiate a connection to Kafka during App
 // initialization to a command. These flags should be applied to the `start` command of the
 // V4 Cosmos application.
-// E.g. `dydxprotocold start --indexer-kafka-conn-str kafka:9092
+// E.g. `jinxprotocold start --indexer-kafka-conn-str kafka:9092
 func AddIndexerFlagsToCmd(cmd *cobra.Command) {
 	cmd.
 		Flags().

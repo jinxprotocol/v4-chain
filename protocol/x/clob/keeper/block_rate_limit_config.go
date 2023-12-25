@@ -1,9 +1,10 @@
 package keeper
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/rate_limit"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/rate_limit"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
 )
 
 // GetBlockRateLimitConfiguration gets the block rate limit configuration from state.

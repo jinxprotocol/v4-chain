@@ -7,18 +7,18 @@ import (
 	"sync"
 	"time"
 
-	appflags "github.com/dydxprotocol/v4-chain/protocol/app/flags"
-	daemontypes "github.com/dydxprotocol/v4-chain/protocol/daemons/types"
+	appflags "github.com/jinxprotocol/v4-chain/protocol/app/flags"
+	daemontypes "github.com/jinxprotocol/v4-chain/protocol/daemons/types"
 
 	sdklog "cosmossdk.io/log"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/flags"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/api"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/handler"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_fetcher"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
-	libtime "github.com/dydxprotocol/v4-chain/protocol/lib/time"
-	pricestypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/flags"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/api"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/handler"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_fetcher"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
+	libtime "github.com/jinxprotocol/v4-chain/protocol/lib/time"
+	pricestypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
 
 	"github.com/cometbft/cometbft/libs/log"
 )

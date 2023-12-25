@@ -5,12 +5,13 @@ import (
 	"testing"
 
 	errorsmod "cosmossdk.io/errors"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/app/process"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/encoding"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
+	"github.com/jinxprotocol/v4-chain/protocol/app/process"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/encoding"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
 	"github.com/stretchr/testify/require"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 func TestDecodeProposedOperationsTx(t *testing.T) {
@@ -83,7 +84,7 @@ func TestProposedOperationsTx_Validate(t *testing.T) {
 			txBytes: constants.InvalidProposedOperationsUnspecifiedOrderRemovalReasonTxBytes,
 			expectedErr: errorsmod.Wrap(
 				types.ErrInvalidMsgProposedOperations,
-				"order removal reason must be specified: {{dydx199tqg4wdlnu4qjlxchpd7seg454937hjrknju4 0} 0 64 0}",
+				"order removal reason must be specified: {{jinx199tqg4wdlnu4qjlxchpd7seg454937hjrknju4 0} 0 64 0}",
 			),
 		},
 		"Valid: ValidateBasic passes": {

@@ -1,0 +1,34 @@
+{
+  "exchanges": [
+    {
+      "exchangeName": "Binance",
+      "ticker": "JINXUSDT",
+      "adjustByMarket": "USDT-USD"
+    },
+    {
+      "exchangeName": "Bybit",
+      "ticker": "JINXUSDT",
+      "adjustByMarket": "USDT-USD"
+    },
+    {
+      "exchangeName": "Gate",
+      "ticker": "JINX_USDT",
+      "adjustByMarket": "USDT-USD"
+    },
+    {
+      "exchangeName": "Kucoin",
+      "ticker": "JINX-USDT",
+      "adjustByMarket": "USDT-USD"
+    },
+    {
+      "exchangeName": "Mexc",
+      "ticker": "JINX_USDT",
+      "adjustByMarket": "USDT-USD"
+    },
+    {
+      "exchangeName": "Okx",
+      "ticker": "JINX-USDT",
+      "adjustByMarket": "USDT-USD"
+    }
+  ]
+}

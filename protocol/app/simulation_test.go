@@ -14,6 +14,23 @@ import (
 	tmjson "github.com/cometbft/cometbft/libs/json"
 	"github.com/cometbft/cometbft/libs/log"
 	tmtypes "github.com/cometbft/cometbft/types"
+	icatypes "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts/types"
+	ibctransfertypes "github.com/cosmos/ibc-go/v7/modules/apps/transfer/types"
+	exportedtypes "github.com/cosmos/ibc-go/v7/modules/core/exported"
+	"github.com/jinxprotocol/v4-chain/protocol/app"
+	"github.com/jinxprotocol/v4-chain/protocol/app/basic_manager"
+	daemonflags "github.com/jinxprotocol/v4-chain/protocol/daemons/flags"
+	assetstypes "github.com/jinxprotocol/v4-chain/protocol/x/assets/types"
+	clobtypes "github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	epochstypes "github.com/jinxprotocol/v4-chain/protocol/x/epochs/types"
+	perpetualstypes "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+	pricestypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+	rewardsmodule "github.com/jinxprotocol/v4-chain/protocol/x/rewards/types"
+	sendingtypes "github.com/jinxprotocol/v4-chain/protocol/x/sending/types"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
+	vestmodule "github.com/jinxprotocol/v4-chain/protocol/x/vest/types"
+	"github.com/stretchr/testify/require"
+
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/codec"
@@ -41,22 +58,6 @@ import (
 	simcli "github.com/cosmos/cosmos-sdk/x/simulation/client/cli"
 	slashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
-	icatypes "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts/types"
-	ibctransfertypes "github.com/cosmos/ibc-go/v7/modules/apps/transfer/types"
-	exportedtypes "github.com/cosmos/ibc-go/v7/modules/core/exported"
-	"github.com/dydxprotocol/v4-chain/protocol/app"
-	"github.com/dydxprotocol/v4-chain/protocol/app/basic_manager"
-	daemonflags "github.com/dydxprotocol/v4-chain/protocol/daemons/flags"
-	assetstypes "github.com/dydxprotocol/v4-chain/protocol/x/assets/types"
-	clobtypes "github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	epochstypes "github.com/dydxprotocol/v4-chain/protocol/x/epochs/types"
-	perpetualstypes "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
-	pricestypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
-	rewardsmodule "github.com/dydxprotocol/v4-chain/protocol/x/rewards/types"
-	sendingtypes "github.com/dydxprotocol/v4-chain/protocol/x/sending/types"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
-	vestmodule "github.com/dydxprotocol/v4-chain/protocol/x/vest/types"
-	"github.com/stretchr/testify/require"
 )
 
 var (
@@ -199,7 +200,7 @@ func BenchmarkFullAppSimulation(b *testing.B) {
 
 	appOptions := defaultAppOptionsForSimulation()
 
-	dydxApp := NewSimApp(
+	jinxApp := NewSimApp(
 		b,
 		func() *app.App {
 			return app.New(
@@ -212,30 +213,30 @@ func BenchmarkFullAppSimulation(b *testing.B) {
 				interBlockCacheOpt(),
 			)
 		})
-	dydxApp.WithRandomlyGeneratedOperationsSimulationManager()
+	jinxApp.WithRandomlyGeneratedOperationsSimulationManager()
 
 	// Note: While our app does not use the `vesting` module, the `auth` module still attempts to create
 	// vesting accounts during simulation here:
-	// https://github.com/dydxprotocol/cosmos-sdk/blob/dydx-fork-v0.47.0-rc2/x/auth/simulation/genesis.go#L26
+	// https://github.com/dydxprotocol/cosmos-sdk/blob/jinx-fork-v0.47.0-rc2/x/auth/simulation/genesis.go#L26
 	// For this reason, we need to register the `vesting` module interfaces so that the Genesis state of `auth` can be
 	// marshaled properly.
-	vestingtypes.RegisterInterfaces(dydxApp.InterfaceRegistry())
+	vestingtypes.RegisterInterfaces(jinxApp.InterfaceRegistry())
 
 	// Run randomized simulations
 	_, simParams, simErr := simulation.SimulateFromSeed(
 		b,
 		os.Stdout,
-		dydxApp.GetBaseApp(),
-		AppStateFn(dydxApp.AppCodec(), dydxApp.SimulationManager()),
+		jinxApp.GetBaseApp(),
+		AppStateFn(jinxApp.AppCodec(), jinxApp.SimulationManager()),
 		simtypes.RandomAccounts,
-		simtestutil.SimulationOperations(dydxApp, dydxApp.AppCodec(), config),
+		simtestutil.SimulationOperations(jinxApp, jinxApp.AppCodec(), config),
 		app.ModuleAccountAddrs(),
 		config,
-		dydxApp.AppCodec(),
+		jinxApp.AppCodec(),
 	)
 
 	// export state and simParams before the simulation error is checked
-	if err = simtestutil.CheckExportSimulation(dydxApp, config, simParams); err != nil {
+	if err = simtestutil.CheckExportSimulation(jinxApp, config, simParams); err != nil {
 		b.Fatal(err)
 	}
 
@@ -272,7 +273,7 @@ func TestFullAppSimulation(t *testing.T) {
 
 	appOptions := defaultAppOptionsForSimulation()
 
-	dydxApp := NewSimApp(
+	jinxApp := NewSimApp(
 		t,
 		func() *app.App {
 			return app.New(
@@ -284,27 +285,27 @@ func TestFullAppSimulation(t *testing.T) {
 				appOptions,
 			)
 		})
-	dydxApp.WithRandomlyGeneratedOperationsSimulationManager()
-	require.Equal(t, "dydxprotocol", dydxApp.Name())
+	jinxApp.WithRandomlyGeneratedOperationsSimulationManager()
+	require.Equal(t, "jinxprotocol", jinxApp.Name())
 
 	// Note: While our app does not use the `vesting` module, the `auth` module still attempts to create
 	// vesting accounts during simulation here:
-	// https://github.com/dydxprotocol/cosmos-sdk/blob/dydx-fork-v0.47.0-rc2/x/auth/simulation/genesis.go#L26
+	// https://github.com/dydxprotocol/cosmos-sdk/blob/jinx-fork-v0.47.0-rc2/x/auth/simulation/genesis.go#L26
 	// For this reason, we need to register the `vesting` module interfaces so that the Genesis state of `auth` can be
 	// marshaled properly.
-	vestingtypes.RegisterInterfaces(dydxApp.InterfaceRegistry())
+	vestingtypes.RegisterInterfaces(jinxApp.InterfaceRegistry())
 
 	// run randomized simulation
 	_, _, simErr := simulation.SimulateFromSeed(
 		t,
 		os.Stdout,
-		dydxApp.GetBaseApp(),
-		AppStateFn(dydxApp.AppCodec(), dydxApp.SimulationManager()),
+		jinxApp.GetBaseApp(),
+		AppStateFn(jinxApp.AppCodec(), jinxApp.SimulationManager()),
 		simtypes.RandomAccounts,
-		simtestutil.SimulationOperations(dydxApp, dydxApp.AppCodec(), config),
+		simtestutil.SimulationOperations(jinxApp, jinxApp.AppCodec(), config),
 		app.ModuleAccountAddrs(),
 		config,
-		dydxApp.AppCodec(),
+		jinxApp.AppCodec(),
 	)
 	require.NoError(t, simErr)
 
@@ -345,7 +346,7 @@ func TestAppStateDeterminism(t *testing.T) {
 			}
 
 			db := dbm.NewMemDB()
-			dydxApp := NewSimApp(
+			jinxApp := NewSimApp(
 				t,
 				func() *app.App {
 					return app.New(
@@ -358,7 +359,7 @@ func TestAppStateDeterminism(t *testing.T) {
 						interBlockCacheOpt(),
 					)
 				})
-			dydxApp.WithRandomlyGeneratedOperationsSimulationManager()
+			jinxApp.WithRandomlyGeneratedOperationsSimulationManager()
 
 			fmt.Printf(
 				"running non-determinism simulation; seed %d: %d/%d, attempt: %d/%d\n",
@@ -367,21 +368,21 @@ func TestAppStateDeterminism(t *testing.T) {
 
 			// Note: While our app does not use the `vesting` module, the `auth` module still attempts to create
 			// vesting accounts during simulation here:
-			// https://github.com/dydxprotocol/cosmos-sdk/blob/dydx-fork-v0.47.0-rc2/x/auth/simulation/genesis.go#L26
+			// https://github.com/dydxprotocol/cosmos-sdk/blob/jinx-fork-v0.47.0-rc2/x/auth/simulation/genesis.go#L26
 			// For this reason, we need to register the `vesting` module interfaces so that the Genesis state of `auth` can be
 			// marshaled properly.
-			vestingtypes.RegisterInterfaces(dydxApp.InterfaceRegistry())
+			vestingtypes.RegisterInterfaces(jinxApp.InterfaceRegistry())
 
 			_, _, err := simulation.SimulateFromSeed(
 				t,
 				os.Stdout,
-				dydxApp.GetBaseApp(),
-				AppStateFn(dydxApp.AppCodec(), dydxApp.SimulationManager()),
+				jinxApp.GetBaseApp(),
+				AppStateFn(jinxApp.AppCodec(), jinxApp.SimulationManager()),
 				simtypes.RandomAccounts,
-				simtestutil.SimulationOperations(dydxApp, dydxApp.AppCodec(), config),
+				simtestutil.SimulationOperations(jinxApp, jinxApp.AppCodec(), config),
 				app.ModuleAccountAddrs(),
 				config,
-				dydxApp.AppCodec(),
+				jinxApp.AppCodec(),
 			)
 			require.NoError(t, err)
 
@@ -389,7 +390,7 @@ func TestAppStateDeterminism(t *testing.T) {
 				simtestutil.PrintStats(db)
 			}
 
-			appHash := dydxApp.LastCommitID().Hash
+			appHash := jinxApp.LastCommitID().Hash
 			appHashList[j] = appHash
 
 			if j != 0 {

@@ -3,9 +3,9 @@ import {
   stats,
   ParseMessageError,
   STATS_NO_SAMPLING,
-} from '@dydxprotocol-indexer/base';
-import { KafkaTopics } from '@dydxprotocol-indexer/kafka';
-import { OffChainUpdateV1 } from '@dydxprotocol-indexer/v4-protos';
+} from '@jinxprotocol-indexer/base';
+import { KafkaTopics } from '@jinxprotocol-indexer/kafka';
+import { OffChainUpdateV1 } from '@jinxprotocol-indexer/v4-protos';
 import { IHeaders, KafkaMessage } from 'kafkajs';
 import { Handler } from 'src/handlers/handler';
 
@@ -13,7 +13,7 @@ import config from '../config';
 import { OrderPlaceHandler } from '../handlers/order-place-handler';
 import { OrderRemoveHandler } from '../handlers/order-remove-handler';
 import { OrderUpdateHandler } from '../handlers/order-update-handler';
-import { DydxRecordHeaderKeys } from './types';
+import { JinxRecordHeaderKeys } from './types';
 
 export type HandlerInitializer = new (
   txHash?: string
@@ -152,7 +152,7 @@ function getTransactionHashFromHeaders(headers?: IHeaders): string | undefined {
     Buffer |
     (string | Buffer)[] |
     undefined
-  ) = headers[DydxRecordHeaderKeys.TRANSACTION_HASH_KEY];
+  ) = headers[JinxRecordHeaderKeys.TRANSACTION_HASH_KEY];
   if (txHashBytes === undefined) {
     return undefined;
   }

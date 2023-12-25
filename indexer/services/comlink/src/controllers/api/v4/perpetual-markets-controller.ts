@@ -1,4 +1,4 @@
-import { stats } from '@dydxprotocol-indexer/base';
+import { stats } from '@jinxprotocol-indexer/base';
 import {
   PerpetualMarketColumns,
   PerpetualMarketFromDatabase,
@@ -8,7 +8,7 @@ import {
   liquidityTierRefresher,
   LiquidityTiersMap,
   LiquidityTiersFromDatabase,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import express from 'express';
 import {
   matchedData,

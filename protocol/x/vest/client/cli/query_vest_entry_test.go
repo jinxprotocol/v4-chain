@@ -8,12 +8,13 @@ import (
 	"testing"
 
 	tmcli "github.com/cometbft/cometbft/libs/cli"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/network"
+	"github.com/jinxprotocol/v4-chain/protocol/x/vest/client/cli"
+	"github.com/jinxprotocol/v4-chain/protocol/x/vest/types"
+	"github.com/stretchr/testify/require"
+
 	"github.com/cosmos/cosmos-sdk/client"
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/network"
-	"github.com/dydxprotocol/v4-chain/protocol/x/vest/client/cli"
-	"github.com/dydxprotocol/v4-chain/protocol/x/vest/types"
-	"github.com/stretchr/testify/require"
 )
 
 // Prevent strconv unused error

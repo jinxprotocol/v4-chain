@@ -3,8 +3,8 @@ package events
 import (
 	"testing"
 
-	v1 "github.com/dydxprotocol/v4-chain/protocol/indexer/protocol/v1"
-	clobtypes "github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
+	v1 "github.com/jinxprotocol/v4-chain/protocol/indexer/protocol/v1"
+	clobtypes "github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
 
 	"github.com/stretchr/testify/require"
 )

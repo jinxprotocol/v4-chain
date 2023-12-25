@@ -4,13 +4,13 @@ import {
   stats,
   STATS_FUNCTION_NAME,
   wrapBackgroundTask,
-} from '@dydxprotocol-indexer/base';
-import { synchronizeWrapBackgroundTask } from '@dydxprotocol-indexer/dev';
+} from '@jinxprotocol-indexer/base';
+import { synchronizeWrapBackgroundTask } from '@jinxprotocol-indexer/dev';
 import {
   ORDERBOOKS_WEBSOCKET_MESSAGE_VERSION,
   producer,
   SUBACCOUNTS_WEBSOCKET_MESSAGE_VERSION,
-} from '@dydxprotocol-indexer/kafka';
+} from '@jinxprotocol-indexer/kafka';
 import {
   dbHelpers,
   BlockTable,
@@ -28,7 +28,7 @@ import {
   testMocks,
   apiTranslations,
   TimeInForce,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import {
   OpenOrdersCache,
   OrderbookLevelsCache,
@@ -42,7 +42,7 @@ import {
   SubaccountOrderIdsCache,
   updateOrder,
   CanceledOrderStatus,
-} from '@dydxprotocol-indexer/redis';
+} from '@jinxprotocol-indexer/redis';
 import {
   OffChainUpdateV1,
   OrderbookMessage,
@@ -52,7 +52,7 @@ import {
   OrderRemoveV1_OrderRemovalStatus,
   RedisOrder,
   SubaccountMessage,
-} from '@dydxprotocol-indexer/v4-protos';
+} from '@jinxprotocol-indexer/v4-protos';
 import Big from 'big.js';
 import { ProducerRecord } from 'kafkajs';
 import { DateTime } from 'luxon';
@@ -67,11 +67,11 @@ import {
   handleOrderUpdate,
 } from '../helpers/helpers';
 import { expectWebsocketOrderbookMessage, expectWebsocketSubaccountMessage } from '../helpers/websocket-helpers';
-import { ORDER_FLAG_LONG_TERM } from '@dydxprotocol-indexer/v4-proto-parser';
+import { ORDER_FLAG_LONG_TERM } from '@jinxprotocol-indexer/v4-proto-parser';
 import Long from 'long';
 
-jest.mock('@dydxprotocol-indexer/base', () => ({
-  ...jest.requireActual('@dydxprotocol-indexer/base'),
+jest.mock('@jinxprotocol-indexer/base', () => ({
+  ...jest.requireActual('@jinxprotocol-indexer/base'),
   wrapBackgroundTask: jest.fn(),
 }));
 

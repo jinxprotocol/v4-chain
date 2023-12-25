@@ -1,12 +1,13 @@
 package types_test
 
 import (
-	errorsmod "cosmossdk.io/errors"
 	"math/big"
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/dtypes"
-	"github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
+	errorsmod "cosmossdk.io/errors"
+
+	"github.com/jinxprotocol/v4-chain/protocol/dtypes"
+	"github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
 
 	"github.com/stretchr/testify/require"
 )

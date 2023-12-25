@@ -8,7 +8,7 @@ import {
   PerpetualMarketTable,
   testConstants,
   testMocks,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import _ from 'lodash';
 import {
   getCandle, getCandlesMap, updateCandleCacheWithCandle, startCandleCache, clearCandlesMap,

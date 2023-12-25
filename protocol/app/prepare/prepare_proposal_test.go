@@ -6,18 +6,19 @@ import (
 	"testing"
 
 	abci "github.com/cometbft/cometbft/abci/types"
-	sdktypes "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/app/prepare"
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/encoding"
-	keepertest "github.com/dydxprotocol/v4-chain/protocol/testutil/keeper"
-	bridgetypes "github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
-	clobtypes "github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	perpetualtypes "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
-	pricestypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
+	"github.com/jinxprotocol/v4-chain/protocol/app/prepare"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/encoding"
+	keepertest "github.com/jinxprotocol/v4-chain/protocol/testutil/keeper"
+	bridgetypes "github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
+	clobtypes "github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	perpetualtypes "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+	pricestypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
+
+	sdktypes "github.com/cosmos/cosmos-sdk/types"
 )
 
 var (

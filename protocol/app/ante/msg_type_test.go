@@ -12,10 +12,10 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	customante "github.com/dydxprotocol/v4-chain/protocol/app/ante"
-	appmsgs "github.com/dydxprotocol/v4-chain/protocol/app/msgs"
-	testante "github.com/dydxprotocol/v4-chain/protocol/testutil/ante"
-	testmsgs "github.com/dydxprotocol/v4-chain/protocol/testutil/msgs"
+	customante "github.com/jinxprotocol/v4-chain/protocol/app/ante"
+	appmsgs "github.com/jinxprotocol/v4-chain/protocol/app/msgs"
+	testante "github.com/jinxprotocol/v4-chain/protocol/testutil/ante"
+	testmsgs "github.com/jinxprotocol/v4-chain/protocol/testutil/msgs"
 
 	"github.com/stretchr/testify/require"
 )

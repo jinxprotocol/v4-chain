@@ -2,20 +2,21 @@ package client
 
 import (
 	"context"
-	sdklog "cosmossdk.io/log"
 	"fmt"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/bridge/client/types"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/bridge/client/types/constants"
-	libtime "github.com/dydxprotocol/v4-chain/protocol/lib/time"
 	"time"
 
+	sdklog "cosmossdk.io/log"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/bridge/client/types"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/bridge/client/types/constants"
+	libtime "github.com/jinxprotocol/v4-chain/protocol/lib/time"
+
 	"github.com/cometbft/cometbft/libs/log"
-	appflags "github.com/dydxprotocol/v4-chain/protocol/app/flags"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/bridge/api"
-	daemonflags "github.com/dydxprotocol/v4-chain/protocol/daemons/flags"
-	daemontypes "github.com/dydxprotocol/v4-chain/protocol/daemons/types"
-	bridgetypes "github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
 	"github.com/ethereum/go-ethereum/ethclient"
+	appflags "github.com/jinxprotocol/v4-chain/protocol/app/flags"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/bridge/api"
+	daemonflags "github.com/jinxprotocol/v4-chain/protocol/daemons/flags"
+	daemontypes "github.com/jinxprotocol/v4-chain/protocol/daemons/types"
+	bridgetypes "github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
 )
 
 // Client encapsulates the logic and interface for the bridge daemon. The bridge daemon periodically queries the

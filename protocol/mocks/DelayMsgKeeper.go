@@ -3,8 +3,8 @@
 package mocks
 
 import (
-	lib "github.com/dydxprotocol/v4-chain/protocol/lib"
-	delaymsgtypes "github.com/dydxprotocol/v4-chain/protocol/x/delaymsg/types"
+	lib "github.com/jinxprotocol/v4-chain/protocol/lib"
+	delaymsgtypes "github.com/jinxprotocol/v4-chain/protocol/x/delaymsg/types"
 
 	log "github.com/cometbft/cometbft/libs/log"
 

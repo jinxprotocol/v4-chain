@@ -1,6 +1,6 @@
 {
-  "@type": "/dydxprotocol.feetiers.MsgUpdatePerpetualFeeParams",
-  "authority": "dydx1mkkvp26dngu6n8rmalaxyp3gwkjuzztq5zx6tr",
+  "@type": "/jinxprotocol.feetiers.MsgUpdatePerpetualFeeParams",
+  "authority": "jinx1mkkvp26dngu6n8rmalaxyp3gwkjuzztqn3pafr",
   "params": {
     "tiers": [
       {

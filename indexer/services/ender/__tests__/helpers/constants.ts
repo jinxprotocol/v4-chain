@@ -1,11 +1,11 @@
-import { SUBACCOUNTS_WEBSOCKET_MESSAGE_VERSION } from '@dydxprotocol-indexer/kafka';
-import { testConstants, TradeContent, TradeType } from '@dydxprotocol-indexer/postgres';
+import { SUBACCOUNTS_WEBSOCKET_MESSAGE_VERSION } from '@jinxprotocol-indexer/kafka';
+import { testConstants, TradeContent, TradeType } from '@jinxprotocol-indexer/postgres';
 import {
   bigIntToBytes,
   ORDER_FLAG_CONDITIONAL,
   ORDER_FLAG_LONG_TERM,
   ORDER_FLAG_SHORT_TERM,
-} from '@dydxprotocol-indexer/v4-proto-parser';
+} from '@jinxprotocol-indexer/v4-proto-parser';
 import {
   AssetCreateEventV1,
   ClobPairStatus,
@@ -32,7 +32,7 @@ import {
   TransferEventV1,
   UpdateClobPairEventV1,
   UpdatePerpetualEventV1,
-} from '@dydxprotocol-indexer/v4-protos';
+} from '@jinxprotocol-indexer/v4-protos';
 import Long from 'long';
 import { DateTime } from 'luxon';
 

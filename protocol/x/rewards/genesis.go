@@ -1,9 +1,10 @@
 package rewards
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/x/rewards/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/rewards/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/rewards/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/rewards/types"
 )
 
 // InitGenesis initializes the module's state from a provided genesis state.

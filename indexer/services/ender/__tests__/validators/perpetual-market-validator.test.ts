@@ -1,9 +1,9 @@
-import { logger, ParseMessageError } from '@dydxprotocol-indexer/base';
-import { PerpetualMarketCreateEventV1, IndexerTendermintBlock, IndexerTendermintEvent } from '@dydxprotocol-indexer/v4-protos';
+import { logger, ParseMessageError } from '@jinxprotocol-indexer/base';
+import { PerpetualMarketCreateEventV1, IndexerTendermintBlock, IndexerTendermintEvent } from '@jinxprotocol-indexer/v4-protos';
 import {
   dbHelpers, testMocks, perpetualMarketRefresher,
-} from '@dydxprotocol-indexer/postgres';
-import { DydxIndexerSubtypes } from '../../src/lib/types';
+} from '@jinxprotocol-indexer/postgres';
+import { JinxIndexerSubtypes } from '../../src/lib/types';
 import {
   defaultPerpetualMarketCreateEvent, defaultHeight, defaultTime, defaultTxHash,
 } from '../helpers/constants';
@@ -90,7 +90,7 @@ function createBlock(
   perpetualMarketEvent: PerpetualMarketCreateEventV1,
 ): IndexerTendermintBlock {
   const event: IndexerTendermintEvent = createIndexerTendermintEvent(
-    DydxIndexerSubtypes.PERPETUAL_MARKET,
+    JinxIndexerSubtypes.PERPETUAL_MARKET,
     PerpetualMarketCreateEventV1.encode(perpetualMarketEvent).finish(),
     0,
     0,

@@ -11,12 +11,12 @@ import {
   PerpetualPositionModel,
   SubaccountTable,
   OrderStatus,
-} from '@dydxprotocol-indexer/postgres';
-import { StateFilledQuantumsCache } from '@dydxprotocol-indexer/redis';
-import { isStatefulOrder } from '@dydxprotocol-indexer/v4-proto-parser';
+} from '@jinxprotocol-indexer/postgres';
+import { StateFilledQuantumsCache } from '@jinxprotocol-indexer/redis';
+import { isStatefulOrder } from '@jinxprotocol-indexer/v4-proto-parser';
 import {
   LiquidationOrderV1, IndexerOrderId,
-} from '@dydxprotocol-indexer/v4-protos';
+} from '@jinxprotocol-indexer/v4-protos';
 import Long from 'long';
 import * as pg from 'pg';
 

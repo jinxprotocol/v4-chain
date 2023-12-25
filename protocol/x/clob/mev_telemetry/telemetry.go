@@ -10,10 +10,11 @@ import (
 
 	sdklog "cosmossdk.io/log"
 	"github.com/cometbft/cometbft/libs/log"
+	"github.com/jinxprotocol/v4-chain/protocol/lib/metrics"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+
 	"github.com/cosmos/cosmos-sdk/telemetry"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/lib/metrics"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
 )
 
 var client = &http.Client{

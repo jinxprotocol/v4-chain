@@ -3,6 +3,9 @@ package clob
 import (
 	"math/rand"
 
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/sample"
+	clobsimulation "github.com/jinxprotocol/v4-chain/protocol/x/clob/simulation"
+
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/codec"
 	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
@@ -11,8 +14,6 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/sample"
-	clobsimulation "github.com/dydxprotocol/v4-chain/protocol/x/clob/simulation"
 )
 
 // avoid unused import issue

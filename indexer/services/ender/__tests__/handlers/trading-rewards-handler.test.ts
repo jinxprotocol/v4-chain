@@ -4,7 +4,7 @@ import {
   IndexerTendermintEvent,
   Timestamp,
   TradingRewardsEventV1,
-} from '@dydxprotocol-indexer/v4-protos';
+} from '@jinxprotocol-indexer/v4-protos';
 import {
   dbHelpers,
   testMocks,
@@ -14,11 +14,11 @@ import {
   TradingRewardTable,
   TradingRewardFromDatabase,
   testConversionHelpers,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import { KafkaMessage } from 'kafkajs';
-import { createKafkaMessage } from '@dydxprotocol-indexer/kafka';
+import { createKafkaMessage } from '@jinxprotocol-indexer/kafka';
 import { onMessage } from '../../src/lib/on-message';
-import { DydxIndexerSubtypes } from '../../src/lib/types';
+import { JinxIndexerSubtypes } from '../../src/lib/types';
 import {
   createIndexerTendermintBlock,
   createIndexerTendermintEvent,
@@ -65,7 +65,7 @@ describe('tradingRewardHandler', () => {
       const eventIndex: number = 0;
 
       const indexerTendermintEvent: IndexerTendermintEvent = createIndexerTendermintEvent(
-        DydxIndexerSubtypes.TRADING_REWARD,
+        JinxIndexerSubtypes.TRADING_REWARD,
         TradingRewardsEventV1.encode(defaultTradingRewardsEvent).finish(),
         transactionIndex,
         eventIndex,
@@ -225,7 +225,7 @@ function createKafkaMessageFromTradingRewardsEvent({
 }) {
   const events: IndexerTendermintEvent[] = [
     createIndexerTendermintEvent(
-      DydxIndexerSubtypes.TRADING_REWARD,
+      JinxIndexerSubtypes.TRADING_REWARD,
       TradingRewardsEventV1.encode(tradingRewardsEvent).finish(),
       transactionIndex,
       0, // eventIndex

@@ -5,8 +5,9 @@ import (
 
 	"github.com/spf13/cobra"
 
+	"github.com/jinxprotocol/v4-chain/protocol/x/blocktime/types"
+
 	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/dydxprotocol/v4-chain/protocol/x/blocktime/types"
 )
 
 // GetTxCmd returns the transaction commands for this module

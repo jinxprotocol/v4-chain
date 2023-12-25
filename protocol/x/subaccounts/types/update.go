@@ -1,8 +1,9 @@
 package types
 
 import (
-	errorsmod "cosmossdk.io/errors"
 	"math/big"
+
+	errorsmod "cosmossdk.io/errors"
 )
 
 type UpdateResult uint

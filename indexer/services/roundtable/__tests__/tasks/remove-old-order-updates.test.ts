@@ -1,10 +1,10 @@
-import { stats } from '@dydxprotocol-indexer/base';
+import { stats } from '@jinxprotocol-indexer/base';
 import {
   StatefulOrderUpdateInfo,
   StatefulOrderUpdatesCache,
   redis,
   redisTestConstants,
-} from '@dydxprotocol-indexer/redis';
+} from '@jinxprotocol-indexer/redis';
 import config from '../../src/config';
 import removeOldOrderUpdatesTask from '../../src/tasks/remove-old-order-updates';
 import { redisClient } from '../../src/helpers/redis';

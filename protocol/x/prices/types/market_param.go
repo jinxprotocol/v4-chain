@@ -2,8 +2,8 @@ package types
 
 import (
 	errorsmod "cosmossdk.io/errors"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	"github.com/dydxprotocol/v4-chain/protocol/lib/json"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/lib/json"
 )
 
 // Validate checks that the MarketParam is valid.

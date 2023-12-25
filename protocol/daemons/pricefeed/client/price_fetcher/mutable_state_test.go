@@ -1,12 +1,13 @@
 package price_fetcher
 
 import (
-	"github.com/cometbft/cometbft/libs/log"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/cometbft/cometbft/libs/log"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/stretchr/testify/require"
 )
 
 func TestGetNextNMarkets(t *testing.T) {

@@ -3,8 +3,9 @@
 package mocks
 
 import (
-	signing "github.com/cosmos/cosmos-sdk/x/auth/signing"
 	mock "github.com/stretchr/testify/mock"
+
+	signing "github.com/cosmos/cosmos-sdk/x/auth/signing"
 
 	tx "github.com/cosmos/cosmos-sdk/types/tx"
 

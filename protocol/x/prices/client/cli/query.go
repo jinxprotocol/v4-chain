@@ -3,9 +3,10 @@ package cli
 import (
 	"fmt"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
 	"github.com/spf13/cobra"
+
+	"github.com/cosmos/cosmos-sdk/client"
 )
 
 // GetQueryCmd returns the cli query commands for this module

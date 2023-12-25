@@ -3,12 +3,12 @@ package server_test
 import (
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/liquidation/api"
-	liquidationtypes "github.com/dydxprotocol/v4-chain/protocol/daemons/server/types/liquidations"
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/grpc"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/liquidation/api"
+	liquidationtypes "github.com/jinxprotocol/v4-chain/protocol/daemons/server/types/liquidations"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/grpc"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
 	"github.com/stretchr/testify/require"
 )
 

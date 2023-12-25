@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
 )
 
 type msgServer struct {

@@ -11,10 +11,10 @@ import (
 	sdkante "github.com/cosmos/cosmos-sdk/x/auth/ante"
 	"github.com/cosmos/cosmos-sdk/x/auth/types"
 
-	customante "github.com/dydxprotocol/v4-chain/protocol/app/ante"
-	testante "github.com/dydxprotocol/v4-chain/protocol/testutil/ante"
-	clobtypes "github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
+	customante "github.com/jinxprotocol/v4-chain/protocol/app/ante"
+	testante "github.com/jinxprotocol/v4-chain/protocol/testutil/ante"
+	clobtypes "github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
 
 	"github.com/stretchr/testify/require"
 )

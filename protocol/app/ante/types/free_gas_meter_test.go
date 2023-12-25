@@ -4,9 +4,10 @@ import (
 	"math"
 	"testing"
 
-	"github.com/cosmos/cosmos-sdk/types"
-	ante_types "github.com/dydxprotocol/v4-chain/protocol/app/ante/types"
+	ante_types "github.com/jinxprotocol/v4-chain/protocol/app/ante/types"
 	"github.com/stretchr/testify/require"
+
+	"github.com/cosmos/cosmos-sdk/types"
 )
 
 func TestInfiniteGasMeter(t *testing.T) {

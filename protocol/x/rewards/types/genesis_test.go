@@ -3,8 +3,8 @@ package types_test
 import (
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	"github.com/dydxprotocol/v4-chain/protocol/x/rewards/types"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/x/rewards/types"
 	"github.com/stretchr/testify/require"
 )
 
@@ -14,7 +14,7 @@ func TestDefaultGenesis(t *testing.T) {
 	expectedGenesisState := &types.GenesisState{
 		Params: types.Params{
 			TreasuryAccount:  "rewards_treasury",
-			Denom:            "adv4tnt",
+			Denom:            "jinx",
 			DenomExponent:    lib.BaseDenomExponent,
 			MarketId:         1,
 			FeeMultiplierPpm: 990_000, // 0.99

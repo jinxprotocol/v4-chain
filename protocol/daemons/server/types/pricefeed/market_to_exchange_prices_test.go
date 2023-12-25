@@ -1,13 +1,14 @@
 package types
 
 import (
-	pricefeed_types "github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/types"
 	"testing"
 	"time"
 
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/api"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
+	pricefeed_types "github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/types"
+
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/api"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
 	"github.com/stretchr/testify/require"
 )
 

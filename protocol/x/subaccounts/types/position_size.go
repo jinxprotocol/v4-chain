@@ -5,7 +5,7 @@ import (
 
 	errorsmod "cosmossdk.io/errors"
 
-	"github.com/dydxprotocol/v4-chain/protocol/dtypes"
+	"github.com/jinxprotocol/v4-chain/protocol/dtypes"
 )
 
 const (

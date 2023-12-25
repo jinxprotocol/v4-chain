@@ -7,26 +7,27 @@ import (
 	"testing"
 	"time"
 
-	indexerevents "github.com/dydxprotocol/v4-chain/protocol/indexer/events"
-	"github.com/dydxprotocol/v4-chain/protocol/indexer/indexer_manager"
+	indexerevents "github.com/jinxprotocol/v4-chain/protocol/indexer/events"
+	"github.com/jinxprotocol/v4-chain/protocol/indexer/indexer_manager"
 
 	sdkmath "cosmossdk.io/math"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/dtypes"
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	clobtest "github.com/dydxprotocol/v4-chain/protocol/testutil/clob"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	keepertest "github.com/dydxprotocol/v4-chain/protocol/testutil/keeper"
-	assettypes "github.com/dydxprotocol/v4-chain/protocol/x/assets/types"
-	blocktimetypes "github.com/dydxprotocol/v4-chain/protocol/x/blocktime/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/memclob"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	perptypes "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
-	pricestypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
+	"github.com/jinxprotocol/v4-chain/protocol/dtypes"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	clobtest "github.com/jinxprotocol/v4-chain/protocol/testutil/clob"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	keepertest "github.com/jinxprotocol/v4-chain/protocol/testutil/keeper"
+	assettypes "github.com/jinxprotocol/v4-chain/protocol/x/assets/types"
+	blocktimetypes "github.com/jinxprotocol/v4-chain/protocol/x/blocktime/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/memclob"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	perptypes "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+	pricestypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 func TestGetInsuranceFundBalance(t *testing.T) {

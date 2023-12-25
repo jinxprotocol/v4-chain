@@ -7,8 +7,9 @@ import (
 	"strings"
 
 	"github.com/cometbft/cometbft/libs/log"
+	"github.com/jinxprotocol/v4-chain/protocol/app/basic_manager"
+
 	"github.com/cosmos/cosmos-sdk/baseapp"
-	"github.com/dydxprotocol/v4-chain/protocol/app/basic_manager"
 )
 
 var (

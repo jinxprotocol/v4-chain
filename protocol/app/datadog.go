@@ -9,12 +9,13 @@ import (
 	"sync"
 
 	"github.com/cometbft/cometbft/libs/log"
-	"github.com/cosmos/cosmos-sdk/version"
-	"github.com/dydxprotocol/v4-chain/protocol/app/flags"
+	"github.com/jinxprotocol/v4-chain/protocol/app/flags"
 	errorspkg "github.com/pkg/errors"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/pkgerrors"
 	"gopkg.in/DataDog/dd-trace-go.v1/profiler"
+
+	"github.com/cosmos/cosmos-sdk/version"
 )
 
 func configureDatadogProfilerOptions(

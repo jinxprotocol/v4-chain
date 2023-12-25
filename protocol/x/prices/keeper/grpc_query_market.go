@@ -5,11 +5,12 @@ import (
 
 	errorsmod "cosmossdk.io/errors"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/query"
-	"github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/cosmos-sdk/types/query"
 )
 
 func (k Keeper) AllMarketPrices(

@@ -8,9 +8,10 @@ import (
 	tmed25519 "github.com/cometbft/cometbft/crypto/ed25519"
 	tmos "github.com/cometbft/cometbft/libs/os"
 	"github.com/cometbft/cometbft/privval"
-	"github.com/cosmos/cosmos-sdk/server"
 	"github.com/cosmos/go-bip39"
 	"github.com/spf13/cobra"
+
+	"github.com/cosmos/cosmos-sdk/server"
 )
 
 var (

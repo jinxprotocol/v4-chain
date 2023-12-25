@@ -2,13 +2,14 @@ package keeper_test
 
 import (
 	"fmt"
-	testApp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
 	"math/big"
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
+	testApp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
 	"github.com/stretchr/testify/require"
 )
 

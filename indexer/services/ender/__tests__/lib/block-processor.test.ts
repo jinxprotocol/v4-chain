@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon';
-import { dbHelpers, Transaction } from '@dydxprotocol-indexer/postgres';
+import { dbHelpers, Transaction } from '@jinxprotocol-indexer/postgres';
 import {
   AssetCreateEventV1,
   IndexerTendermintBlock,
@@ -7,10 +7,10 @@ import {
   MarketEventV1,
   SubaccountUpdateEventV1,
   Timestamp,
-} from '@dydxprotocol-indexer/v4-protos';
+} from '@jinxprotocol-indexer/v4-protos';
 import { createIndexerTendermintBlock, createIndexerTendermintEvent } from '../helpers/indexer-proto-helpers';
 import { MILLIS_IN_NANOS, SECONDS_IN_MILLIS } from '../../src/constants';
-import { DydxIndexerSubtypes } from '../../src/lib/types';
+import { JinxIndexerSubtypes } from '../../src/lib/types';
 import {
   defaultAssetCreateEvent,
   defaultHeight,
@@ -87,19 +87,19 @@ describe('block-processor', () => {
 
   const events: IndexerTendermintEvent[] = [
     createIndexerTendermintEvent(
-      DydxIndexerSubtypes.SUBACCOUNT_UPDATE,
+      JinxIndexerSubtypes.SUBACCOUNT_UPDATE,
       defaultSubaccountUpdateEventBinary,
       transactionIndex0,
       eventIndex0,
     ),
     createIndexerTendermintEvent(
-      DydxIndexerSubtypes.MARKET,
+      JinxIndexerSubtypes.MARKET,
       defaultMarketEventBinary,
       transactionIndex1,
       eventIndex0,
     ),
     createIndexerTendermintEvent(
-      DydxIndexerSubtypes.ASSET,
+      JinxIndexerSubtypes.ASSET,
       defaultAssetEventBinary,
       transactionIndex0,
       eventIndex1,

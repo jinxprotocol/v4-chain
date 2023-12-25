@@ -2,9 +2,9 @@ import {
   AxiosSafeServerError,
   logger,
   stats,
-} from '@dydxprotocol-indexer/base';
-import { isRestrictedCountry } from '@dydxprotocol-indexer/compliance';
-import { CandleResolution, perpetualMarketRefresher } from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/base';
+import { isRestrictedCountry } from '@jinxprotocol-indexer/compliance';
+import { CandleResolution, perpetualMarketRefresher } from '@jinxprotocol-indexer/postgres';
 import WebSocket from 'ws';
 
 import config from '../config';

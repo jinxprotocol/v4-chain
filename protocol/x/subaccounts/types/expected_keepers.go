@@ -3,9 +3,10 @@ package types
 import (
 	"math/big"
 
+	perptypes "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	perptypes "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
 )
 
 // ProductKeeper represents a generic interface for a keeper

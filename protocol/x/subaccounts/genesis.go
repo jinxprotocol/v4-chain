@@ -1,11 +1,12 @@
 package subaccounts
 
 import (
+	indexerevents "github.com/jinxprotocol/v4-chain/protocol/indexer/events"
+	"github.com/jinxprotocol/v4-chain/protocol/indexer/indexer_manager"
+	"github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	indexerevents "github.com/dydxprotocol/v4-chain/protocol/indexer/events"
-	"github.com/dydxprotocol/v4-chain/protocol/indexer/indexer_manager"
-	"github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
 )
 
 // InitGenesis initializes the subaccounts module's state from a provided genesis

@@ -1,14 +1,15 @@
 package perpetuals
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/sample"
+	perpetualssimulation "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/simulation"
+
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/testutil/sims"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/sample"
-	perpetualssimulation "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/simulation"
 )
 
 // avoid unused import issue

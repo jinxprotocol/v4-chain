@@ -7,7 +7,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/client"
 
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
 )
 
 // GetQueryCmd returns the cli query commands for this module

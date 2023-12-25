@@ -12,6 +12,13 @@ import (
 
 	tmdb "github.com/cometbft/cometbft-db"
 	"github.com/cometbft/cometbft/libs/log"
+	"github.com/gofrs/flock"
+	"github.com/jinxprotocol/v4-chain/protocol/app"
+	"github.com/jinxprotocol/v4-chain/protocol/app/basic_manager"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/appoptions"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/ci"
+	"github.com/stretchr/testify/require"
+
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/crypto/hd"
@@ -21,12 +28,6 @@ import (
 	"github.com/cosmos/cosmos-sdk/testutil/network"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	"github.com/dydxprotocol/v4-chain/protocol/app"
-	"github.com/dydxprotocol/v4-chain/protocol/app/basic_manager"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/appoptions"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/ci"
-	"github.com/gofrs/flock"
-	"github.com/stretchr/testify/require"
 )
 
 type (
@@ -153,12 +154,12 @@ func DefaultConfig(options *NetworkConfigOptions) network.Config {
 				appOptions,
 				baseapp.SetPruning(pruningtypes.NewPruningOptionsFromString(val.GetAppConfig().Pruning)),
 				baseapp.SetMinGasPrices(val.GetAppConfig().MinGasPrices),
-				baseapp.SetChainID("dydxprotocol"),
+				baseapp.SetChainID("jinxprotocol"),
 			)
 		},
 		GenesisState:    basic_manager.ModuleBasics.DefaultGenesis(encoding.Codec),
 		TimeoutCommit:   2 * time.Second,
-		ChainID:         "dydxprotocol",
+		ChainID:         "jinxprotocol",
 		NumValidators:   1,
 		BondDenom:       sdk.DefaultBondDenom,
 		MinGasPrices:    fmt.Sprintf("0.000006%s", sdk.DefaultBondDenom),
@@ -175,7 +176,7 @@ func DefaultConfig(options *NetworkConfigOptions) network.Config {
 // NewTestNetworkFixture returns a new simapp AppConstructor for network simulation tests
 func NewTestNetworkFixture() network.TestFixture {
 	appOptions := appoptions.GetDefaultTestAppOptionsFromTempDirectory("", nil)
-	dydxApp := app.New(
+	jinxApp := app.New(
 		log.NewNopLogger(),
 		tmdb.NewMemDB(),
 		tmdb.NewMemDB(),
@@ -199,12 +200,12 @@ func NewTestNetworkFixture() network.TestFixture {
 
 	return network.TestFixture{
 		AppConstructor: appCtr,
-		GenesisState:   dydxApp.DefaultGenesis(),
+		GenesisState:   jinxApp.DefaultGenesis(),
 		EncodingConfig: testutil.TestEncodingConfig{
-			InterfaceRegistry: dydxApp.InterfaceRegistry(),
-			Codec:             dydxApp.AppCodec(),
-			TxConfig:          dydxApp.TxConfig(),
-			Amino:             dydxApp.LegacyAmino(),
+			InterfaceRegistry: jinxApp.InterfaceRegistry(),
+			Codec:             jinxApp.AppCodec(),
+			TxConfig:          jinxApp.TxConfig(),
+			Amino:             jinxApp.LegacyAmino(),
 		},
 	}
 }

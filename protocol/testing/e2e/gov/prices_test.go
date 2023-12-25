@@ -4,22 +4,23 @@ import (
 	"testing"
 
 	"github.com/cometbft/cometbft/types"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	testapp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	pricestest "github.com/jinxprotocol/v4-chain/protocol/testutil/prices"
+	clobtypes "github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	perptypes "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+	pricestypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+	"github.com/stretchr/testify/require"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	govtypesv1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	testapp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	pricestest "github.com/dydxprotocol/v4-chain/protocol/testutil/prices"
-	clobtypes "github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	perptypes "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
-	pricestypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
-	"github.com/stretchr/testify/require"
 )
 
 var (
 	GENESIS_MARKET_PARAM = pricestypes.MarketParam{
 		Id:                 0,
-		Pair:               "btc-adv4tnt",
+		Pair:               "btc-jinx",
 		Exponent:           -8,
 		MinExchanges:       2,
 		MinPriceChangePpm:  1_000,
@@ -28,7 +29,7 @@ var (
 
 	MODIFIED_MARKET_PARAM = pricestypes.MarketParam{
 		Id:                 GENESIS_MARKET_PARAM.Id,
-		Pair:               "eth-adv4tnt",
+		Pair:               "eth-jinx",
 		Exponent:           GENESIS_MARKET_PARAM.Exponent, // exponent cannot be updated
 		MinExchanges:       3,
 		MinPriceChangePpm:  2_002,

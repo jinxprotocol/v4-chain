@@ -7,6 +7,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	gometrics "github.com/armon/go-metrics"
+
 	"github.com/cosmos/cosmos-sdk/telemetry"
 )
 

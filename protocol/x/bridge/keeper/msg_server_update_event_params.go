@@ -4,8 +4,9 @@ import (
 	"context"
 
 	"cosmossdk.io/errors"
+	"github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
 )
 
 // UpdateEventParams updates the EventParams in state.

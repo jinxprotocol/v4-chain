@@ -6,16 +6,16 @@ import (
 
 	"github.com/cometbft/cometbft/types"
 
-	"github.com/dydxprotocol/v4-chain/protocol/dtypes"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	testapp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/encoding"
-	clobtypes "github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	feetiertypes "github.com/dydxprotocol/v4-chain/protocol/x/feetiers/types"
-	perptypes "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
-	prices "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
+	"github.com/jinxprotocol/v4-chain/protocol/dtypes"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	testapp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/encoding"
+	clobtypes "github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	feetiertypes "github.com/jinxprotocol/v4-chain/protocol/x/feetiers/types"
+	perptypes "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+	prices "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
 	"github.com/stretchr/testify/require"
 )
 

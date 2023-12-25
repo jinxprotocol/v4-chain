@@ -2,8 +2,8 @@ package metrics
 
 import (
 	gometrics "github.com/armon/go-metrics"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
-	"github.com/dydxprotocol/v4-chain/protocol/lib/metrics"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
+	"github.com/jinxprotocol/v4-chain/protocol/lib/metrics"
 )
 
 const (

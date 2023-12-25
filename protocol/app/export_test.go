@@ -1,12 +1,13 @@
 package app_test
 
 import (
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	"github.com/stretchr/testify/require"
 )
 
 func TestExportAppStateAndValidators_Panics(t *testing.T) {
-	dydxApp := app.DefaultTestApp(nil)
-	require.Panics(t, func() { dydxApp.ExportAppStateAndValidators(false, nil, nil) }) // nolint:errcheck
+	jinxApp := app.DefaultTestApp(nil)
+	require.Panics(t, func() { jinxApp.ExportAppStateAndValidators(false, nil, nil) }) // nolint:errcheck
 }

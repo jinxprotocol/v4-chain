@@ -7,8 +7,9 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
+	"github.com/jinxprotocol/v4-chain/protocol/x/blocktime/types"
+
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/blocktime/types"
 )
 
 type msgServer struct {

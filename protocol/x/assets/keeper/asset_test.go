@@ -7,16 +7,17 @@ import (
 
 	errorsmod "cosmossdk.io/errors"
 	sdkmath "cosmossdk.io/math"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	indexerevents "github.com/dydxprotocol/v4-chain/protocol/indexer/events"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	keepertest "github.com/dydxprotocol/v4-chain/protocol/testutil/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/nullify"
-	"github.com/dydxprotocol/v4-chain/protocol/x/assets/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/assets/types"
-	priceskeeper "github.com/dydxprotocol/v4-chain/protocol/x/prices/keeper"
-	pricestypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
+	indexerevents "github.com/jinxprotocol/v4-chain/protocol/indexer/events"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	keepertest "github.com/jinxprotocol/v4-chain/protocol/testutil/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/nullify"
+	"github.com/jinxprotocol/v4-chain/protocol/x/assets/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/assets/types"
+	priceskeeper "github.com/jinxprotocol/v4-chain/protocol/x/prices/keeper"
+	pricestypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
 	"github.com/stretchr/testify/require"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 const (

@@ -2,14 +2,16 @@ package keeper_test
 
 import (
 	"context"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
 	"testing"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	testapp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
 
-	"github.com/dydxprotocol/v4-chain/protocol/x/rewards/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/rewards/types"
+	testapp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
+
+	"github.com/jinxprotocol/v4-chain/protocol/x/rewards/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/rewards/types"
 	"github.com/stretchr/testify/require"
 )
 

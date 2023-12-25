@@ -4,17 +4,19 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
 	"testing"
 
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+
 	abci "github.com/cometbft/cometbft/abci/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	keepertest "github.com/dydxprotocol/v4-chain/protocol/testutil/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/sending/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/sending/types"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	keepertest "github.com/jinxprotocol/v4-chain/protocol/testutil/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/sending/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/sending/types"
 	"github.com/stretchr/testify/require"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 type MsgServerTransferTestCase struct {
@@ -272,7 +274,7 @@ func TestMsgServerSendFromModuleToAccount(t *testing.T) {
 				Authority:        lib.GovModuleAddress.String(),
 				SenderModuleName: "community_treasury",
 				Recipient:        constants.AliceAccAddress.String(),
-				Coin:             sdk.NewCoin("adv4tnt", sdk.NewInt(1)),
+				Coin:             sdk.NewCoin("jinx", sdk.NewInt(1)),
 			},
 			expectedResp: &types.MsgSendFromModuleToAccountResponse{},
 		},
@@ -281,7 +283,7 @@ func TestMsgServerSendFromModuleToAccount(t *testing.T) {
 				Authority:        "12345",
 				SenderModuleName: "community_treasury",
 				Recipient:        constants.AliceAccAddress.String(),
-				Coin:             sdk.NewCoin("adv4tnt", sdk.NewInt(1)),
+				Coin:             sdk.NewCoin("jinx", sdk.NewInt(1)),
 			},
 			expectedErr: fmt.Sprintf(
 				"invalid authority %s",
@@ -293,7 +295,7 @@ func TestMsgServerSendFromModuleToAccount(t *testing.T) {
 				Authority:        lib.GovModuleAddress.String(),
 				SenderModuleName: "community_treasury",
 				Recipient:        constants.CarlAccAddress.String(),
-				Coin:             sdk.NewCoin("adv4tnt", sdk.NewInt(1)),
+				Coin:             sdk.NewCoin("jinx", sdk.NewInt(1)),
 			},
 			keeperResp:  fmt.Errorf("keeper error"),
 			expectedErr: "keeper error",

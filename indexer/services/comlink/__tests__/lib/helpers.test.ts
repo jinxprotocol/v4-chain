@@ -28,7 +28,7 @@ import {
   LiquidityTiersFromDatabase,
   LiquidityTiersTable,
   liquidityTierRefresher,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import {
   adjustUSDCAssetPosition,
   calculateEquityAndFreeCollateral,
@@ -51,7 +51,7 @@ import {
   defaultTendermintEventId,
   defaultTendermintEventId2,
   defaultTendermintEventId3,
-} from '@dydxprotocol-indexer/postgres/build/__tests__/helpers/constants';
+} from '@jinxprotocol-indexer/postgres/build/__tests__/helpers/constants';
 import { AssetPositionsMap, PerpetualPositionWithFunding } from '../../src/types';
 import { ZERO, ZERO_USDC_POSITION } from '../../src/lib/constants';
 

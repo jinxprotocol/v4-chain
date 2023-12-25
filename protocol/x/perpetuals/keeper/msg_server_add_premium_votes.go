@@ -4,8 +4,9 @@ import (
 	"context"
 	"fmt"
 
+	"github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
 )
 
 // AddPremiumVotes add new premium sample votes from a proposer to the application.

@@ -2,6 +2,7 @@ package types
 
 import (
 	"github.com/cometbft/cometbft/libs/log"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

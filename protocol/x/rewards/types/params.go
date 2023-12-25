@@ -2,14 +2,15 @@ package types
 
 import (
 	errorsmod "cosmossdk.io/errors"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
 )
 
 // DefaultParams returns a default set of parameters
 func DefaultParams() Params {
 	return Params{
-		// Corresponds to module account address: dydx16wrau2x4tsg033xfrrdpae6kxfn9kyuerr5jjp
+		// Corresponds to module account address: jinx16wrau2x4tsg033xfrrdpae6kxfn9kyueysn4sp
 		TreasuryAccount:  TreasuryAccountName,
 		Denom:            lib.DefaultBaseDenom,
 		DenomExponent:    lib.BaseDenomExponent,

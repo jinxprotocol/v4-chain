@@ -5,9 +5,10 @@ import (
 
 	errorsmod "cosmossdk.io/errors"
 
+	"github.com/jinxprotocol/v4-chain/protocol/dtypes"
+	assettypes "github.com/jinxprotocol/v4-chain/protocol/x/assets/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/dtypes"
-	assettypes "github.com/dydxprotocol/v4-chain/protocol/x/assets/types"
 )
 
 const (

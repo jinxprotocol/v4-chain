@@ -3,12 +3,13 @@ package testutil
 import (
 	"testing"
 
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/network"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
+	"github.com/stretchr/testify/require"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/network"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
-	"github.com/stretchr/testify/require"
 )
 
 // CreateBankGenesisState returns the marshaled genesis state for the bank module.

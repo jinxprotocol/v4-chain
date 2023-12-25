@@ -3,18 +3,19 @@ package keeper_test
 import (
 	"testing"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	keepertest "github.com/dydxprotocol/v4-chain/protocol/testutil/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/memclob"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/perpetuals"
-	"github.com/dydxprotocol/v4-chain/protocol/x/prices"
+	sdk "github.com/cosmos/cosmos-sdk/types"
+
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	keepertest "github.com/jinxprotocol/v4-chain/protocol/testutil/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/memclob"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/perpetuals"
+	"github.com/jinxprotocol/v4-chain/protocol/x/prices"
 )
 
 func TestMevNodeToNodeCalculation(t *testing.T) {

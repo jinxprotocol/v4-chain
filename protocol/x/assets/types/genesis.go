@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
 )
 
 const (

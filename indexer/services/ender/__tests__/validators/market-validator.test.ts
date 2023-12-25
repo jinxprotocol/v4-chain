@@ -1,10 +1,10 @@
-import { logger, ParseMessageError } from '@dydxprotocol-indexer/base';
+import { logger, ParseMessageError } from '@jinxprotocol-indexer/base';
 import {
   IndexerTendermintBlock,
   IndexerTendermintEvent,
   MarketEventV1,
-} from '@dydxprotocol-indexer/v4-protos';
-import { DydxIndexerSubtypes } from '../../src/lib/types';
+} from '@jinxprotocol-indexer/v4-protos';
+import { JinxIndexerSubtypes } from '../../src/lib/types';
 import { MarketValidator } from '../../src/validators/market-validator';
 import {
   defaultHeight,
@@ -171,7 +171,7 @@ function createBlock(
   marketEvent: MarketEventV1,
 ): IndexerTendermintBlock {
   const event: IndexerTendermintEvent = createIndexerTendermintEvent(
-    DydxIndexerSubtypes.MARKET,
+    JinxIndexerSubtypes.MARKET,
     MarketEventV1.encode(marketEvent).finish(),
     0,
     0,

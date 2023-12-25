@@ -7,9 +7,9 @@ import (
 	"regexp"
 	"strconv"
 
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/types"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
 	"github.com/go-playground/validator/v10"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/types"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
 )
 
 var (

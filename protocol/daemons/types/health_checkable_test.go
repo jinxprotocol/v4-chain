@@ -2,13 +2,14 @@ package types_test
 
 import (
 	"fmt"
-	"github.com/cometbft/cometbft/libs/log"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/types"
-	libtime "github.com/dydxprotocol/v4-chain/protocol/lib/time"
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	"github.com/stretchr/testify/require"
 	"testing"
 	"time"
+
+	"github.com/cometbft/cometbft/libs/log"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/types"
+	libtime "github.com/jinxprotocol/v4-chain/protocol/lib/time"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	"github.com/stretchr/testify/require"
 )
 
 var (

@@ -1,12 +1,12 @@
-import { logger, stats } from '@dydxprotocol-indexer/base';
-import { createKafkaMessage, KafkaTopics } from '@dydxprotocol-indexer/kafka';
-import { OffChainUpdateV1 } from '@dydxprotocol-indexer/v4-protos';
+import { logger, stats } from '@jinxprotocol-indexer/base';
+import { createKafkaMessage, KafkaTopics } from '@jinxprotocol-indexer/kafka';
+import { OffChainUpdateV1 } from '@jinxprotocol-indexer/v4-protos';
 import { KafkaMessage } from 'kafkajs';
 import { onMessage } from '../../src/lib/on-message';
 import { OrderPlaceHandler } from '../../src/handlers/order-place-handler';
 import { OrderRemoveHandler } from '../../src/handlers/order-remove-handler';
 import { OrderUpdateHandler } from '../../src/handlers/order-update-handler';
-import { redisTestConstants } from '@dydxprotocol-indexer/redis';
+import { redisTestConstants } from '@jinxprotocol-indexer/redis';
 import { setTransactionHash } from '../helpers/helpers';
 
 jest.mock('../../src/handlers/order-place-handler');

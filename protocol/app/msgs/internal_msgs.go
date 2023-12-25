@@ -1,6 +1,19 @@
 package msgs
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	blocktime "github.com/jinxprotocol/v4-chain/protocol/x/blocktime/types"
+	bridge "github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
+	clob "github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	delaymsg "github.com/jinxprotocol/v4-chain/protocol/x/delaymsg/types"
+	feetiers "github.com/jinxprotocol/v4-chain/protocol/x/feetiers/types"
+	perpetuals "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+	prices "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+	rewards "github.com/jinxprotocol/v4-chain/protocol/x/rewards/types"
+	sending "github.com/jinxprotocol/v4-chain/protocol/x/sending/types"
+	stats "github.com/jinxprotocol/v4-chain/protocol/x/stats/types"
+	vest "github.com/jinxprotocol/v4-chain/protocol/x/vest/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	auth "github.com/cosmos/cosmos-sdk/x/auth/types"
 	bank "github.com/cosmos/cosmos-sdk/x/bank/types"
@@ -11,18 +24,6 @@ import (
 	slashing "github.com/cosmos/cosmos-sdk/x/slashing/types"
 	staking "github.com/cosmos/cosmos-sdk/x/staking/types"
 	upgrade "github.com/cosmos/cosmos-sdk/x/upgrade/types"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	blocktime "github.com/dydxprotocol/v4-chain/protocol/x/blocktime/types"
-	bridge "github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
-	clob "github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	delaymsg "github.com/dydxprotocol/v4-chain/protocol/x/delaymsg/types"
-	feetiers "github.com/dydxprotocol/v4-chain/protocol/x/feetiers/types"
-	perpetuals "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
-	prices "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
-	rewards "github.com/dydxprotocol/v4-chain/protocol/x/rewards/types"
-	sending "github.com/dydxprotocol/v4-chain/protocol/x/sending/types"
-	stats "github.com/dydxprotocol/v4-chain/protocol/x/stats/types"
-	vest "github.com/dydxprotocol/v4-chain/protocol/x/vest/types"
 )
 
 var (
@@ -79,71 +80,71 @@ var (
 
 		// ------- Custom modules
 		// blocktime
-		"/dydxprotocol.blocktime.MsgUpdateDowntimeParams":         &blocktime.MsgUpdateDowntimeParams{},
-		"/dydxprotocol.blocktime.MsgUpdateDowntimeParamsResponse": nil,
+		"/jinxprotocol.blocktime.MsgUpdateDowntimeParams":         &blocktime.MsgUpdateDowntimeParams{},
+		"/jinxprotocol.blocktime.MsgUpdateDowntimeParamsResponse": nil,
 
 		// bridge
-		"/dydxprotocol.bridge.MsgCompleteBridge":              &bridge.MsgCompleteBridge{},
-		"/dydxprotocol.bridge.MsgCompleteBridgeResponse":      nil,
-		"/dydxprotocol.bridge.MsgUpdateEventParams":           &bridge.MsgUpdateEventParams{},
-		"/dydxprotocol.bridge.MsgUpdateEventParamsResponse":   nil,
-		"/dydxprotocol.bridge.MsgUpdateProposeParams":         &bridge.MsgUpdateProposeParams{},
-		"/dydxprotocol.bridge.MsgUpdateProposeParamsResponse": nil,
-		"/dydxprotocol.bridge.MsgUpdateSafetyParams":          &bridge.MsgUpdateSafetyParams{},
-		"/dydxprotocol.bridge.MsgUpdateSafetyParamsResponse":  nil,
+		"/jinxprotocol.bridge.MsgCompleteBridge":              &bridge.MsgCompleteBridge{},
+		"/jinxprotocol.bridge.MsgCompleteBridgeResponse":      nil,
+		"/jinxprotocol.bridge.MsgUpdateEventParams":           &bridge.MsgUpdateEventParams{},
+		"/jinxprotocol.bridge.MsgUpdateEventParamsResponse":   nil,
+		"/jinxprotocol.bridge.MsgUpdateProposeParams":         &bridge.MsgUpdateProposeParams{},
+		"/jinxprotocol.bridge.MsgUpdateProposeParamsResponse": nil,
+		"/jinxprotocol.bridge.MsgUpdateSafetyParams":          &bridge.MsgUpdateSafetyParams{},
+		"/jinxprotocol.bridge.MsgUpdateSafetyParamsResponse":  nil,
 
 		// clob
-		"/dydxprotocol.clob.MsgCreateClobPair":                             &clob.MsgCreateClobPair{},
-		"/dydxprotocol.clob.MsgCreateClobPairResponse":                     nil,
-		"/dydxprotocol.clob.MsgUpdateBlockRateLimitConfiguration":          &clob.MsgUpdateBlockRateLimitConfiguration{},
-		"/dydxprotocol.clob.MsgUpdateBlockRateLimitConfigurationResponse":  nil,
-		"/dydxprotocol.clob.MsgUpdateClobPair":                             &clob.MsgUpdateClobPair{},
-		"/dydxprotocol.clob.MsgUpdateClobPairResponse":                     nil,
-		"/dydxprotocol.clob.MsgUpdateEquityTierLimitConfiguration":         &clob.MsgUpdateEquityTierLimitConfiguration{},
-		"/dydxprotocol.clob.MsgUpdateEquityTierLimitConfigurationResponse": nil,
-		"/dydxprotocol.clob.MsgUpdateLiquidationsConfig":                   &clob.MsgUpdateLiquidationsConfig{},
-		"/dydxprotocol.clob.MsgUpdateLiquidationsConfigResponse":           nil,
+		"/jinxprotocol.clob.MsgCreateClobPair":                             &clob.MsgCreateClobPair{},
+		"/jinxprotocol.clob.MsgCreateClobPairResponse":                     nil,
+		"/jinxprotocol.clob.MsgUpdateBlockRateLimitConfiguration":          &clob.MsgUpdateBlockRateLimitConfiguration{},
+		"/jinxprotocol.clob.MsgUpdateBlockRateLimitConfigurationResponse":  nil,
+		"/jinxprotocol.clob.MsgUpdateClobPair":                             &clob.MsgUpdateClobPair{},
+		"/jinxprotocol.clob.MsgUpdateClobPairResponse":                     nil,
+		"/jinxprotocol.clob.MsgUpdateEquityTierLimitConfiguration":         &clob.MsgUpdateEquityTierLimitConfiguration{},
+		"/jinxprotocol.clob.MsgUpdateEquityTierLimitConfigurationResponse": nil,
+		"/jinxprotocol.clob.MsgUpdateLiquidationsConfig":                   &clob.MsgUpdateLiquidationsConfig{},
+		"/jinxprotocol.clob.MsgUpdateLiquidationsConfigResponse":           nil,
 
 		// delaymsg
-		"/dydxprotocol.delaymsg.MsgDelayMessage":         &delaymsg.MsgDelayMessage{},
-		"/dydxprotocol.delaymsg.MsgDelayMessageResponse": nil,
+		"/jinxprotocol.delaymsg.MsgDelayMessage":         &delaymsg.MsgDelayMessage{},
+		"/jinxprotocol.delaymsg.MsgDelayMessageResponse": nil,
 
 		// feetiers
-		"/dydxprotocol.feetiers.MsgUpdatePerpetualFeeParams":         &feetiers.MsgUpdatePerpetualFeeParams{},
-		"/dydxprotocol.feetiers.MsgUpdatePerpetualFeeParamsResponse": nil,
+		"/jinxprotocol.feetiers.MsgUpdatePerpetualFeeParams":         &feetiers.MsgUpdatePerpetualFeeParams{},
+		"/jinxprotocol.feetiers.MsgUpdatePerpetualFeeParamsResponse": nil,
 
 		// perpetuals
-		"/dydxprotocol.perpetuals.MsgCreatePerpetual":               &perpetuals.MsgCreatePerpetual{},
-		"/dydxprotocol.perpetuals.MsgCreatePerpetualResponse":       nil,
-		"/dydxprotocol.perpetuals.MsgSetLiquidityTier":              &perpetuals.MsgSetLiquidityTier{},
-		"/dydxprotocol.perpetuals.MsgSetLiquidityTierResponse":      nil,
-		"/dydxprotocol.perpetuals.MsgUpdateParams":                  &perpetuals.MsgUpdateParams{},
-		"/dydxprotocol.perpetuals.MsgUpdateParamsResponse":          nil,
-		"/dydxprotocol.perpetuals.MsgUpdatePerpetualParams":         &perpetuals.MsgUpdatePerpetualParams{},
-		"/dydxprotocol.perpetuals.MsgUpdatePerpetualParamsResponse": nil,
+		"/jinxprotocol.perpetuals.MsgCreatePerpetual":               &perpetuals.MsgCreatePerpetual{},
+		"/jinxprotocol.perpetuals.MsgCreatePerpetualResponse":       nil,
+		"/jinxprotocol.perpetuals.MsgSetLiquidityTier":              &perpetuals.MsgSetLiquidityTier{},
+		"/jinxprotocol.perpetuals.MsgSetLiquidityTierResponse":      nil,
+		"/jinxprotocol.perpetuals.MsgUpdateParams":                  &perpetuals.MsgUpdateParams{},
+		"/jinxprotocol.perpetuals.MsgUpdateParamsResponse":          nil,
+		"/jinxprotocol.perpetuals.MsgUpdatePerpetualParams":         &perpetuals.MsgUpdatePerpetualParams{},
+		"/jinxprotocol.perpetuals.MsgUpdatePerpetualParamsResponse": nil,
 
 		// prices
-		"/dydxprotocol.prices.MsgCreateOracleMarket":         &prices.MsgCreateOracleMarket{},
-		"/dydxprotocol.prices.MsgCreateOracleMarketResponse": nil,
-		"/dydxprotocol.prices.MsgUpdateMarketParam":          &prices.MsgUpdateMarketParam{},
-		"/dydxprotocol.prices.MsgUpdateMarketParamResponse":  nil,
+		"/jinxprotocol.prices.MsgCreateOracleMarket":         &prices.MsgCreateOracleMarket{},
+		"/jinxprotocol.prices.MsgCreateOracleMarketResponse": nil,
+		"/jinxprotocol.prices.MsgUpdateMarketParam":          &prices.MsgUpdateMarketParam{},
+		"/jinxprotocol.prices.MsgUpdateMarketParamResponse":  nil,
 
 		// rewards
-		"/dydxprotocol.rewards.MsgUpdateParams":         &rewards.MsgUpdateParams{},
-		"/dydxprotocol.rewards.MsgUpdateParamsResponse": nil,
+		"/jinxprotocol.rewards.MsgUpdateParams":         &rewards.MsgUpdateParams{},
+		"/jinxprotocol.rewards.MsgUpdateParamsResponse": nil,
 
 		// sending
-		"/dydxprotocol.sending.MsgSendFromModuleToAccount":         &sending.MsgSendFromModuleToAccount{},
-		"/dydxprotocol.sending.MsgSendFromModuleToAccountResponse": nil,
+		"/jinxprotocol.sending.MsgSendFromModuleToAccount":         &sending.MsgSendFromModuleToAccount{},
+		"/jinxprotocol.sending.MsgSendFromModuleToAccountResponse": nil,
 
 		// stats
-		"/dydxprotocol.stats.MsgUpdateParams":         &stats.MsgUpdateParams{},
-		"/dydxprotocol.stats.MsgUpdateParamsResponse": nil,
+		"/jinxprotocol.stats.MsgUpdateParams":         &stats.MsgUpdateParams{},
+		"/jinxprotocol.stats.MsgUpdateParamsResponse": nil,
 
 		// vest
-		"/dydxprotocol.vest.MsgSetVestEntry":            &vest.MsgSetVestEntry{},
-		"/dydxprotocol.vest.MsgSetVestEntryResponse":    nil,
-		"/dydxprotocol.vest.MsgDeleteVestEntry":         &vest.MsgDeleteVestEntry{},
-		"/dydxprotocol.vest.MsgDeleteVestEntryResponse": nil,
+		"/jinxprotocol.vest.MsgSetVestEntry":            &vest.MsgSetVestEntry{},
+		"/jinxprotocol.vest.MsgSetVestEntryResponse":    nil,
+		"/jinxprotocol.vest.MsgDeleteVestEntry":         &vest.MsgDeleteVestEntry{},
+		"/jinxprotocol.vest.MsgDeleteVestEntryResponse": nil,
 	}
 )

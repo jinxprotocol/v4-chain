@@ -3,10 +3,11 @@ package types_test
 import (
 	"testing"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	types "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	types "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
 	"github.com/stretchr/testify/require"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 func TestMsgUpdatePerpetualParams_GetSigners(t *testing.T) {

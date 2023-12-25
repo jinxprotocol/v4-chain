@@ -1,5 +1,5 @@
-import { logger } from '@dydxprotocol-indexer/base';
-import { IndexerTendermintEvent, LiquidityTierUpsertEventV1 } from '@dydxprotocol-indexer/v4-protos';
+import { logger } from '@jinxprotocol-indexer/base';
+import { IndexerTendermintEvent, LiquidityTierUpsertEventV1 } from '@jinxprotocol-indexer/v4-protos';
 import Long from 'long';
 
 import { Handler } from '../handlers/handler';

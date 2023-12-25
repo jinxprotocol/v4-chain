@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
 import path from 'path';
 
-import { logger } from '@dydxprotocol-indexer/base';
-import { dbHelpers, storeHelpers } from '@dydxprotocol-indexer/postgres';
+import { logger } from '@jinxprotocol-indexer/base';
+import { dbHelpers, storeHelpers } from '@jinxprotocol-indexer/postgres';
 
 export type PostgresFunction = {
   // The name of the script
@@ -27,22 +27,22 @@ function newScript(name: string, scriptPath: string): PostgresFunction {
 }
 
 const HANDLER_SCRIPTS: string[] = [
-  'dydx_asset_create_handler.sql',
-  'dydx_block_processor_ordered_handlers.sql',
-  'dydx_block_processor_unordered_handlers.sql',
-  'dydx_deleveraging_handler.sql',
-  'dydx_funding_handler.sql',
-  'dydx_liquidity_tier_handler.sql',
-  'dydx_market_create_handler.sql',
-  'dydx_market_modify_handler.sql',
-  'dydx_market_price_update_handler.sql',
-  'dydx_perpetual_market_handler.sql',
-  'dydx_stateful_order_handler.sql',
-  'dydx_subaccount_update_handler.sql',
-  'dydx_trading_rewards_handler.sql',
-  'dydx_transfer_handler.sql',
-  'dydx_update_clob_pair_handler.sql',
-  'dydx_update_perpetual_handler.sql',
+  'jinx_asset_create_handler.sql',
+  'jinx_block_processor_ordered_handlers.sql',
+  'jinx_block_processor_unordered_handlers.sql',
+  'jinx_deleveraging_handler.sql',
+  'jinx_funding_handler.sql',
+  'jinx_liquidity_tier_handler.sql',
+  'jinx_market_create_handler.sql',
+  'jinx_market_modify_handler.sql',
+  'jinx_market_price_update_handler.sql',
+  'jinx_perpetual_market_handler.sql',
+  'jinx_stateful_order_handler.sql',
+  'jinx_subaccount_update_handler.sql',
+  'jinx_trading_rewards_handler.sql',
+  'jinx_transfer_handler.sql',
+  'jinx_update_clob_pair_handler.sql',
+  'jinx_update_perpetual_handler.sql',
 ];
 
 const DB_SETUP_SCRIPTS: string[] = [
@@ -51,45 +51,45 @@ const DB_SETUP_SCRIPTS: string[] = [
 ];
 
 const HELPER_SCRIPTS: string[] = [
-  'dydx_clob_pair_status_to_market_status.sql',
-  'dydx_create_initial_rows_for_tendermint_block.sql',
-  'dydx_create_tendermint_event.sql',
-  'dydx_create_transaction.sql',
-  'dydx_event_id_from_parts.sql',
-  'dydx_from_jsonlib_long.sql',
-  'dydx_from_protocol_order_side.sql',
-  'dydx_from_protocol_time_in_force.sql',
-  'dydx_from_serializable_int.sql',
-  'dydx_get_fee_from_liquidity.sql',
-  'dydx_get_order_status.sql',
-  'dydx_get_perpetual_market_for_clob_pair.sql',
-  'dydx_get_total_filled_from_liquidity.sql',
-  'dydx_get_weighted_average.sql',
-  'dydx_liquidation_fill_handler_per_order.sql',
-  'dydx_order_fill_handler_per_order.sql',
-  'dydx_perpetual_position_and_order_side_matching.sql',
-  'dydx_process_trading_reward_event.sql',
-  'dydx_protocol_condition_type_to_order_type.sql',
-  'dydx_tendermint_event_to_transaction_index.sql',
-  'dydx_trim_scale.sql',
-  'dydx_update_perpetual_position_aggregate_fields.sql',
-  'dydx_uuid.sql',
-  'dydx_uuid_from_asset_position_parts.sql',
-  'dydx_uuid_from_fill_event_parts.sql',
-  'dydx_uuid_from_funding_index_update_parts.sql',
-  'dydx_uuid_from_oracle_price_parts.sql',
-  'dydx_uuid_from_order_id.sql',
-  'dydx_uuid_from_order_id_parts.sql',
-  'dydx_uuid_from_perpetual_position_parts.sql',
-  'dydx_uuid_from_subaccount_id.sql',
-  'dydx_uuid_from_subaccount_id_parts.sql',
-  'dydx_uuid_from_trading_rewards_parts.sql',
-  'dydx_uuid_from_transaction_parts.sql',
-  'dydx_uuid_from_transfer_parts.sql',
+  'jinx_clob_pair_status_to_market_status.sql',
+  'jinx_create_initial_rows_for_tendermint_block.sql',
+  'jinx_create_tendermint_event.sql',
+  'jinx_create_transaction.sql',
+  'jinx_event_id_from_parts.sql',
+  'jinx_from_jsonlib_long.sql',
+  'jinx_from_protocol_order_side.sql',
+  'jinx_from_protocol_time_in_force.sql',
+  'jinx_from_serializable_int.sql',
+  'jinx_get_fee_from_liquidity.sql',
+  'jinx_get_order_status.sql',
+  'jinx_get_perpetual_market_for_clob_pair.sql',
+  'jinx_get_total_filled_from_liquidity.sql',
+  'jinx_get_weighted_average.sql',
+  'jinx_liquidation_fill_handler_per_order.sql',
+  'jinx_order_fill_handler_per_order.sql',
+  'jinx_perpetual_position_and_order_side_matching.sql',
+  'jinx_process_trading_reward_event.sql',
+  'jinx_protocol_condition_type_to_order_type.sql',
+  'jinx_tendermint_event_to_transaction_index.sql',
+  'jinx_trim_scale.sql',
+  'jinx_update_perpetual_position_aggregate_fields.sql',
+  'jinx_uuid.sql',
+  'jinx_uuid_from_asset_position_parts.sql',
+  'jinx_uuid_from_fill_event_parts.sql',
+  'jinx_uuid_from_funding_index_update_parts.sql',
+  'jinx_uuid_from_oracle_price_parts.sql',
+  'jinx_uuid_from_order_id.sql',
+  'jinx_uuid_from_order_id_parts.sql',
+  'jinx_uuid_from_perpetual_position_parts.sql',
+  'jinx_uuid_from_subaccount_id.sql',
+  'jinx_uuid_from_subaccount_id_parts.sql',
+  'jinx_uuid_from_trading_rewards_parts.sql',
+  'jinx_uuid_from_transaction_parts.sql',
+  'jinx_uuid_from_transfer_parts.sql',
 ];
 
 const MAIN_SCRIPTS: string[] = [
-  'dydx_block_processor.sql',
+  'jinx_block_processor.sql',
 ];
 
 const SCRIPTS: string[] = [

@@ -1,8 +1,8 @@
-import { logger, startBugsnag, wrapBackgroundTask } from '@dydxprotocol-indexer/base';
-import { stopConsumer, startConsumer } from '@dydxprotocol-indexer/kafka';
+import { logger, startBugsnag, wrapBackgroundTask } from '@jinxprotocol-indexer/base';
+import { stopConsumer, startConsumer } from '@jinxprotocol-indexer/kafka';
 import {
   assetRefresher, perpetualMarketRefresher, liquidityTierRefresher,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 
 import { initializeAllCaches } from './caches/block-cache';
 import config from './config';

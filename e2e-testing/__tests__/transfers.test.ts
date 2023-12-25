@@ -7,21 +7,21 @@ import {
   SocketClient,
   SubaccountInfo,
   ValidatorClient,
-} from '@dydxprotocol/v4-client-js';
+} from '@jinxprotocol/v4-client-js';
 import {
   Ordering,
   SubaccountTable,
   TransferColumns,
   TransferFromDatabase,
   TransferTable,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import * as utils from './helpers/utils';
-import { DYDX_LOCAL_ADDRESS, DYDX_LOCAL_MNEMONIC } from './helpers/constants';
+import { JINX_LOCAL_ADDRESS, JINX_LOCAL_MNEMONIC } from './helpers/constants';
 
 describe('transfers', () => {
   it('test deposit', async () => {
     connectAndValidateSocketClient();
-    const wallet = await LocalWallet.fromMnemonic(DYDX_LOCAL_MNEMONIC, BECH32_PREFIX);
+    const wallet = await LocalWallet.fromMnemonic(JINX_LOCAL_MNEMONIC, BECH32_PREFIX);
 
     const validatorClient = await ValidatorClient.connect(Network.local().validatorConfig);
     const indexerClient = new IndexerClient(Network.local().indexerConfig);
@@ -30,7 +30,7 @@ describe('transfers', () => {
 
     // Check USDC asset position before
     let assetPosResp: any = await indexerClient.account.getSubaccountAssetPositions(
-      DYDX_LOCAL_ADDRESS,
+      JINX_LOCAL_ADDRESS,
       0,
     );
     expect(assetPosResp).not.toBeNull();
@@ -65,7 +65,7 @@ describe('transfers', () => {
     );
 
     // Check API /v4/transfers endpoint
-    const response = await indexerClient.account.getSubaccountTransfers(DYDX_LOCAL_ADDRESS, 0);
+    const response = await indexerClient.account.getSubaccountTransfers(JINX_LOCAL_ADDRESS, 0);
     expect(response).not.toBeNull();
     const transfersFromApi = response.transfers;
     expect(transfersFromApi).not.toBeNull();
@@ -86,7 +86,7 @@ describe('transfers', () => {
     );
 
     // Check API /v4/assetPositions endpoint
-    assetPosResp = await indexerClient.account.getSubaccountAssetPositions(DYDX_LOCAL_ADDRESS, 0);
+    assetPosResp = await indexerClient.account.getSubaccountAssetPositions(JINX_LOCAL_ADDRESS, 0);
     expect(assetPosResp).not.toBeNull();
     const usdcPositionSizeAfter = assetPosResp.positions[0].size;
     // expect usdcPositionSizeAfter to be usdcPositionSizeBefore + 10
@@ -104,13 +104,13 @@ describe('transfers', () => {
         if (typeof message.data === 'string') {
           const data = JSON.parse(message.data as string);
           if (data.type === 'connected') {
-            mySocket.subscribeToSubaccount(DYDX_LOCAL_ADDRESS, 0);
+            mySocket.subscribeToSubaccount(JINX_LOCAL_ADDRESS, 0);
           } else if (data.type === 'subscribed') {
             expect(data.channel).toEqual('v4_subaccounts');
-            expect(data.id).toEqual(`${DYDX_LOCAL_ADDRESS}/0`);
+            expect(data.id).toEqual(`${JINX_LOCAL_ADDRESS}/0`);
             expect(data.contents.subaccount).toEqual(
               expect.objectContaining({
-                address: DYDX_LOCAL_ADDRESS,
+                address: JINX_LOCAL_ADDRESS,
                 subaccountNumber: 0,
               }),
             );
@@ -118,10 +118,10 @@ describe('transfers', () => {
             expect(data.contents.transfers).toEqual(
               expect.objectContaining({
                 sender: {
-                  address: DYDX_LOCAL_ADDRESS,
+                  address: JINX_LOCAL_ADDRESS,
                 },
                 recipient: {
-                  address: DYDX_LOCAL_ADDRESS,
+                  address: JINX_LOCAL_ADDRESS,
                   subaccountNumber: 0,
                 },
                 size: '10',

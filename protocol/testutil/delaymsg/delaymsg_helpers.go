@@ -3,9 +3,10 @@ package delaymsg
 import (
 	"testing"
 
-	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
 	"github.com/stretchr/testify/require"
+
+	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
 )
 
 // CreateTestAnyMsg returns an encoded Any object for an sdk.Msg for testing. This is useful

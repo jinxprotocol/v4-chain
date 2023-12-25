@@ -4,7 +4,7 @@ import {
   testMocks,
   PnlTicksCreateObject,
   PnlTicksTable,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import { PnlTicksResponseObject, RequestMethod } from '../../../../src/types';
 import request from 'supertest';
 import { sendRequest } from '../../../helpers/helpers';

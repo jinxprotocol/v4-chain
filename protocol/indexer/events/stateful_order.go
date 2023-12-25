@@ -1,9 +1,9 @@
 package events
 
 import (
-	"github.com/dydxprotocol/v4-chain/protocol/indexer/protocol/v1"
-	"github.com/dydxprotocol/v4-chain/protocol/indexer/shared"
-	clobtypes "github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
+	v1 "github.com/jinxprotocol/v4-chain/protocol/indexer/protocol/v1"
+	"github.com/jinxprotocol/v4-chain/protocol/indexer/shared"
+	clobtypes "github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
 )
 
 func NewLongTermOrderPlacementEvent(

@@ -8,7 +8,7 @@ import (
 	"github.com/Shopify/sarama"
 	"github.com/Shopify/sarama/mocks"
 	"github.com/cometbft/cometbft/libs/log"
-	"github.com/dydxprotocol/v4-chain/protocol/indexer"
+	"github.com/jinxprotocol/v4-chain/protocol/indexer"
 	"github.com/stretchr/testify/require"
 )
 

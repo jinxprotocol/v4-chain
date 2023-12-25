@@ -3,8 +3,9 @@ package types
 import (
 	"math/big"
 
+	pricestypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	pricestypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
 )
 
 // GetPricePremiumParams includes the parameters used by

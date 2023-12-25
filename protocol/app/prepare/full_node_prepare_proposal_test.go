@@ -6,11 +6,12 @@ import (
 
 	gometrics "github.com/armon/go-metrics"
 	abci "github.com/cometbft/cometbft/abci/types"
-	sdktypes "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/app/flags"
-	testApp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	testlog "github.com/dydxprotocol/v4-chain/protocol/testutil/logger"
+	"github.com/jinxprotocol/v4-chain/protocol/app/flags"
+	testApp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	testlog "github.com/jinxprotocol/v4-chain/protocol/testutil/logger"
 	"github.com/stretchr/testify/require"
+
+	sdktypes "github.com/cosmos/cosmos-sdk/types"
 )
 
 // TestFullNodePrepareProposalHandler test that the full-node PrepareProposal handler always returns

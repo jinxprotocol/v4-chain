@@ -2,18 +2,19 @@ package price_fetcher
 
 import (
 	"errors"
-	daemontypes "github.com/dydxprotocol/v4-chain/protocol/daemons/types"
 	"testing"
 
+	daemontypes "github.com/jinxprotocol/v4-chain/protocol/daemons/types"
+
 	"cosmossdk.io/math"
-	pricefeed_cosntants "github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/daemons/pricefeed"
+	pricefeed_cosntants "github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/daemons/pricefeed"
 
 	"github.com/cometbft/cometbft/libs/log"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 )

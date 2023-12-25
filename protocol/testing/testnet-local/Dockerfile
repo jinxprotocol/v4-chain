@@ -1,14 +1,14 @@
-FROM dydxprotocol-base
+FROM jinxprotocol-base
 
-COPY ./testing/testnet-local/local.sh /dydxprotocol/local.sh
-COPY ./testing/genesis.sh /dydxprotocol/genesis.sh
-COPY ./testing/start.sh /dydxprotocol/start.sh
-COPY ./daemons/pricefeed/client/constants/testdata /dydxprotocol/exchange_config
-COPY ./testing/delaymsg_config /dydxprotocol/delaymsg_config
+COPY ./testing/testnet-local/local.sh /jinxprotocol/local.sh
+COPY ./testing/genesis.sh /jinxprotocol/genesis.sh
+COPY ./testing/start.sh /jinxprotocol/start.sh
+COPY ./daemons/pricefeed/client/constants/testdata /jinxprotocol/exchange_config
+COPY ./testing/delaymsg_config /jinxprotocol/delaymsg_config
 
 RUN go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
 
-RUN /dydxprotocol/local.sh
+RUN /jinxprotocol/local.sh
 
-ENV DAEMON_NAME=dydxprotocold
+ENV DAEMON_NAME=jinxprotocold
 ENTRYPOINT ["cosmovisor", "run"]

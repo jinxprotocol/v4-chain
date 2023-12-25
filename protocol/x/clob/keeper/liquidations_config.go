@@ -1,8 +1,9 @@
 package keeper
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
 )
 
 // GetLiquidationsConfig gets the liquidations config from state.

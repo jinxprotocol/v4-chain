@@ -1,5 +1,5 @@
 {
-  "name": "@dydxprotocol-indexer/dev",
+  "name": "@jinxprotocol-indexer/dev",
   "version": "0.0.1",
   "description": "",
   "main": "build/index.js",
@@ -32,12 +32,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dydxprotocol/indexer.git"
+    "url": "git+https://github.com/jinxprotocol/indexer.git"
   },
   "author": "",
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/dydxprotocol/indexer/issues"
+    "url": "https://github.com/jinxprotocol/indexer/issues"
   },
-  "homepage": "https://github.com/dydxprotocol/indexer#readme"
+  "homepage": "https://github.com/jinxprotocol/indexer#readme"
 }

@@ -10,13 +10,13 @@ import {
   ComplianceDataColumns,
   Ordering,
   ComplianceDataCreateObject,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import updateComplianceDataTask from '../../src/tasks/update-compliance-data';
-import { logger, stats } from '@dydxprotocol-indexer/base';
+import { logger, stats } from '@jinxprotocol-indexer/base';
 import _ from 'lodash';
 import config from '../../src/config';
 import { ClientAndProvider } from '../../src/helpers/compliance-clients';
-import { ComplianceClientResponse } from '@dydxprotocol-indexer/compliance';
+import { ComplianceClientResponse } from '@jinxprotocol-indexer/compliance';
 import { DateTime } from 'luxon';
 
 interface ComplianceClientResponseWithNull extends Omit<ComplianceClientResponse, 'riskScore'> {
@@ -367,7 +367,7 @@ describe('update-compliance-data', () => {
       updatedAt: DateTime.utc().toISO(),
     });
 
-    const addressWithComplianceError: string = 'dydx1gem4xs643fjhaqvphrvv0adpg4435j7xx9pp4z';
+    const addressWithComplianceError: string = 'jinx1gem4xs643fjhaqvphrvv0adpg4435j7xx9pp4z';
     // Create a new active subaccount that will return an error when queried
     await SubaccountTable.create({
       address: addressWithComplianceError,

@@ -2,8 +2,8 @@ package types
 
 import (
 	gometrics "github.com/armon/go-metrics"
-	"github.com/dydxprotocol/v4-chain/protocol/lib/metrics"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
+	"github.com/jinxprotocol/v4-chain/protocol/lib/metrics"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
 )
 
 // OperationsStats is a struct that holds stats about a list of

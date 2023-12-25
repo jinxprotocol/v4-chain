@@ -7,14 +7,14 @@ import (
 	"testing"
 
 	"github.com/cometbft/cometbft/libs/log"
-	appflags "github.com/dydxprotocol/v4-chain/protocol/app/flags"
-	d_constants "github.com/dydxprotocol/v4-chain/protocol/daemons/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/flags"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/liquidation/client"
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/appoptions"
-	daemontestutils "github.com/dydxprotocol/v4-chain/protocol/testutil/daemons"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/grpc"
+	appflags "github.com/jinxprotocol/v4-chain/protocol/app/flags"
+	d_constants "github.com/jinxprotocol/v4-chain/protocol/daemons/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/flags"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/liquidation/client"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/appoptions"
+	daemontestutils "github.com/jinxprotocol/v4-chain/protocol/testutil/daemons"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/grpc"
 	"github.com/stretchr/testify/require"
 )
 

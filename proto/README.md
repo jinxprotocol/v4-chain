@@ -1,10 +1,10 @@
-<p align="center"><img src="https://dydx.exchange/icon.svg?" width="256" /></p>
+<p align="center"><img src="https://jinx.exchange/icon.svg?" width="256" /></p>
 
-<h1 align="center">dYdX Chain Proto</h1>
+<h1 align="center">jInX Chain Proto</h1>
 
 <div align="center">
-  <a href="https://github.com/dydxprotocol/v4-chain/actions/workflows/proto.yml?query=branch%3Amain" style="text-decoration:none;">
-    <img src="https://github.com/dydxprotocol/v4-chain/actions/workflows/proto.yml/badge.svg?branch=main" />
+  <a href="https://github.com/jinxprotocol/v4-chain/actions/workflows/proto.yml?query=branch%3Amain" style="text-decoration:none;">
+    <img src="https://github.com/jinxprotocol/v4-chain/actions/workflows/proto.yml/badge.svg?branch=main" />
   </a>
 </div>
 

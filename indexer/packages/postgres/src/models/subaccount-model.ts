@@ -96,7 +96,7 @@ export default class SubaccountModel extends BaseModel {
 
   /**
    * A mapping from column name to JSON conversion expected.
-   * See getSqlConversionForDydxModelTypes for valid conversions.
+   * See getSqlConversionForJinxModelTypes for valid conversions.
    *
    * TODO(IND-239): Ensure that jsonSchema() / sqlToJsonConversions() / model fields match.
    */

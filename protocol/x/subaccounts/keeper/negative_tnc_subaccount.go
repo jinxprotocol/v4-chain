@@ -3,9 +3,10 @@ package keeper
 import (
 	"fmt"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
 	gogotypes "github.com/cosmos/gogoproto/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 // GetNegativeTncSubaccountSeenAtBlock gets the last block height a negative TNC subaccount was

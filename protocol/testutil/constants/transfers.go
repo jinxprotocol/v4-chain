@@ -1,8 +1,8 @@
 package constants
 
 import (
-	assettypes "github.com/dydxprotocol/v4-chain/protocol/x/assets/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/sending/types"
+	assettypes "github.com/jinxprotocol/v4-chain/protocol/x/assets/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/sending/types"
 )
 
 var (

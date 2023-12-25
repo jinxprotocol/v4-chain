@@ -1,5 +1,5 @@
-import { bytesToBigInt } from '@dydxprotocol-indexer/v4-proto-parser';
-import { IndexerTendermintEvent, TradingRewardsEventV1, AddressTradingReward } from '@dydxprotocol-indexer/v4-protos';
+import { bytesToBigInt } from '@jinxprotocol-indexer/v4-proto-parser';
+import { IndexerTendermintEvent, TradingRewardsEventV1, AddressTradingReward } from '@jinxprotocol-indexer/v4-protos';
 import _ from 'lodash';
 
 import { Handler } from '../handlers/handler';

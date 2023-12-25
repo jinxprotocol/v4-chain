@@ -25,7 +25,7 @@ import {
   UpdateFunctionCodeCommand,
   UpdateFunctionCodeCommandOutput,
 } from '@aws-sdk/client-lambda';
-import { logger, startBugsnag } from '@dydxprotocol-indexer/base';
+import { logger, startBugsnag } from '@jinxprotocol-indexer/base';
 import {
   APIGatewayEvent,
   APIGatewayProxyResult,

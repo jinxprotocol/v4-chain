@@ -1,9 +1,10 @@
 package epochs
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/x/epochs/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/epochs/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/epochs/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/epochs/types"
 )
 
 // InitGenesis initializes the epochs module's state from a provided genesis

@@ -1,13 +1,14 @@
 package assets_test
 
 import (
-	sdk "github.com/cosmos/cosmos-sdk/types"
 	"testing"
 
-	keepertest "github.com/dydxprotocol/v4-chain/protocol/testutil/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/assets"
-	"github.com/dydxprotocol/v4-chain/protocol/x/assets/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/assets/types"
+	sdk "github.com/cosmos/cosmos-sdk/types"
+
+	keepertest "github.com/jinxprotocol/v4-chain/protocol/testutil/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/assets"
+	"github.com/jinxprotocol/v4-chain/protocol/x/assets/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/assets/types"
 	"github.com/stretchr/testify/require"
 )
 

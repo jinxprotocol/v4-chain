@@ -3,10 +3,10 @@
 # Usage: make check-sample-pregenesis-up-to-date
 
 echo "Running prod_pregenesis.sh..."
-./scripts/genesis/prod_pregenesis.sh dydxprotocold
+./scripts/genesis/prod_pregenesis.sh jinxprotocold
 
 echo "Diffing output against current sample_pregenesis.json..."
-diff_output=$(diff "/tmp/prod-chain/.dydxprotocol/config/sorted_genesis.json" "./scripts/genesis/sample_pregenesis.json")
+diff_output=$(diff "/tmp/prod-chain/.jinxprotocol/config/sorted_genesis.json" "./scripts/genesis/sample_pregenesis.json")
 
 if [ -z "$diff_output" ]; then
     echo "./scripts/genesis/sample_pregenesis.json is up-to-date"

@@ -1,9 +1,10 @@
 package indexer_manager
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/indexer/msgsender"
+
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/indexer/msgsender"
 )
 
 type IndexerEventManager interface {

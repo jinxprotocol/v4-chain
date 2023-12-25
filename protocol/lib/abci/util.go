@@ -2,8 +2,10 @@ package abci
 
 import (
 	"fmt"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+
 	"github.com/pkg/errors"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 // RunCached wraps a function with a cache context and writes the cache to the context if the

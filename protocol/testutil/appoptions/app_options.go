@@ -2,18 +2,21 @@ package appoptions
 
 import (
 	"fmt"
-	"github.com/cosmos/cosmos-sdk/server/config"
-	appflags "github.com/dydxprotocol/v4-chain/protocol/app/flags"
 	"os"
+
+	appflags "github.com/jinxprotocol/v4-chain/protocol/app/flags"
+
+	"github.com/cosmos/cosmos-sdk/server/config"
+
+	daemonflags "github.com/jinxprotocol/v4-chain/protocol/daemons/flags"
 
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	servertypes "github.com/cosmos/cosmos-sdk/server/types"
-	daemonflags "github.com/dydxprotocol/v4-chain/protocol/daemons/flags"
 )
 
 // FakeAppOptions is a helper struct used for creating `servertypes.AppOptions` for simulator and end-to-end testing.
 // This struct allows for customizing the `servertypes.AppOptions` value that is normally supplied from CLI arguments
-// to `dydxprotocold`. The real concrete implementation for this interface is in the "viper" package which is used
+// to `jinxprotocold`. The real concrete implementation for this interface is in the "viper" package which is used
 // under the hood by "cobra", which is the CLI framework used by Cosmos SDK.
 type FakeAppOptions struct {
 	options map[string]interface{}

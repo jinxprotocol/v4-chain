@@ -6,7 +6,7 @@ import {
   TransferTable,
   TransferType,
   WalletTable,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import { RequestMethod, TransferResponseObject } from '../../../../src/types';
 import request from 'supertest';
 import { sendRequest } from '../../../helpers/helpers';

@@ -6,6 +6,15 @@ import (
 	"time"
 
 	comethttp "github.com/cometbft/cometbft/rpc/client/http"
+	gogogrpc "github.com/cosmos/gogoproto/grpc"
+	"github.com/cosmos/gogoproto/proto"
+	"github.com/jinxprotocol/v4-chain/protocol/cmd/jinxprotocold/cmd"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/ory/dockertest/v3"
+	"github.com/spf13/pflag"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
+
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/config"
 	"github.com/cosmos/cosmos-sdk/client/flags"
@@ -13,14 +22,6 @@ import (
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
 	cosmos "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/auth/types"
-	gogogrpc "github.com/cosmos/gogoproto/grpc"
-	"github.com/cosmos/gogoproto/proto"
-	"github.com/dydxprotocol/v4-chain/protocol/cmd/dydxprotocold/cmd"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/ory/dockertest/v3"
-	"github.com/spf13/pflag"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials/insecure"
 )
 
 const (
@@ -115,7 +116,7 @@ func (n *Node) getContextForBroadcastTx(signer string) (*client.Context, *pflag.
 	if err := flags.Set("from", signer); err != nil {
 		return nil, nil, err
 	}
-	if err := flags.Set("chain-id", "localdydxprotocol"); err != nil {
+	if err := flags.Set("chain-id", "localjinxprotocol"); err != nil {
 		return nil, nil, err
 	}
 
@@ -124,7 +125,7 @@ func (n *Node) getContextForBroadcastTx(signer string) (*client.Context, *pflag.
 		return nil, nil, err
 	}
 
-	// NB: In `cmd/dydxprotocol/root.go` this step is done before ReadFromClientConfig, but here we choose to
+	// NB: In `cmd/jinxprotocol/root.go` this step is done before ReadFromClientConfig, but here we choose to
 	// do it second because ReadPersistentCommandFlags sets the node address we configured in flags.
 	// If we were to do it in reverse, ReadFromClientConfig would overwrite the node address.
 	initClientCtx, err = client.ReadPersistentCommandFlags(initClientCtx, flags)

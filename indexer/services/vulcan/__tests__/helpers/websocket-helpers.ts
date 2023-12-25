@@ -1,5 +1,5 @@
-import { KafkaTopics } from '@dydxprotocol-indexer/kafka';
-import { OffChainUpdateV1, OrderbookMessage, SubaccountMessage } from '@dydxprotocol-indexer/v4-protos';
+import { KafkaTopics } from '@jinxprotocol-indexer/kafka';
+import { OffChainUpdateV1, OrderbookMessage, SubaccountMessage } from '@jinxprotocol-indexer/v4-protos';
 import { ProducerRecord } from 'kafkajs';
 
 export function expectWebsocketSubaccountMessage(

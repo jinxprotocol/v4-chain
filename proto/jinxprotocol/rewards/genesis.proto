@@ -1,0 +1,13 @@
+syntax = "proto3";
+package jinxprotocol.rewards;
+
+import "gogoproto/gogo.proto";
+import "jinxprotocol/rewards/params.proto";
+
+option go_package = "github.com/jinxprotocol/v4-chain/protocol/x/rewards/types";
+
+// GenesisState defines the rewards module's genesis state.
+message GenesisState {
+  // The parameters of the module.
+  Params params = 1 [ (gogoproto.nullable) = false ];
+}

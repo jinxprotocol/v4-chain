@@ -4,12 +4,12 @@ import {
   parseInteger,
   parseSchema,
   parseString,
-} from '@dydxprotocol-indexer/base';
-import { complianceConfigSchema } from '@dydxprotocol-indexer/compliance';
+} from '@jinxprotocol-indexer/base';
+import { complianceConfigSchema } from '@jinxprotocol-indexer/compliance';
 import {
   postgresConfigSchema,
-} from '@dydxprotocol-indexer/postgres';
-import { redisConfigSchema } from '@dydxprotocol-indexer/redis';
+} from '@jinxprotocol-indexer/postgres';
+import { redisConfigSchema } from '@jinxprotocol-indexer/redis';
 
 export const configSchema = {
   ...baseConfigSchema,
@@ -17,7 +17,7 @@ export const configSchema = {
   ...redisConfigSchema,
   ...complianceConfigSchema,
 
-  CHAIN_ID: parseString({ default: 'dydxprotocol' }),
+  CHAIN_ID: parseString({ default: 'jinxprotocol' }),
   API_LIMIT_V4: parseInteger({
     default: 100,
   }),

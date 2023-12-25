@@ -5,16 +5,17 @@ import (
 	"math"
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/encoding"
+	keepertest "github.com/jinxprotocol/v4-chain/protocol/testutil/keeper"
+	bridgetypes "github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/delaymsg/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/delaymsg/types"
+	"github.com/stretchr/testify/require"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/encoding"
-	keepertest "github.com/dydxprotocol/v4-chain/protocol/testutil/keeper"
-	bridgetypes "github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/delaymsg/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/delaymsg/types"
-	"github.com/stretchr/testify/require"
 )
 
 // FakeRoutableMsg is a mock sdk.Msg that fools the router into thinking it is a registered message type.
@@ -26,7 +27,7 @@ type FakeRoutableMsg struct {
 // registered CompleteBridge message type. This is done so that we can bypass the handler check and trigger
 // the ValidateBasic error.
 func (msg *FakeRoutableMsg) XXX_MessageName() string {
-	return "dydxprotocol.bridge.MsgCompleteBridge"
+	return "jinxprotocol.bridge.MsgCompleteBridge"
 }
 
 // implementing XXX_Size along with XXX_Marshal proto interface methods allows us to simulate an encoding failure.

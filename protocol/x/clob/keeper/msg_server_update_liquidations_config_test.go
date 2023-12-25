@@ -1,19 +1,21 @@
 package keeper_test
 
 import (
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
 	"testing"
 
-	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	keepertest "github.com/dydxprotocol/v4-chain/protocol/testutil/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/memclob"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/perpetuals"
-	"github.com/dydxprotocol/v4-chain/protocol/x/prices"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	keepertest "github.com/jinxprotocol/v4-chain/protocol/testutil/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/memclob"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/perpetuals"
+	"github.com/jinxprotocol/v4-chain/protocol/x/prices"
 	"github.com/stretchr/testify/require"
+
+	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 )
 
 func TestUpdateLiquidationsConfig(t *testing.T) {

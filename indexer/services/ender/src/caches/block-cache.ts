@@ -1,4 +1,4 @@
-import { NodeEnv, logger, stats } from '@dydxprotocol-indexer/base';
+import { NodeEnv, logger, stats } from '@jinxprotocol-indexer/base';
 import {
   BlockFromDatabase,
   BlockTable,
@@ -6,7 +6,7 @@ import {
   Transaction,
   assetRefresher,
   perpetualMarketRefresher,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import Big from 'big.js';
 
 import config from '../config';

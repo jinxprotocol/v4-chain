@@ -1,9 +1,10 @@
 package sending
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/x/sending/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/sending/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/sending/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/sending/types"
 )
 
 // InitGenesis initializes the sending module's state from a provided genesis

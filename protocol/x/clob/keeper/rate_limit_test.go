@@ -1,11 +1,12 @@
 package keeper_test
 
 import (
-	testApp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	clobtypes "github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	testApp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	clobtypes "github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	"github.com/stretchr/testify/require"
 )
 
 func TestRateLimitPlaceOrderIsNoopOutsideOfCheckTxAndReCheckTx(t *testing.T) {

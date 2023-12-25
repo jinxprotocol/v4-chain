@@ -1,6 +1,6 @@
-import { logger, ParseMessageError } from '@dydxprotocol-indexer/base';
-import { DeleveragingEventV1, IndexerTendermintBlock, IndexerTendermintEvent } from '@dydxprotocol-indexer/v4-protos';
-import { DydxIndexerSubtypes } from '../../src/lib/types';
+import { logger, ParseMessageError } from '@jinxprotocol-indexer/base';
+import { DeleveragingEventV1, IndexerTendermintBlock, IndexerTendermintEvent } from '@jinxprotocol-indexer/v4-protos';
+import { JinxIndexerSubtypes } from '../../src/lib/types';
 import { DeleveragingValidator } from '../../src/validators/deleveraging-validator';
 import {
   defaultDeleveragingEvent, defaultHeight, defaultTime, defaultTxHash,
@@ -67,7 +67,7 @@ function createBlock(
   deleveragingEvent: DeleveragingEventV1,
 ): IndexerTendermintBlock {
   const event: IndexerTendermintEvent = createIndexerTendermintEvent(
-    DydxIndexerSubtypes.DELEVERAGING,
+    JinxIndexerSubtypes.DELEVERAGING,
     DeleveragingEventV1.encode(deleveragingEvent).finish(),
     0,
     0,

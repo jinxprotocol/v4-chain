@@ -1,8 +1,9 @@
 package keeper
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/x/feetiers/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/feetiers/types"
 )
 
 // GetPerpetualFeeParams returns the PerpetualFeeParams in state.

@@ -1,10 +1,11 @@
 package lib_test
 
 import (
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	testApp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	testApp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	"github.com/stretchr/testify/require"
 )
 
 func TestAssertDeliverTxMode(t *testing.T) {

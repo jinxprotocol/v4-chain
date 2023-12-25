@@ -3,8 +3,9 @@ package app
 import (
 	"encoding/json"
 
+	"github.com/jinxprotocol/v4-chain/protocol/app/basic_manager"
+
 	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/dydxprotocol/v4-chain/protocol/app/basic_manager"
 )
 
 // The genesis state of the blockchain is represented here as a map of raw json

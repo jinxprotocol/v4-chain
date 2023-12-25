@@ -1,21 +1,21 @@
-import { logger, stats } from '@dydxprotocol-indexer/base';
+import { logger, stats } from '@jinxprotocol-indexer/base';
 import _ from 'lodash';
 import * as pg from 'pg';
 
 import config from '../config';
 import { Handler } from '../handlers/handler';
 import { KafkaPublisher } from './kafka-publisher';
-import { ConsolidatedKafkaEvent, DydxIndexerSubtypes, EventMessage } from './types';
+import { ConsolidatedKafkaEvent, JinxIndexerSubtypes, EventMessage } from './types';
 
 // type alias for an array of handlers.
 type HandlerBatch = Handler<EventMessage>[];
-export const SYNCHRONOUS_SUBTYPES: DydxIndexerSubtypes[] = [
-  DydxIndexerSubtypes.MARKET,
-  DydxIndexerSubtypes.ASSET,
-  DydxIndexerSubtypes.LIQUIDITY_TIER,
-  DydxIndexerSubtypes.PERPETUAL_MARKET,
-  DydxIndexerSubtypes.UPDATE_PERPETUAL,
-  DydxIndexerSubtypes.UPDATE_CLOB_PAIR,
+export const SYNCHRONOUS_SUBTYPES: JinxIndexerSubtypes[] = [
+  JinxIndexerSubtypes.MARKET,
+  JinxIndexerSubtypes.ASSET,
+  JinxIndexerSubtypes.LIQUIDITY_TIER,
+  JinxIndexerSubtypes.PERPETUAL_MARKET,
+  JinxIndexerSubtypes.UPDATE_PERPETUAL,
+  JinxIndexerSubtypes.UPDATE_CLOB_PAIR,
 ];
 
 /**
@@ -44,7 +44,7 @@ export class SyncHandlers {
    * @param handler The handler to add to the batched handlers
    */
   public addHandler(
-    indexerSubtype: DydxIndexerSubtypes,
+    indexerSubtype: JinxIndexerSubtypes,
     handler: Handler<EventMessage>,
   ): void {
     if (!SYNCHRONOUS_SUBTYPES.includes(indexerSubtype)) {

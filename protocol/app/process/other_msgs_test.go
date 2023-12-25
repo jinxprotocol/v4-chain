@@ -1,15 +1,17 @@
 package process_test
 
 import (
-	errorsmod "cosmossdk.io/errors"
 	"testing"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/app/process"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/encoding"
-	testmsgs "github.com/dydxprotocol/v4-chain/protocol/testutil/msgs"
+	errorsmod "cosmossdk.io/errors"
+
+	"github.com/jinxprotocol/v4-chain/protocol/app/process"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/encoding"
+	testmsgs "github.com/jinxprotocol/v4-chain/protocol/testutil/msgs"
 	"github.com/stretchr/testify/require"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 func TestDecodeOtherMsgsTx(t *testing.T) {

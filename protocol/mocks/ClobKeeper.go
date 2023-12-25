@@ -5,14 +5,14 @@ package mocks
 import (
 	big "math/big"
 
-	indexer_manager "github.com/dydxprotocol/v4-chain/protocol/indexer/indexer_manager"
-	clobtypes "github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
+	indexer_manager "github.com/jinxprotocol/v4-chain/protocol/indexer/indexer_manager"
+	clobtypes "github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
 
 	log "github.com/cometbft/cometbft/libs/log"
 
 	mock "github.com/stretchr/testify/mock"
 
-	subaccountstypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
+	subaccountstypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
 
 	time "time"
 

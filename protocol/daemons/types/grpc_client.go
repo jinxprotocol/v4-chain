@@ -7,7 +7,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/constants"
 )
 
 // GrpcClientImpl is the struct that implements the `GrpcClient` interface.

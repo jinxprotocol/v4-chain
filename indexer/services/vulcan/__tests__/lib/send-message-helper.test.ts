@@ -1,16 +1,16 @@
 import {
   delay, logger, stats, STATS_NO_SAMPLING, wrapBackgroundTask,
-} from '@dydxprotocol-indexer/base';
-import { synchronizeWrapBackgroundTask } from '@dydxprotocol-indexer/dev';
-import { producer, WebsocketTopics } from '@dydxprotocol-indexer/kafka';
+} from '@jinxprotocol-indexer/base';
+import { synchronizeWrapBackgroundTask } from '@jinxprotocol-indexer/dev';
+import { producer, WebsocketTopics } from '@jinxprotocol-indexer/kafka';
 import {
   flushAllQueues, sendMessageWrapper, sizeStat, timingStat,
 } from '../../src/lib/send-message-helper';
 import config from '../../src/config';
 import { Message, ProducerRecord } from 'kafkajs';
 
-jest.mock('@dydxprotocol-indexer/base', () => ({
-  ...jest.requireActual('@dydxprotocol-indexer/base'),
+jest.mock('@jinxprotocol-indexer/base', () => ({
+  ...jest.requireActual('@jinxprotocol-indexer/base'),
   wrapBackgroundTask: jest.fn(),
 }));
 

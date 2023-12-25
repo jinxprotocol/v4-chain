@@ -1,9 +1,10 @@
 package vest
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/x/vest/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/vest/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/vest/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/vest/types"
 )
 
 // InitGenesis initializes the module's state from a provided genesis state.

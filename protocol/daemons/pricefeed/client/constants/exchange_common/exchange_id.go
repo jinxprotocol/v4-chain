@@ -1,7 +1,7 @@
 package exchange_common
 
 import (
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
 )
 
 const (

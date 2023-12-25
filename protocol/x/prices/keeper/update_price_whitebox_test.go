@@ -1,11 +1,12 @@
 package keeper
 
 import (
-	"github.com/dydxprotocol/v4-chain/protocol/lib/metrics"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/jinxprotocol/v4-chain/protocol/lib/metrics"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+	"github.com/stretchr/testify/require"
 )
 
 const (

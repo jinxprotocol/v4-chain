@@ -1,6 +1,6 @@
 import {
   logger,
-} from '@dydxprotocol-indexer/base';
+} from '@jinxprotocol-indexer/base';
 import { Consumer, ConsumerRunConfig, KafkaMessage } from 'kafkajs';
 import { v4 as uuidv4 } from 'uuid';
 

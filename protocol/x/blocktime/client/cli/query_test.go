@@ -6,13 +6,14 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
 	"github.com/stretchr/testify/require"
 
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/network"
-	"github.com/dydxprotocol/v4-chain/protocol/x/blocktime/client/cli"
-	"github.com/dydxprotocol/v4-chain/protocol/x/blocktime/types"
+	"github.com/cosmos/cosmos-sdk/client"
+	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
+
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/network"
+	"github.com/jinxprotocol/v4-chain/protocol/x/blocktime/client/cli"
+	"github.com/jinxprotocol/v4-chain/protocol/x/blocktime/types"
 )
 
 // Prevent strconv unused error

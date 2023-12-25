@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_function"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/types"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_function"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/types"
 )
 
 // https://api.kraken.com/0/public/Ticker

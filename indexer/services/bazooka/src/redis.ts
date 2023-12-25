@@ -1,4 +1,4 @@
-import { redis as redislib } from '@dydxprotocol-indexer/redis';
+import { redis as redislib } from '@jinxprotocol-indexer/redis';
 import {
   RedisClient,
 } from 'redis';

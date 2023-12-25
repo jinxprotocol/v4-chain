@@ -1,11 +1,12 @@
 package rate_limit
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/lib/metrics"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+
 	"github.com/cosmos/cosmos-sdk/telemetry"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	"github.com/dydxprotocol/v4-chain/protocol/lib/metrics"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
 )
 
 // A RateLimiter which rate limits types.MsgPlaceOrder.

@@ -1,31 +1,32 @@
 package app
 
 import (
+	icatypes "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts/types"
+	ibctransfertypes "github.com/cosmos/ibc-go/v7/modules/apps/transfer/types"
+
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	distrtypes "github.com/cosmos/cosmos-sdk/x/distribution/types"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
-	icatypes "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts/types"
-	ibctransfertypes "github.com/cosmos/ibc-go/v7/modules/apps/transfer/types"
 
-	"github.com/dydxprotocol/v4-chain/protocol/app/config"
-	bridgemoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
-	clobmoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	delaymsgtypes "github.com/dydxprotocol/v4-chain/protocol/x/delaymsg/types"
-	rewardsmoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/rewards/types"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
-	vestmoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/vest/types"
+	"github.com/jinxprotocol/v4-chain/protocol/app/config"
+	bridgemoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
+	clobmoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	delaymsgtypes "github.com/jinxprotocol/v4-chain/protocol/x/delaymsg/types"
+	rewardsmoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/rewards/types"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
+	vestmoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/vest/types"
 
 	"golang.org/x/exp/maps"
 )
 
 func init() {
-	// SetAddressPrefixes() explicitly in order to set the `dydx` address prefixes.
+	// SetAddressPrefixes() explicitly in order to set the `jinx` address prefixes.
 	config.SetAddressPrefixes()
 }
 
 var (
-	// Module account permissions. Contains all module accounts on dYdX chain.
+	// Module account permissions. Contains all module accounts on jInX chain.
 	maccPerms = map[string][]string{
 		// -------- Native SDK module accounts --------
 		authtypes.FeeCollectorName:     nil,
@@ -35,7 +36,7 @@ var (
 		govtypes.ModuleName:            {authtypes.Burner},
 		ibctransfertypes.ModuleName:    {authtypes.Minter, authtypes.Burner},
 		icatypes.ModuleName:            nil,
-		// -------- dYdX custom module accounts --------
+		// -------- jInX custom module accounts --------
 		// bridge module account mints tokens for bridged funds.
 		bridgemoduletypes.ModuleName: {authtypes.Minter},
 		// subaccounts module account holds tokens for all subaccounts.

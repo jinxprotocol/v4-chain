@@ -4,8 +4,8 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/app/msgs"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/app/msgs"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
 	"github.com/stretchr/testify/require"
 )
 
@@ -108,22 +108,22 @@ func TestNormalMsgs_Key(t *testing.T) {
 		"/cosmos.upgrade.v1beta1.SoftwareUpgradeProposal",
 
 		// clob
-		"/dydxprotocol.clob.MsgCancelOrder",
-		"/dydxprotocol.clob.MsgCancelOrderResponse",
-		"/dydxprotocol.clob.MsgPlaceOrder",
-		"/dydxprotocol.clob.MsgPlaceOrderResponse",
+		"/jinxprotocol.clob.MsgCancelOrder",
+		"/jinxprotocol.clob.MsgCancelOrderResponse",
+		"/jinxprotocol.clob.MsgPlaceOrder",
+		"/jinxprotocol.clob.MsgPlaceOrderResponse",
 
 		// perpetuals
 
 		// prices
 
 		// sending
-		"/dydxprotocol.sending.MsgCreateTransfer",
-		"/dydxprotocol.sending.MsgCreateTransferResponse",
-		"/dydxprotocol.sending.MsgDepositToSubaccount",
-		"/dydxprotocol.sending.MsgDepositToSubaccountResponse",
-		"/dydxprotocol.sending.MsgWithdrawFromSubaccount",
-		"/dydxprotocol.sending.MsgWithdrawFromSubaccountResponse",
+		"/jinxprotocol.sending.MsgCreateTransfer",
+		"/jinxprotocol.sending.MsgCreateTransferResponse",
+		"/jinxprotocol.sending.MsgDepositToSubaccount",
+		"/jinxprotocol.sending.MsgDepositToSubaccountResponse",
+		"/jinxprotocol.sending.MsgWithdrawFromSubaccount",
+		"/jinxprotocol.sending.MsgWithdrawFromSubaccountResponse",
 
 		// ibc application module: ICA
 		"/ibc.applications.interchain_accounts.v1.InterchainAccount",

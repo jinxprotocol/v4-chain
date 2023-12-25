@@ -10,7 +10,7 @@ import {
   LiquidityTiersFromDatabase,
   LiquidityTiersTable,
   liquidityTierRefresher,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import { RequestMethod } from '../../../../src/types';
 import request from 'supertest';
 import { getQueryString, sendRequest } from '../../../helpers/helpers';

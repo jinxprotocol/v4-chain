@@ -1,11 +1,11 @@
-import { logger, ParseMessageError } from '@dydxprotocol-indexer/base';
+import { logger, ParseMessageError } from '@jinxprotocol-indexer/base';
 import {
   IndexerTendermintBlock,
   IndexerTendermintEvent,
   OrderFillEventV1,
   IndexerOrder_Side,
-} from '@dydxprotocol-indexer/v4-protos';
-import { DydxIndexerSubtypes } from '../../src/lib/types';
+} from '@jinxprotocol-indexer/v4-protos';
+import { JinxIndexerSubtypes } from '../../src/lib/types';
 import { OrderFillValidator } from '../../src/validators/order-fill-validator';
 import {
   defaultHeight,
@@ -21,7 +21,7 @@ import {
 import { createIndexerTendermintBlock, createIndexerTendermintEvent } from '../helpers/indexer-proto-helpers';
 import { expectDidntLogError, expectLoggedParseMessageError } from '../helpers/validator-helpers';
 import { OrderFillWithLiquidity } from '../../src/lib/translated-types';
-import { Liquidity } from '@dydxprotocol-indexer/postgres';
+import { Liquidity } from '@jinxprotocol-indexer/postgres';
 
 describe('order-fill-validator', () => {
   beforeEach(() => {
@@ -191,7 +191,7 @@ function createBlock(
   orderFillEvent: OrderFillEventV1,
 ): IndexerTendermintBlock {
   const event: IndexerTendermintEvent = createIndexerTendermintEvent(
-    DydxIndexerSubtypes.ORDER_FILL,
+    JinxIndexerSubtypes.ORDER_FILL,
     OrderFillEventV1.encode(orderFillEvent).finish(),
     0,
     0,

@@ -1,17 +1,17 @@
-import { logger } from '@dydxprotocol-indexer/base';
+import { logger } from '@jinxprotocol-indexer/base';
 import {
   dbHelpers, MarketFromDatabase, MarketTable, testMocks,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import { KafkaMessage } from 'kafkajs';
 import { onMessage } from '../../../src/lib/on-message';
-import { DydxIndexerSubtypes, MarketModifyEventMessage } from '../../../src/lib/types';
+import { JinxIndexerSubtypes, MarketModifyEventMessage } from '../../../src/lib/types';
 import {
   defaultHeight, defaultMarketModify, defaultPreviousHeight, defaultTime, defaultTxHash,
 } from '../../helpers/constants';
 import { createKafkaMessageFromMarketEvent } from '../../helpers/kafka-helpers';
-import { producer } from '@dydxprotocol-indexer/kafka';
+import { producer } from '@jinxprotocol-indexer/kafka';
 import { updateBlockCache } from '../../../src/caches/block-cache';
-import { MarketEventV1, IndexerTendermintBlock, IndexerTendermintEvent } from '@dydxprotocol-indexer/v4-protos';
+import { MarketEventV1, IndexerTendermintBlock, IndexerTendermintEvent } from '@jinxprotocol-indexer/v4-protos';
 import { createIndexerTendermintBlock, createIndexerTendermintEvent } from '../../helpers/indexer-proto-helpers';
 import { MarketModifyHandler } from '../../../src/handlers/markets/market-modify-handler';
 import Long from 'long';
@@ -54,7 +54,7 @@ describe('marketModifyHandler', () => {
         },
       };
       const indexerTendermintEvent: IndexerTendermintEvent = createIndexerTendermintEvent(
-        DydxIndexerSubtypes.MARKET,
+        JinxIndexerSubtypes.MARKET,
         MarketEventV1.encode(marketEvent).finish(),
         transactionIndex,
         eventIndex,
@@ -118,7 +118,7 @@ describe('marketModifyHandler', () => {
       'Market in MarketModify doesn\'t exist',
     );
     expect(loggerCrit).toHaveBeenCalledWith(expect.objectContaining({
-      at: expect.stringContaining('PL/pgSQL function dydx_market_modify_handler('),
+      at: expect.stringContaining('PL/pgSQL function jinx_market_modify_handler('),
       message: expect.stringContaining('Market in MarketModify doesn\'t exist'),
     }));
     expect(producerSendMock.mock.calls.length).toEqual(0);

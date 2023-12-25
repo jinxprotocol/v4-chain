@@ -3,14 +3,14 @@ package types
 import (
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/indexer/msgsender"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
+	"github.com/jinxprotocol/v4-chain/protocol/indexer/msgsender"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
 	"github.com/stretchr/testify/require"
 )
 
 var (
 	subaccountId = satypes.SubaccountId{
-		Owner:  "dydx1x2hd82qerp7lc0kf5cs3yekftupkrl620te6u2",
+		Owner:  "jinx1x2hd82qerp7lc0kf5cs3yekftupkrl620te6u2",
 		Number: 0,
 	}
 	orderId0 = OrderId{

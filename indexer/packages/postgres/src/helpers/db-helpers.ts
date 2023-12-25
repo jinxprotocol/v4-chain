@@ -1,4 +1,4 @@
-import { logger } from '@dydxprotocol-indexer/base';
+import { logger } from '@jinxprotocol-indexer/base';
 
 import config from '../config';
 import { SQL_TO_JSON_DEFINED_MODELS } from '../constants';
@@ -33,7 +33,7 @@ const layer1Tables = [
  *
  * Raises an error if an unknown conversion is requested.
  */
-function getSqlConversionForDydxModelTypes(fieldName: string, type: string): string {
+function getSqlConversionForJinxModelTypes(fieldName: string, type: string): string {
   switch (type) {
     case 'integer':
       return `row_t."${fieldName}"::int`;
@@ -51,8 +51,8 @@ function getSqlConversionForDydxModelTypes(fieldName: string, type: string): str
 }
 
 /**
- * Defines a `dydx_to_jsonb` function for each of the models in SQL_TO_JSON_DEFINED_MODELS and
- * loads them in Postgres. This allows for plpgsql functions to invoke `dydx_to_jsonb` on the
+ * Defines a `jinx_to_jsonb` function for each of the models in SQL_TO_JSON_DEFINED_MODELS and
+ * loads them in Postgres. This allows for plpgsql functions to invoke `jinx_to_jsonb` on the
  * associated models table row type and convert the record into a JSON representation which
  * conforms to the models schema allowing conversion to the model type via the models `fromJson`
  * method.
@@ -61,8 +61,8 @@ export async function createModelToJsonFunctions(): Promise<void> {
   await Promise.all(
     SQL_TO_JSON_DEFINED_MODELS.map(async (model) => {
       const sqlProperties: string[] = Object.entries(model.sqlToJsonConversions)
-        .map(([key, value]) => `'${key}', ${getSqlConversionForDydxModelTypes(key, value)}`);
-      const sqlFn: string = `CREATE OR REPLACE FUNCTION dydx_to_jsonb(row_t ${model.tableName}) RETURNS jsonb AS $$
+        .map(([key, value]) => `'${key}', ${getSqlConversionForJinxModelTypes(key, value)}`);
+      const sqlFn: string = `CREATE OR REPLACE FUNCTION jinx_to_jsonb(row_t ${model.tableName}) RETURNS jsonb AS $$
 BEGIN
     RETURN jsonb_build_object(
         ${sqlProperties.join(',\n        ')}
@@ -72,7 +72,7 @@ $$ LANGUAGE plpgsql IMMUTABLE PARALLEL SAFE;`;
       return rawQuery(sqlFn, {}).catch((error) => {
         logger.error({
           at: 'dbHelpers#createModelToJsonFunctions',
-          message: `Failed to create or replace function dydx_to_jsonb for model ${model.tableName}.`,
+          message: `Failed to create or replace function jinx_to_jsonb for model ${model.tableName}.`,
           error,
         });
         throw error;
@@ -97,9 +97,9 @@ async function dropData() {
 }
 
 /**
- * Drops all functions named dydx_.* from the database.
+ * Drops all functions named jinx_.* from the database.
  */
-async function dropAllDydxFunctions() {
+async function dropAllJinxFunctions() {
   await knexPrimary.raw(`DO
 $do$
 DECLARE
@@ -118,7 +118,7 @@ BEGIN
                    , E'\\n')
    FROM   pg_proc
    WHERE  pronamespace = 'public'::regnamespace  -- schema name here!
-   AND proname LIKE 'dydx_%';
+   AND proname LIKE 'jinx_%';
 
    IF _sql IS NOT NULL THEN
       EXECUTE _sql;         -- uncomment payload once you are sure
@@ -154,7 +154,7 @@ export async function clearSchema() {
 
 export async function reset() {
   await dropData();
-  await dropAllDydxFunctions();
+  await dropAllJinxFunctions();
   await rollback();
 }
 
@@ -167,7 +167,7 @@ export async function migrate() {
 }
 
 export async function teardown() {
-  await dropAllDydxFunctions();
+  await dropAllJinxFunctions();
   await knexPrimary.destroy();
   if (config.IS_USING_DB_READONLY) {
     await knexReadReplica.getConnection().destroy();

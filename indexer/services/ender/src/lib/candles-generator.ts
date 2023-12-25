@@ -1,5 +1,5 @@
-import { stats } from '@dydxprotocol-indexer/base';
-import { CANDLES_WEBSOCKET_MESSAGE_VERSION, KafkaTopics } from '@dydxprotocol-indexer/kafka';
+import { stats } from '@jinxprotocol-indexer/base';
+import { CANDLES_WEBSOCKET_MESSAGE_VERSION, KafkaTopics } from '@jinxprotocol-indexer/kafka';
 import {
   CANDLE_RESOLUTION_TO_PROTO,
   CandleColumns,
@@ -18,8 +18,8 @@ import {
   PerpetualPositionTable,
   TradeContent,
   TradeMessageContents,
-} from '@dydxprotocol-indexer/postgres';
-import { CandleMessage } from '@dydxprotocol-indexer/v4-protos';
+} from '@jinxprotocol-indexer/postgres';
+import { CandleMessage } from '@jinxprotocol-indexer/v4-protos';
 import Big from 'big.js';
 import _ from 'lodash';
 import { DateTime } from 'luxon';

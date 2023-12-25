@@ -3,25 +3,27 @@ package keeper_test
 import (
 	"errors"
 	"fmt"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
 	"math/big"
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/indexer/common"
-	indexerevents "github.com/dydxprotocol/v4-chain/protocol/indexer/events"
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	"github.com/dydxprotocol/v4-chain/protocol/x/sending/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+
+	"github.com/jinxprotocol/v4-chain/protocol/indexer/common"
+	indexerevents "github.com/jinxprotocol/v4-chain/protocol/indexer/events"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	"github.com/jinxprotocol/v4-chain/protocol/x/sending/keeper"
+
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	keepertest "github.com/jinxprotocol/v4-chain/protocol/testutil/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/sample"
+	assettypes "github.com/jinxprotocol/v4-chain/protocol/x/assets/types"
+	perptypes "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/sending/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	keepertest "github.com/dydxprotocol/v4-chain/protocol/testutil/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/sample"
-	assettypes "github.com/dydxprotocol/v4-chain/protocol/x/assets/types"
-	perptypes "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/sending/types"
 
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 )
@@ -592,7 +594,7 @@ func TestSendFromModuleToAccount_InvalidMsg(t *testing.T) {
 		Authority:        lib.GovModuleAddress.String(),
 		SenderModuleName: "",
 		Recipient:        constants.AliceAccAddress.String(),
-		Coin:             sdk.NewCoin("adv4tnt", sdk.NewInt(100)),
+		Coin:             sdk.NewCoin("jinx", sdk.NewInt(100)),
 	}
 
 	ks := keepertest.SendingKeepers(t)
@@ -605,7 +607,7 @@ func TestSendFromModuleToAccount_NonExistentSenderModule(t *testing.T) {
 		Authority:        lib.GovModuleAddress.String(),
 		SenderModuleName: "nonexistent",
 		Recipient:        constants.AliceAccAddress.String(),
-		Coin:             sdk.NewCoin("adv4tnt", sdk.NewInt(100)),
+		Coin:             sdk.NewCoin("jinx", sdk.NewInt(100)),
 	}
 
 	// Calling SendFromModuleToAccount with a non-existent sender module will panic.
@@ -626,7 +628,7 @@ func TestSendFromModuleToAccount_InvalidRecipient(t *testing.T) {
 		&types.MsgSendFromModuleToAccount{
 			Authority:        lib.GovModuleAddress.String(),
 			SenderModuleName: "bridge",
-			Recipient:        "dydx1abc", // invalid recipient address
+			Recipient:        "jinx1abc", // invalid recipient address
 			Coin:             sdk.NewCoin("dv4tnt", sdk.NewInt(1)),
 		},
 	)

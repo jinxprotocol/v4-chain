@@ -18,8 +18,8 @@ jobs:
       postgres:
         image: postgres:12-alpine
         env:
-          POSTGRES_PASSWORD: dydxserver123
-          POSTGRES_USER: dydx_test
+          POSTGRES_PASSWORD: jinxserver123
+          POSTGRES_USER: jinx_test
         ports:
           - 5432:5432
       redis:

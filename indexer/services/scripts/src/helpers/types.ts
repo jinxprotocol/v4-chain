@@ -1,4 +1,4 @@
-import { IndexerTendermintBlock, IndexerTendermintEvent } from '@dydxprotocol-indexer/v4-protos';
+import { IndexerTendermintBlock, IndexerTendermintEvent } from '@jinxprotocol-indexer/v4-protos';
 
 export interface AnnotatedIndexerTendermintEvent extends IndexerTendermintEvent {
   data: string;
@@ -8,7 +8,7 @@ export interface AnnotatedIndexerTendermintBlock extends IndexerTendermintBlock 
   annotatedEvents: AnnotatedIndexerTendermintEvent[];
 }
 
-export enum DydxIndexerSubtypes {
+export enum JinxIndexerSubtypes {
   ORDER_FILL = 'order_fill',
   SUBACCOUNT_UPDATE = 'subaccount_update',
   TRANSFER = 'transfer',

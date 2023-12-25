@@ -1,9 +1,9 @@
 package testutil
 
 import (
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/handler"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_function/bitfinex"
 	"github.com/h2non/gock"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/handler"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_function/bitfinex"
 )
 
 // BitfinexTicker represents ticker in Bitfinex response for testing purposes.

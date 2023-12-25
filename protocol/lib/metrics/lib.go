@@ -4,6 +4,7 @@ import (
 	"time"
 
 	gometrics "github.com/armon/go-metrics"
+
 	"github.com/cosmos/cosmos-sdk/telemetry"
 )
 

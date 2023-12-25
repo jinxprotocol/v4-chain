@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	liberror "github.com/dydxprotocol/v4-chain/protocol/lib/error"
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
+	liberror "github.com/jinxprotocol/v4-chain/protocol/lib/error"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
 	"github.com/stretchr/testify/mock"
 )
 

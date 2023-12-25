@@ -1,7 +1,7 @@
 package app
 
 import (
-	"github.com/dydxprotocol/v4-chain/protocol/app/basic_manager"
+	"github.com/jinxprotocol/v4-chain/protocol/app/basic_manager"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/codec"
@@ -45,7 +45,7 @@ func makeEncodingConfig() EncodingConfig {
 func initEncodingConfig() EncodingConfig {
 	encConfig := makeEncodingConfig()
 
-	// This is currently required in order to support various CLI commands such as the `dydxprotocold status` command.
+	// This is currently required in order to support various CLI commands such as the `jinxprotocold status` command.
 	std.RegisterLegacyAminoCodec(encConfig.Amino)
 	std.RegisterInterfaces(encConfig.InterfaceRegistry)
 

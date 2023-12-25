@@ -2,23 +2,25 @@ package client
 
 import (
 	"context"
-	"cosmossdk.io/errors"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_encoder"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_fetcher"
-	daemontypes "github.com/dydxprotocol/v4-chain/protocol/daemons/types"
-	pricetypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
 	"net/http"
 	"time"
 
+	"cosmossdk.io/errors"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_encoder"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_fetcher"
+	daemontypes "github.com/jinxprotocol/v4-chain/protocol/daemons/types"
+	pricetypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+
 	gometrics "github.com/armon/go-metrics"
 	"github.com/cometbft/cometbft/libs/log"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/api"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/handler"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
+	pricefeedmetrics "github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/metrics"
+	"github.com/jinxprotocol/v4-chain/protocol/lib/metrics"
+
 	"github.com/cosmos/cosmos-sdk/telemetry"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/api"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/handler"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
-	pricefeedmetrics "github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/metrics"
-	"github.com/dydxprotocol/v4-chain/protocol/lib/metrics"
 )
 
 var (

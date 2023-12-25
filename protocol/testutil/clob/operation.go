@@ -1,10 +1,11 @@
 package clob
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
 )
 
 // buildTxAndGetBytesFromMsg builds a transaction with a single message

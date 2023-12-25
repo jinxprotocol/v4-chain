@@ -3,10 +3,11 @@ package prices
 // DONTCOVER
 
 import (
+	pricessimulation "github.com/jinxprotocol/v4-chain/protocol/x/prices/simulation"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	pricessimulation "github.com/dydxprotocol/v4-chain/protocol/x/prices/simulation"
 )
 
 var (

@@ -4,12 +4,12 @@ import (
 	"math"
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	testutil_memclob "github.com/dydxprotocol/v4-chain/protocol/testutil/memclob"
-	sdktest "github.com/dydxprotocol/v4-chain/protocol/testutil/sdk"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	testutil_memclob "github.com/jinxprotocol/v4-chain/protocol/testutil/memclob"
+	sdktest "github.com/jinxprotocol/v4-chain/protocol/testutil/sdk"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 )

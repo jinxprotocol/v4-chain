@@ -4,13 +4,14 @@ import (
 	"errors"
 	"testing"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	clobtestutils "github.com/dydxprotocol/v4-chain/protocol/testutil/clob"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	testtx "github.com/dydxprotocol/v4-chain/protocol/testutil/tx"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
+	clobtestutils "github.com/jinxprotocol/v4-chain/protocol/testutil/clob"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	testtx "github.com/jinxprotocol/v4-chain/protocol/testutil/tx"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
 	"github.com/stretchr/testify/require"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 func TestValidateBasic(t *testing.T) {

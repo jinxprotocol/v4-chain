@@ -7,21 +7,22 @@ import (
 
 	sdkmath "cosmossdk.io/math"
 	cometbfttypes "github.com/cometbft/cometbft/types"
+	"github.com/jinxprotocol/v4-chain/protocol/dtypes"
+	testapp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	big_testutil "github.com/jinxprotocol/v4-chain/protocol/testutil/big"
+	feetierstypes "github.com/jinxprotocol/v4-chain/protocol/x/feetiers/types"
+	pricestypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/rewards/types"
+	"github.com/stretchr/testify/require"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	"github.com/dydxprotocol/v4-chain/protocol/dtypes"
-	testapp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	big_testutil "github.com/dydxprotocol/v4-chain/protocol/testutil/big"
-	feetierstypes "github.com/dydxprotocol/v4-chain/protocol/x/feetiers/types"
-	pricestypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/rewards/types"
-	"github.com/stretchr/testify/require"
 )
 
 const (
-	TestAddress1         = "dydx16h7p7f4dysrgtzptxx2gtpt5d8t834g9dj830z"
-	TestAddress2         = "dydx168pjt8rkru35239fsqvz7rzgeclakp49zx3aum"
-	TestAddress3         = "dydx1fjg6zp6vv8t9wvy4lps03r5l4g7tkjw9wvmh70"
+	TestAddress1         = "jinx16h7p7f4dysrgtzptxx2gtpt5d8t834g9dj830z"
+	TestAddress2         = "jinx168pjt8rkru35239fsqvz7rzgeclakp49zx3aum"
+	TestAddress3         = "jinx1fjg6zp6vv8t9wvy4lps03r5l4g7tkjw9wvmh70"
 	TestRewardTokenDenom = "test-denom"
 )
 

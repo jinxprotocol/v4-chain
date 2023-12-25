@@ -5,9 +5,10 @@ import (
 	"fmt"
 
 	errorsmod "cosmossdk.io/errors"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/dydxprotocol/v4-chain/protocol/x/delaymsg/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/delaymsg/types"
 )
 
 type msgServer struct {

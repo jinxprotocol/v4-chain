@@ -17,23 +17,23 @@ import {
   LiquidityTiersTable,
   LiquidityTiersMap,
   LiquidityTiersColumns,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import _ from 'lodash';
 
 import { getUpdatedMarkets } from '../../src/helpers/websocket';
 import marketUpdaterTask, { getPriceChange } from '../../src/tasks/market-updater';
 import { expectMarketWebsocketMessage } from '../helpers/websocket-helpers';
-import { producer } from '@dydxprotocol-indexer/kafka';
-import { wrapBackgroundTask } from '@dydxprotocol-indexer/base';
+import { producer } from '@jinxprotocol-indexer/kafka';
+import { wrapBackgroundTask } from '@jinxprotocol-indexer/base';
 
-import { synchronizeWrapBackgroundTask } from '@dydxprotocol-indexer/dev';
-import { NextFundingCache, redis } from '@dydxprotocol-indexer/redis';
+import { synchronizeWrapBackgroundTask } from '@jinxprotocol-indexer/dev';
+import { NextFundingCache, redis } from '@jinxprotocol-indexer/redis';
 import { redisClient } from '../../src/helpers/redis';
 import Big from 'big.js';
 import { DateTime } from 'luxon';
 
-jest.mock('@dydxprotocol-indexer/base', () => ({
-  ...jest.requireActual('@dydxprotocol-indexer/base'),
+jest.mock('@jinxprotocol-indexer/base', () => ({
+  ...jest.requireActual('@jinxprotocol-indexer/base'),
   wrapBackgroundTask: jest.fn(),
 }));
 

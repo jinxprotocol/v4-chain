@@ -3,10 +3,11 @@ package middleware_test
 import (
 	"bytes"
 	"fmt"
-	"github.com/cometbft/cometbft/libs/log"
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/app/middleware"
+	"github.com/cometbft/cometbft/libs/log"
+
+	"github.com/jinxprotocol/v4-chain/protocol/app/middleware"
 	"github.com/stretchr/testify/require"
 )
 

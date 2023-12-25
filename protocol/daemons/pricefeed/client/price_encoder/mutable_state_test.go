@@ -2,9 +2,10 @@ package price_encoder
 
 import (
 	"fmt"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
+	"github.com/stretchr/testify/require"
 )
 
 func newMarketIdWithValue(id types.MarketId) *types.MarketId {

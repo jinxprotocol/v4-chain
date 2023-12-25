@@ -4,19 +4,20 @@ import (
 	"testing"
 
 	"github.com/cometbft/cometbft/types"
+	testapp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	rewardstypes "github.com/jinxprotocol/v4-chain/protocol/x/rewards/types"
+	"github.com/stretchr/testify/require"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 	govtypesv1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
-	testapp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	rewardstypes "github.com/dydxprotocol/v4-chain/protocol/x/rewards/types"
-	"github.com/stretchr/testify/require"
 )
 
 var (
 	GENESIS_REWARD_PARAMS = rewardstypes.Params{
 		TreasuryAccount:  "test_treasury",
-		Denom:            "adv4tnt",
+		Denom:            "jinx",
 		DenomExponent:    -18,
 		MarketId:         1234,
 		FeeMultiplierPpm: 700_000,
@@ -36,7 +37,7 @@ func TestUpdateRewardsModuleParams(t *testing.T) {
 				Authority: authtypes.NewModuleAddress(govtypes.ModuleName).String(),
 				Params: rewardstypes.Params{
 					TreasuryAccount:  "test_treasury",
-					Denom:            "adv4tnt",
+					Denom:            "jinx",
 					DenomExponent:    -5,
 					MarketId:         0,
 					FeeMultiplierPpm: 700_001,
@@ -62,7 +63,7 @@ func TestUpdateRewardsModuleParams(t *testing.T) {
 				Authority: authtypes.NewModuleAddress(govtypes.ModuleName).String(),
 				Params: rewardstypes.Params{
 					TreasuryAccount:  GENESIS_REWARD_PARAMS.TreasuryAccount,
-					Denom:            "7adv4tnt", // cannot start with number
+					Denom:            "7jinx", // cannot start with number
 					DenomExponent:    GENESIS_REWARD_PARAMS.DenomExponent,
 					MarketId:         GENESIS_REWARD_PARAMS.MarketId,
 					FeeMultiplierPpm: GENESIS_REWARD_PARAMS.FeeMultiplierPpm,

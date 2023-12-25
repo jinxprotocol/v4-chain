@@ -1870,7 +1870,7 @@
   },
   "servers": [
     {
-      "url": "https://dydx-testnet.imperator.co/v4",
+      "url": "https://jinx-testnet.imperator.co/v4",
       "description": "Public Testnet"
     }
   ]

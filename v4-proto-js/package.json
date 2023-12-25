@@ -1,10 +1,10 @@
 {
-  "name": "@dydxprotocol/v4-proto",
+  "name": "@jinxprotocol/v4-proto",
   "version": "0.0.0",
   "access": "public",
-  "description": "Protos for dYdX v4 protocol",
-  "author": "dYdX Trading Inc.",
-  "homepage": "https://github.com/dydxprotocol/v4-chain",
+  "description": "Protos for jInX v4 protocol",
+  "author": "jInX Trading Inc.",
+  "homepage": "https://github.com/jinxprotocol/v4-chain",
   "license": "AGPL-3.0",
   "main": "main/index.js",
   "module": "module/index.js",
@@ -28,15 +28,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dydxprotocol/v4-chain"
+    "url": "https://github.com/jinxprotocol/v4-chain"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/dydxprotocol/v4-chain/issues"
+    "url": "https://github.com/jinxprotocol/v4-chain/issues"
   },
   "devDependencies": {
     "@cosmjs/stargate": "^0.32.1",
-    "@dydxprotocol/node-service-base-dev": "^0.3.2",
+    "@jinxprotocol/node-service-base-dev": "^0.3.2",
     "@osmonauts/lcd": "^0.6.0",
     "@osmonauts/telescope": "0.86.0",
     "long": "^4.0.0",

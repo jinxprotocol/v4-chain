@@ -4,10 +4,11 @@ import (
 	fmt "fmt"
 	"testing"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/x/sending/types"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/x/sending/types"
 	"github.com/stretchr/testify/require"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 var (
@@ -24,7 +25,7 @@ func TestMsgSendFromModuleToAccount_ValidateBasic(t *testing.T) {
 				Authority:        validAuthority,
 				SenderModuleName: "gov",
 				Recipient:        constants.AliceAccAddress.String(),
-				Coin:             sdk.NewCoin("adv4tnt", sdk.NewInt(1)),
+				Coin:             sdk.NewCoin("jinx", sdk.NewInt(1)),
 			},
 		},
 		"Valid - module name has underscore": {
@@ -32,7 +33,7 @@ func TestMsgSendFromModuleToAccount_ValidateBasic(t *testing.T) {
 				Authority:        validAuthority,
 				SenderModuleName: "insurance_fund",
 				Recipient:        constants.AliceAccAddress.String(),
-				Coin:             sdk.NewCoin("adv4tnt", sdk.NewInt(100)),
+				Coin:             sdk.NewCoin("jinx", sdk.NewInt(100)),
 			},
 		},
 		"Invalid authority": {
@@ -46,7 +47,7 @@ func TestMsgSendFromModuleToAccount_ValidateBasic(t *testing.T) {
 				Authority:        validAuthority,
 				SenderModuleName: "", // empty module name
 				Recipient:        constants.BobAccAddress.String(),
-				Coin:             sdk.NewCoin("adv4tnt", sdk.NewInt(100)),
+				Coin:             sdk.NewCoin("jinx", sdk.NewInt(100)),
 			},
 			err: types.ErrEmptyModuleName,
 		},
@@ -55,7 +56,7 @@ func TestMsgSendFromModuleToAccount_ValidateBasic(t *testing.T) {
 				Authority:        validAuthority,
 				SenderModuleName: "bridge",
 				Recipient:        "invalid_address",
-				Coin:             sdk.NewCoin("adv4tnt", sdk.NewInt(100)),
+				Coin:             sdk.NewCoin("jinx", sdk.NewInt(100)),
 			},
 			err: types.ErrInvalidAccountAddress,
 		},

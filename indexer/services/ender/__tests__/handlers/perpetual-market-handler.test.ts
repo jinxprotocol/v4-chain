@@ -3,7 +3,7 @@ import {
   IndexerTendermintBlock,
   IndexerTendermintEvent,
   Timestamp,
-} from '@dydxprotocol-indexer/v4-protos';
+} from '@jinxprotocol-indexer/v4-protos';
 import {
   PerpetualMarketColumns,
   PerpetualMarketFromDatabase,
@@ -17,11 +17,11 @@ import {
   perpetualMarketRefresher,
   LiquidityTiersTable,
   liquidityTierRefresher,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import { KafkaMessage } from 'kafkajs';
-import { createKafkaMessage, producer } from '@dydxprotocol-indexer/kafka';
+import { createKafkaMessage, producer } from '@jinxprotocol-indexer/kafka';
 import { onMessage } from '../../src/lib/on-message';
-import { DydxIndexerSubtypes } from '../../src/lib/types';
+import { JinxIndexerSubtypes } from '../../src/lib/types';
 import {
   createIndexerTendermintBlock,
   createIndexerTendermintEvent,
@@ -76,7 +76,7 @@ describe('perpetualMarketHandler', () => {
       const eventIndex: number = 0;
 
       const indexerTendermintEvent: IndexerTendermintEvent = createIndexerTendermintEvent(
-        DydxIndexerSubtypes.PERPETUAL_MARKET,
+        JinxIndexerSubtypes.PERPETUAL_MARKET,
         PerpetualMarketCreateEventV1.encode(defaultPerpetualMarketCreateEvent).finish(),
         transactionIndex,
         eventIndex,
@@ -197,7 +197,7 @@ function createKafkaMessageFromPerpetualMarketEvent({
   const events: IndexerTendermintEvent[] = [];
   events.push(
     createIndexerTendermintEvent(
-      DydxIndexerSubtypes.PERPETUAL_MARKET,
+      JinxIndexerSubtypes.PERPETUAL_MARKET,
       PerpetualMarketCreateEventV1.encode(perpetualMarketEvent).finish(),
       transactionIndex,
       0,

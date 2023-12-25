@@ -2,10 +2,11 @@ package constants
 
 import (
 	sdkmath "cosmossdk.io/math"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
 	"github.com/ethereum/go-ethereum/common"
 	ethcoretypes "github.com/ethereum/go-ethereum/core/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 func init() {
@@ -31,11 +32,11 @@ func init() {
 var (
 	// Private
 	emptyCoin = sdk.Coin{
-		Denom:  "adv4tnt",
+		Denom:  "jinx",
 		Amount: sdkmath.NewInt(0),
 	}
 	coin = sdk.Coin{
-		Denom:  "adv4tnt",
+		Denom:  "jinx",
 		Amount: sdkmath.NewIntFromUint64(888),
 	}
 
@@ -133,7 +134,7 @@ var (
 	// Eth Chain ID.
 	EthChainId = 11155111
 	// Eth Log of Bridge event ID 0 at block height 3872013 that bridges 12345 tokens to address
-	// `dydx1qqgzqvzq2ps8pqys5zcvp58q7rluextx92xhln`.
+	// `jinx1qqgzqvzq2ps8pqys5zcvp58q7rluextxzepsan`.
 	EthLog_Event0 = ethcoretypes.Log{
 		Topics: []common.Hash{
 			common.HexToHash("0x498a04382650bc110983392ed12ab27595af8ece270a344fc70d773d2481043a"),
@@ -168,7 +169,7 @@ var (
 		BlockNumber: 3969937,
 	}
 	// Eth Log of Bridge event ID 2 at block height 4139345 that bridges 777 tokens to address
-	// `dydx1qqgzqvzq2ps8pqys5zcvp58q7rluextxzy3rx3z4vemc3xgq42as94fpcv` (32-byte address).
+	// `jinx1qqgzqvzq2ps8pqys5zcvp58q7rluextxzy3rx3z4vemc3xgq42asksu05f` (32-byte address).
 	EthLog_Event2 = ethcoretypes.Log{
 		Topics: []common.Hash{
 			common.HexToHash("0x498a04382650bc110983392ed12ab27595af8ece270a344fc70d773d2481043a"),
@@ -187,7 +188,7 @@ var (
 		BlockNumber: 4139345,
 	}
 	// Eth Log of Bridge event ID 3 at block height 4139348 that bridges 888 tokens to address
-	// `dydx124n92ej4ve2kv4tx24n92ej4ve2kv4tx24n92ej4ve2kv4tx24nyggjyyfzzy3pzgs3yggjyyfzzy3pzgs3ygg
+	// `jinx124n92ej4ve2kv4tx24n92ej4ve2kv4tx24n92ej4ve2kv4tx24nyggjyyfzzy3pzgs3yggjyyfzzy3pzgs3ygg
 	// jyyfzzy3pzgs3q8699x3` (62-byte address).
 	EthLog_Event3 = ethcoretypes.Log{
 		Topics: []common.Hash{
@@ -209,7 +210,7 @@ var (
 		BlockNumber: 4139348,
 	}
 	// Eth Log of Bridge event ID 4 at block height 4139349 that bridges 1234123443214321 tokens to
-	// address `dydx1zg6pydqhy4yy9`.
+	// address `jinx1zg6pydqhy4yy9`.
 	EthLog_Event4 = ethcoretypes.Log{
 		Topics: []common.Hash{
 			common.HexToHash("0x498a04382650bc110983392ed12ab27595af8ece270a344fc70d773d2481043a"),

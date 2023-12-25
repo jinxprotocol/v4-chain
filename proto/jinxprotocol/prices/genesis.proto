@@ -1,0 +1,14 @@
+syntax = "proto3";
+package jinxprotocol.prices;
+
+import "gogoproto/gogo.proto";
+import "jinxprotocol/prices/market_param.proto";
+import "jinxprotocol/prices/market_price.proto";
+
+option go_package = "github.com/jinxprotocol/v4-chain/protocol/x/prices/types";
+
+// GenesisState defines the prices module's genesis state.
+message GenesisState {
+  repeated MarketParam market_params = 1 [ (gogoproto.nullable) = false ];
+  repeated MarketPrice market_prices = 2 [ (gogoproto.nullable) = false ];
+}

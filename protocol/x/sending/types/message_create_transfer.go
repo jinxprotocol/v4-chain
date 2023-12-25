@@ -2,8 +2,9 @@ package types
 
 import (
 	errorsmod "cosmossdk.io/errors"
+	assettypes "github.com/jinxprotocol/v4-chain/protocol/x/assets/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	assettypes "github.com/dydxprotocol/v4-chain/protocol/x/assets/types"
 )
 
 var _ sdk.Msg = &MsgCreateTransfer{}

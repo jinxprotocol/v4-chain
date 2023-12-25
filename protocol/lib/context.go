@@ -2,6 +2,7 @@ package lib
 
 import (
 	"fmt"
+
 	"github.com/cometbft/cometbft/crypto/tmhash"
 )
 

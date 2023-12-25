@@ -3,14 +3,15 @@ package ratelimit
 import (
 	"math/rand"
 
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/sample"
+	ratelimitsimulation "github.com/jinxprotocol/v4-chain/protocol/x/ratelimit/simulation"
+	"github.com/jinxprotocol/v4-chain/protocol/x/ratelimit/types"
+
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/sample"
-	ratelimitsimulation "github.com/dydxprotocol/v4-chain/protocol/x/ratelimit/simulation"
-	"github.com/dydxprotocol/v4-chain/protocol/x/ratelimit/types"
 )
 
 // avoid unused import issue

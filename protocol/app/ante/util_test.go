@@ -3,10 +3,11 @@ package ante_test
 import (
 	"testing"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/app/ante"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/app/ante"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
 	"github.com/stretchr/testify/require"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 type ValidationUtilTestCase struct {

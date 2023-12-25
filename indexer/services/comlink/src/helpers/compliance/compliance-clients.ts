@@ -1,8 +1,8 @@
 import {
   ComplianceClient,
   getComplianceClient,
-} from '@dydxprotocol-indexer/compliance';
-import { ComplianceProvider } from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/compliance';
+import { ComplianceProvider } from '@jinxprotocol-indexer/postgres';
 
 export interface ClientAndProvider {
   client: ComplianceClient;

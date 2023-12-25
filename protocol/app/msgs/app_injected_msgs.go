@@ -5,11 +5,11 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	bridgetypes "github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
-	clobtypes "github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	perptypes "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
-	pricestypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	bridgetypes "github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
+	clobtypes "github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	perptypes "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+	pricestypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
 )
 
 var (
@@ -17,7 +17,7 @@ var (
 	// These messages are reserved for proposing validator's use only.
 	AppInjectedMsgSamples = map[string]sdk.Msg{
 		// bridge
-		"/dydxprotocol.bridge.MsgAcknowledgeBridges": &bridgetypes.MsgAcknowledgeBridges{
+		"/jinxprotocol.bridge.MsgAcknowledgeBridges": &bridgetypes.MsgAcknowledgeBridges{
 			Events: []bridgetypes.BridgeEvent{
 				{
 					Id: 0,
@@ -29,28 +29,28 @@ var (
 				},
 			},
 		},
-		"/dydxprotocol.bridge.MsgAcknowledgeBridgesResponse": nil,
+		"/jinxprotocol.bridge.MsgAcknowledgeBridgesResponse": nil,
 
 		// clob
-		"/dydxprotocol.clob.MsgProposedOperations": &clobtypes.MsgProposedOperations{
+		"/jinxprotocol.clob.MsgProposedOperations": &clobtypes.MsgProposedOperations{
 			OperationsQueue: make([]clobtypes.OperationRaw, 0),
 		},
-		"/dydxprotocol.clob.MsgProposedOperationsResponse": nil,
+		"/jinxprotocol.clob.MsgProposedOperationsResponse": nil,
 
 		// perpetuals
-		"/dydxprotocol.perpetuals.MsgAddPremiumVotes": &perptypes.MsgAddPremiumVotes{
+		"/jinxprotocol.perpetuals.MsgAddPremiumVotes": &perptypes.MsgAddPremiumVotes{
 			Votes: []perptypes.FundingPremium{
 				{PerpetualId: 0, PremiumPpm: 1_000},
 			},
 		},
-		"/dydxprotocol.perpetuals.MsgAddPremiumVotesResponse": nil,
+		"/jinxprotocol.perpetuals.MsgAddPremiumVotesResponse": nil,
 
 		// prices
-		"/dydxprotocol.prices.MsgUpdateMarketPrices": &pricestypes.MsgUpdateMarketPrices{
+		"/jinxprotocol.prices.MsgUpdateMarketPrices": &pricestypes.MsgUpdateMarketPrices{
 			MarketPriceUpdates: []*pricestypes.MsgUpdateMarketPrices_MarketPrice{
 				pricestypes.NewMarketPriceUpdate(constants.MarketId0, 123_000),
 			},
 		},
-		"/dydxprotocol.prices.MsgUpdateMarketPricesResponse": nil,
+		"/jinxprotocol.prices.MsgUpdateMarketPricesResponse": nil,
 	}
 )

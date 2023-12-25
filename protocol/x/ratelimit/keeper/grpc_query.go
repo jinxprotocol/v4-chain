@@ -3,7 +3,7 @@ package keeper
 import (
 	"context"
 
-	"github.com/dydxprotocol/v4-chain/protocol/x/ratelimit/types"
+	"github.com/jinxprotocol/v4-chain/protocol/x/ratelimit/types"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

@@ -1,12 +1,12 @@
 # Dockerfile to containerize postgres package locally
-FROM dydxprotocol/indexer-node:16-alpine-m1
+FROM jinxprotocol/indexer-node:16-alpine-m1
 ENV NODE_ENV=development
 
-RUN adduser -S dydx
-RUN mkdir -p /home/dydx/app
-RUN chown dydx -R /home/dydx/app
+RUN adduser -S jinx
+RUN mkdir -p /home/jinx/app
+RUN chown jinx -R /home/jinx/app
 
-WORKDIR /home/dydx/app
+WORKDIR /home/jinx/app
 
 # Copy pnpm lock and workspace and package.json from base directory
 COPY ./pnpm-lock.yaml ./pnpm-workspace.yaml ./package.json ./
@@ -32,13 +32,13 @@ COPY ./packages/postgres/knexfile.js ./packages/postgres
 # Copy .env files
 COPY ./packages/postgres/.env* ./packages/postgres/
 
-RUN chown dydx -R /home/dydx/app
+RUN chown jinx -R /home/jinx/app
 
-USER dydx
+USER jinx
 
 # Install npm modules using pnpm
 RUN pnpm i --loglevel warn --production --frozen-lockfile
 
-WORKDIR /home/dydx/app/packages/postgres
+WORKDIR /home/jinx/app/packages/postgres
 
 CMD ["sh", "-c", "pnpm run migrate"]

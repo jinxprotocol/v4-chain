@@ -3,10 +3,10 @@ package events_test
 import (
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/indexer/events"
-	"github.com/dydxprotocol/v4-chain/protocol/indexer/protocol/v1"
-	"github.com/dydxprotocol/v4-chain/protocol/indexer/shared"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/indexer/events"
+	v1 "github.com/jinxprotocol/v4-chain/protocol/indexer/protocol/v1"
+	"github.com/jinxprotocol/v4-chain/protocol/indexer/shared"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
 	"github.com/stretchr/testify/require"
 )
 

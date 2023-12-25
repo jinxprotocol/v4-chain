@@ -1,4 +1,4 @@
-import { logger } from '@dydxprotocol-indexer/base';
+import { logger } from '@jinxprotocol-indexer/base';
 import Big from 'big.js';
 
 import { ONE_MILLION } from '../constants';

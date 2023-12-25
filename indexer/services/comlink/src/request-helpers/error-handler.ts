@@ -1,4 +1,4 @@
-import { logger } from '@dydxprotocol-indexer/base';
+import { logger } from '@jinxprotocol-indexer/base';
 import express from 'express';
 import { validationResult, matchedData } from 'express-validator';
 import { isEqual, isObject, forEach } from 'lodash';

@@ -2,13 +2,15 @@ package types_test
 
 import (
 	"fmt"
+	"testing"
+
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/encoding"
+	"github.com/jinxprotocol/v4-chain/protocol/x/delaymsg/types"
+	"github.com/stretchr/testify/require"
+
 	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/encoding"
-	"github.com/dydxprotocol/v4-chain/protocol/x/delaymsg/types"
-	"github.com/stretchr/testify/require"
-	"testing"
 )
 
 func TestDelayedMessage_Validate(t *testing.T) {

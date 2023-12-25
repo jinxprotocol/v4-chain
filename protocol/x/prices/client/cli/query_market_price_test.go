@@ -4,18 +4,20 @@ package cli_test
 
 import (
 	"fmt"
-	cli_util "github.com/dydxprotocol/v4-chain/protocol/testutil/prices/cli"
 	"testing"
 
+	cli_util "github.com/jinxprotocol/v4-chain/protocol/testutil/prices/cli"
+
 	tmcli "github.com/cometbft/cometbft/libs/cli"
-	"github.com/cosmos/cosmos-sdk/client/flags"
-	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/dydxprotocol/v4-chain/protocol/x/prices/client/cli"
-	"github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
+	"github.com/cosmos/cosmos-sdk/client/flags"
+	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
+
+	"github.com/jinxprotocol/v4-chain/protocol/x/prices/client/cli"
+	"github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
 )
 
 func TestShowMarketPrice(t *testing.T) {

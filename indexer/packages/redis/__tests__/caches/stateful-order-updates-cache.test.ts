@@ -5,10 +5,10 @@ import {
   removeStatefulOrderUpdate,
   getOldOrderUpdates,
 } from '../../src/caches/stateful-order-updates-cache';
-import { IndexerOrderId, OrderUpdateV1 } from '@dydxprotocol-indexer/v4-protos';
+import { IndexerOrderId, OrderUpdateV1 } from '@jinxprotocol-indexer/v4-protos';
 import Long from 'long';
 import { orderId } from './constants';
-import { OrderTable } from '@dydxprotocol-indexer/postgres';
+import { OrderTable } from '@jinxprotocol-indexer/postgres';
 import { StatefulOrderUpdateInfo } from 'packages/redis/src';
 
 describe('statefulOrderUpdatesCache', () => {

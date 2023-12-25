@@ -1,4 +1,4 @@
-import { logger, stats } from '@dydxprotocol-indexer/base';
+import { logger, stats } from '@jinxprotocol-indexer/base';
 import _ from 'lodash';
 import * as pg from 'pg';
 

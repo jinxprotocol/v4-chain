@@ -5,7 +5,7 @@ import {
   redis,
   redisTestConstants,
   StatefulOrderUpdatesCache,
-} from '@dydxprotocol-indexer/redis';
+} from '@jinxprotocol-indexer/redis';
 import {
   expectOpenOrderIds,
   expectOrderbookLevelCache,
@@ -20,14 +20,14 @@ import {
   protocolTranslations,
   testConstants,
   testMocks,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import {
   logger,
   stats,
   STATS_FUNCTION_NAME,
   wrapBackgroundTask,
-} from '@dydxprotocol-indexer/base';
-import { synchronizeWrapBackgroundTask } from '@dydxprotocol-indexer/dev';
+} from '@jinxprotocol-indexer/base';
+import { synchronizeWrapBackgroundTask } from '@jinxprotocol-indexer/dev';
 import {
   IndexerOrder,
   OrderbookMessage,
@@ -35,19 +35,19 @@ import {
   OrderPlaceV1_OrderPlacementStatus,
   RedisOrder,
   OrderUpdateV1,
-} from '@dydxprotocol-indexer/v4-protos';
-import * as redisPackage from '@dydxprotocol-indexer/redis';
+} from '@jinxprotocol-indexer/v4-protos';
+import * as redisPackage from '@jinxprotocol-indexer/redis';
 import {
   ORDERBOOKS_WEBSOCKET_MESSAGE_VERSION,
   producer,
-} from '@dydxprotocol-indexer/kafka';
+} from '@jinxprotocol-indexer/kafka';
 import { ProducerRecord } from 'kafkajs';
 import { expectWebsocketOrderbookMessage } from '../helpers/websocket-helpers';
 import { OrderbookSide } from '../../src/lib/types';
 import Long from 'long';
 
-jest.mock('@dydxprotocol-indexer/base', () => ({
-  ...jest.requireActual('@dydxprotocol-indexer/base'),
+jest.mock('@jinxprotocol-indexer/base', () => ({
+  ...jest.requireActual('@jinxprotocol-indexer/base'),
   wrapBackgroundTask: jest.fn(),
 }));
 

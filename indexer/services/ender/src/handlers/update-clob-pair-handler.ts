@@ -2,8 +2,8 @@ import {
   PerpetualMarketFromDatabase,
   PerpetualMarketModel,
   perpetualMarketRefresher,
-} from '@dydxprotocol-indexer/postgres';
-import { UpdateClobPairEventV1 } from '@dydxprotocol-indexer/v4-protos';
+} from '@jinxprotocol-indexer/postgres';
+import { UpdateClobPairEventV1 } from '@jinxprotocol-indexer/v4-protos';
 import * as pg from 'pg';
 
 import { generatePerpetualMarketMessage } from '../helpers/kafka-helper';

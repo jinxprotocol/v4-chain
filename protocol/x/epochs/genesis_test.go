@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	keepertest "github.com/dydxprotocol/v4-chain/protocol/testutil/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/epochs"
-	"github.com/dydxprotocol/v4-chain/protocol/x/epochs/types"
+	keepertest "github.com/jinxprotocol/v4-chain/protocol/testutil/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/epochs"
+	"github.com/jinxprotocol/v4-chain/protocol/x/epochs/types"
 	"github.com/stretchr/testify/require"
 )
 

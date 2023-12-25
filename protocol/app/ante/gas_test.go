@@ -1,23 +1,25 @@
 package ante_test
 
 import (
-	"cosmossdk.io/errors"
-	sdkmath "cosmossdk.io/math"
-	bank "github.com/cosmos/cosmos-sdk/x/bank/types"
-	testapp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	assets "github.com/dydxprotocol/v4-chain/protocol/x/assets/types"
 	"reflect"
 	"testing"
+
+	"cosmossdk.io/errors"
+	sdkmath "cosmossdk.io/math"
+	testapp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	assets "github.com/jinxprotocol/v4-chain/protocol/x/assets/types"
+
+	bank "github.com/cosmos/cosmos-sdk/x/bank/types"
 
 	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	"github.com/cosmos/cosmos-sdk/testutil/testdata"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/dydxprotocol/v4-chain/protocol/app/ante"
-	testante "github.com/dydxprotocol/v4-chain/protocol/testutil/ante"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	pricestypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
+	"github.com/jinxprotocol/v4-chain/protocol/app/ante"
+	testante "github.com/jinxprotocol/v4-chain/protocol/testutil/ante"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	pricestypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
 
 	"github.com/stretchr/testify/require"
 )
@@ -155,7 +157,7 @@ func TestSubmitTxnWithGas(t *testing.T) {
 		"Failure: 0 gas fee": {
 			gasFee:       sdk.Coins{},
 			responseCode: sdkerrors.ErrInsufficientFee.ABCICode(),
-			logMessage: "insufficient fees; got:  required: 25000000000000000adv4tnt," +
+			logMessage: "insufficient fees; got:  required: 25000000000000000jinx," +
 				"25000ibc/8E27BA2D5493AF5636760E354E46004562C46AB7EC0CC4C1CA14E9E20E2545B5: insufficient fee",
 		},
 		"Failure: unsupported gas fee denom": {
@@ -164,7 +166,7 @@ func TestSubmitTxnWithGas(t *testing.T) {
 				sdk.NewCoin(constants.BtcUsd.Denom, sdkmath.NewInt(100_000_000)),
 			},
 			responseCode: sdkerrors.ErrInsufficientFee.ABCICode(),
-			logMessage: "insufficient fees; got: 100000000btc-denom required: 25000000000000000adv4tnt," +
+			logMessage: "insufficient fees; got: 100000000btc-denom required: 25000000000000000jinx," +
 				"25000ibc/8E27BA2D5493AF5636760E354E46004562C46AB7EC0CC4C1CA14E9E20E2545B5: insufficient fee",
 		},
 	}

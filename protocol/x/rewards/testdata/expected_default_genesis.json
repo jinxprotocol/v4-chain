@@ -1,7 +1,7 @@
 {
   "params": {
     "treasury_account":"rewards_treasury",
-    "denom":"adv4tnt",
+    "denom":"jinx",
     "denom_exponent":-18,
     "market_id":1,
     "fee_multiplier_ppm":990000

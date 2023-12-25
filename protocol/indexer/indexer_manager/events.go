@@ -1,14 +1,15 @@
 package indexer_manager
 
 import (
+	"github.com/cosmos/gogoproto/proto"
+	ante_types "github.com/jinxprotocol/v4-chain/protocol/app/ante/types"
+	"github.com/jinxprotocol/v4-chain/protocol/indexer/common"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/lib/metrics"
+
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
 	"github.com/cosmos/cosmos-sdk/telemetry"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/gogoproto/proto"
-	ante_types "github.com/dydxprotocol/v4-chain/protocol/app/ante/types"
-	"github.com/dydxprotocol/v4-chain/protocol/indexer/common"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	"github.com/dydxprotocol/v4-chain/protocol/lib/metrics"
 )
 
 const (

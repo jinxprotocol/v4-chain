@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/app"
-	"github.com/dydxprotocol/v4-chain/protocol/app/module"
+	"github.com/jinxprotocol/v4-chain/protocol/app"
+	"github.com/jinxprotocol/v4-chain/protocol/app/module"
 	"github.com/stretchr/testify/require"
 )
 

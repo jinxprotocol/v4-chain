@@ -2,8 +2,9 @@ package price_encoder
 
 import (
 	"fmt"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
 	"sync"
+
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
 )
 
 // mutableState stores all mutable state for the price encoder. Unlike the price fetcher, the

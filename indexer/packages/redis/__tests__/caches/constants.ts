@@ -1,5 +1,5 @@
-import { IsoString, OrderTable, SubaccountTable } from '@dydxprotocol-indexer/postgres';
-import { ORDER_FLAG_LONG_TERM, ORDER_FLAG_SHORT_TERM } from '@dydxprotocol-indexer/v4-proto-parser';
+import { IsoString, OrderTable, SubaccountTable } from '@jinxprotocol-indexer/postgres';
+import { ORDER_FLAG_LONG_TERM, ORDER_FLAG_SHORT_TERM } from '@jinxprotocol-indexer/v4-proto-parser';
 import {
   IndexerOrder,
   IndexerOrder_Side,
@@ -8,11 +8,11 @@ import {
   RedisOrder_TickerType,
   IndexerOrderId,
   IndexerOrder_ConditionType,
-} from '@dydxprotocol-indexer/v4-protos';
+} from '@jinxprotocol-indexer/v4-protos';
 import Long from 'long';
 import { DateTime } from 'luxon';
 
-export const address: string = 'dydxprotocol174e000tqwvszgjxs7yaj844e0m9s6f0m45ws7q';
+export const address: string = 'jinxprotocol174e000tqwvszgjxs7yaj844e0m9s6f0m45ws7q';
 export const subaccountNumber: number = 0;
 export const subaccountNumber2: number = 2;
 export const clientId: number = 12;

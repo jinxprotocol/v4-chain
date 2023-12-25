@@ -3,24 +3,25 @@ package app_test
 import (
 	"testing"
 
-	"github.com/cosmos/cosmos-sdk/x/auth/ante"
-	"github.com/dydxprotocol/v4-chain/protocol/app"
-	testApp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
+	"github.com/jinxprotocol/v4-chain/protocol/app"
+	testApp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
 	"github.com/stretchr/testify/require"
+
+	"github.com/cosmos/cosmos-sdk/x/auth/ante"
 )
 
 func newHandlerOptions() app.HandlerOptions {
 	encodingConfig := app.GetEncodingConfig()
-	dydxApp := testApp.DefaultTestApp(nil)
+	jinxApp := testApp.DefaultTestApp(nil)
 	return app.HandlerOptions{
 		HandlerOptions: ante.HandlerOptions{
-			AccountKeeper:   dydxApp.AccountKeeper,
-			BankKeeper:      dydxApp.BankKeeper,
+			AccountKeeper:   jinxApp.AccountKeeper,
+			BankKeeper:      jinxApp.BankKeeper,
 			SignModeHandler: encodingConfig.TxConfig.SignModeHandler(),
-			FeegrantKeeper:  dydxApp.FeeGrantKeeper,
+			FeegrantKeeper:  jinxApp.FeeGrantKeeper,
 			SigGasConsumer:  ante.DefaultSigVerificationGasConsumer,
 		},
-		ClobKeeper: dydxApp.ClobKeeper,
+		ClobKeeper: jinxApp.ClobKeeper,
 	}
 }
 

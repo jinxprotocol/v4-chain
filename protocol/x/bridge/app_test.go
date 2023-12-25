@@ -8,17 +8,18 @@ import (
 
 	abcitypes "github.com/cometbft/cometbft/abci/types"
 	"github.com/cometbft/cometbft/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/bridge/api"
-	testapp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	testtx "github.com/dydxprotocol/v4-chain/protocol/testutil/tx"
-	bridgetypes "github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/bridge/api"
+	testapp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	testtx "github.com/jinxprotocol/v4-chain/protocol/testutil/tx"
+	bridgetypes "github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
 	"github.com/stretchr/testify/require"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 const (
-	TEST_DENOM = "adv4tnt"
+	TEST_DENOM = "jinx"
 )
 
 func TestBridge_Success(t *testing.T) {
@@ -403,7 +404,7 @@ func TestBridge_AcknowledgedEventIdGreaterThanRecognizedEventId(t *testing.T) {
 	// RecognizedEventInfo has a greater `NextId` (which is AcknowledgedEventInfo in this case).
 	reiRequest := bridgetypes.QueryRecognizedEventInfoRequest{}
 	abciResponse := tApp.App.Query(abcitypes.RequestQuery{
-		Path: "/dydxprotocol.bridge.Query/RecognizedEventInfo",
+		Path: "/jinxprotocol.bridge.Query/RecognizedEventInfo",
 		Data: tApp.App.AppCodec().MustMarshal(&reiRequest),
 	})
 	require.True(t, abciResponse.IsOK())
@@ -416,7 +417,7 @@ func TestBridge_AcknowledgedEventIdGreaterThanRecognizedEventId(t *testing.T) {
 		BridgeEvents: []bridgetypes.BridgeEvent{
 			{
 				Id:             reiResponse.Info.NextId,
-				Coin:           sdk.NewCoin("adv4tnt", sdk.NewInt(1)),
+				Coin:           sdk.NewCoin("jinx", sdk.NewInt(1)),
 				Address:        constants.BobAccAddress.String(),
 				EthBlockHeight: 234,
 			},

@@ -1,10 +1,11 @@
 package msgs
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/encoding"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	govbeta "github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/encoding"
 )
 
 func init() {

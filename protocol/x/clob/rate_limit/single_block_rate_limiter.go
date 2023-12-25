@@ -1,11 +1,13 @@
 package rate_limit
 
 import (
-	errorsmod "cosmossdk.io/errors"
 	"fmt"
 
+	errorsmod "cosmossdk.io/errors"
+
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
 )
 
 var _ RateLimiter[int] = (*singleBlockRateLimiter[int])(nil)

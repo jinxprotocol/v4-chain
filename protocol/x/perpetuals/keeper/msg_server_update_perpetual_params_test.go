@@ -1,19 +1,21 @@
 package keeper_test
 
 import (
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
 	"testing"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	keepertest "github.com/dydxprotocol/v4-chain/protocol/testutil/keeper"
-	perptest "github.com/dydxprotocol/v4-chain/protocol/testutil/perpetuals"
-	pricestest "github.com/dydxprotocol/v4-chain/protocol/testutil/prices"
-	perpkeeper "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
-	priceskeeper "github.com/dydxprotocol/v4-chain/protocol/x/prices/keeper"
-	pricestypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	keepertest "github.com/jinxprotocol/v4-chain/protocol/testutil/keeper"
+	perptest "github.com/jinxprotocol/v4-chain/protocol/testutil/perpetuals"
+	pricestest "github.com/jinxprotocol/v4-chain/protocol/testutil/prices"
+	perpkeeper "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+	priceskeeper "github.com/jinxprotocol/v4-chain/protocol/x/prices/keeper"
+	pricestypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
 	"github.com/stretchr/testify/require"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 func TestUpdatePerpetualParams(t *testing.T) {

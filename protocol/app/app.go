@@ -21,6 +21,11 @@ import (
 	"github.com/cometbft/cometbft/libs/log"
 	tmos "github.com/cometbft/cometbft/libs/os"
 	tmproto "github.com/cometbft/cometbft/proto/tendermint/types"
+	"github.com/gorilla/mux"
+	"github.com/rakyll/statik/fs"
+	"github.com/spf13/cast"
+	"google.golang.org/grpc"
+
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/client"
 	cosmosflags "github.com/cosmos/cosmos-sdk/client/flags"
@@ -84,89 +89,85 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/upgrade"
 	upgradekeeper "github.com/cosmos/cosmos-sdk/x/upgrade/keeper"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
-	"github.com/gorilla/mux"
-	"github.com/rakyll/statik/fs"
-	"github.com/spf13/cast"
-	"google.golang.org/grpc"
 
 	// App
-	"github.com/dydxprotocol/v4-chain/protocol/app/basic_manager"
-	"github.com/dydxprotocol/v4-chain/protocol/app/flags"
-	"github.com/dydxprotocol/v4-chain/protocol/app/middleware"
-	"github.com/dydxprotocol/v4-chain/protocol/app/prepare"
-	"github.com/dydxprotocol/v4-chain/protocol/app/process"
+	"github.com/jinxprotocol/v4-chain/protocol/app/basic_manager"
+	"github.com/jinxprotocol/v4-chain/protocol/app/flags"
+	"github.com/jinxprotocol/v4-chain/protocol/app/middleware"
+	"github.com/jinxprotocol/v4-chain/protocol/app/prepare"
+	"github.com/jinxprotocol/v4-chain/protocol/app/process"
 
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	"github.com/dydxprotocol/v4-chain/protocol/lib/metrics"
-	timelib "github.com/dydxprotocol/v4-chain/protocol/lib/time"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/rate_limit"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/lib/metrics"
+	timelib "github.com/jinxprotocol/v4-chain/protocol/lib/time"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/rate_limit"
 
 	// Mempool
-	"github.com/dydxprotocol/v4-chain/protocol/mempool"
+	"github.com/jinxprotocol/v4-chain/protocol/mempool"
 
 	// Daemons
-	bridgeclient "github.com/dydxprotocol/v4-chain/protocol/daemons/bridge/client"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/configs"
-	daemonflags "github.com/dydxprotocol/v4-chain/protocol/daemons/flags"
-	liquidationclient "github.com/dydxprotocol/v4-chain/protocol/daemons/liquidation/client"
-	metricsclient "github.com/dydxprotocol/v4-chain/protocol/daemons/metrics/client"
-	pricefeedclient "github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/constants"
-	pricefeed_types "github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/types"
-	daemonserver "github.com/dydxprotocol/v4-chain/protocol/daemons/server"
-	daemonservertypes "github.com/dydxprotocol/v4-chain/protocol/daemons/server/types"
-	bridgedaemontypes "github.com/dydxprotocol/v4-chain/protocol/daemons/server/types/bridge"
-	liquidationtypes "github.com/dydxprotocol/v4-chain/protocol/daemons/server/types/liquidations"
-	pricefeedtypes "github.com/dydxprotocol/v4-chain/protocol/daemons/server/types/pricefeed"
-	daemontypes "github.com/dydxprotocol/v4-chain/protocol/daemons/types"
+	bridgeclient "github.com/jinxprotocol/v4-chain/protocol/daemons/bridge/client"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/configs"
+	daemonflags "github.com/jinxprotocol/v4-chain/protocol/daemons/flags"
+	liquidationclient "github.com/jinxprotocol/v4-chain/protocol/daemons/liquidation/client"
+	metricsclient "github.com/jinxprotocol/v4-chain/protocol/daemons/metrics/client"
+	pricefeedclient "github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/constants"
+	pricefeed_types "github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/types"
+	daemonserver "github.com/jinxprotocol/v4-chain/protocol/daemons/server"
+	daemonservertypes "github.com/jinxprotocol/v4-chain/protocol/daemons/server/types"
+	bridgedaemontypes "github.com/jinxprotocol/v4-chain/protocol/daemons/server/types/bridge"
+	liquidationtypes "github.com/jinxprotocol/v4-chain/protocol/daemons/server/types/liquidations"
+	pricefeedtypes "github.com/jinxprotocol/v4-chain/protocol/daemons/server/types/pricefeed"
+	daemontypes "github.com/jinxprotocol/v4-chain/protocol/daemons/types"
 
 	// Modules
-	assetsmodule "github.com/dydxprotocol/v4-chain/protocol/x/assets"
-	assetsmodulekeeper "github.com/dydxprotocol/v4-chain/protocol/x/assets/keeper"
-	assetsmoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/assets/types"
-	blocktimemodule "github.com/dydxprotocol/v4-chain/protocol/x/blocktime"
-	blocktimemodulekeeper "github.com/dydxprotocol/v4-chain/protocol/x/blocktime/keeper"
-	blocktimemoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/blocktime/types"
-	bridgemodule "github.com/dydxprotocol/v4-chain/protocol/x/bridge"
-	bridgemodulekeeper "github.com/dydxprotocol/v4-chain/protocol/x/bridge/keeper"
-	bridgemoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
-	clobmodule "github.com/dydxprotocol/v4-chain/protocol/x/clob"
-	clobflags "github.com/dydxprotocol/v4-chain/protocol/x/clob/flags"
-	clobmodulekeeper "github.com/dydxprotocol/v4-chain/protocol/x/clob/keeper"
-	clobmodulememclob "github.com/dydxprotocol/v4-chain/protocol/x/clob/memclob"
-	clobmoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	delaymsgmodule "github.com/dydxprotocol/v4-chain/protocol/x/delaymsg"
-	delaymsgmodulekeeper "github.com/dydxprotocol/v4-chain/protocol/x/delaymsg/keeper"
-	delaymsgmoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/delaymsg/types"
-	epochsmodule "github.com/dydxprotocol/v4-chain/protocol/x/epochs"
-	epochsmodulekeeper "github.com/dydxprotocol/v4-chain/protocol/x/epochs/keeper"
-	epochsmoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/epochs/types"
-	feetiersmodule "github.com/dydxprotocol/v4-chain/protocol/x/feetiers"
-	feetiersmodulekeeper "github.com/dydxprotocol/v4-chain/protocol/x/feetiers/keeper"
-	feetiersmoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/feetiers/types"
-	perpetualsmodule "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals"
-	perpetualsmodulekeeper "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/keeper"
-	perpetualsmoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
-	pricesmodule "github.com/dydxprotocol/v4-chain/protocol/x/prices"
-	pricesmodulekeeper "github.com/dydxprotocol/v4-chain/protocol/x/prices/keeper"
-	pricesmoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
-	ratelimitmodulekeeper "github.com/dydxprotocol/v4-chain/protocol/x/ratelimit/keeper"
-	ratelimitmoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/ratelimit/types"
-	rewardsmodule "github.com/dydxprotocol/v4-chain/protocol/x/rewards"
-	rewardsmodulekeeper "github.com/dydxprotocol/v4-chain/protocol/x/rewards/keeper"
-	rewardsmoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/rewards/types"
-	sendingmodule "github.com/dydxprotocol/v4-chain/protocol/x/sending"
-	sendingmodulekeeper "github.com/dydxprotocol/v4-chain/protocol/x/sending/keeper"
-	sendingmoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/sending/types"
-	statsmodule "github.com/dydxprotocol/v4-chain/protocol/x/stats"
-	statsmodulekeeper "github.com/dydxprotocol/v4-chain/protocol/x/stats/keeper"
-	statsmoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/stats/types"
-	subaccountsmodule "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts"
-	subaccountsmodulekeeper "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/keeper"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
-	vestmodule "github.com/dydxprotocol/v4-chain/protocol/x/vest"
-	vestmodulekeeper "github.com/dydxprotocol/v4-chain/protocol/x/vest/keeper"
-	vestmoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/vest/types"
+	assetsmodule "github.com/jinxprotocol/v4-chain/protocol/x/assets"
+	assetsmodulekeeper "github.com/jinxprotocol/v4-chain/protocol/x/assets/keeper"
+	assetsmoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/assets/types"
+	blocktimemodule "github.com/jinxprotocol/v4-chain/protocol/x/blocktime"
+	blocktimemodulekeeper "github.com/jinxprotocol/v4-chain/protocol/x/blocktime/keeper"
+	blocktimemoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/blocktime/types"
+	bridgemodule "github.com/jinxprotocol/v4-chain/protocol/x/bridge"
+	bridgemodulekeeper "github.com/jinxprotocol/v4-chain/protocol/x/bridge/keeper"
+	bridgemoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
+	clobmodule "github.com/jinxprotocol/v4-chain/protocol/x/clob"
+	clobflags "github.com/jinxprotocol/v4-chain/protocol/x/clob/flags"
+	clobmodulekeeper "github.com/jinxprotocol/v4-chain/protocol/x/clob/keeper"
+	clobmodulememclob "github.com/jinxprotocol/v4-chain/protocol/x/clob/memclob"
+	clobmoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	delaymsgmodule "github.com/jinxprotocol/v4-chain/protocol/x/delaymsg"
+	delaymsgmodulekeeper "github.com/jinxprotocol/v4-chain/protocol/x/delaymsg/keeper"
+	delaymsgmoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/delaymsg/types"
+	epochsmodule "github.com/jinxprotocol/v4-chain/protocol/x/epochs"
+	epochsmodulekeeper "github.com/jinxprotocol/v4-chain/protocol/x/epochs/keeper"
+	epochsmoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/epochs/types"
+	feetiersmodule "github.com/jinxprotocol/v4-chain/protocol/x/feetiers"
+	feetiersmodulekeeper "github.com/jinxprotocol/v4-chain/protocol/x/feetiers/keeper"
+	feetiersmoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/feetiers/types"
+	perpetualsmodule "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals"
+	perpetualsmodulekeeper "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/keeper"
+	perpetualsmoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+	pricesmodule "github.com/jinxprotocol/v4-chain/protocol/x/prices"
+	pricesmodulekeeper "github.com/jinxprotocol/v4-chain/protocol/x/prices/keeper"
+	pricesmoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+	ratelimitmodulekeeper "github.com/jinxprotocol/v4-chain/protocol/x/ratelimit/keeper"
+	ratelimitmoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/ratelimit/types"
+	rewardsmodule "github.com/jinxprotocol/v4-chain/protocol/x/rewards"
+	rewardsmodulekeeper "github.com/jinxprotocol/v4-chain/protocol/x/rewards/keeper"
+	rewardsmoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/rewards/types"
+	sendingmodule "github.com/jinxprotocol/v4-chain/protocol/x/sending"
+	sendingmodulekeeper "github.com/jinxprotocol/v4-chain/protocol/x/sending/keeper"
+	sendingmoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/sending/types"
+	statsmodule "github.com/jinxprotocol/v4-chain/protocol/x/stats"
+	statsmodulekeeper "github.com/jinxprotocol/v4-chain/protocol/x/stats/keeper"
+	statsmoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/stats/types"
+	subaccountsmodule "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts"
+	subaccountsmodulekeeper "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/keeper"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
+	vestmodule "github.com/jinxprotocol/v4-chain/protocol/x/vest"
+	vestmodulekeeper "github.com/jinxprotocol/v4-chain/protocol/x/vest/keeper"
+	vestmoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/vest/types"
 
 	// IBC
 	ica "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts"
@@ -183,9 +184,9 @@ import (
 	ibckeeper "github.com/cosmos/ibc-go/v7/modules/core/keeper"
 
 	// Indexer
-	"github.com/dydxprotocol/v4-chain/protocol/indexer"
-	"github.com/dydxprotocol/v4-chain/protocol/indexer/indexer_manager"
-	"github.com/dydxprotocol/v4-chain/protocol/indexer/msgsender"
+	"github.com/jinxprotocol/v4-chain/protocol/indexer"
+	"github.com/jinxprotocol/v4-chain/protocol/indexer/indexer_manager"
+	"github.com/jinxprotocol/v4-chain/protocol/indexer/msgsender"
 )
 
 var (
@@ -320,7 +321,7 @@ func New(
 ) *App {
 	assertAppPreconditions()
 
-	// dYdX specific command-line flags.
+	// jInX specific command-line flags.
 	appFlags := flags.GetFlagValuesFromOptions(appOpts)
 	logger.Info("Parsed App flags", "Flags", appFlags)
 	// Panic if this is not a full node and gRPC is disabled.
@@ -586,7 +587,7 @@ func New(
 	// If evidence needs to be handled for the app, set routes in router here and seal
 	app.EvidenceKeeper = *evidenceKeeper
 
-	/****  dYdX specific modules/setup ****/
+	/****  jInX specific modules/setup ****/
 	msgSender, indexerFlags := getIndexerFromOptions(appOpts, logger)
 	app.IndexerEventManager = indexer_manager.NewIndexerEventManager(
 		msgSender,
@@ -1242,7 +1243,7 @@ func New(
 
 	// Currently the only case that exists where the app is _not_ started with loadLatest=true is when state is
 	// loaded and then immediately exported to a file. In those cases, `LoadHeight` within `app.go` is called instead.
-	// This behavior can be invoked via running `dydxprotocold export`, which exports the chain state to a JSON file.
+	// This behavior can be invoked via running `jinxprotocold export`, which exports the chain state to a JSON file.
 	// In the export case, the memclob does not need to be hydrated, as it is never used.
 	if loadLatest {
 		if err := app.LoadLatestVersion(); err != nil {

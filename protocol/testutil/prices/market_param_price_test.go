@@ -3,7 +3,7 @@ package prices_test
 import (
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/prices"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/prices"
 	"github.com/stretchr/testify/require"
 )
 

@@ -1,4 +1,4 @@
-import { logger } from '@dydxprotocol-indexer/base';
+import { logger } from '@jinxprotocol-indexer/base';
 import {
   AssetPositionFromDatabase,
   BlockFromDatabase,
@@ -19,7 +19,7 @@ import {
   TendermintEventFromDatabase,
   TendermintEventTable,
   USDC_SYMBOL,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import Big from 'big.js';
 import express from 'express';
 import _ from 'lodash';

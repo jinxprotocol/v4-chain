@@ -1,17 +1,19 @@
 package gov_test
 
 import (
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
 	"testing"
 	"time"
 
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+
 	"github.com/cometbft/cometbft/types"
+	testapp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	statstypes "github.com/jinxprotocol/v4-chain/protocol/x/stats/types"
+	"github.com/stretchr/testify/require"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	govtypesv1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
-	testapp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	statstypes "github.com/dydxprotocol/v4-chain/protocol/x/stats/types"
-	"github.com/stretchr/testify/require"
 )
 
 func TestUpdateParams(t *testing.T) {

@@ -6,12 +6,35 @@ import (
 	"testing"
 	"time"
 
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
 	"gopkg.in/typ.v4/slices"
 
-	delaymsgmodule "github.com/dydxprotocol/v4-chain/protocol/x/delaymsg"
+	delaymsgmodule "github.com/jinxprotocol/v4-chain/protocol/x/delaymsg"
 
 	tmproto "github.com/cometbft/cometbft/proto/tendermint/types"
+	ica "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts"
+	"github.com/cosmos/ibc-go/v7/modules/apps/transfer"
+	ibc "github.com/cosmos/ibc-go/v7/modules/core"
+	ibcclientclient "github.com/cosmos/ibc-go/v7/modules/core/02-client/client"
+	ibctm "github.com/cosmos/ibc-go/v7/modules/light-clients/07-tendermint"
+	"github.com/jinxprotocol/v4-chain/protocol/app/basic_manager"
+	"github.com/jinxprotocol/v4-chain/protocol/app/flags"
+	custommodule "github.com/jinxprotocol/v4-chain/protocol/app/module"
+	testapp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	assetsmodule "github.com/jinxprotocol/v4-chain/protocol/x/assets"
+	blocktimemodule "github.com/jinxprotocol/v4-chain/protocol/x/blocktime"
+	bridgemodule "github.com/jinxprotocol/v4-chain/protocol/x/bridge"
+	clobmodule "github.com/jinxprotocol/v4-chain/protocol/x/clob"
+	epochsmodule "github.com/jinxprotocol/v4-chain/protocol/x/epochs"
+	feetiersmodule "github.com/jinxprotocol/v4-chain/protocol/x/feetiers"
+	perpetualsmodule "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals"
+	pricesmodule "github.com/jinxprotocol/v4-chain/protocol/x/prices"
+	rewardsmodule "github.com/jinxprotocol/v4-chain/protocol/x/rewards"
+	sendingmodule "github.com/jinxprotocol/v4-chain/protocol/x/sending"
+	statsmodule "github.com/jinxprotocol/v4-chain/protocol/x/stats"
+	subaccountsmodule "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts"
+	vestmodule "github.com/jinxprotocol/v4-chain/protocol/x/vest"
+
 	"github.com/cosmos/cosmos-sdk/types/module"
 	"github.com/cosmos/cosmos-sdk/x/auth"
 	"github.com/cosmos/cosmos-sdk/x/bank"
@@ -30,28 +53,6 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/staking"
 	"github.com/cosmos/cosmos-sdk/x/upgrade"
 	upgradeclient "github.com/cosmos/cosmos-sdk/x/upgrade/client"
-	ica "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts"
-	"github.com/cosmos/ibc-go/v7/modules/apps/transfer"
-	ibc "github.com/cosmos/ibc-go/v7/modules/core"
-	ibcclientclient "github.com/cosmos/ibc-go/v7/modules/core/02-client/client"
-	ibctm "github.com/cosmos/ibc-go/v7/modules/light-clients/07-tendermint"
-	"github.com/dydxprotocol/v4-chain/protocol/app/basic_manager"
-	"github.com/dydxprotocol/v4-chain/protocol/app/flags"
-	custommodule "github.com/dydxprotocol/v4-chain/protocol/app/module"
-	testapp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	assetsmodule "github.com/dydxprotocol/v4-chain/protocol/x/assets"
-	blocktimemodule "github.com/dydxprotocol/v4-chain/protocol/x/blocktime"
-	bridgemodule "github.com/dydxprotocol/v4-chain/protocol/x/bridge"
-	clobmodule "github.com/dydxprotocol/v4-chain/protocol/x/clob"
-	epochsmodule "github.com/dydxprotocol/v4-chain/protocol/x/epochs"
-	feetiersmodule "github.com/dydxprotocol/v4-chain/protocol/x/feetiers"
-	perpetualsmodule "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals"
-	pricesmodule "github.com/dydxprotocol/v4-chain/protocol/x/prices"
-	rewardsmodule "github.com/dydxprotocol/v4-chain/protocol/x/rewards"
-	sendingmodule "github.com/dydxprotocol/v4-chain/protocol/x/sending"
-	statsmodule "github.com/dydxprotocol/v4-chain/protocol/x/stats"
-	subaccountsmodule "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts"
-	vestmodule "github.com/dydxprotocol/v4-chain/protocol/x/vest"
 
 	"github.com/stretchr/testify/require"
 )
@@ -134,47 +135,47 @@ func TestAppPanicsWithGrpcDisabled(t *testing.T) {
 }
 
 func TestClobKeeperMemStoreHasBeenInitialized(t *testing.T) {
-	dydxApp := testapp.DefaultTestApp(nil)
-	ctx := dydxApp.NewUncachedContext(true, tmproto.Header{})
+	jinxApp := testapp.DefaultTestApp(nil)
+	ctx := jinxApp.NewUncachedContext(true, tmproto.Header{})
 
 	// The memstore panics if initialized twice so initializing again outside of application
 	// start-up should cause a panic.
-	require.Panics(t, func() { dydxApp.ClobKeeper.InitMemStore(ctx) })
+	require.Panics(t, func() { jinxApp.ClobKeeper.InitMemStore(ctx) })
 }
 
 func TestBaseApp(t *testing.T) {
-	dydxApp := testapp.DefaultTestApp(nil)
-	require.NotNil(t, dydxApp.GetBaseApp(), "Expected non-nil BaseApp")
+	jinxApp := testapp.DefaultTestApp(nil)
+	require.NotNil(t, jinxApp.GetBaseApp(), "Expected non-nil BaseApp")
 }
 
 func TestLegacyAmino(t *testing.T) {
-	dydxApp := testapp.DefaultTestApp(nil)
-	require.NotNil(t, dydxApp.LegacyAmino(), "Expected non-nil LegacyAmino")
+	jinxApp := testapp.DefaultTestApp(nil)
+	require.NotNil(t, jinxApp.LegacyAmino(), "Expected non-nil LegacyAmino")
 }
 
 func TestAppCodec(t *testing.T) {
-	dydxApp := testapp.DefaultTestApp(nil)
-	require.NotNil(t, dydxApp.AppCodec(), "Expected non-nil AppCodec")
+	jinxApp := testapp.DefaultTestApp(nil)
+	require.NotNil(t, jinxApp.AppCodec(), "Expected non-nil AppCodec")
 }
 
 func TestInterfaceRegistry(t *testing.T) {
-	dydxApp := testapp.DefaultTestApp(nil)
-	require.NotNil(t, dydxApp.InterfaceRegistry(), "Expected non-nil InterfaceRegistry")
+	jinxApp := testapp.DefaultTestApp(nil)
+	require.NotNil(t, jinxApp.InterfaceRegistry(), "Expected non-nil InterfaceRegistry")
 }
 
 func TestTxConfig(t *testing.T) {
-	dydxApp := testapp.DefaultTestApp(nil)
-	require.NotNil(t, dydxApp.TxConfig(), "Expected non-nil TxConfig")
+	jinxApp := testapp.DefaultTestApp(nil)
+	require.NotNil(t, jinxApp.TxConfig(), "Expected non-nil TxConfig")
 }
 
 func TestDefaultGenesis(t *testing.T) {
-	dydxApp := testapp.DefaultTestApp(nil)
-	require.NotNil(t, dydxApp.DefaultGenesis(), "Expected non-nil DefaultGenesis")
+	jinxApp := testapp.DefaultTestApp(nil)
+	require.NotNil(t, jinxApp.DefaultGenesis(), "Expected non-nil DefaultGenesis")
 }
 
 func TestSimulationManager(t *testing.T) {
-	dydxApp := testapp.DefaultTestApp(nil)
-	require.Nil(t, dydxApp.SimulationManager(), "Expected nil SimulationManager")
+	jinxApp := testapp.DefaultTestApp(nil)
+	require.Nil(t, jinxApp.SimulationManager(), "Expected nil SimulationManager")
 }
 
 func TestModuleBasics(t *testing.T) {

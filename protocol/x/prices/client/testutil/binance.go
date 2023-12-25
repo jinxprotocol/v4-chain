@@ -2,12 +2,13 @@ package testutil
 
 import (
 	"fmt"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/daemons/pricefeed/exchange_config"
 	"strings"
 
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_function/binance"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/daemons/pricefeed/exchange_config"
+
 	"github.com/h2non/gock"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_function/binance"
 )
 
 var (

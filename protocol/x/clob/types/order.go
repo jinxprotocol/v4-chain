@@ -9,8 +9,8 @@ import (
 
 	gometrics "github.com/armon/go-metrics"
 	proto "github.com/cosmos/gogoproto/proto"
-	"github.com/dydxprotocol/v4-chain/protocol/lib/metrics"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
+	"github.com/jinxprotocol/v4-chain/protocol/lib/metrics"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
 )
 
 var _ MatchableOrder = &Order{}

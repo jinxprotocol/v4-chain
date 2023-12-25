@@ -13,11 +13,11 @@ import (
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 
-	"github.com/dydxprotocol/v4-chain/protocol/app"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	libeth "github.com/dydxprotocol/v4-chain/protocol/lib/eth"
-	bridgetypes "github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
+	"github.com/jinxprotocol/v4-chain/protocol/app"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	libeth "github.com/jinxprotocol/v4-chain/protocol/lib/eth"
+	bridgetypes "github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
 
 	eth "github.com/ethereum/go-ethereum"
 	ethcommon "github.com/ethereum/go-ethereum/common"
@@ -46,7 +46,7 @@ func main() {
 	var denom, totalSupply, rpcNode, bridgeAddress string
 	var toBlock int64
 	var verbose bool
-	flag.StringVar(&denom, "denom", "adv4tnt", "token denom")
+	flag.StringVar(&denom, "denom", "jinx", "token denom")
 	flag.StringVar(&totalSupply, "totalsupply", "1000000000000000000000000000", "token's total supply (base 10)")
 	flag.StringVar(&rpcNode, "rpc", "https://eth-sepolia.g.alchemy.com/v2/demo", "rpc node url")
 	flag.StringVar(&bridgeAddress, "address", "0xcca9D5f0a3c58b6f02BD0985fC7F9420EA24C1f0", "bridge address")

@@ -19,7 +19,7 @@ NINE_ZEROS="000000000"
 ### TODO: update below fields as needed                                ###
 ########################################################################## 
 TITLE="TODO: Fill in proposal title" 
-NATIVE_TOKEN_DENOM="adv4tnt" # TODO: Replace with production token 
+NATIVE_TOKEN_DENOM="jinx" # TODO: Replace with production token 
 PROPOSAL_BODY="""
 TODO: Fill in proposal content. 
 Include detailed description of the proposal, links to governance discussion forums (if applicable).
@@ -57,10 +57,10 @@ VOTING_PERIOD_DAYS = 4
 ########################################################################## 
 ### Script contants - do not change                                    ###
 ########################################################################## 
-GOV_MODULE_ADDRESS="dydx10d07y265gmmuvt4z0w9aw880jnsr700jnmapky" # Governance module account
-COMMUNITY_VESTER_ADDRESS="dydx1wxje320an3karyc6mjw4zghs300dmrjkwn7xtk"
-REWARDS_VESTER_ADDRESS="dydx1ltyc6y4skclzafvpznpt2qjwmfwgsndp458rmp"
-DELAY_MSG_MODULE_ADDRESS="dydx1mkkvp26dngu6n8rmalaxyp3gwkjuzztq5zx6tr"
+GOV_MODULE_ADDRESS="jinx10d07y265gmmuvt4z0w9aw880jnsr700j5g6x5y" # Governance module account
+COMMUNITY_VESTER_ADDRESS="jinx1wxje320an3karyc6mjw4zghs300dmrjkwn7xtk"
+REWARDS_VESTER_ADDRESS="jinx1ltyc6y4skclzafvpznpt2qjwmfwgsndp458rmp"
+DELAY_MSG_MODULE_ADDRESS="jinx1mkkvp26dngu6n8rmalaxyp3gwkjuzztqn3pafr"
 DEPOSIT=f"10000{NINE_ZEROS}{NINE_ZEROS}{NATIVE_TOKEN_DENOM}" # 10,000 native tokens
 OUTPUT_FILE='proposal_bridge_vesters_set_rewards.json'
 
@@ -109,7 +109,7 @@ proposal_template = {
     "summary": PROPOSAL_BODY,
     "messages": [
         {
-            "@type": "/dydxprotocol.sending.MsgSendFromModuleToAccount",
+            "@type": "/jinxprotocol.sending.MsgSendFromModuleToAccount",
             "authority": GOV_MODULE_ADDRESS,
             "sender_module_name": "bridge",
             "recipient": COMMUNITY_VESTER_ADDRESS,
@@ -119,7 +119,7 @@ proposal_template = {
             }
         },
         {
-            "@type": "/dydxprotocol.sending.MsgSendFromModuleToAccount",
+            "@type": "/jinxprotocol.sending.MsgSendFromModuleToAccount",
             "authority": GOV_MODULE_ADDRESS,
             "sender_module_name": "bridge",
             "recipient": REWARDS_VESTER_ADDRESS,
@@ -129,7 +129,7 @@ proposal_template = {
             }
         },
         {
-            "@type": "/dydxprotocol.rewards.MsgUpdateParams",
+            "@type": "/jinxprotocol.rewards.MsgUpdateParams",
             "authority": GOV_MODULE_ADDRESS,
             "params": {
                 "treasury_account": "rewards_treasury",
@@ -149,10 +149,10 @@ for delayed_block_number, new_fee_multiplier in [
 ]:
     proposal_template["messages"].append(
         {
-            "@type": "/dydxprotocol.delaymsg.MsgDelayMessage",
+            "@type": "/jinxprotocol.delaymsg.MsgDelayMessage",
             "authority": GOV_MODULE_ADDRESS,
             "msg": {
-                "@type": "/dydxprotocol.rewards.MsgUpdateParams",
+                "@type": "/jinxprotocol.rewards.MsgUpdateParams",
                 "authority": DELAY_MSG_MODULE_ADDRESS,
                 "params": {
                     "treasury_account": "rewards_treasury",

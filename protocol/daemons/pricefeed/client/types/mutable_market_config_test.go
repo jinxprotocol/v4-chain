@@ -2,10 +2,11 @@ package types_test
 
 import (
 	"errors"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/stretchr/testify/require"
 )
 
 func TestCopy(t *testing.T) {

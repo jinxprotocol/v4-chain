@@ -1,5 +1,5 @@
-FROM dydxprotocol-base
+FROM jinxprotocol-base
 
-COPY ./testing/util/new-validator.sh /dydxprotocol/new-validator.sh
+COPY ./testing/util/new-validator.sh /jinxprotocol/new-validator.sh
 
-ENTRYPOINT ["/dydxprotocol/new-validator.sh"]
+ENTRYPOINT ["/jinxprotocol/new-validator.sh"]

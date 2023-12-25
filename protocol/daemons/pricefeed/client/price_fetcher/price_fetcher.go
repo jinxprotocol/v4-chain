@@ -3,20 +3,22 @@ package price_fetcher
 import (
 	"context"
 	"fmt"
-	"github.com/cosmos/cosmos-sdk/telemetry"
-	daemontypes "github.com/dydxprotocol/v4-chain/protocol/daemons/types"
 	"math/rand"
 	"sync"
 	"time"
 
+	daemontypes "github.com/jinxprotocol/v4-chain/protocol/daemons/types"
+
+	"github.com/cosmos/cosmos-sdk/telemetry"
+
 	gometrics "github.com/armon/go-metrics"
 	"github.com/cometbft/cometbft/libs/log"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/handler"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
-	pricefeedmetrics "github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/metrics"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	"github.com/dydxprotocol/v4-chain/protocol/lib/metrics"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/handler"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
+	pricefeedmetrics "github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/metrics"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/lib/metrics"
 	"gopkg.in/typ.v4/lists"
 )
 

@@ -1,8 +1,8 @@
 package exchange_config
 
 import (
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/constants/exchange_common"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/constants/exchange_common"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
 )
 
 var (
@@ -14,8 +14,8 @@ var (
 			Id: exchange_common.EXCHANGE_ID_BINANCE,
 			// example `symbols` parameter: ["BTCUSDT","BNBUSDT"]
 			MarketToMarketConfig: map[types.MarketId]types.MarketConfig{
-				MARKET_DYDX_USD: {
-					Ticker:         "DYDXUSDT",
+				MARKET_JINX_USD: {
+					Ticker:         "JINXUSDT",
 					AdjustByMarket: newMarketIdWithValue(MARKET_USDT_USD),
 				},
 				MARKET_BTC_USD: {
@@ -238,8 +238,8 @@ var (
 		exchange_common.EXCHANGE_ID_GATE: {
 			Id: exchange_common.EXCHANGE_ID_GATE,
 			MarketToMarketConfig: map[types.MarketId]types.MarketConfig{
-				MARKET_DYDX_USD: {
-					Ticker:         "DYDX_USDT",
+				MARKET_JINX_USD: {
+					Ticker:         "JINX_USDT",
 					AdjustByMarket: newMarketIdWithValue(MARKET_USDT_USD),
 				},
 				MARKET_MATIC_USD: {
@@ -351,8 +351,8 @@ var (
 		exchange_common.EXCHANGE_ID_BYBIT: {
 			Id: exchange_common.EXCHANGE_ID_BYBIT,
 			MarketToMarketConfig: map[types.MarketId]types.MarketConfig{
-				MARKET_DYDX_USD: {
-					Ticker:         "DYDXUSDT",
+				MARKET_JINX_USD: {
+					Ticker:         "JINXUSDT",
 					AdjustByMarket: newMarketIdWithValue(MARKET_USDT_USD),
 				},
 				MARKET_BTC_USD: {
@@ -546,8 +546,8 @@ var (
 		exchange_common.EXCHANGE_ID_KUCOIN: {
 			Id: exchange_common.EXCHANGE_ID_KUCOIN,
 			MarketToMarketConfig: map[types.MarketId]types.MarketConfig{
-				MARKET_DYDX_USD: {
-					Ticker:         "DYDX-USDT",
+				MARKET_JINX_USD: {
+					Ticker:         "JINX-USDT",
 					AdjustByMarket: newMarketIdWithValue(MARKET_USDT_USD),
 				},
 				MARKET_LINK_USD: {
@@ -684,8 +684,8 @@ var (
 		exchange_common.EXCHANGE_ID_OKX: {
 			Id: exchange_common.EXCHANGE_ID_OKX,
 			MarketToMarketConfig: map[types.MarketId]types.MarketConfig{
-				MARKET_DYDX_USD: {
-					Ticker:         "DYDX-USDT",
+				MARKET_JINX_USD: {
+					Ticker:         "JINX-USDT",
 					AdjustByMarket: newMarketIdWithValue(MARKET_USDT_USD),
 				},
 				MARKET_BTC_USD: {
@@ -824,8 +824,8 @@ var (
 		},
 		exchange_common.EXCHANGE_ID_MEXC: {
 			MarketToMarketConfig: map[types.MarketId]types.MarketConfig{
-				MARKET_DYDX_USD: {
-					Ticker:         "DYDX_USDT",
+				MARKET_JINX_USD: {
+					Ticker:         "JINX_USDT",
 					AdjustByMarket: newMarketIdWithValue(MARKET_USDT_USD),
 				},
 				MARKET_BTC_USD: {

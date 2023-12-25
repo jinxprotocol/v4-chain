@@ -1,9 +1,10 @@
 package lib_test
 
 import (
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	"github.com/stretchr/testify/require"
 )
 
 func TestTxHash(t *testing.T) {

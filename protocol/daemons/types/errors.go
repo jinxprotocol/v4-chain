@@ -1,10 +1,11 @@
 package types
 
 import (
-	errorsmod "cosmossdk.io/errors"
 	"fmt"
 
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/constants"
+	errorsmod "cosmossdk.io/errors"
+
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/constants"
 )
 
 const Name = "daemons"

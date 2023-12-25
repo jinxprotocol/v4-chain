@@ -2,7 +2,7 @@ import {
   ORDER_FLAG_CONDITIONAL,
   ORDER_FLAG_LONG_TERM,
   ORDER_FLAG_SHORT_TERM,
-} from '@dydxprotocol-indexer/v4-proto-parser';
+} from '@jinxprotocol-indexer/v4-proto-parser';
 import { DateTime } from 'luxon';
 
 import * as AssetPositionTable from '../../src/stores/asset-position-table';
@@ -56,9 +56,9 @@ import { denomToHumanReadableConversion } from './conversion-helpers';
 export const createdDateTime: DateTime = DateTime.utc();
 export const createdHeight: string = '2';
 export const invalidTicker: string = 'INVALID-INVALID';
-export const dydxChain: string = 'dydx';
-export const defaultAddress: string = 'dydx1n88uc38xhjgxzw9nwre4ep2c8ga4fjxc565lnf';
-export const blockedAddress: string = 'dydx1f9k5qldwmqrnwy8hcgp4fw6heuvszt35egvtx2';
+export const jinxChain: string = 'jinx';
+export const defaultAddress: string = 'jinx1n88uc38xhjgxzw9nwre4ep2c8ga4fjxc565lnf';
+export const blockedAddress: string = 'jinx1f9k5qldwmqrnwy8hcgp4fw6heuvszt35egvtx2';
 
 // ============== Subaccounts ==============
 
@@ -119,7 +119,7 @@ export const defaultAsset: AssetCreateObject = {
 };
 export const defaultAsset2: AssetCreateObject = {
   id: '1',
-  symbol: 'DYDX',
+  symbol: 'JINX',
   atomicResolution: 0,
   hasMarket: true,
   marketId: 1,
@@ -577,7 +577,7 @@ export const defaultFundingIndexUpdateId: string = FundingIndexUpdatesTable.uuid
 export const blockedComplianceData: ComplianceDataCreateObject = {
   address: blockedAddress,
   provider: ComplianceProvider.ELLIPTIC,
-  chain: dydxChain,
+  chain: jinxChain,
   blocked: true,
   riskScore: '100.00',
   updatedAt: createdDateTime.toISO(),
@@ -586,7 +586,7 @@ export const blockedComplianceData: ComplianceDataCreateObject = {
 export const nonBlockedComplianceData: ComplianceDataCreateObject = {
   address: defaultAddress,
   provider: ComplianceProvider.ELLIPTIC,
-  chain: dydxChain,
+  chain: jinxChain,
   blocked: false,
   riskScore: '10.00',
   updatedAt: createdDateTime.plus(1).toISO(),

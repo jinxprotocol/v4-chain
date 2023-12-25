@@ -4,8 +4,9 @@ import (
 	fmt "fmt"
 	"math/big"
 
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
 )
 
 // CLOB module event types.

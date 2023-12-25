@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"strings"
 
-	servertypes "github.com/cosmos/cosmos-sdk/server/types"
 	"github.com/spf13/cast"
 	"github.com/spf13/cobra"
+
+	servertypes "github.com/cosmos/cosmos-sdk/server/types"
 )
 
 // A struct containing the values of all flags.
@@ -49,7 +50,7 @@ var DefaultMevTelemetryHosts = []string{}
 
 // AddFlagsToCmd adds flags to app initialization.
 // These flags should be applied to the `start` command of the V4 Cosmos application.
-// E.g. `dydxprotocold start --non-validating-full-node true`.
+// E.g. `jinxprotocold start --non-validating-full-node true`.
 func AddClobFlagsToCmd(cmd *cobra.Command) {
 	cmd.Flags().Uint32(
 		MaxLiquidationAttemptsPerBlock,

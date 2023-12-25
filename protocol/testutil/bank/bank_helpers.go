@@ -2,6 +2,8 @@ package bank
 
 import (
 	sdkmath "cosmossdk.io/math"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/codec"
 	testutilcli "github.com/cosmos/cosmos-sdk/testutil/cli"
@@ -10,7 +12,6 @@ import (
 	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
 )
 
 // GetModuleAccUsdcBalance is a test utility function to query USDC balance

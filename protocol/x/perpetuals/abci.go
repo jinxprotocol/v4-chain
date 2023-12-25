@@ -1,8 +1,9 @@
 package perpetuals
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
 )
 
 // EndBlocker executes all ABCI EndBlock logic respective to the perpetuals module.

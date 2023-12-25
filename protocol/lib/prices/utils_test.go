@@ -1,10 +1,11 @@
 package prices_test
 
 import (
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
-	"github.com/dydxprotocol/v4-chain/protocol/lib/prices"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
+	"github.com/jinxprotocol/v4-chain/protocol/lib/prices"
+	"github.com/stretchr/testify/require"
 )
 
 func TestInvert(t *testing.T) {

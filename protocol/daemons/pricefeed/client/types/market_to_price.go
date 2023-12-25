@@ -4,9 +4,10 @@ import (
 	"sync"
 	"time"
 
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/types"
+	"github.com/jinxprotocol/v4-chain/protocol/lib/metrics"
+
 	"github.com/cosmos/cosmos-sdk/telemetry"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/types"
-	"github.com/dydxprotocol/v4-chain/protocol/lib/metrics"
 )
 
 // MarketToPrice maintains multiple prices for different markets for the same exchange,

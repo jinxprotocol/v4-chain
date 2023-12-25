@@ -7,16 +7,16 @@ import {
   baseConfigSchema,
   parseInteger,
   parseBoolean,
-} from '@dydxprotocol-indexer/base';
+} from '@jinxprotocol-indexer/base';
 import {
   kafkaConfigSchema,
-} from '@dydxprotocol-indexer/kafka';
+} from '@jinxprotocol-indexer/kafka';
 import {
   postgresConfigSchema,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import {
   redisConfigSchema,
-} from '@dydxprotocol-indexer/redis';
+} from '@jinxprotocol-indexer/redis';
 
 export const configSchema = {
   ...baseConfigSchema,

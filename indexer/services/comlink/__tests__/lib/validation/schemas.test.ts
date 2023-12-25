@@ -3,7 +3,7 @@ import { getQueryString, sendRequestToApp } from '../../helpers/helpers';
 import { schemaTestApp } from './helpers';
 import request from 'supertest';
 import config from '../../../src/config';
-import { testConstants } from '@dydxprotocol-indexer/postgres';
+import { testConstants } from '@jinxprotocol-indexer/postgres';
 import { MAX_SUBACCOUNT_NUMBER } from '../../../src/constants';
 
 describe('schemas', () => {

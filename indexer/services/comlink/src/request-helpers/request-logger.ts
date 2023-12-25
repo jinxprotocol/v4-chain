@@ -1,4 +1,4 @@
-import { logger, safeJsonStringify } from '@dydxprotocol-indexer/base';
+import { logger, safeJsonStringify } from '@jinxprotocol-indexer/base';
 import express from 'express';
 
 import config from '../config';

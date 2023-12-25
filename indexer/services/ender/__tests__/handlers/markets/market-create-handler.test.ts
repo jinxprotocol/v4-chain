@@ -1,11 +1,11 @@
-import { logger } from '@dydxprotocol-indexer/base';
+import { logger } from '@jinxprotocol-indexer/base';
 import {
   dbHelpers, MarketFromDatabase, MarketTable, testMocks,
-} from '@dydxprotocol-indexer/postgres';
-import { IndexerTendermintBlock, IndexerTendermintEvent, MarketEventV1 } from '@dydxprotocol-indexer/v4-protos';
+} from '@jinxprotocol-indexer/postgres';
+import { IndexerTendermintBlock, IndexerTendermintEvent, MarketEventV1 } from '@jinxprotocol-indexer/v4-protos';
 import { KafkaMessage } from 'kafkajs';
 import { onMessage } from '../../../src/lib/on-message';
-import { DydxIndexerSubtypes, MarketCreateEventMessage } from '../../../src/lib/types';
+import { JinxIndexerSubtypes, MarketCreateEventMessage } from '../../../src/lib/types';
 import {
   defaultHeight,
   defaultMarketCreate,
@@ -14,7 +14,7 @@ import {
   defaultTxHash,
 } from '../../helpers/constants';
 import { createKafkaMessageFromMarketEvent } from '../../helpers/kafka-helpers';
-import { producer } from '@dydxprotocol-indexer/kafka';
+import { producer } from '@jinxprotocol-indexer/kafka';
 import { updateBlockCache } from '../../../src/caches/block-cache';
 import { MarketCreateHandler } from '../../../src/handlers/markets/market-create-handler';
 import {
@@ -60,7 +60,7 @@ describe('marketCreateHandler', () => {
         },
       };
       const indexerTendermintEvent: IndexerTendermintEvent = createIndexerTendermintEvent(
-        DydxIndexerSubtypes.MARKET,
+        JinxIndexerSubtypes.MARKET,
         MarketEventV1.encode(marketEvent).finish(),
         transactionIndex,
         eventIndex,
@@ -93,7 +93,7 @@ describe('marketCreateHandler', () => {
       marketId: 3,
       marketCreate: {
         base: {
-          pair: 'DYDX-USD',
+          pair: 'JINX-USD',
           minPriceChangePpm: 500,
         },
         exponent: -5,
@@ -138,7 +138,7 @@ describe('marketCreateHandler', () => {
     expect(market.minPriceChangePpm).toEqual(50);
 
     expect(loggerCrit).toHaveBeenCalledWith(expect.objectContaining({
-      at: expect.stringContaining('PL/pgSQL function dydx_market_create_handler('),
+      at: expect.stringContaining('PL/pgSQL function jinx_market_create_handler('),
       message: expect.stringContaining('Market in MarketCreate already exists'),
     }));
     expect(producerSendMock.mock.calls.length).toEqual(0);

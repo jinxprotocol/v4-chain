@@ -1,11 +1,12 @@
 package cli
 
 import (
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/spf13/cobra"
 
-	"github.com/dydxprotocol/v4-chain/protocol/x/vest/types"
+	"github.com/cosmos/cosmos-sdk/client"
+	"github.com/cosmos/cosmos-sdk/client/flags"
+
+	"github.com/jinxprotocol/v4-chain/protocol/x/vest/types"
 )
 
 func CmdQueryVestEntry() *cobra.Command {

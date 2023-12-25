@@ -1,12 +1,12 @@
 /* eslint-disable max-len */
-import { logger, stats, STATS_NO_SAMPLING } from '@dydxprotocol-indexer/base';
+import { logger, stats, STATS_NO_SAMPLING } from '@jinxprotocol-indexer/base';
 import {
   storeHelpers,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import {
   IndexerTendermintBlock,
   IndexerTendermintEvent,
-} from '@dydxprotocol-indexer/v4-protos';
+} from '@jinxprotocol-indexer/v4-protos';
 import _ from 'lodash';
 import * as pg from 'pg';
 import { DatabaseError } from 'pg';
@@ -32,26 +32,26 @@ import { indexerTendermintEventToEventProtoWithType, indexerTendermintEventToTra
 import { KafkaPublisher } from './kafka-publisher';
 import { SyncHandlers, SYNCHRONOUS_SUBTYPES } from './sync-handlers';
 import {
-  DydxIndexerSubtypes, EventMessage, EventProtoWithTypeAndVersion, GroupedEvents,
+  JinxIndexerSubtypes, EventMessage, EventProtoWithTypeAndVersion, GroupedEvents,
 } from './types';
 
 const TXN_EVENT_SUBTYPE_VERSION_TO_VALIDATOR_MAPPING: Record<string, ValidatorInitializer> = {
-  [serializeSubtypeAndVersion(DydxIndexerSubtypes.ORDER_FILL.toString(), 1)]: OrderFillValidator,
-  [serializeSubtypeAndVersion(DydxIndexerSubtypes.SUBACCOUNT_UPDATE.toString(), 1)]: SubaccountUpdateValidator,
-  [serializeSubtypeAndVersion(DydxIndexerSubtypes.TRANSFER.toString(), 1)]: TransferValidator,
-  [serializeSubtypeAndVersion(DydxIndexerSubtypes.MARKET.toString(), 1)]: MarketValidator,
-  [serializeSubtypeAndVersion(DydxIndexerSubtypes.STATEFUL_ORDER.toString(), 1)]: StatefulOrderValidator,
-  [serializeSubtypeAndVersion(DydxIndexerSubtypes.ASSET.toString(), 1)]: AssetValidator,
-  [serializeSubtypeAndVersion(DydxIndexerSubtypes.PERPETUAL_MARKET.toString(), 1)]: PerpetualMarketValidator,
-  [serializeSubtypeAndVersion(DydxIndexerSubtypes.LIQUIDITY_TIER.toString(), 1)]: LiquidityTierValidator,
-  [serializeSubtypeAndVersion(DydxIndexerSubtypes.UPDATE_PERPETUAL.toString(), 1)]: UpdatePerpetualValidator,
-  [serializeSubtypeAndVersion(DydxIndexerSubtypes.UPDATE_CLOB_PAIR.toString(), 1)]: UpdateClobPairValidator,
-  [serializeSubtypeAndVersion(DydxIndexerSubtypes.DELEVERAGING.toString(), 1)]: DeleveragingValidator,
-  [serializeSubtypeAndVersion(DydxIndexerSubtypes.TRADING_REWARD.toString(), 1)]: TradingRewardsValidator,
+  [serializeSubtypeAndVersion(JinxIndexerSubtypes.ORDER_FILL.toString(), 1)]: OrderFillValidator,
+  [serializeSubtypeAndVersion(JinxIndexerSubtypes.SUBACCOUNT_UPDATE.toString(), 1)]: SubaccountUpdateValidator,
+  [serializeSubtypeAndVersion(JinxIndexerSubtypes.TRANSFER.toString(), 1)]: TransferValidator,
+  [serializeSubtypeAndVersion(JinxIndexerSubtypes.MARKET.toString(), 1)]: MarketValidator,
+  [serializeSubtypeAndVersion(JinxIndexerSubtypes.STATEFUL_ORDER.toString(), 1)]: StatefulOrderValidator,
+  [serializeSubtypeAndVersion(JinxIndexerSubtypes.ASSET.toString(), 1)]: AssetValidator,
+  [serializeSubtypeAndVersion(JinxIndexerSubtypes.PERPETUAL_MARKET.toString(), 1)]: PerpetualMarketValidator,
+  [serializeSubtypeAndVersion(JinxIndexerSubtypes.LIQUIDITY_TIER.toString(), 1)]: LiquidityTierValidator,
+  [serializeSubtypeAndVersion(JinxIndexerSubtypes.UPDATE_PERPETUAL.toString(), 1)]: UpdatePerpetualValidator,
+  [serializeSubtypeAndVersion(JinxIndexerSubtypes.UPDATE_CLOB_PAIR.toString(), 1)]: UpdateClobPairValidator,
+  [serializeSubtypeAndVersion(JinxIndexerSubtypes.DELEVERAGING.toString(), 1)]: DeleveragingValidator,
+  [serializeSubtypeAndVersion(JinxIndexerSubtypes.TRADING_REWARD.toString(), 1)]: TradingRewardsValidator,
 };
 
 const BLOCK_EVENT_SUBTYPE_VERSION_TO_VALIDATOR_MAPPING: Record<string, ValidatorInitializer> = {
-  [serializeSubtypeAndVersion(DydxIndexerSubtypes.FUNDING.toString(), 1)]: FundingValidator,
+  [serializeSubtypeAndVersion(JinxIndexerSubtypes.FUNDING.toString(), 1)]: FundingValidator,
 };
 
 function serializeSubtypeAndVersion(
@@ -208,7 +208,7 @@ export class BlockProcessor {
     );
 
     _.map(handlers, (handler: Handler<EventMessage>) => {
-      if (SYNCHRONOUS_SUBTYPES.includes(eventProto.type as DydxIndexerSubtypes)) {
+      if (SYNCHRONOUS_SUBTYPES.includes(eventProto.type as JinxIndexerSubtypes)) {
         this.syncHandlers.addHandler(eventProto.type, handler);
       } else {
         this.batchedHandlers.addHandler(handler);
@@ -237,11 +237,11 @@ export class BlockProcessor {
     let resultRow: pg.QueryResultRow;
     try {
       const result: pg.QueryResult = await storeHelpers.rawQuery(
-        'SELECT dydx_block_processor(?) AS result;',
+        'SELECT jinx_block_processor(?) AS result;',
         {
           txId: this.txId,
           bindings: [JSON.stringify(this.sqlBlock)],
-          sqlOptions: { name: 'dydx_block_processor' },
+          sqlOptions: { name: 'jinx_block_processor' },
         },
       ).catch((error: DatabaseError) => {
         logger.crit({

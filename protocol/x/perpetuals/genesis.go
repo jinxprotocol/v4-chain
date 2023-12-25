@@ -1,9 +1,10 @@
 package perpetuals
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
 )
 
 // InitGenesis initializes the perpetual module's state from a provided genesis

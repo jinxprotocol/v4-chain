@@ -1,8 +1,9 @@
 package epochs
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/x/epochs/keeper"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/epochs/keeper"
 )
 
 // BeginBlocker executes all ABCI BeginBlock logic respective to the epochs module.

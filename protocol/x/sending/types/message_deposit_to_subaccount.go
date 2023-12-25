@@ -1,10 +1,11 @@
 package types
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	assettypes "github.com/jinxprotocol/v4-chain/protocol/x/assets/types"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	assettypes "github.com/dydxprotocol/v4-chain/protocol/x/assets/types"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
 )
 
 var _ sdk.Msg = &MsgDepositToSubaccount{}

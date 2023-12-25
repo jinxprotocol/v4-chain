@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_function/binance"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_function/testutil"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/daemons/pricefeed"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_function/binance"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_function/testutil"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/daemons/pricefeed"
 	"github.com/stretchr/testify/require"
 )
 

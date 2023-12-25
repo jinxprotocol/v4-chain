@@ -1,4 +1,4 @@
-import { stats, logger } from '@dydxprotocol-indexer/base';
+import { stats, logger } from '@jinxprotocol-indexer/base';
 import WebSocket from 'ws';
 
 import config from '../config';

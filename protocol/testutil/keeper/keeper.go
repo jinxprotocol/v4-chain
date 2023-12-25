@@ -1,16 +1,18 @@
 package keeper
 
 import (
-	indexer_manager "github.com/dydxprotocol/v4-chain/protocol/indexer/indexer_manager"
 	"testing"
 
+	indexer_manager "github.com/jinxprotocol/v4-chain/protocol/indexer/indexer_manager"
+
 	tmdb "github.com/cometbft/cometbft-db"
+	sdktest "github.com/jinxprotocol/v4-chain/protocol/testutil/sdk"
+	"github.com/stretchr/testify/require"
+
 	"github.com/cosmos/cosmos-sdk/codec"
 	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdktest "github.com/dydxprotocol/v4-chain/protocol/testutil/sdk"
-	"github.com/stretchr/testify/require"
 )
 
 type GenesisInitializer interface {

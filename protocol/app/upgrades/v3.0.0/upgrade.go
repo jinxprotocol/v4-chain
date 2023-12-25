@@ -3,6 +3,17 @@ package v_3_0_0
 import (
 	"fmt"
 
+	ica "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts"
+	icacontrollertypes "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts/controller/types"
+	icahosttypes "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts/host/types"
+	icatypes "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts/types"
+	ibctransfertypes "github.com/cosmos/ibc-go/v7/modules/apps/transfer/types"
+	bridgemoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
+	clobmoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	rewardsmoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/rewards/types"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
+	vestmoduletypes "github.com/jinxprotocol/v4-chain/protocol/x/vest/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	authkeeper "github.com/cosmos/cosmos-sdk/x/auth/keeper"
@@ -12,16 +23,6 @@ import (
 	govtypesv1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
-	ica "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts"
-	icacontrollertypes "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts/controller/types"
-	icahosttypes "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts/host/types"
-	icatypes "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts/types"
-	ibctransfertypes "github.com/cosmos/ibc-go/v7/modules/apps/transfer/types"
-	bridgemoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
-	clobmoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	rewardsmoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/rewards/types"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
-	vestmoduletypes "github.com/dydxprotocol/v4-chain/protocol/x/vest/types"
 )
 
 var (
@@ -47,7 +48,7 @@ var (
 		sdk.MsgTypeURL(&govtypesv1.MsgVote{}),
 	}
 	// List of module accounts to check in state.
-	// These include all dYdX custom module accounts.
+	// These include all jInX custom module accounts.
 	ModuleAccsToInitialize = []string{
 		bridgemoduletypes.ModuleName,
 		satypes.ModuleName,

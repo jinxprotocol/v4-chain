@@ -8,9 +8,10 @@ import (
 	"sync"
 
 	gometrics "github.com/armon/go-metrics"
+	"github.com/jinxprotocol/v4-chain/protocol/lib/metrics"
+	"github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+
 	"github.com/cosmos/cosmos-sdk/telemetry"
-	"github.com/dydxprotocol/v4-chain/protocol/lib/metrics"
-	"github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
 )
 
 const (

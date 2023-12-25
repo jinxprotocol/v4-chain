@@ -1,11 +1,12 @@
 package types_test
 
 import (
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/server/types"
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	"github.com/stretchr/testify/require"
 	"testing"
 	"time"
+
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/server/types"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	"github.com/stretchr/testify/require"
 )
 
 func TestHealthChecker(t *testing.T) {

@@ -1,12 +1,12 @@
 import {
   stats,
-} from '@dydxprotocol-indexer/base';
+} from '@jinxprotocol-indexer/base';
 import {
   OrderSide,
   PerpetualMarketFromDatabase,
   PerpetualMarketTable,
-} from '@dydxprotocol-indexer/postgres';
-import { OrderbookLevels, OrderbookLevelsCache, PriceLevel } from '@dydxprotocol-indexer/redis';
+} from '@jinxprotocol-indexer/postgres';
+import { OrderbookLevels, OrderbookLevelsCache, PriceLevel } from '@jinxprotocol-indexer/redis';
 import _ from 'lodash';
 
 import config from '../config';

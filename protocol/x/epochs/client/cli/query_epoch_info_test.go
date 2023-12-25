@@ -9,15 +9,16 @@ import (
 	"time"
 
 	tmcli "github.com/cometbft/cometbft/libs/cli"
-	"github.com/cosmos/cosmos-sdk/client/flags"
-	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/network"
-	"github.com/dydxprotocol/v4-chain/protocol/x/epochs/client/cli"
-	"github.com/dydxprotocol/v4-chain/protocol/x/epochs/types"
+	"github.com/cosmos/cosmos-sdk/client/flags"
+	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
+
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/network"
+	"github.com/jinxprotocol/v4-chain/protocol/x/epochs/client/cli"
+	"github.com/jinxprotocol/v4-chain/protocol/x/epochs/types"
 )
 
 // Prevent strconv unused error

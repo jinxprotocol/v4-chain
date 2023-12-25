@@ -4,8 +4,9 @@ import (
 	"errors"
 	"fmt"
 
+	"github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
 )
 
 // UpdateSmoothedPrices updates the internal map of smoothed prices for all markets.

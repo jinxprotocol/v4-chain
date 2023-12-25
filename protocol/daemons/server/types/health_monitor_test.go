@@ -2,13 +2,14 @@ package types_test
 
 import (
 	"fmt"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/server/types"
-	daemontypes "github.com/dydxprotocol/v4-chain/protocol/daemons/types"
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	"github.com/stretchr/testify/mock"
-	"github.com/stretchr/testify/require"
 	"testing"
 	"time"
+
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/server/types"
+	daemontypes "github.com/jinxprotocol/v4-chain/protocol/daemons/types"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	"github.com/stretchr/testify/mock"
+	"github.com/stretchr/testify/require"
 )
 
 var (

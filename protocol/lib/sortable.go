@@ -1,8 +1,9 @@
 package lib
 
 import (
-	"golang.org/x/exp/constraints"
 	"sort"
+
+	"golang.org/x/exp/constraints"
 )
 
 // Sortable[K] attaches the methods of sort.Interface to []K, sorting in increasing order.

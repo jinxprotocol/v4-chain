@@ -19,7 +19,7 @@ const (
 
 	// 10^BaseDenomExponent denotes how much full coin is represented by 1 base denom.
 	BaseDenomExponent = -18
-	DefaultBaseDenom  = "adv4tnt"
+	DefaultBaseDenom  = "jinx"
 )
 
 // PowerReduction defines the default power reduction value for staking.

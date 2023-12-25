@@ -3,11 +3,11 @@ package events_test
 import (
 	"testing"
 
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
 
-	"github.com/dydxprotocol/v4-chain/protocol/indexer/events"
-	v1 "github.com/dydxprotocol/v4-chain/protocol/indexer/protocol/v1"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/indexer/events"
+	v1 "github.com/jinxprotocol/v4-chain/protocol/indexer/protocol/v1"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
 	"github.com/stretchr/testify/require"
 )
 

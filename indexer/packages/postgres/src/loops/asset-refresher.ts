@@ -1,6 +1,6 @@
 import {
   stats, delay, logger, NodeEnv,
-} from '@dydxprotocol-indexer/base';
+} from '@jinxprotocol-indexer/base';
 
 import config from '../config';
 import * as AssetTable from '../stores/asset-table';

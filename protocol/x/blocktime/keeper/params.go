@@ -1,8 +1,9 @@
 package keeper
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/x/blocktime/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/blocktime/types"
 )
 
 // GetParams returns the DowntimeParams in state.

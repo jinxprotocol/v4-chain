@@ -2,9 +2,10 @@ package price_function_test
 
 import (
 	"errors"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_function"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_function"
+	"github.com/stretchr/testify/require"
 )
 
 func TestExchangeError(t *testing.T) {

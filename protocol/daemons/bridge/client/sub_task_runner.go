@@ -3,19 +3,21 @@ package client
 import (
 	"context"
 	"fmt"
+	"math/big"
+	"time"
+
 	"github.com/cometbft/cometbft/libs/log"
-	"github.com/cosmos/cosmos-sdk/telemetry"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/bridge/api"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/bridge/client/types"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/constants"
-	libeth "github.com/dydxprotocol/v4-chain/protocol/lib/eth"
-	"github.com/dydxprotocol/v4-chain/protocol/lib/metrics"
-	bridgetypes "github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
 	eth "github.com/ethereum/go-ethereum"
 	ethcommon "github.com/ethereum/go-ethereum/common"
 	ethrpc "github.com/ethereum/go-ethereum/rpc"
-	"math/big"
-	"time"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/bridge/api"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/bridge/client/types"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/constants"
+	libeth "github.com/jinxprotocol/v4-chain/protocol/lib/eth"
+	"github.com/jinxprotocol/v4-chain/protocol/lib/metrics"
+	bridgetypes "github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
+
+	"github.com/cosmos/cosmos-sdk/telemetry"
 )
 
 type SubTaskRunner interface {

@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	abci "github.com/cometbft/cometbft/abci/types"
-	testApp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
+	testApp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
 	"github.com/stretchr/testify/require"
 )
 
@@ -20,7 +20,7 @@ func TestEquityTierLimitConfiguration(
 
 	request := types.QueryEquityTierLimitConfigurationRequest{}
 	abciResponse := tApp.App.Query(abci.RequestQuery{
-		Path: "/dydxprotocol.clob.Query/EquityTierLimitConfiguration",
+		Path: "/jinxprotocol.clob.Query/EquityTierLimitConfiguration",
 		Data: tApp.App.AppCodec().MustMarshal(&request),
 	})
 	require.True(t, abciResponse.IsOK())

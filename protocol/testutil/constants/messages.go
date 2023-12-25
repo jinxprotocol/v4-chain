@@ -2,17 +2,18 @@ package constants
 
 import (
 	sdkmath "cosmossdk.io/math"
+	"github.com/jinxprotocol/v4-chain/protocol/app/config"
+	assettypes "github.com/jinxprotocol/v4-chain/protocol/x/assets/types"
+	clobtypes "github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	sendingtypes "github.com/jinxprotocol/v4-chain/protocol/x/sending/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	"github.com/dydxprotocol/v4-chain/protocol/app/config"
-	assettypes "github.com/dydxprotocol/v4-chain/protocol/x/assets/types"
-	clobtypes "github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	sendingtypes "github.com/dydxprotocol/v4-chain/protocol/x/sending/types"
 )
 
 func init() {
 	// This package does not contain the `app/config` package in its import chain, and therefore needs to call
-	// SetAddressPrefixes() explicitly in order to set the `dydx` address prefixes.
+	// SetAddressPrefixes() explicitly in order to set the `jinx` address prefixes.
 	config.SetAddressPrefixes()
 
 	_ = TestTxBuilder.SetMsgs(Msg_PlaceOrder)

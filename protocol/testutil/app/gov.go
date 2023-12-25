@@ -6,10 +6,11 @@ import (
 	"time"
 
 	abcitypes "github.com/cometbft/cometbft/abci/types"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/stretchr/testify/require"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	govtypesv1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/stretchr/testify/require"
 )
 
 const (

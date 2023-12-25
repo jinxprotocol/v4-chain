@@ -1,12 +1,14 @@
 package types_test
 
 import (
-	sdkmath "cosmossdk.io/math"
 	"testing"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
+	sdkmath "cosmossdk.io/math"
+
+	"github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
 	"github.com/stretchr/testify/require"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 func TestBridgeEvent_Equal(t *testing.T) {

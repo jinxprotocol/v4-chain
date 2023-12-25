@@ -16,12 +16,13 @@ import (
 
 	tmcfg "github.com/cometbft/cometbft/config"
 	tmcli "github.com/cometbft/cometbft/libs/cli"
+	"github.com/jinxprotocol/v4-chain/protocol/cmd/jinxprotocold/cmd"
+	"github.com/jinxprotocol/v4-chain/protocol/indexer"
+
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/server"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 	srvtypes "github.com/cosmos/cosmos-sdk/server/types"
-	"github.com/dydxprotocol/v4-chain/protocol/cmd/dydxprotocold/cmd"
-	"github.com/dydxprotocol/v4-chain/protocol/indexer"
 
 	dbm "github.com/cometbft/cometbft-db"
 	abcitypes "github.com/cometbft/cometbft/abci/types"
@@ -30,6 +31,29 @@ import (
 	"github.com/cometbft/cometbft/mempool"
 	tmproto "github.com/cometbft/cometbft/proto/tendermint/types"
 	"github.com/cometbft/cometbft/types"
+	sdkproto "github.com/cosmos/gogoproto/proto"
+	"github.com/jinxprotocol/v4-chain/protocol/app"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/appoptions"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	testlog "github.com/jinxprotocol/v4-chain/protocol/testutil/logger"
+	testtx "github.com/jinxprotocol/v4-chain/protocol/testutil/tx"
+	assettypes "github.com/jinxprotocol/v4-chain/protocol/x/assets/types"
+	blocktimetypes "github.com/jinxprotocol/v4-chain/protocol/x/blocktime/types"
+	bridgetypes "github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
+	clobtypes "github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	delaymsgtypes "github.com/jinxprotocol/v4-chain/protocol/x/delaymsg/types"
+	epochstypes "github.com/jinxprotocol/v4-chain/protocol/x/epochs/types"
+	feetiertypes "github.com/jinxprotocol/v4-chain/protocol/x/feetiers/types"
+	perptypes "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+	pricestypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+	rewardstypes "github.com/jinxprotocol/v4-chain/protocol/x/rewards/types"
+	sendingtypes "github.com/jinxprotocol/v4-chain/protocol/x/sending/types"
+	stattypes "github.com/jinxprotocol/v4-chain/protocol/x/stats/types"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
+	vesttypes "github.com/jinxprotocol/v4-chain/protocol/x/vest/types"
+	"github.com/stretchr/testify/require"
+	"golang.org/x/exp/slices"
+
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	"github.com/cosmos/cosmos-sdk/testutil/sims"
@@ -38,31 +62,9 @@ import (
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 	govtypesv1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
-	sdkproto "github.com/cosmos/gogoproto/proto"
-	"github.com/dydxprotocol/v4-chain/protocol/app"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/appoptions"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	testlog "github.com/dydxprotocol/v4-chain/protocol/testutil/logger"
-	testtx "github.com/dydxprotocol/v4-chain/protocol/testutil/tx"
-	assettypes "github.com/dydxprotocol/v4-chain/protocol/x/assets/types"
-	blocktimetypes "github.com/dydxprotocol/v4-chain/protocol/x/blocktime/types"
-	bridgetypes "github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
-	clobtypes "github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	delaymsgtypes "github.com/dydxprotocol/v4-chain/protocol/x/delaymsg/types"
-	epochstypes "github.com/dydxprotocol/v4-chain/protocol/x/epochs/types"
-	feetiertypes "github.com/dydxprotocol/v4-chain/protocol/x/feetiers/types"
-	perptypes "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
-	pricestypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
-	rewardstypes "github.com/dydxprotocol/v4-chain/protocol/x/rewards/types"
-	sendingtypes "github.com/dydxprotocol/v4-chain/protocol/x/sending/types"
-	stattypes "github.com/dydxprotocol/v4-chain/protocol/x/stats/types"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
-	vesttypes "github.com/dydxprotocol/v4-chain/protocol/x/vest/types"
-	"github.com/stretchr/testify/require"
-	"golang.org/x/exp/slices"
 )
 
-// localdydxprotocol Alice config/priv_validator_key.json.
+// localjinxprotocol Alice config/priv_validator_key.json.
 const alicePrivValidatorKeyJson = `{
   "address": "124B880684400B4C0086BD4EE882DCC5B61CF7E3",
   "pub_key": {
@@ -76,7 +78,7 @@ const alicePrivValidatorKeyJson = `{
 }
 `
 
-// localdydxprotocol Alice config/node_key.json.
+// localjinxprotocol Alice config/node_key.json.
 const aliceNodeKeyJson = `{
   "priv_key": {
     "type": "tendermint/PrivKeyEd25519",
@@ -152,7 +154,7 @@ func DefaultTestApp(customFlags map[string]interface{}, baseAppOptions ...func(*
 	}
 	db := dbm.NewMemDB()
 	snapshotsDB := dbm.NewMemDB()
-	dydxApp := app.New(
+	jinxApp := app.New(
 		logger,
 		db,
 		snapshotsDB,
@@ -161,12 +163,12 @@ func DefaultTestApp(customFlags map[string]interface{}, baseAppOptions ...func(*
 		appOptions,
 		baseAppOptions...,
 	)
-	return dydxApp
+	return jinxApp
 }
 
 // DefaultGenesis returns a genesis doc using configuration from the local net with a genesis time
 // equivalent to unix epoch + 1 nanosecond. We specifically use non-zero because stateful orders
-// validate that block time is non-zero (https://github.com/dydxprotocol/v4-chain/protocol/blob/
+// validate that block time is non-zero (https://github.com/jinxprotocol/v4-chain/protocol/blob/
 // 84a046554ab1b4725475500d94a0b3179fdd18c2/x/clob/keeper/stateful_order_state.go#L237).
 func DefaultGenesis() (genesis types.GenesisDoc) {
 	// NOTE: Tendermint uses a custom JSON decoder for GenesisDoc
@@ -940,7 +942,7 @@ func newTestingLogger() log.Logger {
 func (tApp *TestApp) CheckTx(req abcitypes.RequestCheckTx) abcitypes.ResponseCheckTx {
 	tApp.panicIfChainIsHalted()
 	res := tApp.App.CheckTx(req)
-	// Note that the dYdX fork of CometBFT explicitly excludes place and cancel order messages. See
+	// Note that the jInX fork of CometBFT explicitly excludes place and cancel order messages. See
 	// https://github.com/dydxprotocol/cometbft/blob/4d4d3b0/mempool/v0/clist_mempool.go#L416
 	if res.IsOK() && !mempool.IsShortTermClobOrderTransaction(req.Tx, newTestingLogger()) {
 		// We want to ensure that we hold the lock only for updating passingCheckTxs so that App.CheckTx can execute
@@ -1057,8 +1059,8 @@ func launchValidatorInDir(
 	parentCtx, cancelFn := context.WithCancel(context.Background())
 
 	appCaptor := make(chan *app.App, 1)
-	// Set up the root command using https://github.com/dydxprotocol/v4-chain/blob/
-	// 1fa21ed5d848ed7cc6a98053838cadb68422079f/protocol/cmd/dydxprotocold/main.go#L12 as a basis.
+	// Set up the root command using https://github.com/jinxprotocol/v4-chain/blob/
+	// 1fa21ed5d848ed7cc6a98053838cadb68422079f/protocol/cmd/jinxprotocold/main.go#L12 as a basis.
 	option := cmd.GetOptionWithCustomStartCmd()
 	rootCmd := cmd.NewRootCmdWithInterceptors(
 		option,
@@ -1074,7 +1076,7 @@ func launchValidatorInDir(
 			}
 		},
 		// Override the addresses to use domain sockets to avoid port conflicts.
-		func(s string, appConfig *cmd.DydxAppConfig) (string, *cmd.DydxAppConfig) {
+		func(s string, appConfig *cmd.JinxAppConfig) (string, *cmd.JinxAppConfig) {
 			// Note that the domain sockets need to typically be ~100 bytes or fewer otherwise they will fail to be
 			// created. The actual limit is OS specific.
 			apiSocketPath := filepath.Join(validatorHomeDir, "api_socket")

@@ -7,8 +7,8 @@ import (
 	"time"
 
 	gometrics "github.com/armon/go-metrics"
-	"github.com/dydxprotocol/v4-chain/protocol/lib/metrics"
-	big_testutil "github.com/dydxprotocol/v4-chain/protocol/testutil/big"
+	"github.com/jinxprotocol/v4-chain/protocol/lib/metrics"
+	big_testutil "github.com/jinxprotocol/v4-chain/protocol/testutil/big"
 
 	"github.com/stretchr/testify/require"
 )

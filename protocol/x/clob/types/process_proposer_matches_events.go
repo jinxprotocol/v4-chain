@@ -3,8 +3,9 @@ package types
 import (
 	"fmt"
 
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
 )
 
 // ValidateProcessProposerMatchesEvents performs basic stateless validation on ProcessProposerMatchesEvents.

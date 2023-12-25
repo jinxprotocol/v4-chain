@@ -4,14 +4,15 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_function/testexchange"
+	pricefeed "github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	pricefeed_testutil "github.com/jinxprotocol/v4-chain/protocol/testutil/pricefeed"
+	"github.com/ory/dockertest/v3"
+
 	"github.com/cosmos/cosmos-sdk/crypto/hd"
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/price_function/testexchange"
-	pricefeed "github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	pricefeed_testutil "github.com/dydxprotocol/v4-chain/protocol/testutil/pricefeed"
-	"github.com/ory/dockertest/v3"
 )
 
 // For now all this config data like peers and monikers are hard coded to match the local net.
@@ -127,15 +128,15 @@ func (t *Testnet) initialize() (err error) {
 func (t *Testnet) initializeNode(moniker string) (*Node, error) {
 	var entrypointCommand string
 	if t.isPreupgradeGenesis {
-		entrypointCommand = "/dydxprotocol/preupgrade_entrypoint.sh"
+		entrypointCommand = "/jinxprotocol/preupgrade_entrypoint.sh"
 	} else {
-		entrypointCommand = "dydxprotocold"
+		entrypointCommand = "jinxprotocold"
 	}
 
 	resource, err := t.pool.RunWithOptions(
 		&dockertest.RunOptions{
 			Name:       fmt.Sprintf("testnet-local-%s", moniker),
-			Repository: "dydxprotocol-container-test",
+			Repository: "jinxprotocol-container-test",
 			Tag:        "",
 			NetworkID:  t.network.Network.ID,
 			ExposedPorts: []string{
@@ -145,15 +146,15 @@ func (t *Testnet) initializeNode(moniker string) (*Node, error) {
 				entrypointCommand,
 				"start",
 				"--home",
-				fmt.Sprintf("/dydxprotocol/chain/.%s", moniker),
+				fmt.Sprintf("/jinxprotocol/chain/.%s", moniker),
 				"--p2p.persistent_peers",
 				persistentPeers,
 				"--bridge-daemon-eth-rpc-endpoint",
 				"https://eth-sepolia.g.alchemy.com/v2/demo",
 			},
 			Env: []string{
-				"DAEMON_NAME=dydxprotocold",
-				fmt.Sprintf("DAEMON_HOME=/dydxprotocol/chain/.%s", moniker),
+				"DAEMON_NAME=jinxprotocold",
+				fmt.Sprintf("DAEMON_HOME=/jinxprotocol/chain/.%s", moniker),
 				fmt.Sprintf("UPGRADE_TO_VERSION=%s", UpgradeToVersion),
 			},
 			ExtraHosts: []string{

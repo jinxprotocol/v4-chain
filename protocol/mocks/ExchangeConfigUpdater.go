@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	types "github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
+	types "github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
 	mock "github.com/stretchr/testify/mock"
 )
 

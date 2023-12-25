@@ -1,6 +1,18 @@
 package ante
 
 import (
+	blocktime "github.com/jinxprotocol/v4-chain/protocol/x/blocktime/types"
+	bridge "github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
+	clob "github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	delaymsg "github.com/jinxprotocol/v4-chain/protocol/x/delaymsg/types"
+	feetiers "github.com/jinxprotocol/v4-chain/protocol/x/feetiers/types"
+	perpetuals "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+	prices "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+	rewards "github.com/jinxprotocol/v4-chain/protocol/x/rewards/types"
+	sending "github.com/jinxprotocol/v4-chain/protocol/x/sending/types"
+	stats "github.com/jinxprotocol/v4-chain/protocol/x/stats/types"
+	vest "github.com/jinxprotocol/v4-chain/protocol/x/vest/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	auth "github.com/cosmos/cosmos-sdk/x/auth/types"
 	bank "github.com/cosmos/cosmos-sdk/x/bank/types"
@@ -11,17 +23,6 @@ import (
 	slashing "github.com/cosmos/cosmos-sdk/x/slashing/types"
 	staking "github.com/cosmos/cosmos-sdk/x/staking/types"
 	upgrade "github.com/cosmos/cosmos-sdk/x/upgrade/types"
-	blocktime "github.com/dydxprotocol/v4-chain/protocol/x/blocktime/types"
-	bridge "github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
-	clob "github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	delaymsg "github.com/dydxprotocol/v4-chain/protocol/x/delaymsg/types"
-	feetiers "github.com/dydxprotocol/v4-chain/protocol/x/feetiers/types"
-	perpetuals "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
-	prices "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
-	rewards "github.com/dydxprotocol/v4-chain/protocol/x/rewards/types"
-	sending "github.com/dydxprotocol/v4-chain/protocol/x/sending/types"
-	stats "github.com/dydxprotocol/v4-chain/protocol/x/stats/types"
-	vest "github.com/dydxprotocol/v4-chain/protocol/x/vest/types"
 )
 
 // IsInternalMsg returns true if the given msg is an internal message.

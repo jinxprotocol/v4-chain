@@ -1,0 +1,20 @@
+syntax = "proto3";
+package jinxprotocol.clob;
+
+import "gogoproto/gogo.proto";
+import "jinxprotocol/clob/block_rate_limit_config.proto";
+import "jinxprotocol/clob/clob_pair.proto";
+import "jinxprotocol/clob/equity_tier_limit_config.proto";
+import "jinxprotocol/clob/liquidations_config.proto";
+
+option go_package = "github.com/jinxprotocol/v4-chain/protocol/x/clob/types";
+
+// GenesisState defines the clob module's genesis state.
+message GenesisState {
+  repeated ClobPair clob_pairs = 1 [ (gogoproto.nullable) = false ];
+  LiquidationsConfig liquidations_config = 2 [ (gogoproto.nullable) = false ];
+  BlockRateLimitConfiguration block_rate_limit_config = 3
+      [ (gogoproto.nullable) = false ];
+  EquityTierLimitConfiguration equity_tier_limit_config = 4
+      [ (gogoproto.nullable) = false ];
+}

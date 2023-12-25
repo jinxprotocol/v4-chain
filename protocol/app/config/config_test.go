@@ -1,10 +1,12 @@
 package config_test
 
 import (
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/app/config"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/jinxprotocol/v4-chain/protocol/app/config"
+	"github.com/stretchr/testify/require"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 func TestSetupConfig_SealsConfig(t *testing.T) {
@@ -23,12 +25,12 @@ func TestSetupConfig_SealsConfig(t *testing.T) {
 func TestSetAddressPrefixes(t *testing.T) {
 	sdkConfig := sdk.GetConfig()
 
-	require.Equal(t, "dydx", sdkConfig.GetBech32AccountAddrPrefix())
-	require.Equal(t, "dydxpub", sdkConfig.GetBech32AccountPubPrefix())
+	require.Equal(t, "jinx", sdkConfig.GetBech32AccountAddrPrefix())
+	require.Equal(t, "jinxpub", sdkConfig.GetBech32AccountPubPrefix())
 
-	require.Equal(t, "dydxvaloper", sdkConfig.GetBech32ValidatorAddrPrefix())
-	require.Equal(t, "dydxvaloperpub", sdkConfig.GetBech32ValidatorPubPrefix())
+	require.Equal(t, "jinxvaloper", sdkConfig.GetBech32ValidatorAddrPrefix())
+	require.Equal(t, "jinxvaloperpub", sdkConfig.GetBech32ValidatorPubPrefix())
 
-	require.Equal(t, "dydxvalcons", sdkConfig.GetBech32ConsensusAddrPrefix())
-	require.Equal(t, "dydxvalconspub", sdkConfig.GetBech32ConsensusPubPrefix())
+	require.Equal(t, "jinxvalcons", sdkConfig.GetBech32ConsensusAddrPrefix())
+	require.Equal(t, "jinxvalconspub", sdkConfig.GetBech32ConsensusPubPrefix())
 }

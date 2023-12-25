@@ -3,15 +3,16 @@ package keeper_test
 import (
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	keepertest "github.com/jinxprotocol/v4-chain/protocol/testutil/keeper"
+	lttest "github.com/jinxprotocol/v4-chain/protocol/testutil/liquidity_tier"
+	perpkeeper "github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/perpetuals/types"
+	"github.com/stretchr/testify/require"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	keepertest "github.com/dydxprotocol/v4-chain/protocol/testutil/keeper"
-	lttest "github.com/dydxprotocol/v4-chain/protocol/testutil/liquidity_tier"
-	perpkeeper "github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/perpetuals/types"
-	"github.com/stretchr/testify/require"
 )
 
 func TestSetLiquidityTier(t *testing.T) {

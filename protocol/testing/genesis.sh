@@ -11,18 +11,18 @@ EIGHTEEN_ZEROS="$NINE_ZEROS$NINE_ZEROS"
 
 # Address of the `subaccounts` module account.
 # Obtained from `authtypes.NewModuleAddress(subaccounttypes.ModuleName)`.
-SUBACCOUNTS_MODACC_ADDR="dydx1v88c3xv9xyv3eetdx0tvcmq7ung3dywp5upwc6"
-REWARDS_VESTER_ACCOUNT_ADDR="dydx1ltyc6y4skclzafvpznpt2qjwmfwgsndp458rmp"
+SUBACCOUNTS_MODACC_ADDR="jinx1v88c3xv9xyv3eetdx0tvcmq7ung3dywp5upwc6"
+REWARDS_VESTER_ACCOUNT_ADDR="jinx1ltyc6y4skclzafvpznpt2qjwmfwgsndp458rmp"
 # Address of the `bridge` module account.
 # Obtained from `authtypes.NewModuleAddress(bridgetypes.ModuleName)`.
-BRIDGE_MODACC_ADDR="dydx1zlefkpe3g0vvm9a4h0jf9000lmqutlh9jwjnsv"
+BRIDGE_MODACC_ADDR="jinx1zlefkpe3g0vvm9a4h0jf9000lmqutlh94a45jv"
 USDC_DENOM="ibc/8E27BA2D5493AF5636760E354E46004562C46AB7EC0CC4C1CA14E9E20E2545B5"
-REWARD_TOKEN="adv4tnt"
-NATIVE_TOKEN="adv4tnt" # public testnet token
+REWARD_TOKEN="jinx"
+NATIVE_TOKEN="jinx" # public testnet token
 DEFAULT_SUBACCOUNT_QUOTE_BALANCE=100000000000000000
 DEFAULT_SUBACCOUNT_QUOTE_BALANCE_FAUCET=900000000000000000
 NATIVE_TOKEN_WHOLE_COIN="dv4tnt"
-COIN_NAME="dYdX V4 Testnet Token"
+COIN_NAME="jInX V4 Testnet Token"
 # Each testnet validator has 1 million whole coins of native token.
 TESTNET_VALIDATOR_NATIVE_TOKEN_BALANCE=1000000$EIGHTEEN_ZEROS # 1e24 or 1 million native tokens.
 # Each testnet validator self-delegates 500k whole coins of native token.
@@ -975,9 +975,9 @@ function edit_genesis() {
 	usdt_exchange_config_json=$(cat "$EXCHANGE_CONFIG_JSON_DIR/usdt_exchange_config.json" | jq -c '.')
 	dasel put -t string -f "$GENESIS" '.app_state.prices.market_params.[33].exchange_config_json' -v "$usdt_exchange_config_json"
 
-	# Market: DYDX-USD
+	# Market: JINX-USD
 	dasel put -t json -f "$GENESIS" '.app_state.prices.market_params.[]' -v "{}"
-	dasel put -t string -f "$GENESIS" '.app_state.prices.market_params.[34].pair' -v 'DYDX-USD'
+	dasel put -t string -f "$GENESIS" '.app_state.prices.market_params.[34].pair' -v 'JINX-USD'
 	dasel put -t int -f "$GENESIS" '.app_state.prices.market_params.[34].id' -v '1000001'
 	dasel put -t int -f "$GENESIS" '.app_state.prices.market_params.[34].exponent' -v '-9'
 	dasel put -t int -f "$GENESIS" '.app_state.prices.market_params.[34].min_exchanges' -v '3'
@@ -985,10 +985,10 @@ function edit_genesis() {
 	dasel put -t json -f "$GENESIS" '.app_state.prices.market_prices.[]' -v "{}"
 	dasel put -t int -f "$GENESIS" '.app_state.prices.market_prices.[34].id' -v '1000001'
 	dasel put -t int -f "$GENESIS" '.app_state.prices.market_prices.[34].exponent' -v '-9'
-	dasel put -t int -f "$GENESIS" '.app_state.prices.market_prices.[34].price' -v '2050000000'          # $2.05 = 1 DYDX.
-	# DYDX Exchange Config
-	dydx_exchange_config_json=$(cat "$EXCHANGE_CONFIG_JSON_DIR/dydx_exchange_config.json" | jq -c '.')
-	dasel put -t string -f "$GENESIS" '.app_state.prices.market_params.[34].exchange_config_json' -v "$dydx_exchange_config_json"
+	dasel put -t int -f "$GENESIS" '.app_state.prices.market_prices.[34].price' -v '2050000000'          # $2.05 = 1 JINX.
+	# JINX Exchange Config
+	jinx_exchange_config_json=$(cat "$EXCHANGE_CONFIG_JSON_DIR/jinx_exchange_config.json" | jq -c '.')
+	dasel put -t string -f "$GENESIS" '.app_state.prices.market_params.[34].exchange_config_json' -v "$jinx_exchange_config_json"
 
 	# Initialize bridge module account balance as total native token supply.
 	bridge_module_account_balance=$TOTAL_NATIVE_TOKEN_SUPPLY

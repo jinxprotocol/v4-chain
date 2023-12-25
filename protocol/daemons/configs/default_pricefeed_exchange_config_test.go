@@ -8,11 +8,11 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/configs"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/constants"
-	pfconstants "github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/constants/exchange_common"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/configs"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/constants"
+	pfconstants "github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/constants/exchange_common"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/types"
 
 	tmos "github.com/cometbft/cometbft/libs/os"
 	"github.com/stretchr/testify/require"

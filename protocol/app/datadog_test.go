@@ -1,10 +1,11 @@
 package app
 
 import (
-	"github.com/cometbft/cometbft/libs/log"
-	"github.com/stretchr/testify/require"
 	"os"
 	"testing"
+
+	"github.com/cometbft/cometbft/libs/log"
+	"github.com/stretchr/testify/require"
 )
 
 func TestConfigureDatadogProfilerOptions(t *testing.T) {

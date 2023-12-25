@@ -3,10 +3,11 @@ package types_test
 import (
 	"testing"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
 	"github.com/stretchr/testify/require"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 var (
@@ -66,7 +67,7 @@ func TestMsgUpdateEventParams_ValidateBasic(t *testing.T) {
 		},
 		"Failure: invalid authority": {
 			msg: types.MsgUpdateEventParams{
-				Authority: "dydx1abc",
+				Authority: "jinx1abc",
 			},
 			expectedErr: types.ErrInvalidAuthority.Error(),
 		},

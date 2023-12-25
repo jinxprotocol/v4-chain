@@ -1,11 +1,13 @@
 package types_test
 
 import (
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	types "github.com/dydxprotocol/v4-chain/protocol/x/feetiers/types"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	types "github.com/jinxprotocol/v4-chain/protocol/x/feetiers/types"
+	"github.com/stretchr/testify/require"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 var (

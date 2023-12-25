@@ -3,18 +3,19 @@ package keeper_test
 import (
 	"testing"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	testapp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	pricestest "github.com/dydxprotocol/v4-chain/protocol/testutil/prices"
-	"github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
-	delaymsgtypes "github.com/dydxprotocol/v4-chain/protocol/x/delaymsg/types"
-	pricestypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
-	sendingtypes "github.com/dydxprotocol/v4-chain/protocol/x/sending/types"
+	sdk "github.com/cosmos/cosmos-sdk/types"
+
+	testapp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	pricestest "github.com/jinxprotocol/v4-chain/protocol/testutil/prices"
+	"github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
+	delaymsgtypes "github.com/jinxprotocol/v4-chain/protocol/x/delaymsg/types"
+	pricestypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+	sendingtypes "github.com/jinxprotocol/v4-chain/protocol/x/sending/types"
 )
 
 var (
@@ -240,7 +241,7 @@ func TestDelayedCompleteBridgeMessages(t *testing.T) {
 					DelayMsgAuthority,
 					types.ModuleName,
 					constants.AliceAccAddress.String(),
-					sdk.NewCoin("adv4tnt", sdk.NewInt(100)),
+					sdk.NewCoin("jinx", sdk.NewInt(100)),
 				),
 				100,
 			)

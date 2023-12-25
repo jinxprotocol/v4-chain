@@ -5,8 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cosmos/cosmos-sdk/telemetry"
 	"github.com/stretchr/testify/require"
+
+	"github.com/cosmos/cosmos-sdk/telemetry"
 )
 
 func TestTelemetryMetrics(t *testing.T) {

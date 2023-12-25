@@ -1,6 +1,6 @@
-import { stats } from '@dydxprotocol-indexer/base';
-import { PerpetualMarketFromDatabase, perpetualMarketRefresher } from '@dydxprotocol-indexer/postgres';
-import { OrderbookLevels, OrderbookLevelsCache } from '@dydxprotocol-indexer/redis';
+import { stats } from '@jinxprotocol-indexer/base';
+import { PerpetualMarketFromDatabase, perpetualMarketRefresher } from '@jinxprotocol-indexer/postgres';
+import { OrderbookLevels, OrderbookLevelsCache } from '@jinxprotocol-indexer/redis';
 import express from 'express';
 import { checkSchema, matchedData } from 'express-validator';
 import {

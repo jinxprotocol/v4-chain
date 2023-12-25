@@ -3,11 +3,12 @@ package types
 import (
 	"errors"
 	"fmt"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/daemons/pricefeed"
-	prices_types "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
+	"testing"
+
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/daemons/pricefeed"
+	prices_types "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
 	"github.com/stretchr/testify/require"
 	"golang.org/x/exp/maps"
-	"testing"
 )
 
 // Define a simple mock class to avoid import loops caused by importing the mock class.

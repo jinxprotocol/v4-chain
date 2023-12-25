@@ -1,7 +1,7 @@
 package app
 
 const (
-	AppName       = "dydxprotocol"
+	AppName       = "jinxprotocol"
 	AppDaemonName = AppName + "d"
 	ServiceName   = "validator"
 )

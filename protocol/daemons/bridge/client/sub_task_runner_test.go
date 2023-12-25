@@ -3,16 +3,17 @@ package client_test
 import (
 	"errors"
 	"fmt"
-	"github.com/dydxprotocol/v4-chain/protocol/daemons/bridge/client"
-	"github.com/dydxprotocol/v4-chain/protocol/mocks"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/grpc"
-	bridgetypes "github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
-	ethcoretypes "github.com/ethereum/go-ethereum/core/types"
-	"github.com/stretchr/testify/mock"
-	"github.com/stretchr/testify/require"
 	"math/big"
 	"testing"
+
+	ethcoretypes "github.com/ethereum/go-ethereum/core/types"
+	"github.com/jinxprotocol/v4-chain/protocol/daemons/bridge/client"
+	"github.com/jinxprotocol/v4-chain/protocol/mocks"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/grpc"
+	bridgetypes "github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
+	"github.com/stretchr/testify/mock"
+	"github.com/stretchr/testify/require"
 )
 
 func TestRunBridgeDaemonTaskLoop(t *testing.T) {

@@ -6,14 +6,15 @@ import (
 	"math"
 	"testing"
 
-	"github.com/cosmos/cosmos-sdk/telemetry"
-	clobtest "github.com/dydxprotocol/v4-chain/protocol/testutil/clob"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/constants"
-	testutil_memclob "github.com/dydxprotocol/v4-chain/protocol/testutil/memclob"
-	sdktest "github.com/dydxprotocol/v4-chain/protocol/testutil/sdk"
-	"github.com/dydxprotocol/v4-chain/protocol/x/clob/types"
-	satypes "github.com/dydxprotocol/v4-chain/protocol/x/subaccounts/types"
+	clobtest "github.com/jinxprotocol/v4-chain/protocol/testutil/clob"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/constants"
+	testutil_memclob "github.com/jinxprotocol/v4-chain/protocol/testutil/memclob"
+	sdktest "github.com/jinxprotocol/v4-chain/protocol/testutil/sdk"
+	"github.com/jinxprotocol/v4-chain/protocol/x/clob/types"
+	satypes "github.com/jinxprotocol/v4-chain/protocol/x/subaccounts/types"
 	"github.com/stretchr/testify/require"
+
+	"github.com/cosmos/cosmos-sdk/telemetry"
 )
 
 func TestShortTermCancelOrder_CancelAlreadyExists(t *testing.T) {

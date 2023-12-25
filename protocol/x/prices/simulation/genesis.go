@@ -5,11 +5,12 @@ package simulation
 import (
 	"math/rand"
 
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/sim_helpers"
+	"github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
+
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/sim_helpers"
-	"github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
 )
 
 // genNumMarkets returns randomized num markets.

@@ -2,9 +2,10 @@ package lib_test
 
 import (
 	"bytes"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
 	"math/rand"
 	"testing"
+
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
 
 	"github.com/stretchr/testify/require"
 )

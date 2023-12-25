@@ -3,14 +3,15 @@ package vest
 import (
 	"math/rand"
 
+	"github.com/jinxprotocol/v4-chain/protocol/testutil/sample"
+	vestsimulation "github.com/jinxprotocol/v4-chain/protocol/x/vest/simulation"
+	"github.com/jinxprotocol/v4-chain/protocol/x/vest/types"
+
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
-	"github.com/dydxprotocol/v4-chain/protocol/testutil/sample"
-	vestsimulation "github.com/dydxprotocol/v4-chain/protocol/x/vest/simulation"
-	"github.com/dydxprotocol/v4-chain/protocol/x/vest/types"
 )
 
 // avoid unused import issue

@@ -3,10 +3,11 @@ package flags
 import (
 	"fmt"
 
-	"github.com/cosmos/cosmos-sdk/server/config"
-	servertypes "github.com/cosmos/cosmos-sdk/server/types"
 	"github.com/spf13/cast"
 	"github.com/spf13/cobra"
+
+	"github.com/cosmos/cosmos-sdk/server/config"
+	servertypes "github.com/cosmos/cosmos-sdk/server/types"
 )
 
 // A struct containing the values of all flags.
@@ -43,7 +44,7 @@ const (
 
 // AddFlagsToCmd adds flags to app initialization.
 // These flags should be applied to the `start` command of the V4 Cosmos application.
-// E.g. `dydxprotocold start --non-validating-full-node true`.
+// E.g. `jinxprotocold start --non-validating-full-node true`.
 func AddFlagsToCmd(cmd *cobra.Command) {
 	cmd.Flags().Bool(
 		NonValidatingFullNodeFlag,

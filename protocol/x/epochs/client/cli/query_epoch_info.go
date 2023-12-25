@@ -3,10 +3,11 @@ package cli
 import (
 	"context"
 
+	"github.com/jinxprotocol/v4-chain/protocol/x/epochs/types"
+	"github.com/spf13/cobra"
+
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/dydxprotocol/v4-chain/protocol/x/epochs/types"
-	"github.com/spf13/cobra"
 )
 
 func CmdListEpochInfo() *cobra.Command {

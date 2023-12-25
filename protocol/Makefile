@@ -1,7 +1,7 @@
 export VERSION := $(shell echo $(shell git describe --tags --always --match "protocol/v*") | sed 's/^protocol\/v//')
 BUILDDIR ?= $(CURDIR)/build
 DOCKER := $(shell which docker)
-HTTPS_GIT := https://github.com/dydxprotocol/v4.git
+HTTPS_GIT := https://github.com/jinxprotocol/v4.git
 GO_VERSION := $(shell cat go.mod | grep -E 'go [0-9].[0-9]+' | cut -d ' ' -f 2)
 PROJECT_NAME := $(shell git remote get-url origin | xargs basename -s .git)
 CGO_ENABLED=1
@@ -59,8 +59,8 @@ build_tags_comma_sep := $(subst $(whitespace),$(comma),$(build_tags))
 
 # process linker flags
 
-ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=dydxprotocol \
-		  -X github.com/cosmos/cosmos-sdk/version.AppName=dydxprotocold \
+ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=jinxprotocol \
+		  -X github.com/cosmos/cosmos-sdk/version.AppName=jinxprotocold \
 		  -X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
 		  -X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT) \
 		  -X "github.com/cosmos/cosmos-sdk/version.BuildTags=$(build_tags_comma_sep)"
@@ -107,7 +107,7 @@ include contrib/devtools/Makefile
 all: tools install lint test
 
 install: go.sum
-	go install -mod=readonly $(BUILD_FLAGS) ./cmd/dydxprotocold
+	go install -mod=readonly $(BUILD_FLAGS) ./cmd/jinxprotocold
 
 aws-push-dev:
 	./scripts/build-push-ecr.sh dev
@@ -138,7 +138,7 @@ build: go.sum
 ifeq ($(OS),Windows_NT)
 	exit 1
 else
-	go build -mod=readonly $(BUILD_FLAGS) -o build/dydxprotocold ./cmd/dydxprotocold
+	go build -mod=readonly $(BUILD_FLAGS) -o build/jinxprotocold ./cmd/jinxprotocold
 endif
 
 # TODO(DEC-1743): `build-reproducible` is taken from Osmosis. This currently takes a long time,
@@ -147,42 +147,42 @@ endif
 # which doesn't support go 1.19 yet.
 build-reproducible: build-reproducible-linux-amd64 build-reproducible-linux-arm64
 build-reproducible-linux-amd64: go.sum $(BUILDDIR)/
-	$(DOCKER) buildx create --name dydxv4builder || true
-	$(DOCKER) buildx use dydxv4builder
+	$(DOCKER) buildx create --name jinxv4builder || true
+	$(DOCKER) buildx use jinxv4builder
 	$(DOCKER) buildx build \
 		--build-arg VERSION=$(VERSION) \
 		--build-arg COMMIT=$(COMMIT) \
 		--build-arg RUNNER_IMAGE=alpine:3.16 \
 		--platform linux/amd64 \
-		-t dydx:local-linux-amd64 \
+		-t jinx:local-linux-amd64 \
 		--load \
 		-f Dockerfile .
-	$(DOCKER) rm -f dydxv4binary || true
-	$(DOCKER) create -ti --name dydxv4binary dydx:local-linux-amd64
-	$(DOCKER) cp dydxv4binary:/bin/dydxprotocold $(BUILDDIR)/dydxprotocold:linux-amd64
-	$(DOCKER) rm -f dydxv4binary
+	$(DOCKER) rm -f jinxv4binary || true
+	$(DOCKER) create -ti --name jinxv4binary jinx:local-linux-amd64
+	$(DOCKER) cp jinxv4binary:/bin/jinxprotocold $(BUILDDIR)/jinxprotocold:linux-amd64
+	$(DOCKER) rm -f jinxv4binary
 build-reproducible-linux-arm64: go.sum $(BUILDDIR)/
-	$(DOCKER) buildx create --name dydxv4builder || true
-	$(DOCKER) buildx use dydxv4builder
+	$(DOCKER) buildx create --name jinxv4builder || true
+	$(DOCKER) buildx use jinxv4builder
 	$(DOCKER) buildx build \
 		--build-arg VERSION=$(VERSION) \
 		--build-arg COMMIT=$(COMMIT) \
 		--build-arg RUNNER_IMAGE=alpine:3.16 \
 		--platform linux/arm64 \
-		-t dydx:local-linux-arm64 \
+		-t jinx:local-linux-arm64 \
 		--load \
 		-f Dockerfile .
-	$(DOCKER) rm -f dydxv4binary || true
-	$(DOCKER) create -ti --name dydxv4binary dydx:local-linux-arm64
-	$(DOCKER) cp dydxv4binary:/bin/dydxprotocold $(BUILDDIR)/dydxprotocold:linux-arm64
-	$(DOCKER) rm -f dydxv4binary
+	$(DOCKER) rm -f jinxv4binary || true
+	$(DOCKER) create -ti --name jinxv4binary jinx:local-linux-arm64
+	$(DOCKER) cp jinxv4binary:/bin/jinxprotocold $(BUILDDIR)/jinxprotocold:linux-arm64
+	$(DOCKER) rm -f jinxv4binary
 # TODO(DEC-1743): Make this also a reproducible build.
 build-darwin-arm64: go.sum
 	LEDGER_ENABLED=false GOOS=darwin GOARCH=arm64 $(MAKE) build -ldflags="${ldflags}"
 draw-deps:
 	@# requires brew install graphviz or apt-get install graphviz
 	go get github.com/RobotsAndPencils/goviz
-	@goviz -i ./cmd/dydxprotocold -d 2 | dot -Tpng -o dependency-graph.png
+	@goviz -i ./cmd/jinxprotocold -d 2 | dot -Tpng -o dependency-graph.png
 
 ################################################################################
 ### 						Tools & dependencies							 ###
@@ -226,10 +226,10 @@ test-race:
 	@VERSION=$(VERSION) go test -mod=readonly -race -tags='test_ledger_mock $(build_tags)' ./...
 
 test-cover:
-	@VERSION=$(VERSION) go test -mod=readonly -timeout 12m -coverprofile=coverage.out -covermode=atomic -coverpkg=github.com/dydxprotocol/v4-chain/protocol/... -tags='test_ledger_mock $(build_tags)' ./...
+	@VERSION=$(VERSION) go test -mod=readonly -timeout 12m -coverprofile=coverage.out -covermode=atomic -coverpkg=github.com/jinxprotocol/v4-chain/protocol/... -tags='test_ledger_mock $(build_tags)' ./...
 
 test-exchanges:
-	@VERSION=$(VERSION) go test -mod=readonly -tags='test_ledger_mock exchange_tests $(build_tags)' github.com/dydxprotocol/v4-chain/protocol/daemons/pricefeed/client/handler -run "TestQueryingActualExchanges"
+	@VERSION=$(VERSION) go test -mod=readonly -tags='test_ledger_mock exchange_tests $(build_tags)' github.com/jinxprotocol/v4-chain/protocol/daemons/pricefeed/client/handler -run "TestQueryingActualExchanges"
 
 test-unit-and-integration:
 	@VERSION=$(VERSION) go test -mod=readonly -tags='integration_test test_ledger_mock $(build_tags)' ./...
@@ -245,7 +245,7 @@ test-container-accept:
 
 test-container-build:
 	$(MAKE) localnet-build
-	@docker build . -t dydxprotocol-container-test -f testing/containertest/Dockerfile --no-cache
+	@docker build . -t jinxprotocol-container-test -f testing/containertest/Dockerfile --no-cache
 
 .PHONY: test test-all test-cover test-unit test-race test-container
 	\ container-test-build-base container-test-build-local
@@ -339,43 +339,43 @@ proto-download-deps:
 ###############################################################################
 
 localnet-new-validator:
-	@docker run --rm -it $(shell docker build --build-arg VERSION=$(VERSION) --build-arg COMMIT=$(COMMIT) . -t dydxprotocol-base && docker build . -q -f ./testing/util/Dockerfile)
+	@docker run --rm -it $(shell docker build --build-arg VERSION=$(VERSION) --build-arg COMMIT=$(COMMIT) . -t jinxprotocol-base && docker build . -q -f ./testing/util/Dockerfile)
 
 localnet-build:
-	docker build --build-arg VERSION=$(VERSION) --build-arg COMMIT=$(COMMIT) . -t dydxprotocol-base --no-cache
+	docker build --build-arg VERSION=$(VERSION) --build-arg COMMIT=$(COMMIT) . -t jinxprotocol-base --no-cache
 
 localnet-build-amd64:
-	DOCKER_BUILDKIT=1 docker build --build-arg VERSION=$(VERSION) --build-arg COMMIT=$(COMMIT) -f Dockerfile . -t dydxprotocol-base --no-cache --platform linux/amd64
+	DOCKER_BUILDKIT=1 docker build --build-arg VERSION=$(VERSION) --build-arg COMMIT=$(COMMIT) -f Dockerfile . -t jinxprotocol-base --no-cache --platform linux/amd64
 
 localnet-init:
 	rm -rf localnet
 	# Creates the directories which store the chain data for each node.
-	mkdir -p localnet/dydxprotocol0
-	mkdir -p localnet/dydxprotocol1
-	mkdir -p localnet/dydxprotocol2
-	mkdir -p localnet/dydxprotocol3
-	# These files are created as part of `dydxprotocold init`, and are required to initialize the chain,
+	mkdir -p localnet/jinxprotocol0
+	mkdir -p localnet/jinxprotocol1
+	mkdir -p localnet/jinxprotocol2
+	mkdir -p localnet/jinxprotocol3
+	# These files are created as part of `jinxprotocold init`, and are required to initialize the chain,
 	# but mounting the volumes removes them. This is a workaround to create them again.
-	echo '{"height": "0", "round": 0, "step": 0 }' > localnet/dydxprotocol0/priv_validator_state.json
-	echo '{"height": "0", "round": 0, "step": 0 }' > localnet/dydxprotocol1/priv_validator_state.json
-	echo '{"height": "0", "round": 0, "step": 0 }' > localnet/dydxprotocol2/priv_validator_state.json
-	echo '{"height": "0", "round": 0, "step": 0 }' > localnet/dydxprotocol3/priv_validator_state.json
+	echo '{"height": "0", "round": 0, "step": 0 }' > localnet/jinxprotocol0/priv_validator_state.json
+	echo '{"height": "0", "round": 0, "step": 0 }' > localnet/jinxprotocol1/priv_validator_state.json
+	echo '{"height": "0", "round": 0, "step": 0 }' > localnet/jinxprotocol2/priv_validator_state.json
+	echo '{"height": "0", "round": 0, "step": 0 }' > localnet/jinxprotocol3/priv_validator_state.json
 	# Build the base image.
 	make localnet-build
 
 localnet-compose-up:
 	@echo "Launching localnet at commit ${GIT_COMMIT_HASH}"
-	@docker build . -t local:dydxprotocol -f testing/testnet-local/Dockerfile --no-cache
+	@docker build . -t local:jinxprotocol -f testing/testnet-local/Dockerfile --no-cache
 	@docker-compose -f docker-compose.yml up --force-recreate $(ARGS)
 
 localnet-compose-upd:
 	@echo "Launching localnet at commit ${GIT_COMMIT_HASH}"
-	@docker build . -t local:dydxprotocol -f testing/testnet-local/Dockerfile --no-cache
+	@docker build . -t local:jinxprotocol -f testing/testnet-local/Dockerfile --no-cache
 	@docker-compose -f docker-compose.yml up --force-recreate -d $(ARGS)
 
 build-e2etest-image:
 	@echo "Build e2e test image at commit ${GIT_COMMIT_HASH}"
-	@docker build . -t local:e2etest-dydxprotocol -f testing/e2etest-local/Dockerfile --no-cache
+	@docker build . -t local:e2etest-jinxprotocol -f testing/e2etest-local/Dockerfile --no-cache
 
 localnet-start: localnet-init localnet-compose-up
 localnet-startd: localnet-init localnet-compose-upd
@@ -415,8 +415,8 @@ update-swagger-docs: statik
 # Run at `./protocol` directory.
 update-sample-pregenesis:
 	make build
-	./scripts/genesis/prod_pregenesis.sh build/dydxprotocold
-	cp /tmp/prod-chain/.dydxprotocol/config/sorted_genesis.json ./scripts/genesis/sample_pregenesis.json
+	./scripts/genesis/prod_pregenesis.sh build/jinxprotocold
+	cp /tmp/prod-chain/.jinxprotocol/config/sorted_genesis.json ./scripts/genesis/sample_pregenesis.json
 	@echo "Updated ./scripts/genesis/sample_pregenesis.json"
 
 check-sample-pregenesis-up-to-date:

@@ -1,9 +1,10 @@
 package feetiers
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/x/feetiers/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/feetiers/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/feetiers/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/feetiers/types"
 )
 
 // InitGenesis initializes the feetiers module's state from a provided genesis state.

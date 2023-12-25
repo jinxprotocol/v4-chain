@@ -4,10 +4,11 @@ import (
 	"context"
 	"testing"
 
+	testapp "github.com/jinxprotocol/v4-chain/protocol/testutil/app"
+	"github.com/jinxprotocol/v4-chain/protocol/x/bridge/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/bridge/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	testapp "github.com/dydxprotocol/v4-chain/protocol/testutil/app"
-	"github.com/dydxprotocol/v4-chain/protocol/x/bridge/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/bridge/types"
 )
 
 func setupMsgServer(t *testing.T) (keeper.Keeper, types.MsgServer, context.Context) {

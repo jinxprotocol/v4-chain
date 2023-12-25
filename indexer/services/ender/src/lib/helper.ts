@@ -1,10 +1,10 @@
-import { logger, ParseMessageError } from '@dydxprotocol-indexer/base';
+import { logger, ParseMessageError } from '@jinxprotocol-indexer/base';
 import {
   OrderSide,
   PerpetualMarketFromDatabase,
   PositionSide,
   protocolTranslations,
-} from '@dydxprotocol-indexer/postgres';
+} from '@jinxprotocol-indexer/postgres';
 import {
   IndexerTendermintEvent,
   IndexerTendermintEvent_BlockEvent,
@@ -24,7 +24,7 @@ import {
   SubaccountMessage,
   DeleveragingEventV1,
   TradingRewardsEventV1,
-} from '@dydxprotocol-indexer/v4-protos';
+} from '@jinxprotocol-indexer/v4-protos';
 import Big from 'big.js';
 import _ from 'lodash';
 import { DateTime } from 'luxon';
@@ -35,7 +35,7 @@ import {
 } from '../constants';
 import {
   AnnotatedSubaccountMessage,
-  DydxIndexerSubtypes,
+  JinxIndexerSubtypes,
   EventProtoWithTypeAndVersion,
 } from './types';
 
@@ -100,117 +100,117 @@ export function indexerTendermintEventToEventProtoWithType(
   // set the default version to 1
   const version: number = event.version === 0 ? 1 : event.version;
   switch (event.subtype) {
-    case (DydxIndexerSubtypes.ORDER_FILL.toString()): {
+    case (JinxIndexerSubtypes.ORDER_FILL.toString()): {
       return {
-        type: DydxIndexerSubtypes.ORDER_FILL,
+        type: JinxIndexerSubtypes.ORDER_FILL,
         eventProto: OrderFillEventV1.decode(eventDataBinary),
         indexerTendermintEvent: event,
         version,
         blockEventIndex,
       };
     }
-    case (DydxIndexerSubtypes.SUBACCOUNT_UPDATE.toString()): {
+    case (JinxIndexerSubtypes.SUBACCOUNT_UPDATE.toString()): {
       return {
-        type: DydxIndexerSubtypes.SUBACCOUNT_UPDATE,
+        type: JinxIndexerSubtypes.SUBACCOUNT_UPDATE,
         eventProto: SubaccountUpdateEventV1.decode(eventDataBinary),
         indexerTendermintEvent: event,
         version,
         blockEventIndex,
       };
     }
-    case (DydxIndexerSubtypes.TRANSFER.toString()): {
+    case (JinxIndexerSubtypes.TRANSFER.toString()): {
       return {
-        type: DydxIndexerSubtypes.TRANSFER,
+        type: JinxIndexerSubtypes.TRANSFER,
         eventProto: TransferEventV1.decode(eventDataBinary),
         indexerTendermintEvent: event,
         version,
         blockEventIndex,
       };
     }
-    case (DydxIndexerSubtypes.MARKET.toString()): {
+    case (JinxIndexerSubtypes.MARKET.toString()): {
       return {
-        type: DydxIndexerSubtypes.MARKET,
+        type: JinxIndexerSubtypes.MARKET,
         eventProto: MarketEventV1.decode(eventDataBinary),
         indexerTendermintEvent: event,
         version,
         blockEventIndex,
       };
     }
-    case (DydxIndexerSubtypes.STATEFUL_ORDER.toString()): {
+    case (JinxIndexerSubtypes.STATEFUL_ORDER.toString()): {
       return {
-        type: DydxIndexerSubtypes.STATEFUL_ORDER,
+        type: JinxIndexerSubtypes.STATEFUL_ORDER,
         eventProto: StatefulOrderEventV1.decode(eventDataBinary),
         indexerTendermintEvent: event,
         version,
         blockEventIndex,
       };
     }
-    case (DydxIndexerSubtypes.FUNDING.toString()): {
+    case (JinxIndexerSubtypes.FUNDING.toString()): {
       return {
-        type: DydxIndexerSubtypes.FUNDING,
+        type: JinxIndexerSubtypes.FUNDING,
         eventProto: FundingEventV1.decode(eventDataBinary),
         indexerTendermintEvent: event,
         version,
         blockEventIndex,
       };
     }
-    case (DydxIndexerSubtypes.ASSET.toString()): {
+    case (JinxIndexerSubtypes.ASSET.toString()): {
       return {
-        type: DydxIndexerSubtypes.ASSET,
+        type: JinxIndexerSubtypes.ASSET,
         eventProto: AssetCreateEventV1.decode(eventDataBinary),
         indexerTendermintEvent: event,
         version,
         blockEventIndex,
       };
     }
-    case (DydxIndexerSubtypes.PERPETUAL_MARKET.toString()): {
+    case (JinxIndexerSubtypes.PERPETUAL_MARKET.toString()): {
       return {
-        type: DydxIndexerSubtypes.PERPETUAL_MARKET,
+        type: JinxIndexerSubtypes.PERPETUAL_MARKET,
         eventProto: PerpetualMarketCreateEventV1.decode(eventDataBinary),
         indexerTendermintEvent: event,
         version,
         blockEventIndex,
       };
     }
-    case (DydxIndexerSubtypes.LIQUIDITY_TIER.toString()): {
+    case (JinxIndexerSubtypes.LIQUIDITY_TIER.toString()): {
       return {
-        type: DydxIndexerSubtypes.LIQUIDITY_TIER,
+        type: JinxIndexerSubtypes.LIQUIDITY_TIER,
         eventProto: LiquidityTierUpsertEventV1.decode(eventDataBinary),
         indexerTendermintEvent: event,
         version,
         blockEventIndex,
       };
     }
-    case (DydxIndexerSubtypes.UPDATE_PERPETUAL.toString()): {
+    case (JinxIndexerSubtypes.UPDATE_PERPETUAL.toString()): {
       return {
-        type: DydxIndexerSubtypes.UPDATE_PERPETUAL,
+        type: JinxIndexerSubtypes.UPDATE_PERPETUAL,
         eventProto: UpdatePerpetualEventV1.decode(eventDataBinary),
         indexerTendermintEvent: event,
         version,
         blockEventIndex,
       };
     }
-    case (DydxIndexerSubtypes.UPDATE_CLOB_PAIR.toString()): {
+    case (JinxIndexerSubtypes.UPDATE_CLOB_PAIR.toString()): {
       return {
-        type: DydxIndexerSubtypes.UPDATE_CLOB_PAIR,
+        type: JinxIndexerSubtypes.UPDATE_CLOB_PAIR,
         eventProto: UpdateClobPairEventV1.decode(eventDataBinary),
         indexerTendermintEvent: event,
         version,
         blockEventIndex,
       };
     }
-    case (DydxIndexerSubtypes.DELEVERAGING.toString()): {
+    case (JinxIndexerSubtypes.DELEVERAGING.toString()): {
       return {
-        type: DydxIndexerSubtypes.DELEVERAGING,
+        type: JinxIndexerSubtypes.DELEVERAGING,
         eventProto: DeleveragingEventV1.decode(eventDataBinary),
         indexerTendermintEvent: event,
         version,
         blockEventIndex,
       };
     }
-    case (DydxIndexerSubtypes.TRADING_REWARD.toString()): {
+    case (JinxIndexerSubtypes.TRADING_REWARD.toString()): {
       return {
-        type: DydxIndexerSubtypes.TRADING_REWARD,
+        type: JinxIndexerSubtypes.TRADING_REWARD,
         eventProto: TradingRewardsEventV1.decode(eventDataBinary),
         indexerTendermintEvent: event,
         version,

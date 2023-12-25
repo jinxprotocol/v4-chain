@@ -3,14 +3,15 @@ package ante_test
 import (
 	"testing"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 
-	appmsgs "github.com/dydxprotocol/v4-chain/protocol/app/msgs"
-	"github.com/dydxprotocol/v4-chain/protocol/lib"
-	"github.com/dydxprotocol/v4-chain/protocol/lib/ante"
-	testmsgs "github.com/dydxprotocol/v4-chain/protocol/testutil/msgs"
-	pricestypes "github.com/dydxprotocol/v4-chain/protocol/x/prices/types"
+	sdk "github.com/cosmos/cosmos-sdk/types"
+
+	appmsgs "github.com/jinxprotocol/v4-chain/protocol/app/msgs"
+	"github.com/jinxprotocol/v4-chain/protocol/lib"
+	"github.com/jinxprotocol/v4-chain/protocol/lib/ante"
+	testmsgs "github.com/jinxprotocol/v4-chain/protocol/testutil/msgs"
+	pricestypes "github.com/jinxprotocol/v4-chain/protocol/x/prices/types"
 )
 
 func TestIsSingleAppInjectedMsg(t *testing.T) {

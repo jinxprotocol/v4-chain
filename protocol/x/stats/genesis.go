@@ -1,9 +1,10 @@
 package stats
 
 import (
+	"github.com/jinxprotocol/v4-chain/protocol/x/stats/keeper"
+	"github.com/jinxprotocol/v4-chain/protocol/x/stats/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/dydxprotocol/v4-chain/protocol/x/stats/keeper"
-	"github.com/dydxprotocol/v4-chain/protocol/x/stats/types"
 )
 
 // InitGenesis initializes the stat module's state from a provided genesis state.

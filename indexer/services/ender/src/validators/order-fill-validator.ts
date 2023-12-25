@@ -1,13 +1,13 @@
 import {
   Liquidity,
   OrderTable,
-} from '@dydxprotocol-indexer/postgres';
-import { CanceledOrdersCache } from '@dydxprotocol-indexer/redis';
+} from '@jinxprotocol-indexer/postgres';
+import { CanceledOrdersCache } from '@jinxprotocol-indexer/redis';
 import {
   IndexerTendermintEvent,
   LiquidationOrderV1,
   IndexerOrder, OrderFillEventV1,
-} from '@dydxprotocol-indexer/v4-protos';
+} from '@jinxprotocol-indexer/v4-protos';
 import _ from 'lodash';
 
 import { Handler, HandlerInitializer } from '../handlers/handler';

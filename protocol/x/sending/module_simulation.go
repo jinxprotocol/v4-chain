@@ -1,11 +1,12 @@
 package sending
 
 import (
+	sendingsimulation "github.com/jinxprotocol/v4-chain/protocol/x/sending/simulation"
+	"github.com/jinxprotocol/v4-chain/protocol/x/sending/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	sendingsimulation "github.com/dydxprotocol/v4-chain/protocol/x/sending/simulation"
-	"github.com/dydxprotocol/v4-chain/protocol/x/sending/types"
 )
 
 // GenerateGenesisState creates a randomized GenState of the module
