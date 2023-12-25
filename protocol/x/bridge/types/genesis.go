@@ -9,7 +9,7 @@ func DefaultGenesis() *GenesisState {
 	return &GenesisState{
 		EventParams: EventParams{
 			Denom:      "bridge-token",
-			EthChainId: 11155111,
+			EthChainId: 710,
 			EthAddress: "0xEf01c3A30eB57c91c40C52E996d29c202ae72193",
 		},
 		ProposeParams: ProposeParams{

@@ -114,7 +114,7 @@ func TestAppModuleBasic_DefaultGenesis(t *testing.T) {
 	require.NoError(t, err)
 	require.Equal(
 		t,
-		`{"event_params":{"denom":"bridge-token","eth_chain_id":"11155111",`+
+		`{"event_params":{"denom":"bridge-token","eth_chain_id":"710",`+
 			`"eth_address":"0xEf01c3A30eB57c91c40C52E996d29c202ae72193"},"propose_params":`+
 			`{"max_bridges_per_block":10,"propose_delay_duration":"60s","skip_rate_ppm":800000,`+
 			`"skip_if_block_delayed_by_duration":"5s"},"safety_params":{"is_disabled":false,`+
@@ -142,7 +142,7 @@ func TestAppModuleBasic_ValidateGenesisErrBadState(t *testing.T) {
 	cdc := codec.NewProtoCodec(interfaceRegistry)
 
 	// bad JSON - extra { at the beginning.
-	h := json.RawMessage(`{{"event_params":{"denom":"bridge-token","eth_chain_id":"11155111",
+	h := json.RawMessage(`{{"event_params":{"denom":"bridge-token","eth_chain_id":"710",
 		"eth_address":"0xEf01c3A30eB57c91c40C52E996d29c202ae72193"},"propose_params":{"max_bridges_per_block":10,
 		"propose_delay_duration":"60s","skip_rate_ppm":800000,"skip_if_block_delayed_by_duration":"5s"},
 		"safety_params":{"is_disabled":false,"delay_blocks":86400},"acknowledged_event_info":{"next_id":0,
@@ -159,7 +159,7 @@ func TestAppModuleBasic_ValidateGenesis(t *testing.T) {
 	interfaceRegistry := types.NewInterfaceRegistry()
 	cdc := codec.NewProtoCodec(interfaceRegistry)
 
-	h := json.RawMessage(`{"event_params":{"denom":"bridge-token","eth_chain_id":"11155111",
+	h := json.RawMessage(`{"event_params":{"denom":"bridge-token","eth_chain_id":"710",
 		"eth_address":"0xEf01c3A30eB57c91c40C52E996d29c202ae72193"},"propose_params":{"max_bridges_per_block":10,
 		"propose_delay_duration":"60s","skip_rate_ppm":800000,"skip_if_block_delayed_by_duration":"5s"},
 		"safety_params":{"is_disabled":false,"delay_blocks":86400},"acknowledged_event_info":{"next_id":0,

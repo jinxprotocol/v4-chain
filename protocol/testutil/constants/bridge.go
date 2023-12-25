@@ -132,7 +132,7 @@ var (
 	}
 
 	// Eth Chain ID.
-	EthChainId = 11155111
+	EthChainId = 710
 	// Eth Log of Bridge event ID 0 at block height 3872013 that bridges 12345 tokens to address
 	// `jinx1qqgzqvzq2ps8pqys5zcvp58q7rluextxzepsan`.
 	EthLog_Event0 = ethcoretypes.Log{

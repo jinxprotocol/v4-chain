@@ -201,7 +201,7 @@
         "event_params": {
           "denom": "jinx",
           "eth_address": "0xf75012c350e4ad55be2048bd67ce6e03b20de82d",
-          "eth_chain_id": 11155111
+          "eth_chain_id": 710
         },
         "propose_params": {
           "max_bridges_per_block": 10,
